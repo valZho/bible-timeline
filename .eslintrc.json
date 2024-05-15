@@ -1,3 +1,39 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "error",
+    "no-plusplus": 0,
+    "prefer-promise-reject-errors": 0,
+    "import/newline-after-import": 0,
+    "import/order": 0,
+    "import/no-named-as-default": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/display-name": 0,
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-key": 0,
+    "react/forbid-prop-types": 0,
+    "react/require-default-props": 0,
+    "no-restricted-syntax": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "avoid",
+        "bracketSpacing": true,
+        "indent": 2,
+        "printWidth": 100,
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "all"
+      }
+    ]
+  }
 }
