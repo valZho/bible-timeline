@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PageWrapper = ({ t }) => {
-  return <h1>{t('page.title')}</h1>;
-};
+import { useTranslation } from 'react-i18next';
 
-PageWrapper.defaultProps = {
-  t: k => k,
+const PageWrapper = () => {
+  const { t } = useTranslation();
+  return <h1>{t('page.title')}</h1>;
 };
 
 PageWrapper.propTypes = {
