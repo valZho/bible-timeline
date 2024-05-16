@@ -2,4 +2,13 @@
 
 body {
   padding: 10px;
+
+  .tabler-icon {
+    vertical-align: middle;
+  }
+
+  .mantine-Divider-root:where([data-orientation='vertical']) {
+    display: inline;
+    margin: 0 .75rem;
+  }
 }

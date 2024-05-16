@@ -3,13 +3,14 @@
   z-index: 1000;
   top: 15px;
   left: 15px;
+  background: var(--mantine-color-body);
 }
 
 .navbar {
   padding-left: 10px;
   padding-right: 10px;
-  p {
-    margin-bottom: 1rem;
+  .mantine-Drawer-body {
+    padding-top: 10px;
   }
   header {
     // padding-bottom: 0;
@@ -19,6 +20,11 @@
       padding-left: 30px;
     }
   }
+
+  .timelineIcon {
+    transform: rotate(-90deg);
+  }
+
   .mantine-Tabs-tabLabel {
     display: flex;
     flex-flow: row nowrap;

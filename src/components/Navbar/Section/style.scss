@@ -1,0 +1,29 @@
+.section {
+  &.compact {
+    .mantine-Divider-root {
+      margin-bottom: .75rem;
+    }
+
+    +.section {
+      margin-top: 1.25rem;
+    }
+
+    .mantine-Slider-root {
+      margin: 1rem 1.5rem 0;
+    }
+  }
+
+  &:not(.compact) {
+    .mantine-Divider-root {
+      margin-bottom: .75rem;
+    }
+
+    +.section {
+      margin-top: 3rem;
+    }
+
+    .mantine-Slider-root {
+      margin: 1rem 1.5rem 0;
+    }
+  }
+}

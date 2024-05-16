@@ -1,18 +1,33 @@
 {
-  "page": {
+  "nav": {
     "title": "Bible Timeline",
-    "description": "This project began as a quickly hobbled together collection of PHP and CSS just to visualize and verify some things I was reading about. Fast forward a couple of years, and I am now rebuilding it into something that will hopefully be more stable and usable for more than just me!",
-    "attribution": "© 2024, Darren Doyle || <0>Fork this on Github</0>",
-    "nav": {
-      "about": "About",
-      "settings": "Settings"
+    "timeline": {
+      "tab": "Timeline",
+      "masoretic": {
+        "title": "Septuagint vs Masoretic",
+        "description": ""
+      }
+    },
+    "about": {
+      "tab": "About",
+      "description": "This project began as a quickly hobbled together collection of PHP and CSS just to visualize and verify some things I was reading about. Fast forward a couple of years, and I am now rebuilding it into something that will hopefully be more stable and usable for more than just me!",
+      "attribution": "<0 /> 2024, Darren Doyle <1 /> <2 /> <3>Fork this on Github</3>"
+    },
+    "settings": {
+      "tab": "Settings"
     }
   },
   "settings": {
     "theme": {
-      "title": "Theme",
+      "title": "Website Theme",
       "light": "Light",
       "dark": "Dark"
+    },
+    "scale": {
+      "title": "Timeline Size Scale",
+      "bigger": "Bigger",
+      "smaller": "Smaller",
+      "default": "Default"
     }
   },
   "names": {
