@@ -1,15 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { useTranslation } from 'react-i18next';
+import Navbar from './Navbar';
 
 const PageWrapper = () => {
-  const { t } = useTranslation();
-  return <h1>{t('page.title')}</h1>;
-};
-
-PageWrapper.propTypes = {
-  t: PropTypes.func,
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default PageWrapper;

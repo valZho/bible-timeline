@@ -1,5 +1,33 @@
 {
   "page": {
     "title": "Cronología de la Biblia"
+  },
+  "names": {
+    "adam": "Adán",
+    "seth": "Set",
+    "enosh": "Enós",
+    "kenan": "Cainán",
+    "mahalalel": "Mahalaleel",
+    "jared": "Jared",
+    "enoch": "Enoc",
+    "methuselah": "Matusalén",
+    "lamech": "Lamec",
+
+    "noah": "Noé",
+    "shem": "Sem",
+    "ham": "Cam",
+    "japheth": "Jafet",
+
+    "arphaxad": "Arfaxad",
+    "shelah": "Selaj",
+    "eber": "Éber",
+    "peleg": "Péleg",
+    "reu": "Reú",
+    "serug": "Serug",
+    "nahor": "Najor",
+    "terah": "Térah",
+    "abraham": "Abraham",
+    "isaac": "Isaac",
+    "jacob": "Jacob"
   }
 }

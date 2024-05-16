@@ -1,5 +1,46 @@
 {
   "page": {
-    "title": "Bible Timeline"
+    "title": "Bible Timeline",
+    "description": "This project began as a quickly hobbled together collection of PHP and CSS just to visualize and verify some things I was reading about. Fast forward a couple of years, and I am now rebuilding it into something that will hopefully be more stable and usable for more than just me!",
+    "attribution": "© 2024, Darren Doyle || <0>Fork this on Github</0>",
+    "nav": {
+      "about": "About",
+      "settings": "Settings"
+    }
+  },
+  "settings": {
+    "theme": {
+      "title": "Theme",
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
+  "names": {
+    "adam": "Adam",
+    "seth": "Seth",
+    "enosh": "Enosh",
+    "kenan": "Kenan",
+    "mahalalel": "Mahalalel",
+    "jared": "Jared",
+    "enoch": "Enoch",
+    "methuselah": "Methuselah",
+    "lamech": "Lamech",
+
+    "noah": "Noah",
+    "shem": "Shem",
+    "ham": "Ham",
+    "japheth": "Japheth",
+
+    "arphaxad": "Arphaxad",
+    "shelah": "Shelah",
+    "eber": "Eber",
+    "peleg": "Peleg",
+    "reu": "Reu",
+    "serug": "Serug",
+    "nahor": "Nahor",
+    "terah": "Terah",
+    "abraham": "Abraham",
+    "isaac": "Isaac",
+    "jacob": "Jacob"
   }
 }

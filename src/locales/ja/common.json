@@ -1,5 +1,33 @@
 {
   "page": {
     "title": "聖書年表"
+  },
+  "names": {
+    "adam": "アダム",
+    "seth": "セツ",
+    "enosh": "エノシュ",
+    "kenan": "ケナン",
+    "mahalalel": "マハラルエル",
+    "jared": "エレデ",
+    "enoch": "エノク",
+    "methuselah": "メトシェラ",
+    "lamech": "レメク",
+
+    "noah": "ノア",
+    "shem": "セム",
+    "ham": "ハム",
+    "japheth": "ヤペテ",
+
+    "arphaxad": "アルパクシャデ",
+    "shelah": "シェラフ",
+    "eber": "エベル",
+    "peleg": "ペレグ",
+    "reu": "レウ",
+    "serug": "セルグ",
+    "nahor": "ナホル",
+    "terah": "テラ",
+    "abraham": "アブラハム",
+    "isaac": "イサク",
+    "jacob": "ヤコブ"
   }
 }
