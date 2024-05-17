@@ -9,9 +9,7 @@
 .navbar {
   padding-left: 10px;
   padding-right: 10px;
-  .mantine-Drawer-body {
-    padding-top: 10px;
-  }
+
   header {
     // padding-bottom: 0;
     .mantine-Drawer-title {
@@ -21,17 +19,38 @@
     }
   }
 
+  .mantine-Drawer-body {
+    margin-top: 10px;
+    height: calc(100% - 15px - (3.75rem * var(--mantine-scale)));
+    max-height: calc(100% - 15px - (3.75rem * var(--mantine-scale)));
+  }
+
   .timelineIcon {
     transform: rotate(-90deg);
   }
 
-  .mantine-Tabs-tabLabel {
+  .mantine-Tabs-root {
+    max-height: 100%;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    span {
-      padding-left: 5px;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-shrink: 1;
+
+    .mantine-Tabs-tabLabel {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      span {
+        padding-left: 5px;
+      }
+    }
+
+    .mantine-Tabs-panel {
+      overflow-y: auto;
+      overflow-x: auto;
+      padding: 20px;
     }
   }
 }

@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { RecoilRoot } from 'recoil';
+import RecoilNexus from 'recoil-nexus';
 
 import '@mantine/core/styles.css';
 import type { AppProps } from 'next/app';
@@ -13,8 +15,11 @@ import './page.scss';
 
 export default function Page({ pageProps }: AppProps) {
   return (
-    <I18nextProvider i18n={i18n}>
-      <PageWrapper {...pageProps} />
-    </I18nextProvider>
+    <RecoilRoot>
+      <RecoilNexus />
+      <I18nextProvider i18n={i18n}>
+        <PageWrapper {...pageProps} />
+      </I18nextProvider>
+    </RecoilRoot>
   );
 }

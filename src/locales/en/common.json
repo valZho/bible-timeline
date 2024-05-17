@@ -1,20 +1,29 @@
 {
   "nav": {
     "title": "Bible Timeline",
-    "timeline": {
-      "tab": "Timeline",
-      "masoretic": {
-        "title": "Septuagint vs Masoretic",
-        "description": ""
-      }
+    "options": {
+      "tab": "Timeline Options"
     },
     "about": {
       "tab": "About",
-      "description": "This project began as a quickly hobbled together collection of PHP and CSS just to visualize and verify some things I was reading about. Fast forward a couple of years, and I am now rebuilding it into something that will hopefully be more stable and usable for more than just me!",
-      "attribution": "<0 /> 2024, Darren Doyle <1 /> <2 /> <3>Fork this on Github</3>"
+      "description": "This project began as a quickly hobbled together collection of PHP and CSS just to visualize and verify some things I was reading about. Fast forward a couple of years, and I am now rebuilding it (with modern tools) into something that will hopefully be more stable and usable for more than just me!",
+      "description2": "While I have included many options to accommodate differing views, interpretations, and sources, I doubt I have covered all scenarios, and I am not claiming to come to this completely without opinion either. Having said that, feel free to send me a message if you think there's something that could be improved or added, or if you are so inclined and able, the code is available for you to tinker around with yourself.",
+      "cookies": "Cookies are used for saving preferences only.",
+      "builtWith": "Built With",
+      "copyright": "<0 /> 2024, Darren Doyle",
+      "contact": "Contact"
     },
     "settings": {
       "tab": "Settings"
+    }
+  },
+  "options": {
+    "ages": {
+      "title": "Ages of the Patriarchs",
+      "description": "The ages of $t(names.adam) through $t(names.terah) found in Genesis 5 and 11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC — and I'm not even going to bother with the Samaritan Pentateuch.<br /><br />There are a whole host of factors indicating that the LXX should be trusted over the MT (with a couple of exceptions). In particular, I have heavily referenced <0>the work of Henry B. Smith Jr. of the Associates of Biblical Research</0> on the topic, and the option of \"$t(options.ages.best)\" is based on his conclusions.<br /><br />Despite this, by what I would consider a quirk of history, all English bible translations today (I can't speak for translations in other languages) are still using the ages from the MT.<br /><br />Thus, this option lets you force the timeline to use either the ages strictly from the LXX or strictly from the MT, but I recommend keeping this set at the default value of \"$t(options.ages.best)\" for accuracy.<br /><br />A <i>somewhat</i> separate issue is the fact that $t(names.kainan), son of $t(names.arphaxad), doesn't show up at all in the MT. It is highly likely that he <i>should</i> be included in the timeline, but I am making it a separate option to include him or not.",
+      "septuagint": "Septuagint",
+      "masoretic": "Masoretic",
+      "best": "Best Attested"
     }
   },
   "settings": {
@@ -26,8 +35,7 @@
     "scale": {
       "title": "Timeline Size Scale",
       "bigger": "Bigger",
-      "smaller": "Smaller",
-      "default": "Default"
+      "smaller": "Smaller"
     }
   },
   "names": {
@@ -47,6 +55,7 @@
     "japheth": "Japheth",
 
     "arphaxad": "Arphaxad",
+    "kainan": "Kainan",
     "shelah": "Shelah",
     "eber": "Eber",
     "peleg": "Peleg",

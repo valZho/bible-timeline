@@ -9,7 +9,7 @@ import {
 import { Drawer, Burger, Tabs } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
-import Timeline from './Timeline';
+import Options from './Options';
 import About from './About';
 import Settings from './Settings';
 
@@ -34,13 +34,16 @@ const Navbar = () => {
         title={t('nav.title')}
         opened={navOpen}
         onClose={navToggle.close}
+        closeOnEscape={false}
+        closeOnClickOutside={false}
         transitionProps={{ duration: 500 }}
+        lockScroll
       >
-        <Tabs defaultValue="timeline">
+        <Tabs defaultValue="options">
           <Tabs.List>
-            <Tabs.Tab value="timeline">
+            <Tabs.Tab value="options">
               <IconChartCandleFilled className="timelineIcon" size={18} />
-              <span>{t('nav.timeline.tab')}</span>
+              <span>{t('nav.options.tab')}</span>
             </Tabs.Tab>
 
             <Tabs.Tab value="about">
@@ -54,8 +57,8 @@ const Navbar = () => {
             </Tabs.Tab>
           </Tabs.List>
 
-          <Tabs.Panel value="timeline">
-            <Timeline />
+          <Tabs.Panel value="options">
+            <Options />
           </Tabs.Panel>
 
           <Tabs.Panel value="about">

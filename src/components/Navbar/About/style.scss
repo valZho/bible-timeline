@@ -1,6 +1,20 @@
-.about {
-  padding-top: 20px;
-  +p {
-    margin-top: 1rem 0;
+p.cookieNotice.mantine-Text-root {
+  margin-top: .4rem;
+}
+
+.toolsLinks {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+
+  .mantine-Badge-root {
+    margin: 4px;
+    padding-left: 4px;
+    cursor: pointer;
+    // border-style: solid;
+    // border-width: 1px;
+    // border-color: var(--mantine-color-dimmed);
   }
 }
+

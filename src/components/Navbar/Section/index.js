@@ -1,13 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Divider } from '@mantine/core';
+import { Divider, Accordion, Text } from '@mantine/core';
 
 import './style.scss';
 
-const Section = ({ label = '', children = '', compact = false }) => {
+const Section = ({ title = '', children = '', Icon, compact = false, description = '' }) => {
   return (
     <div className={`section ${compact ? 'compact' : ''}`}>
-      <Divider labelPosition="left" label={label} />
+      {description ? (
+        <Accordion variant="contained" radius="md" chevronPosition="right">
+          <Accordion.Item value="a">
+            <Accordion.Control icon={<Icon size="22" />}>{title}</Accordion.Control>
+            <Accordion.Panel>
+              <Text size="sm">{description}</Text>
+            </Accordion.Panel>
+          </Accordion.Item>
+        </Accordion>
+      ) : (
+        <Divider labelPosition="left" label={title} />
+      )}
       {children}
     </div>
   );
@@ -16,7 +27,9 @@ const Section = ({ label = '', children = '', compact = false }) => {
 Section.propTypes = {
   children: PropTypes.node,
   compact: PropTypes.bool,
-  label: PropTypes.string,
+  description: PropTypes.node,
+  Icon: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  title: PropTypes.string,
 };
 
 export default Section;
