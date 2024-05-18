@@ -7,20 +7,16 @@ import {
   IconCopyright,
   IconMailFilled,
   IconCookie,
-  IconBrandNextjs,
-  IconBrandMantine,
-  IconBrandReact,
-  IconBrandNpm,
-  IconLanguageHiragana,
-  IconBrandSass,
 } from '@tabler/icons-react';
 
 import Section from '../Section';
+import toolsList from './toolsList';
 import './style.scss';
 
 const generateToolsLink = (title, link, Icon, color1, color2) => (
   // <Anchor href={link} target="_blank" className="toolLink">
   <Badge
+    key={title}
     component="a"
     href={link}
     target="_blank"
@@ -33,40 +29,6 @@ const generateToolsLink = (title, link, Icon, color1, color2) => (
   </Badge>
   // </Anchor>
 );
-
-const toolsLinks = [
-  {
-    title: 'Next.js',
-    link: 'https://nextjs.org',
-    icon: IconBrandNextjs,
-    c1: '#222',
-    c2: '#555',
-  },
-  { title: 'Recoil', link: 'https://recoiljs.org', icon: IconBrandReact, c1: 'rgb(53, 120, 229)' },
-  {
-    title: 'Recoil-Nexus',
-    link: 'https://www.npmjs.com/package/recoil-nexus',
-    icon: IconBrandNpm,
-  },
-  {
-    title: 'Mantine UI',
-    link: 'https://mantine.dev',
-    icon: IconBrandMantine,
-    c1: 'rgb(51, 154, 240)',
-  },
-  {
-    title: 'i18next',
-    link: 'https://www.i18next.com',
-    icon: IconLanguageHiragana,
-    c1: 'rgb(81, 184, 174)',
-  },
-  {
-    title: 'Sass',
-    link: 'https://sass-lang.com',
-    icon: IconBrandSass,
-    c1: 'rgb(191, 64, 128)',
-  },
-];
 
 const About = () => {
   const { t } = useTranslation();
@@ -85,7 +47,7 @@ const About = () => {
 
       <Section title={t('nav.about.builtWith')}>
         <div className="toolsLinks">
-          {toolsLinks.map(tool =>
+          {toolsList.map(tool =>
             generateToolsLink(tool.title, tool.link, tool.icon, tool.c1, tool.c2 || tool.c1),
           )}
         </div>
@@ -93,20 +55,30 @@ const About = () => {
 
       {/* COPYRIGHT FOOTER */}
       <Section compact>
-        <Text align="center" size="sm" c="blue">
-          <Trans
-            i18nKey="nav.about.copyright"
-            components={[<IconCopyright size="17" alt="Copyright" />]}
-          />
+        <div className="copyright">
+          <Text align="center" data-size="sm" c="blue">
+            <Trans
+              i18nKey="nav.about.copyright"
+              components={[<IconCopyright size="17" alt="Copyright" />]}
+            />
+          </Text>
           <Divider orientation="vertical" size="md" />
-          <Anchor href="mailto:timeline@inv.email?subject=Bible Timeline">
-            <IconMailFilled size="17" /> {t('nav.about.contact')}
-          </Anchor>
+          <Text align="center" data-size="sm" c="blue">
+            <Anchor href="mailto:timeline@inv.email?subject=Bible Timeline">
+              <span>
+                <IconMailFilled size="17" /> {t('nav.about.contact')}
+              </span>
+            </Anchor>
+          </Text>
           <Divider orientation="vertical" size="md" />
-          <Anchor href="https://github.com/valZho/bible-timeline" target="_blank">
-            <IconBrandGithubFilled size="17" /> Github
-          </Anchor>
-        </Text>
+          <Text align="center" data-size="sm" c="blue">
+            <Anchor href="https://github.com/valZho/bible-timeline" target="_blank">
+              <span>
+                <IconBrandGithubFilled size="17" /> Github
+              </span>
+            </Anchor>
+          </Text>
+        </div>
         <Text align="center" size="xs" c="dimmed" className="cookieNotice">
           <IconCookie size="19" /> {t('nav.about.cookies')}
         </Text>

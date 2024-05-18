@@ -19,11 +19,17 @@
   },
   "options": {
     "ages": {
-      "title": "Ages of the Patriarchs",
-      "description": "The ages of $t(names.adam) through $t(names.terah) found in Genesis 5 and 11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC — and I'm not even going to bother with the Samaritan Pentateuch.<br /><br />There are a whole host of factors indicating that the LXX should be trusted over the MT (with a couple of exceptions). In particular, I have heavily referenced <0>the work of Henry B. Smith Jr. of the Associates of Biblical Research</0> on the topic, and the option of \"$t(options.ages.best)\" is based on his conclusions.<br /><br />Despite this, by what I would consider a quirk of history, all English bible translations today (I can't speak for translations in other languages) are still using the ages from the MT.<br /><br />Thus, this option lets you force the timeline to use either the ages strictly from the LXX or strictly from the MT, but I recommend keeping this set at the default value of \"$t(options.ages.best)\" for accuracy.<br /><br />A <i>somewhat</i> separate issue is the fact that $t(names.kainan), son of $t(names.arphaxad), doesn't show up at all in the MT. It is highly likely that he <i>should</i> be included in the timeline, but I am making it a separate option to include him or not.",
+      "title": "Manuscript Source",
+      "description_wTags": "The ages of Adam through Terah found in Genesis 5 and 11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC — and I'm not even going to bother with the Samaritan Pentateuch.<br /><br />There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to these dates (with a couple of exceptions). In particular, I have heavily referenced <0>the work of Henry B. Smith Jr. of the Associates of Biblical Research</0> on the topic, and the \"$t(options.ages.best)\" option is based on his assertions: mostly following the LXX, but <br /><br />Despite the preponderance of evidence, and by what I would consider a quirk of history, all English bible translations — even the most recent (and I can't speak for translations in other languages) — are still using the ages found in the MT.<br /><br />I recommend keeping this option set to \"$t(options.ages.best)\", but it can be useful to force it to use solely the MT or the LXX.",
       "septuagint": "Septuagint",
       "masoretic": "Masoretic",
       "best": "Best Attested"
+    },
+    "margins": {
+      "title": "Margin of Error",
+      "description_wTags": "When constructing a Biblical timeline there is going to be some margin of error on <i>all</i> of your dates. This is inescapable by virtue of how the Bible lists birth years in Genesis; the Bible will list the year a person had their first child, but was that child born at the beginning of that year, the end, or somewhere in the middle? Naturally, that places a ±6mo margin of error on all dates of birth for the patriarchs (save Adam) which compounds to about a ±10yr margin of error for all subsequent dates.<br /><br />A common method around this is to just assume that placing all of these birth dates at the middle of the year will more-or-less average itself out. Technically it's less precise, but likely gets you pretty close — in essence, the margins of error are still there, you just won't see them.",
+      "on": "Show",
+      "off": "Hide"
     }
   },
   "settings": {
@@ -38,7 +44,7 @@
       "smaller": "Smaller"
     }
   },
-  "names": {
+  "timeline": {
     "adam": "Adam",
     "seth": "Seth",
     "enosh": "Enosh",
@@ -48,12 +54,13 @@
     "enoch": "Enoch",
     "methuselah": "Methuselah",
     "lamech": "Lamech",
-
     "noah": "Noah",
+
+    "flood": "Flood",
+
     "shem": "Shem",
     "ham": "Ham",
     "japheth": "Japheth",
-
     "arphaxad": "Arphaxad",
     "kainan": "Kainan",
     "shelah": "Shelah",

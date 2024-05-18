@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Divider, Accordion, Text } from '@mantine/core';
+import { Divider, Accordion } from '@mantine/core';
 
 import './style.scss';
 
@@ -11,9 +11,7 @@ const Section = ({ title = '', children = '', Icon, compact = false, description
         <Accordion variant="contained" radius="md" chevronPosition="right">
           <Accordion.Item value="a">
             <Accordion.Control icon={<Icon size="22" />}>{title}</Accordion.Control>
-            <Accordion.Panel>
-              <Text size="sm">{description}</Text>
-            </Accordion.Panel>
+            <Accordion.Panel>{description}</Accordion.Panel>
           </Accordion.Item>
         </Accordion>
       ) : (

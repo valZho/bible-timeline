@@ -4,7 +4,7 @@ import { atom, useRecoilState } from 'recoil';
 import { recoilPersist } from 'recoil-persist';
 
 import { SegmentedControl, Anchor } from '@mantine/core';
-import { IconBook } from '@tabler/icons-react';
+import { IconBook, IconSquareHalf } from '@tabler/icons-react';
 
 import Section from '../Section';
 import './style.scss';
@@ -18,12 +18,18 @@ OPTIONS.ages = atom({
   default: 'best',
   effects_UNSTABLE: [persistAtom],
 });
+OPTIONS.margins = atom({
+  key: 'optionsMargins',
+  default: 'on',
+  effects_UNSTABLE: [persistAtom],
+});
 export { OPTIONS };
 // —————————————————————————————————————————————————————
 
 const Timeline = () => {
   const { t } = useTranslation();
   const [ages, setAges] = useRecoilState(OPTIONS.ages);
+  const [margins, setMargins] = useRecoilState(OPTIONS.margins);
 
   const agesLink = (
     <Anchor
@@ -36,7 +42,7 @@ const Timeline = () => {
     <div className="options">
       <Section
         title={t('options.ages.title')}
-        description={<Trans i18nKey="options.ages.description" components={[agesLink]} />}
+        description={<Trans i18nKey="options.ages.description_wTags" components={[agesLink]} />}
         Icon={IconBook}
       >
         <SegmentedControl
@@ -47,8 +53,26 @@ const Timeline = () => {
           fullWidth
           data={[
             { value: 'best', label: t('options.ages.best') },
-            { value: 'septuagint', label: t('options.ages.septuagint') },
-            { value: 'masoretic', label: t('options.ages.masoretic') },
+            { value: 'lxx', label: t('options.ages.septuagint') },
+            { value: 'mt', label: t('options.ages.masoretic') },
+          ]}
+        />
+      </Section>
+
+      <Section
+        title={t('options.margins.title')}
+        description={<Trans i18nKey="options.margins.description_wTags" />}
+        Icon={IconSquareHalf}
+      >
+        <SegmentedControl
+          color="blue"
+          size="xs"
+          value={margins}
+          onChange={setMargins}
+          fullWidth
+          data={[
+            { value: 'on', label: t('options.margins.on') },
+            { value: '', label: t('options.margins.off') },
           ]}
         />
       </Section>

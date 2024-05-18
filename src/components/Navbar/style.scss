@@ -1,21 +1,48 @@
-.burger {
+.mantine-Burger-root {
   position: absolute;
+  left: 4px;
+  top: 0;
   z-index: 1000;
-  top: 15px;
-  left: 15px;
-  background: var(--mantine-color-body);
+  box-sizing: content-box;
+  border-left: solid 2px var(--mantine-color-blue-filled);
+  border-right: solid 2px var(--mantine-color-blue-filled);
+  background: var(--mantine-color-blue-filled);
+  height: 100%;
+  opacity: 1;
+  transition-property: opacity, left;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+
+  &.navOpen {
+    left: calc(27.5rem * var(--mantine-scale));
+    @media (max-width: 488px) {
+      opacity: 0;
+    }
+  }
+
+  .mantine-Burger-burger {
+    position: absolute;
+    left: 10px;
+    top: var(--burger-size);
+    &:not([data-opened]),
+    &:before,
+    &:after {
+      background-color: var(--mantine-color-white) !important;
+    }
+  }
 }
 
 .navbar {
-  padding-left: 10px;
-  padding-right: 10px;
-
-  header {
-    // padding-bottom: 0;
+  .mantine-Drawer-header {
     .mantine-Drawer-title {
+      color: var(--mantine-color-anchor);
       font-size: 24pt;
       font-weight: 700;
-      padding-left: 30px;
+    }
+    @media (min-width: 487px) {
+      .mantine-Drawer-close {
+        display: none;
+      }
     }
   }
 
@@ -23,10 +50,6 @@
     margin-top: 10px;
     height: calc(100% - 15px - (3.75rem * var(--mantine-scale)));
     max-height: calc(100% - 15px - (3.75rem * var(--mantine-scale)));
-  }
-
-  .timelineIcon {
-    transform: rotate(-90deg);
   }
 
   .mantine-Tabs-root {

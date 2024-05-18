@@ -1,11 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import {
-  IconChartCandleFilled,
-  IconSettingsFilled,
-  IconInfoCircleFilled,
-} from '@tabler/icons-react';
+import { IconAlignRight, IconSettingsFilled, IconInfoCircleFilled } from '@tabler/icons-react';
 import { Drawer, Burger, Tabs } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
@@ -16,20 +12,19 @@ import Settings from './Settings';
 import './style.scss';
 
 const Navbar = () => {
-  const [navOpen, navToggle] = useDisclosure(true);
+  const [navOpen, navToggle] = useDisclosure(false);
   const { t } = useTranslation();
 
   return (
     <>
       <Burger
-        className="burger"
+        className={navOpen ? 'navOpen' : ''}
         opened={navOpen}
         onClick={navToggle.toggle}
         aria-label="Toggle navbar"
       />
       <Drawer
         className="navbar"
-        withCloseButton={false}
         position="left"
         title={t('nav.title')}
         opened={navOpen}
@@ -38,21 +33,22 @@ const Navbar = () => {
         closeOnClickOutside={false}
         transitionProps={{ duration: 500 }}
         lockScroll
+        withinPortal={false}
       >
         <Tabs defaultValue="options">
           <Tabs.List>
             <Tabs.Tab value="options">
-              <IconChartCandleFilled className="timelineIcon" size={18} />
+              <IconAlignRight className="timelineIcon" size={18} stroke="1.5" />
               <span>{t('nav.options.tab')}</span>
             </Tabs.Tab>
 
             <Tabs.Tab value="about">
-              <IconInfoCircleFilled size={18} />
+              <IconInfoCircleFilled size={18} stroke="1.5" />
               <span>{t('nav.about.tab')}</span>
             </Tabs.Tab>
 
             <Tabs.Tab value="settings">
-              <IconSettingsFilled size={18} />
+              <IconSettingsFilled size={18} stroke="1.5" />
               <span>{t('nav.settings.tab')}</span>
             </Tabs.Tab>
           </Tabs.List>

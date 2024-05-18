@@ -1,14 +1,23 @@
 @import './reset';
 
+html,
 body {
-  padding: 10px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
+body {
   p {
     line-height: 1.3 !important;
   }
 
   .tabler-icon {
     vertical-align: middle;
+  }
+
+  .mantine-Anchor-root {
+    line-height: 1.3;
   }
 
   .mantine-Divider-root:where([data-orientation='vertical']) {
