@@ -2,12 +2,7 @@ import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { Anchor, Divider, Text, Badge } from '@mantine/core';
-import {
-  IconBrandGithubFilled,
-  IconCopyright,
-  IconMailFilled,
-  IconCookie,
-} from '@tabler/icons-react';
+import { IconBrandGithubFilled, IconCopyright, IconMailFilled, IconCookie } from '@tabler/icons-react';
 
 import Section from '../Section';
 import toolsList from './toolsList';
@@ -35,21 +30,22 @@ const About = () => {
 
   return (
     <div className="about">
-      {/* PROJECT INFORMATION BLURB */}
-      <Section compact>
+      {/* INCLUSIVE TIME */}
+      <Section title={t('nav.info.inclusiveTime.title')}>
         <Text size="md">
-          <Trans i18nKey="nav.about.description" />
-        </Text>
-        <Text size="md">
-          <Trans i18nKey="nav.about.description2" />
+          <Trans i18nKey="nav.info.inclusiveTime.description_wTags" />
         </Text>
       </Section>
 
-      <Section title={t('nav.about.builtWith')}>
+      {/* PROJECT INFORMATION BLURB */}
+      <Section compact title={t('nav.info.project.title')}>
+        <Text size="sm">{t('nav.info.project.description')}</Text>
+        <Text size="sm">{t('nav.info.project.description2')}</Text>
+      </Section>
+
+      <Section title={t('nav.info.project.builtWith')}>
         <div className="toolsLinks">
-          {toolsList.map(tool =>
-            generateToolsLink(tool.title, tool.link, tool.icon, tool.c1, tool.c2 || tool.c1),
-          )}
+          {toolsList.map(tool => generateToolsLink(tool.title, tool.link, tool.icon, tool.c1, tool.c2 || tool.c1))}
         </div>
       </Section>
 
@@ -57,16 +53,13 @@ const About = () => {
       <Section compact>
         <div className="copyright">
           <Text align="center" data-size="sm" c="blue">
-            <Trans
-              i18nKey="nav.about.copyright"
-              components={[<IconCopyright size="17" alt="Copyright" />]}
-            />
+            <Trans i18nKey="nav.info.project.copyright" components={[<IconCopyright size="17" alt="Copyright" />]} />
           </Text>
           <Divider orientation="vertical" size="md" />
           <Text align="center" data-size="sm" c="blue">
             <Anchor href="mailto:timeline@inv.email?subject=Bible Timeline">
               <span>
-                <IconMailFilled size="17" /> {t('nav.about.contact')}
+                <IconMailFilled size="17" /> {t('nav.info.project.contact')}
               </span>
             </Anchor>
           </Text>
@@ -80,7 +73,7 @@ const About = () => {
           </Text>
         </div>
         <Text align="center" size="xs" c="dimmed" className="cookieNotice">
-          <IconCookie size="19" /> {t('nav.about.cookies')}
+          <IconCookie size="19" /> {t('nav.info.project.cookies')}
         </Text>
       </Section>
     </div>

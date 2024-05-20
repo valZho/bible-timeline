@@ -4,7 +4,7 @@ import { atom, useRecoilState } from 'recoil';
 import { recoilPersist } from 'recoil-persist';
 
 import { SegmentedControl, Anchor } from '@mantine/core';
-import { IconBook, IconSquareHalf } from '@tabler/icons-react';
+import { IconBook, IconSquareHalf, IconConfetti } from '@tabler/icons-react';
 
 import Section from '../Section';
 import './style.scss';
@@ -23,6 +23,11 @@ OPTIONS.margins = atom({
   default: 'on',
   effects_UNSTABLE: [persistAtom],
 });
+OPTIONS.jubilee = atom({
+  key: 'optionsJubilee',
+  default: 'exclusive',
+  effects_UNSTABLE: [persistAtom],
+});
 export { OPTIONS };
 // —————————————————————————————————————————————————————
 
@@ -30,6 +35,7 @@ const Timeline = () => {
   const { t } = useTranslation();
   const [ages, setAges] = useRecoilState(OPTIONS.ages);
   const [margins, setMargins] = useRecoilState(OPTIONS.margins);
+  const [jubilee, setJubilee] = useRecoilState(OPTIONS.jubilee);
 
   const agesLink = (
     <Anchor
@@ -73,6 +79,25 @@ const Timeline = () => {
           data={[
             { value: 'on', label: t('options.margins.on') },
             { value: '', label: t('options.margins.off') },
+          ]}
+        />
+      </Section>
+
+      <Section
+        title={t('options.jubilee.title')}
+        description={<Trans i18nKey="options.jubilee.description_wTags" />}
+        Icon={IconConfetti}
+      >
+        <SegmentedControl
+          color="blue"
+          size="xs"
+          value={jubilee}
+          onChange={setJubilee}
+          fullWidth
+          data={[
+            { value: 'inclusive', label: t('options.jubilee.inclusive') },
+            { value: 'exclusive', label: t('options.jubilee.exclusive') },
+            { value: 'intercalated', label: t('options.jubilee.intercalated') },
           ]}
         />
       </Section>

@@ -23,6 +23,10 @@
   .mantine-Divider-root {
     margin-top: 0;
     margin-bottom: .75rem;
+
+    .mantine-Divider-label {
+      font-size: 1rem;
+    }
   }
 
   // the last item doesn't need a bottom margin
@@ -34,9 +38,9 @@
     margin: 0 0 1rem;
 
     // hide the top divider on the first item if it's compact
-    &:first-child .mantine-Divider-root {
-      display: none;
-    }
+    // &:first-child .mantine-Divider-root {
+    //   display: none;
+    // }
 
     // non-compact sections following a compact one should still have large spacing
     + .section:not(.compact) {

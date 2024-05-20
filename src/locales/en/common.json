@@ -4,14 +4,21 @@
     "options": {
       "tab": "Timeline Options"
     },
-    "about": {
-      "tab": "About",
-      "description": "This project began as a quickly hobbled together collection of PHP and CSS just to visualize and verify some things I was reading about. Fast forward a couple of years, and I am now rebuilding it (with modern tools) into something that will hopefully be more stable and usable for more than just me!",
-      "description2": "While I have included many options to accommodate differing views, interpretations, and sources, I doubt I have covered all scenarios, and I am not claiming to come to this completely without opinion either. Having said that, feel free to send me a message if you think there's something that could be improved or added, or if you are so inclined and able, the code is available for you to tinker around with yourself.",
-      "cookies": "Cookies are used for saving preferences only.",
-      "builtWith": "Built With",
-      "copyright": "<0 /> 2024, Darren Doyle",
-      "contact": "Contact"
+    "info": {
+      "tab": "Info",
+      "inclusiveTime": {
+        "title": "Inclusive Time",
+        "description_wTags": "It is important to understand that the Bible uses an <strong><i>inclusive</i></strong> reconing of time which can be foreign to our modern, Western, <i>exclusive</i> reconing about time.<br /><br />To illustrate, only a full year after birth would we moderns say that a baby is one year old, i.e., they have been alive for a year. In Ancient Isreal, as soon as they were born, it would have been said that they were one, i.e., they were in their first year.<br /><br />Applying this to a Biblical example, in Genesis 5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we moderns should understand it to mean that he was what we would call 499 years old and \"in his 500th year\" when he became a father. This has obvious implications on dates, and is something to keep in mind."
+      },
+      "project": {
+        "title": "Project Info",
+        "description": "This project began as a quickly hobbled together collection of PHP and CSS just to visualize and verify some things I was reading about. Fast forward a couple of years, and I am now rebuilding it (with modern tools) into something that will hopefully be more stable and usable for more than just me!",
+        "description2": "While I have included many options to accommodate differing views, interpretations, and sources, I doubt I have covered all scenarios. In other words, I am in no way claiming any sort of expertise on this topic, but I'm also not claiming to come to this completely without opinion either. Mostly I just felt like lending some of my development skills towards visualizing what turns out to a be a tricky and contended subject. Feel free to send me a message if you think there's something that could be improved or added, or if you are so inclined and able, the code for this whole site is available on Github for you to tinker around with yourself.",
+        "cookies": "Cookies are used for saving preferences only.",
+        "builtWith": "Built With",
+        "copyright": "<0 /> 2024, Darren Doyle",
+        "contact": "Contact"
+      }
     },
     "settings": {
       "tab": "Settings"
@@ -30,6 +37,13 @@
       "description_wTags": "When constructing a Biblical timeline there is going to be some margin of error on <i>all</i> of your dates. This is inescapable by virtue of how the Bible lists birth years in Genesis; the Bible will list the year a person had their first child, but was that child born at the beginning of that year, the end, or somewhere in the middle? Naturally, that places a ±6mo margin of error on all dates of birth for the patriarchs (save Adam) which compounds to about a ±10yr margin of error for all subsequent dates.<br /><br />A common method around this is to just assume that placing all of these birth dates at the middle of the year will more-or-less average itself out. Technically it's less precise, but likely gets you pretty close — in essence, the margins of error are still there, you just won't see them.",
       "on": "Show",
       "off": "Hide"
+    },
+    "jubilee": {
+      "title": "Jubilee Years",
+      "description_wTags": "Leviticus 25 mandates the observation of a sabbath year (the <i>\"shmita\"</i>) every 7th year and a jubilee year every 7 shmita. Apparently, there is some wiggle room for interpretation on just when the jubilee year occurs in relation to the shmita cycle. Below are the three different methods for calculating the jubilee year that I have seen floating around out there:<br /><br /><strong>• Inclusive:</strong> Each jubilee year overlaps with each 49th (<i>shmita</i>) year.<br /><br /><strong>• Exclusive:</strong> Each jubilee year begins <i>after</i> each 49th (<i>shmita</i>) year and overlaps with the 1st year of each new shmita cycle (49-year cycles)<br /><br /><strong>• Intercalated:</strong> Each jubilee year begins <i>after</i> the 49th (<i>shmita</i>) year and interrupts the shmita cycle with an intercalated (inserted) year. The first year of the next shmita cycle begins <i>after</i> the jubilee year (50-year cycles)",
+      "inclusive": "Inclusive",
+      "exclusive": "Exclusive",
+      "intercalated": "Intercalated"
     }
   },
   "settings": {
@@ -45,6 +59,14 @@
     }
   },
   "timeline": {
+    "am": "AM",
+    "ad": "AD",
+    "bc": "BC",
+    "date": "{{year}} {{era}}",
+    "date_wMargin_one": "{{year}} {{era}} ±{{count}}yr",
+    "date_wMargin_other": "{{year}} {{era}} ±{{count}}yrs"
+  },
+  "events": {
     "adam": "Adam",
     "seth": "Seth",
     "enosh": "Enosh",

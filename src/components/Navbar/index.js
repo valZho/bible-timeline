@@ -6,7 +6,7 @@ import { Drawer, Burger, Tabs } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 import Options from './Options';
-import About from './About';
+import Info from './Info';
 import Settings from './Settings';
 
 import './style.scss';
@@ -35,21 +35,21 @@ const Navbar = () => {
         lockScroll
         withinPortal={false}
       >
-        <Tabs defaultValue="options">
-          <Tabs.List>
+        <Tabs defaultValue="options" variant="outline">
+          <Tabs.List grow>
             <Tabs.Tab value="options">
               <IconAlignRight className="timelineIcon" size={18} stroke="1.5" />
               <span>{t('nav.options.tab')}</span>
             </Tabs.Tab>
 
-            <Tabs.Tab value="about">
-              <IconInfoCircleFilled size={18} stroke="1.5" />
-              <span>{t('nav.about.tab')}</span>
-            </Tabs.Tab>
-
             <Tabs.Tab value="settings">
               <IconSettingsFilled size={18} stroke="1.5" />
               <span>{t('nav.settings.tab')}</span>
+            </Tabs.Tab>
+
+            <Tabs.Tab value="info">
+              <IconInfoCircleFilled size={18} stroke="1.5" />
+              <span>{t('nav.info.tab')}</span>
             </Tabs.Tab>
           </Tabs.List>
 
@@ -57,8 +57,8 @@ const Navbar = () => {
             <Options />
           </Tabs.Panel>
 
-          <Tabs.Panel value="about">
-            <About />
+          <Tabs.Panel value="info">
+            <Info />
           </Tabs.Panel>
 
           <Tabs.Panel value="settings">
