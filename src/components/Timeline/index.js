@@ -1,41 +1,74 @@
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
+import { OPTIONS } from '../Navbar/Options';
 
 import { EVENTS } from '../../data/EventsProvider';
+import Grid from './Grid';
 import './style.scss';
 
 const Timeline = () => {
   const { t } = useTranslation();
-  const { biblical: events } = useRecoilValue(EVENTS);
+  const { biblical, farRight } = useRecoilValue(EVENTS);
+  const margins = useRecoilValue(OPTIONS.margins);
+  const jubilee = useRecoilValue(OPTIONS.jubilee);
+  const scale = useRecoilValue(OPTIONS.scale);
 
-  const eventParser = useCallback(() => {
-    return Object.keys(events).map(key => {
-      const e = events[key];
+  const createEvents = useCallback(() => {
+    console.log(biblical);
+    return biblical.map((e, i) => {
       return (
-        <div key={key}>
-          <b>{t(e.title)} — </b>
-          {/* {e.start ? `Start: ${e.start} — ` : ''} */}
-          {/* {e.relative?.start ? `${e.relative?.start} from start of "${e.relative.id}" — ` : ''}
-          {e.relative?.end ? `${e.relative?.end} from end of "${e.relative.id}" — ` : ''}
-          {e.length ? `Length: ${e.length}` : ''} */}
-          {JSON.stringify(e)}
+        <div
+          className={`eventWrapper ${e.color ?? ''}`}
+          key={e.key}
+          style={{
+            top: i * 46,
+            left: e.display.left,
+            width: e.display.fullWidth,
+          }}
+        >
+          <div className={`bar ${e.color || ''}`}>
+            <div className="margin" style={{ width: e.display.marginStart }} />
+            <div className="event" style={{ maxWidth: e.display.width }}>
+              <div className="margin" style={{ width: e.display.marginStart }} />
+              <div className="margin" style={{ width: e.display.marginEnd }} />
+            </div>
+            <div className="margin" style={{ width: e.display.marginEnd }} />
+          </div>
+          <div className="labels">
+            <div className="start">
+              <span className="title">{t(e.title)}</span>
+              {t('timeline.textSeparator')}
+              {t(`timeline.${margins && e.marginStart ? 'date_wMargin' : 'date'}`, {
+                year: e.startAm,
+                era: t('timeline.am'),
+                count: e.marginStart,
+              })}
+              {t('timeline.textSeparator')}
+              {t('timeline.year', { count: e.years })}
+            </div>
+            <div className="end">
+              {t(`timeline.${margins && e.marginEnd ? 'date_wMargin' : 'date'}`, {
+                year: e.endAm,
+                era: t('timeline.am'),
+                count: e.marginEnd,
+              })}
+            </div>
+          </div>
         </div>
       );
     });
-  }, [events, t]);
+  }, [biblical, margins, t]);
 
-  const yearsOutput = useCallback(() => {
-    let years = 0;
-    Object.keys(events).forEach(key => {
-      const e = events[key];
-      if (key === 'adam') return;
-      return (years += e.relative.start || e.relative.end + e.years);
-    });
-    return <h1>Years: {years}</h1>;
-  }, [events]);
-
-  return <div className="timeline-main">{JSON.stringify(events)}</div>;
+  return (
+    <div className="timelineContainer">
+      {/* add buffer space to the right for some overflowing event labels */}
+      <div className="eventsContainer" style={{ width: farRight + 200 }}>
+        <Grid scale={scale} width={farRight + 200} jubilee={jubilee} />
+        {createEvents()}
+      </div>
+    </div>
+  );
 };
 
 export default Timeline;

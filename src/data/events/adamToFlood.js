@@ -8,7 +8,7 @@ const adamToFlood = (MT, LXX) => {
   // it's easier to create objects as they appear in Bible
   // and then normalize them to our event format afterwards
   const events = {
-    adam: { startAm: 1, fatherAt: MT ? 130 : 230, years: 930 }, // <--- the whole timeline is going to build off of this date!!!
+    adam: { startAm: 1, fatherAt: MT ? 130 : 230, years: 930, color: 'green' },
     seth: { relative: { id: 'adam' }, fatherAt: MT ? 105 : 205, years: 912 },
     enosh: { relative: { id: 'seth' }, fatherAt: MT ? 90 : 190, years: 905 },
     kenan: { relative: { id: 'enosh' }, fatherAt: MT ? 70 : 170, years: 910 },
@@ -18,7 +18,7 @@ const adamToFlood = (MT, LXX) => {
     methuselah: { relative: { id: 'enoch' }, fatherAt: 187, years: 969 },
     lamech: { relative: { id: 'methuselah' }, fatherAt: LXX ? 182 : 188, years: LXX ? 777 : 753 },
     noah: { relative: { id: 'lamech' }, fatherAt: 600, years: 950 },
-    flood: { relative: { id: 'noah' }, years: 1, exact: true },
+    flood: { relative: { id: 'noah' }, years: 1, exact: true, color: 'red' },
   };
 
   // normalize event objects

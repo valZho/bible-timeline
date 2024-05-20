@@ -7,7 +7,7 @@
  * @param {string} jubilee - ['inclusive', 'exclusive', 'intercalated'] - jubilee calculation method
  * @returns {array} - an array of events normalized for processed[key] to the timeline
  */
-const convertToTimeline = ({ events = {}, scale = 4 }) => {
+const convertToTimeline = ({ events = {}, scale = 4, margins = true }) => {
   // PARSE THE EVENTS OBJECTS INTO A TIMELINE ARRAY
   // final processed[key] should an array of display object sorted by start date
   //
@@ -18,11 +18,14 @@ const convertToTimeline = ({ events = {}, scale = 4 }) => {
   // marginEnd (number)    <--- +/- margin of error at end (cumulative)
   //
   // display: {              <--- all pixel values are for absolute positioning
+  //   dateStart (pixels)    <--- the absolute position of the averaged date start
+  //   dateEnd (pixels)      <--- the absolute position of the averaged date end
+  //   marginStart (pixels)  <--- width of the start margin
+  //   marginEnd (pixels)    <--- width of the end margin
   //   left (pixels)         <--- the left side of the outer wrapper
-  //   left (pixels)         <--- the right side of the outer wrapper
-  //   width (pixels)        <--- full width of the outer wrapper
-  //   startWidth (pixels)   <--- full width of the start margin — "start" will always be in the center of this
-  //   endWidth (pixels)     <--- full width of the end margin — "end" will always be in the center of this
+  //   right (pixels)        <--- the right side of the outer wrapper
+  //   width (pixels)        <--- width from dateStart to dateEnd
+  //   fullWidth (pixels)    <--- full width of the outer wrapper
   // }
 
   // ————————————————————————————————————————————————————————————————————————————
@@ -31,6 +34,10 @@ const convertToTimeline = ({ events = {}, scale = 4 }) => {
   // so that we can reference them for relative dates
   const processed = {};
   let toProcess = Object.keys(events);
+
+  // keep track of our max values for timeline display
+  let farRight = 0;
+  let lastDate = 1;
 
   // we may need to loop over the events object multiple
   // times to make sure all dependencies are calculated
@@ -46,8 +53,10 @@ const convertToTimeline = ({ events = {}, scale = 4 }) => {
 
       // INITIALIZE OUTPUT
       processed[key] = {
+        key,
         title: e.title,
         years: e.years,
+        color: e.color,
         marginWidth: (e.margin || 0) * 2 * scale,
         display: {},
       };
@@ -69,11 +78,20 @@ const convertToTimeline = ({ events = {}, scale = 4 }) => {
       processed[key].marginEnd = processed[key].marginStart + (e.exact ? 0 : 0.5);
 
       // CALCULATE DISPLAY
-      processed[key].display.startWidth = processed[key].marginStart * 2 * scale;
-      processed[key].display.endWidth = processed[key].marginEnd * 2 * scale;
-      processed[key].display.left = (processed[key].startAm - 1) * scale - processed[key].display.startWidth / 2;
-      processed[key].display.right = (processed[key].endAm - 1) * scale + processed[key].display.endWidth / 2;
-      processed[key].display.width = processed[key].display.right - processed[key].display.left;
+      processed[key].display.dateStart = (processed[key].startAm - 1) * scale;
+      processed[key].display.marginStart = margins ? processed[key].marginStart * scale : 0;
+      processed[key].display.left = processed[key].display.dateStart - processed[key].display.marginStart;
+
+      processed[key].display.dateEnd = (processed[key].endAm - 1) * scale;
+      processed[key].display.marginEnd = margins ? processed[key].marginEnd * scale : 0;
+      processed[key].display.right = processed[key].display.dateEnd + processed[key].display.marginEnd;
+
+      processed[key].display.width = processed[key].display.dateEnd - processed[key].display.dateStart;
+      processed[key].display.fullWidth = processed[key].display.right - processed[key].display.left;
+
+      // UPDATE MAX VALUES
+      farRight = Math.max(farRight, processed[key].display.right);
+      lastDate = Math.max(lastDate, processed[key].endAm);
     });
 
     // CLEAN UP BEFORE ATTEMPTING ANOTHER LOOP
@@ -81,10 +99,13 @@ const convertToTimeline = ({ events = {}, scale = 4 }) => {
     infiniteLoopProtection++;
   }
 
-  // output all items in a sorted array
-  return Object.keys(processed)
-    .map(key => processed[key])
-    .sort((a, b) => a.display.left - b.display.left);
+  return {
+    farRight,
+    lastDate,
+    events: Object.keys(processed)
+      .map(key => processed[key])
+      .sort((a, b) => a.display.left - b.display.left),
+  };
 };
 
 export default convertToTimeline;

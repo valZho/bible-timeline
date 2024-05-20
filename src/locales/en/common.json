@@ -59,12 +59,15 @@
     }
   },
   "timeline": {
+    "textSeparator": "  •  ",
     "am": "AM",
     "ad": "AD",
     "bc": "BC",
     "date": "{{year}} {{era}}",
     "date_wMargin_one": "{{year}} {{era}} ±{{count}}yr",
-    "date_wMargin_other": "{{year}} {{era}} ±{{count}}yrs"
+    "date_wMargin_other": "{{year}} {{era}} ±{{count}}yrs",
+    "year_one": "{{count}} year",
+    "year_other": "{{count}} years"
   },
   "events": {
     "adam": "Adam",

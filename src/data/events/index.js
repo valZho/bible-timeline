@@ -3,7 +3,7 @@ import shemToTerah from './shemToTerah';
 
 import convertToTimeline from './convertToTimeline';
 
-const getBiblicalEvents = ({ ages = 'best', scale = 4 }) => {
+const getBiblicalEvents = ({ ages, scale, margins }) => {
   // FIRST GENERATE A KEYED OBJECT OF EVENTS
   // using an object first makes it much easier to reference events for doing relative dates
   //
@@ -35,7 +35,7 @@ const getBiblicalEvents = ({ ages = 'best', scale = 4 }) => {
     ...shemToTerah(MT, LXX),
   };
 
-  return convertToTimeline({ events: biblicalEvents, scale });
+  return convertToTimeline({ events: biblicalEvents, scale, margins });
 };
 
 export { getBiblicalEvents };

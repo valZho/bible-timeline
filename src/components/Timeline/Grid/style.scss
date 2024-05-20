@@ -1,0 +1,14 @@
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+
+  .tick {
+    display: inline-block;
+    height: 100%;
+    border-left: solid 1px var(--mantine-color-text);
+  }
+}
