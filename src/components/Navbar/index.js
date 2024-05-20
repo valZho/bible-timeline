@@ -12,7 +12,7 @@ import Settings from './Settings';
 import './style.scss';
 
 const Navbar = () => {
-  const [navOpen, navToggle] = useDisclosure(false);
+  const [navOpen, navToggle] = useDisclosure(true);
   const { t } = useTranslation();
 
   return (
@@ -32,7 +32,6 @@ const Navbar = () => {
         closeOnEscape={false}
         closeOnClickOutside={false}
         transitionProps={{ duration: 500 }}
-        lockScroll
         withinPortal={false}
       >
         <Tabs defaultValue="options" variant="outline">

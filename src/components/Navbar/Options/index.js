@@ -3,8 +3,8 @@ import { Trans, useTranslation } from 'react-i18next';
 import { atom, useRecoilState } from 'recoil';
 import { recoilPersist } from 'recoil-persist';
 
-import { SegmentedControl, Anchor } from '@mantine/core';
-import { IconBook, IconSquareHalf, IconConfetti } from '@tabler/icons-react';
+import { SegmentedControl, Anchor, Slider } from '@mantine/core';
+import { IconBook, IconSquareHalf, IconConfetti, IconAntennaBars5 } from '@tabler/icons-react';
 
 import Section from '../Section';
 import './style.scss';
@@ -13,6 +13,11 @@ const { persistAtom } = recoilPersist();
 
 // —————————————— OPTION STATE & STORAGE ———————————————
 const OPTIONS = {};
+OPTIONS.scale = atom({
+  key: 'optionsScale',
+  default: 4,
+  effects_UNSTABLE: [persistAtom],
+});
 OPTIONS.ages = atom({
   key: 'optionsAges',
   default: 'best',
@@ -33,6 +38,7 @@ export { OPTIONS };
 
 const Timeline = () => {
   const { t } = useTranslation();
+  const [scale, setScale] = useRecoilState(OPTIONS.scale);
   const [ages, setAges] = useRecoilState(OPTIONS.ages);
   const [margins, setMargins] = useRecoilState(OPTIONS.margins);
   const [jubilee, setJubilee] = useRecoilState(OPTIONS.jubilee);
@@ -47,6 +53,31 @@ const Timeline = () => {
   return (
     <div className="options">
       <Section
+        isSetting
+        title={t('settings.scale.title')}
+        Icon={IconAntennaBars5}
+        iconStyle={{ transform: 'rotate(90deg)' }}
+      >
+        <Slider
+          value={scale}
+          onChange={setScale}
+          min={1}
+          max={20}
+          step={1}
+          size="md"
+          label={null}
+          marks={[
+            { value: 1, label: t('settings.scale.smaller') },
+            { value: 5 },
+            { value: 10 },
+            { value: 15 },
+            { value: 20, label: t('settings.scale.bigger') },
+          ]}
+        />
+      </Section>
+
+      <Section
+        isSetting
         title={t('options.ages.title')}
         description={<Trans i18nKey="options.ages.description_wTags" components={[agesLink]} />}
         Icon={IconBook}
@@ -66,6 +97,7 @@ const Timeline = () => {
       </Section>
 
       <Section
+        isSetting
         title={t('options.margins.title')}
         description={<Trans i18nKey="options.margins.description_wTags" />}
         Icon={IconSquareHalf}
@@ -84,6 +116,7 @@ const Timeline = () => {
       </Section>
 
       <Section
+        isSetting
         title={t('options.jubilee.title')}
         description={<Trans i18nKey="options.jubilee.description_wTags" />}
         Icon={IconConfetti}

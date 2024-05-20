@@ -1,29 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { atom, useRecoilState } from 'recoil';
-import { recoilPersist } from 'recoil-persist';
 
-import { useMantineColorScheme, SegmentedControl, Slider } from '@mantine/core';
+import { useMantineColorScheme, SegmentedControl } from '@mantine/core';
 
 import Section from '../Section';
 import './style.scss';
 
-const { persistAtom } = recoilPersist();
-
-// —————————————— SETTINGS STATE & STORAGE ——————————————
-const SETTINGS = {};
-// Mantine automatically saves theme state
-SETTINGS.scale = atom({
-  key: 'settingsScale',
-  default: 4,
-  effects_UNSTABLE: [persistAtom],
-});
-export { SETTINGS };
-// —————————————————————————————————————————————————————
-
 const Settings = () => {
   const { setColorScheme, colorScheme } = useMantineColorScheme();
-  const [scale, setScale] = useRecoilState(SETTINGS.scale);
   const { t } = useTranslation();
 
   return (
@@ -37,25 +21,6 @@ const Settings = () => {
           data={[
             { value: 'light', label: t('settings.theme.light') },
             { value: 'dark', label: t('settings.theme.dark') },
-          ]}
-        />
-      </Section>
-
-      <Section title={t('settings.scale.title')}>
-        <Slider
-          value={scale}
-          onChange={setScale}
-          min={2}
-          max={50}
-          step={4}
-          size="md"
-          label={null}
-          marks={[
-            { value: 2, label: t('settings.scale.smaller') },
-            { value: 14 },
-            { value: 26 },
-            { value: 38 },
-            { value: 50, label: t('settings.scale.bigger') },
           ]}
         />
       </Section>

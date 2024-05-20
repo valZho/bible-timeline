@@ -17,6 +17,13 @@
       font-weight: 700;
       // color: var(--mantine-color-anchor);
     };
+
+  }
+
+  &.empty .mantine-Accordion-control {
+    .mantine-Accordion-chevron {
+      display: none;
+    }
   }
 
   // set the spacing on the top line
