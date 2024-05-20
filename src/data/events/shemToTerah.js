@@ -9,59 +9,22 @@ const shemToTerah = (MT, LXX) => {
   // e.g.,
   // and then normalize them to our event format afterwards
   const events = {
-    shem: {
-      // Shem was 100 years old when he had Arphaxad which was 2 years after the flood
-      // end of flood + 2 years - 100 years old
-      relative: { id: 'flood', end: 2 - 100 },
-      hadChildrenAt: 100,
-      yearsAfterFirstChild: 500,
-    },
-    arphaxad: {
-      relative: { id: 'shem' },
-      hadChildrenAt: MT ? 35 : 135,
-      yearsAfterFirstChild: MT ? 403 : LXX ? 400 : 430,
-    },
-    kainan: {
-      relative: { id: 'arphaxad' },
-      hadChildrenAt: 130,
-      yearsAfterFirstChild: 330,
-    },
+    // Shem was 100 years old when he had Arphaxad which was 2 years after the flood
+    // end of flood + 2 years - 100 years old
+    shem: { relative: { id: 'flood', end: 2 - 100 }, fatherAt: 100, yearsAfter: 500 },
+    arphaxad: { relative: { id: 'shem' }, fatherAt: MT ? 35 : 135, yearsAfter: MT ? 403 : LXX ? 400 : 430 },
+    kainan: { relative: { id: 'arphaxad' }, fatherAt: 130, yearsAfter: 330 },
     shelah: {
-      relative: {
-        id: MT ? 'arphaxad' : 'kainan',
-      },
-      hadChildrenAt: MT ? 30 : 130,
-      yearsAfterFirstChild: MT ? 403 : LXX ? 330 : 403,
+      relative: { id: MT ? 'arphaxad' : 'kainan' },
+      fatherAt: MT ? 30 : 130,
+      yearsAfter: MT ? 403 : LXX ? 330 : 403,
     },
-    eber: {
-      relative: { id: 'shelah' },
-      hadChildrenAt: MT ? 34 : 134,
-      yearsAfterFirstChild: MT ? 430 : LXX ? 270 : 370,
-    },
-    peleg: {
-      relative: { id: 'eber' },
-      hadChildrenAt: MT ? 30 : 130,
-      yearsAfterFirstChild: LXX ? 209 : 207,
-    },
-    reu: {
-      relative: { id: 'peleg' },
-      hadChildrenAt: MT ? 32 : 132,
-      yearsAfterFirstChild: 207,
-    },
-    serug: {
-      relative: { id: 'reu' },
-      hadChildrenAt: MT ? 30 : 130,
-      yearsAfterFirstChild: 200,
-    },
-    nahor: {
-      relative: { id: 'serug' },
-      hadChildrenAt: MT ? 29 : LXX ? 179 : 79,
-      yearsAfterFirstChild: MT ? 119 : LXX ? 125 : 129,
-    },
-    terah: {
-      relative: { id: 'nahor' },
-      years: 205,
-    },
+    eber: { relative: { id: 'shelah' }, fatherAt: MT ? 34 : 134, yearsAfter: MT ? 430 : LXX ? 270 : 370 },
+    peleg: { relative: { id: 'eber' }, fatherAt: MT ? 30 : 130, yearsAfter: LXX ? 209 : 207 },
+    reu: { relative: { id: 'peleg' }, fatherAt: MT ? 32 : 132, yearsAfter: 207 },
+    serug: { relative: { id: 'reu' }, fatherAt: MT ? 30 : 130, yearsAfter: 200 },
+    nahor: { relative: { id: 'serug' }, fatherAt: MT ? 29 : LXX ? 179 : 79, yearsAfter: MT ? 119 : LXX ? 125 : 129 },
+    terah: { relative: { id: 'nahor' }, years: 205 },
   };
 
   // MT skips Kainan
@@ -69,19 +32,19 @@ const shemToTerah = (MT, LXX) => {
 
   // normalize event objects
   Object.keys(events).forEach(key => {
-    events[key].title = `timeline.${key}`;
+    events[key].title = `events.${key}`;
+    events[key].margin = 0.5;
 
     // set the years length for all but last item
     if (key !== 'terah') {
-      events[key].years = events[key].hadChildrenAt + events[key].yearsAfterFirstChild;
-      delete events[key].yearsAfterFirstChild;
+      events[key].years = events[key].fatherAt + events[key].yearsAfter;
+      delete events[key].yearsAfter;
     }
 
     // set relative start date for all but first item
-    // Masoretic skips kainan
     if (key !== 'shem') {
-      events[key].relative.start = events[events[key].relative.id].hadChildrenAt;
-      delete events[events[key].relative.id].hadChildrenAt;
+      events[key].relative.start = events[events[key].relative.id].fatherAt;
+      delete events[events[key].relative.id].fatherAt;
     }
   });
 

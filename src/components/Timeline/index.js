@@ -35,12 +35,7 @@ const Timeline = () => {
     return <h1>Years: {years}</h1>;
   }, [events]);
 
-  return (
-    <div className="timeline-main">
-      {eventParser()}
-      {yearsOutput()}
-    </div>
-  );
+  return <div className="timeline-main">{JSON.stringify(events)}</div>;
 };
 
 export default Timeline;
