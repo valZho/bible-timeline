@@ -12,7 +12,7 @@ import Settings from './Settings';
 import './style.scss';
 
 const Navbar = () => {
-  const [navOpen, navToggle] = useDisclosure(true);
+  const [navOpen, navToggle] = useDisclosure(false);
   const { t } = useTranslation();
 
   return (

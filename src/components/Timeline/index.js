@@ -4,7 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { OPTIONS } from '../Navbar/Options';
 
 import { EVENTS } from '../../data/EventsProvider';
-import Grid from './Grid';
+import Ruler from './Ruler';
 import './style.scss';
 
 const Timeline = () => {
@@ -19,12 +19,11 @@ const Timeline = () => {
     return biblical.map((e, i) => {
       return (
         <div
-          className={`eventWrapper ${e.color ?? ''}`}
+          className={`eventWrapper ${e.color ?? ''} track${e.display.track}`}
           key={e.key}
           style={{
-            top: i * 46,
             left: e.display.left,
-            width: e.display.fullWidth,
+            width: e.display.fullWidth + 2, // add 2 pixels for borders
           }}
         >
           <div className={`bar ${e.color || ''}`}>
@@ -64,7 +63,7 @@ const Timeline = () => {
     <div className="timelineContainer">
       {/* add buffer space to the right for some overflowing event labels */}
       <div className="eventsContainer" style={{ width: farRight + 200 }}>
-        <Grid scale={scale} width={farRight + 200} jubilee={jubilee} />
+        <Ruler scale={scale} width={farRight + 200} jubilee={jubilee} />
         {createEvents()}
       </div>
     </div>

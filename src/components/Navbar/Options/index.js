@@ -68,10 +68,10 @@ const Timeline = () => {
           label={null}
           marks={[
             { value: 1, label: t('settings.scale.smaller') },
-            { value: 5 },
-            { value: 10 },
-            { value: 15 },
-            { value: 20, label: t('settings.scale.bigger') },
+            { value: 12 },
+            { value: 25 },
+            { value: 37 },
+            { value: 50, label: t('settings.scale.bigger') },
           ]}
         />
       </Section>

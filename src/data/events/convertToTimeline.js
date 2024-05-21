@@ -57,8 +57,11 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true }) => {
         title: e.title,
         years: e.years,
         color: e.color,
+        extraBuffer: e.extraBuffer || 0,
         marginWidth: (e.margin || 0) * 2 * scale,
-        display: {},
+        display: {
+          track: 0,
+        },
       };
 
       // START DATE & MARGIN START
@@ -99,12 +102,37 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true }) => {
     infiniteLoopProtection++;
   }
 
+  // export events to array and sort by start
+  const timeline = Object.keys(processed)
+    .map(key => processed[key])
+    .sort((a, b) => a.display.left - b.display.left);
+
+  // set vertical tracks on events
+  const buffer = 100; // right-side pixel buffer before slotting new event on same track
+  const trackCount = 16;
+  const lastTrack = trackCount - 1;
+  const tracks = Array(trackCount).fill(-500, 0, trackCount);
+  let nextTrack = 0;
+
+  timeline.forEach(e => {
+    let infiniteLoopProtection = 0;
+    for (let t = nextTrack; t < trackCount && infiniteLoopProtection < trackCount + 2; t++, infiniteLoopProtection++) {
+      if (tracks[t] + buffer + e.extraBuffer < e.display.left) {
+        e.display.track = t;
+        tracks[t] = e.display.right;
+        nextTrack = t === lastTrack ? 0 : t + 1;
+        break;
+      }
+      // reached the last track without placing, but didn't start at first track
+      // reset t to start at first track and run loop again
+      if (t === lastTrack && nextTrack > 0) t = -1;
+    }
+  });
+
   return {
     farRight,
     lastDate,
-    events: Object.keys(processed)
-      .map(key => processed[key])
-      .sort((a, b) => a.display.left - b.display.left),
+    events: timeline,
   };
 };
 

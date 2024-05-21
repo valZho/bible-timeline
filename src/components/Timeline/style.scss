@@ -10,11 +10,13 @@ $bar-height: 20px;
   .eventsContainer {
     z-index: 100;
     position: relative;
-    height: 1000px;
+    height: 900px;
     overflow: visible;
 
     .eventWrapper {
       position: absolute;
+      top: 50px;
+      left: 0;
       height: 60px;
 
       .labels {
@@ -23,6 +25,8 @@ $bar-height: 20px;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+        font-size: .75rem;
+        padding-left: 5px;
         .title {
           font-weight: 700;
         }
@@ -88,6 +92,28 @@ $bar-height: 20px;
           .event { background-color: var(--mantine-color-red-4); }
         }
       }
+
+      &.track0  { top: calc(45px * 0); }
+      &.track1  { top: calc(45px * 1); }
+      &.track2  { top: calc(45px * 2); }
+      &.track3  { top: calc(45px * 3); }
+      &.track4  { top: calc(45px * 4); }
+      &.track5  { top: calc(45px * 5); }
+      &.track6  { top: calc(45px * 6); }
+      &.track7  { top: calc(45px * 7); }
+      &.track8  { top: calc(45px * 8); }
+      &.track9  { top: calc(45px * 9); }
+      &.track10 { top: calc(45px * 10); }
+      &.track11 { top: calc(45px * 11); }
+      &.track12 { top: calc(45px * 12); }
+      &.track13 { top: calc(45px * 13); }
+      &.track14 { top: calc(45px * 14); }
+      &.track15 { top: calc(45px * 15); }
+      &.track16 { top: calc(45px * 16); }
+      &.track17 { top: calc(45px * 17); }
+      &.track18 { top: calc(45px * 18); }
+      &.track19 { top: calc(45px * 19); }
+      &.track20 { top: calc(45px * 20); }
     }
   }
 

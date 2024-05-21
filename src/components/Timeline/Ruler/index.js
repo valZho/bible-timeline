@@ -11,8 +11,8 @@ const Grid = ({ scale = 4, width = 1, jubilee = 'exclusive' }) => {
   for (let i = 1; i < totalYears; i++) {
     ticks.push(<div key={`tick${i}`} className="tick" style={{ width: scale }}></div>);
   }
-
-  return <div className="grid">{ticks.map(t => t)}</div>;
+  return <></>;
+  return <div className="ruler">{ticks.map(t => t)}</div>;
 };
 
 Grid.propTypes = {
