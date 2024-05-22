@@ -1,27 +1,16 @@
 .rulerContainer {
   position: relative;
-  height: 80px;
+  height: 50px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px var(--mantine-color-text);
   z-index: 0;
-  background: orange;
 
-  .tick {
-    display: inline-block;
-    position: relative;
-    bottom: 0;
-    border-left: solid 1px var(--mantine-color-text);
-
-    &.normal {
-      height: 50%;
+  .ruler {
+    .tickMark {
+      fill: var(--mantine-color-text);
     }
-
-    &.shmita {
-      height: 75%;
-      background: blue;
-    }
-
-    &.jubilee {
-      height: 100%;
-      background: yellow;
+    .shmita {
+      // fill: var(--mantine-color-green-3)
     }
   }
 }
