@@ -1,6 +1,6 @@
-$track-height: 60px;
+$track-height: 46px;
 $track-count: 16;
-$margin: 4px;
+$margin: 3px;
 $events-container-height: $track-count * $track-height + 10px;
 $bar-height: $track-height * 0.5;
 
@@ -16,28 +16,33 @@ $bar-height: $track-height * 0.5;
     left: 0;
     height: $track-height;
 
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
+    .bar {
       height: $bar-height;
-      background: linear-gradient(60deg, rgba(255, 255, 255, .1), rgba(0, 0, 0, .1), rgba(255, 255, 255, .1));
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .6);
+      position: relative;
       z-index: 100;
-    }
+      border-radius: 3px;
+      overflow: hidden;
 
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: $bar-height;
-      background: linear-gradient(0, rgba(0, 0, 0, .4), transparent);
-      z-index: 100;
+      .base { fill: var(--mantine-color-blue-4); }
+      .margin { fill: var(--mantine-color-blue-2); }
+      &.yellow {
+        .base { fill: var(--mantine-color-yellow-4); }
+        .margin { fill: var(--mantine-color-yellow-2); }
+      }
+      &.green {
+        .base { fill: var(--mantine-color-green-4); }
+        .margin { fill: var(--mantine-color-green-2); }
+      }
+      &.red {
+        .base { fill: var(--mantine-color-red-4); }
+        .margin { fill: var(--mantine-color-red-2); }
+      }
+
+      .gradient {
+        height: $bar-height;
+        fill: linear-gradient(60deg, rgba(255, 255, 255, .1), rgba(0, 0, 0, .1), rgba(255, 255, 255, .1));
+      }
     }
 
     .labels {
@@ -48,8 +53,6 @@ $bar-height: $track-height * 0.5;
       justify-content: space-between;
       font-size: .75rem;
       padding-left: 5px;
-      position: relative;
-      top: $margin;
       z-index: 50;
 
       .title {
@@ -77,68 +80,6 @@ $bar-height: $track-height * 0.5;
 
       .end {
         z-index: 1;
-      }
-    }
-
-    .bar {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: stretch;
-      align-items: flex-end;
-      width: 100%;
-      box-shadow: 0 $margin/2 $margin rgba(0, 0, 0, .8);
-      position: relative;
-      z-index: 100;
-      border-radius: 3px;
-      overflow: hidden;
-
-
-      .margin {
-        flex-shrink: 0;
-        height: $bar-height;
-        background-color: var(--mantine-color-blue-2);
-      }
-
-      .event {
-        background-color: var(--mantine-color-blue-4);
-        box-sizing: border-box;
-        width: 100%;
-        height: $bar-height;
-        flex-shrink: 0;
-        overflow: hidden;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-      }
-
-      &.yellow {
-        .margin {
-          background-color: var(--mantine-color-yellow-2);
-        }
-
-        .event {
-          background-color: var(--mantine-color-yellow-4);
-        }
-      }
-
-      &.green {
-        .margin {
-          background-color: var(--mantine-color-green-2);
-        }
-
-        .event {
-          background-color: var(--mantine-color-green-4);
-        }
-      }
-
-      &.red {
-        .margin {
-          background-color: var(--mantine-color-red-2);
-        }
-
-        .event {
-          background-color: var(--mantine-color-red-4);
-        }
       }
     }
 

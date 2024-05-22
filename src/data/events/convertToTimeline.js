@@ -56,10 +56,10 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true }) => {
         key,
         title: e.title,
         years: e.years,
-        color: e.color,
         extraBuffer: e.extraBuffer || 0,
         marginWidth: (e.margin || 0) * 2 * scale,
         display: {
+          color: e.color,
           track: 0,
         },
       };

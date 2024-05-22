@@ -14,7 +14,70 @@ const Events = () => {
 
   const createEvents = useCallback(() => {
     console.log(biblical);
-    return biblical.map((e, i) => {
+
+    const bar = ({ color, marginStart, width, marginEnd }) => (
+      <div className={`bar ${color || ''}`}>
+        <div className="margin" style={{ width: marginStart }} />
+        <div className="event" style={{ maxWidth: width }}>
+          <div className="margin" style={{ minWidth: marginStart }} />
+          <div className="margin" style={{ width: marginEnd }} />
+        </div>
+        <div className="margin" style={{ width: marginEnd }} />
+      </div>
+    );
+
+    const bar2 = ({ color, marginStart, width, fullWidth, marginEnd }, key) => (
+      <svg className={`bar ${color || ''}`} version="1.1" width={fullWidth} height="10">
+        <defs>
+          <linearGradient id="shadow" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="30%" stopColor="black" stopOpacity="0" />
+            <stop offset="70%" stopColor="black" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="black" stopOpacity="0.6" />
+          </linearGradient>
+          <linearGradient id="highlight" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stopColor="white" stopOpacity="0.6" />
+            <stop offset="30%" stopColor="white" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="gradient" x1="0" x2=".7" y1="0" y2="1">
+            <stop offset="0%" stopColor="white" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="black" stopOpacity="0.2" />
+          </linearGradient>
+        </defs>
+        <rect className="base" width="100%" height="100%" fill="blue" />
+        <rect className="margin" width={marginStart * 2} height="100%" fill="lightblue" />
+        <rect className="margin" width={marginEnd * 2} x={fullWidth - marginEnd * 2} height="100%" fill="lightblue" />
+        <rect className="start" width={marginStart ? 1 : 0} height="100%" x={marginStart} fill="black" />
+        <rect className="end" width={marginEnd ? 1 : 0} height="100%" x={marginStart + width} fill="black" />
+        <rect width="100%" height="100%" fill="url(#gradient)" />
+        <rect width="100%" height="100%" fill="url(#shadow)" />
+        <rect width="100%" height="100%" fill="url(#highlight)" />
+      </svg>
+    );
+
+    const labels = ({ title, marginStart, startAm, years, marginEnd, endAm }) => (
+      <div className="labels">
+        <div className="start">
+          <span className="title">{t(title)}</span>
+          {t('timeline.textSeparator')}
+          {t(`timeline.${margins && marginStart ? 'date_wMargin' : 'date'}`, {
+            year: startAm,
+            era: t('timeline.am'),
+            count: marginStart,
+          })}
+          {t('timeline.textSeparator')}
+          {t('timeline.year', { count: years })}
+        </div>
+        <div className="end">
+          {t(`timeline.${margins && marginEnd ? 'date_wMargin' : 'date'}`, {
+            year: endAm,
+            era: t('timeline.am'),
+            count: marginEnd,
+          })}
+        </div>
+      </div>
+    );
+
+    return biblical.map(e => {
       return (
         <div
           className={`eventWrapper ${e.color ?? ''} track${e.display.track}`}
@@ -24,34 +87,8 @@ const Events = () => {
             width: e.display.fullWidth, // add 2 pixels for borders
           }}
         >
-          <div className={`bar ${e.color || ''}`}>
-            <div className="margin" style={{ width: e.display.marginStart }} />
-            <div className="event" style={{ maxWidth: e.display.width }}>
-              <div className="margin" style={{ minWidth: e.display.marginStart }} />
-              <div className="margin" style={{ width: e.display.marginEnd }} />
-            </div>
-            <div className="margin" style={{ width: e.display.marginEnd }} />
-          </div>
-          <div className="labels">
-            <div className="start">
-              <span className="title">{t(e.title)}</span>
-              {t('timeline.textSeparator')}
-              {t(`timeline.${margins && e.marginStart ? 'date_wMargin' : 'date'}`, {
-                year: e.startAm,
-                era: t('timeline.am'),
-                count: e.marginStart,
-              })}
-              {t('timeline.textSeparator')}
-              {t('timeline.year', { count: e.years })}
-            </div>
-            <div className="end">
-              {t(`timeline.${margins && e.marginEnd ? 'date_wMargin' : 'date'}`, {
-                year: e.endAm,
-                era: t('timeline.am'),
-                count: e.marginEnd,
-              })}
-            </div>
-          </div>
+          {bar2(e.display, e.key)}
+          {labels(e)}
           <div className="flagStart" />
           <div className="flagEnd" />
         </div>

@@ -27,11 +27,7 @@ const Ruler = () => {
     }
   }
 
-  return (
-    <div className="rulerContainer" style={{ width: farRight + 200 }}>
-      {ticks}
-    </div>
-  );
+  return <div className="rulerContainer" style={{ width: farRight + 200 }}></div>;
 };
 
 export default Ruler;
