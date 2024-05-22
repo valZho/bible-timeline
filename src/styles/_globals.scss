@@ -8,6 +8,12 @@ body {
 }
 
 body {
+  .pageWrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
   p {
     line-height: 1.3 !important;
   }

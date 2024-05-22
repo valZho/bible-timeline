@@ -17,10 +17,11 @@
       font-weight: 700;
       // color: var(--mantine-color-anchor);
     };
-
   }
 
   &.empty .mantine-Accordion-control {
+    opacity: 1 !important;
+    cursor: default !important;
     .mantine-Accordion-chevron {
       display: none;
     }

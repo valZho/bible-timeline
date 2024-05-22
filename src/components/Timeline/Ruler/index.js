@@ -1,24 +1,37 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useRecoilValue } from 'recoil';
 
+import { OPTIONS } from '../../Navbar/Options';
+import { EVENTS } from '../../../data/EventsProvider';
 import './style.scss';
 
-const Grid = ({ scale = 4, width = 1, jubilee = 'exclusive' }) => {
-  // years to show
-  const totalYears = Math.ceil(width / scale) + 10;
+const Ruler = () => {
+  const { farRight } = useRecoilValue(EVENTS);
+  const margins = useRecoilValue(OPTIONS.margins);
+  const jubilee = useRecoilValue(OPTIONS.jubilee);
+  const scale = useRecoilValue(OPTIONS.scale);
+
+  // years to show ... add a little buffer on the right for event
+  const totalYears = Math.ceil((farRight + 200) / scale) + 10;
 
   const ticks = [];
   for (let i = 1; i < totalYears; i++) {
-    ticks.push(<div key={`tick${i}`} className="tick" style={{ width: scale }}></div>);
+    // yearly ticks: only zoomed in above a certain scale
+    if (scale > 20) {
+      ticks.push(<div key={`tick${i}`} className="tick normal" style={{ width: scale }}></div>);
+    }
+
+    // shmita every 7 years
+    if (i % 7 === 0) {
+      ticks.push(<div key={`tick${i}`} className="tick shmita" style={{ width: scale }}></div>);
+    }
   }
-  return <></>;
-  return <div className="ruler">{ticks.map(t => t)}</div>;
+
+  return (
+    <div className="rulerContainer" style={{ width: farRight + 200 }}>
+      {ticks}
+    </div>
+  );
 };
 
-Grid.propTypes = {
-  jubilee: PropTypes.oneOf(['inclusive', 'exclusive', 'intercalated']),
-  scale: PropTypes.number,
-  width: PropTypes.number,
-};
-
-export default Grid;
+export default Ruler;

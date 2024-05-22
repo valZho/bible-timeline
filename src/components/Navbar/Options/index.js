@@ -43,6 +43,8 @@ const Timeline = () => {
   const [margins, setMargins] = useRecoilState(OPTIONS.margins);
   const [jubilee, setJubilee] = useRecoilState(OPTIONS.jubilee);
 
+  const scaleMax = 40;
+
   const agesLink = (
     <Anchor
       href="https://biblearchaeology.org/research/topics/biblical-chronologies/4767-from-adam-to-abraham-the-latest-on-the-genesis-5-and-11-project"
@@ -52,30 +54,6 @@ const Timeline = () => {
 
   return (
     <div className="options">
-      <Section
-        isSetting
-        title={t('settings.scale.title')}
-        Icon={IconAntennaBars5}
-        iconStyle={{ transform: 'rotate(90deg)' }}
-      >
-        <Slider
-          value={scale}
-          onChange={setScale}
-          min={1}
-          max={20}
-          step={1}
-          size="md"
-          label={null}
-          marks={[
-            { value: 1, label: t('settings.scale.smaller') },
-            { value: 12 },
-            { value: 25 },
-            { value: 37 },
-            { value: 50, label: t('settings.scale.bigger') },
-          ]}
-        />
-      </Section>
-
       <Section
         isSetting
         title={t('options.ages.title')}
@@ -131,6 +109,30 @@ const Timeline = () => {
             { value: 'inclusive', label: t('options.jubilee.inclusive') },
             { value: 'exclusive', label: t('options.jubilee.exclusive') },
             { value: 'intercalated', label: t('options.jubilee.intercalated') },
+          ]}
+        />
+      </Section>
+
+      <Section
+        isSetting
+        title={t('settings.scale.title')}
+        Icon={IconAntennaBars5}
+        iconStyle={{ transform: 'rotate(90deg)' }}
+      >
+        <Slider
+          value={scale}
+          onChange={setScale}
+          min={1}
+          max={scaleMax}
+          step={1}
+          size="md"
+          label={null}
+          marks={[
+            { value: 1, label: t('settings.scale.smaller') },
+            { value: scaleMax * 0.25, label: '' },
+            { value: scaleMax * 0.5, label: '' },
+            { value: scaleMax * 0.75, label: '' },
+            { value: scaleMax, label: t('settings.scale.bigger') },
           ]}
         />
       </Section>

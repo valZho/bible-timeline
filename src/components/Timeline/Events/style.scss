@@ -1,0 +1,229 @@
+$track-height: 60px;
+$track-count: 16;
+$margin: 4px;
+$events-container-height: $track-count * $track-height + 10px;
+$bar-height: $track-height * 0.5;
+
+.eventsContainer {
+  z-index: 100;
+  position: relative;
+  height: $events-container-height;
+  overflow: visible;
+
+  .eventWrapper {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: $track-height;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: $bar-height;
+      background: linear-gradient(60deg, rgba(255, 255, 255, .1), rgba(0, 0, 0, .1), rgba(255, 255, 255, .1));
+      z-index: 100;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: $bar-height;
+      background: linear-gradient(0, rgba(0, 0, 0, .4), transparent);
+      z-index: 100;
+    }
+
+    .labels {
+      width: 100%;
+      white-space: nowrap;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      font-size: .75rem;
+      padding-left: 5px;
+      position: relative;
+      top: $margin;
+      z-index: 50;
+
+      .title {
+        font-weight: 700;
+      }
+
+      .start {
+        z-index: 10;
+        background: var(--mantine-color-body);
+        flex-shrink: 0;
+        position: sticky;
+        left: 0;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 100%;
+          top: 0;
+          width: 100px;
+          height: 100%;
+          background: linear-gradient(90deg, var(--mantine-color-body) 20%, transparent);
+        }
+      }
+
+      .end {
+        z-index: 1;
+      }
+    }
+
+    .bar {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: stretch;
+      align-items: flex-end;
+      width: 100%;
+      box-shadow: 0 $margin/2 $margin rgba(0, 0, 0, .8);
+      position: relative;
+      z-index: 100;
+      border-radius: 3px;
+      overflow: hidden;
+
+
+      .margin {
+        flex-shrink: 0;
+        height: $bar-height;
+        background-color: var(--mantine-color-blue-2);
+      }
+
+      .event {
+        background-color: var(--mantine-color-blue-4);
+        box-sizing: border-box;
+        width: 100%;
+        height: $bar-height;
+        flex-shrink: 0;
+        overflow: hidden;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
+
+      &.yellow {
+        .margin {
+          background-color: var(--mantine-color-yellow-2);
+        }
+
+        .event {
+          background-color: var(--mantine-color-yellow-4);
+        }
+      }
+
+      &.green {
+        .margin {
+          background-color: var(--mantine-color-green-2);
+        }
+
+        .event {
+          background-color: var(--mantine-color-green-4);
+        }
+      }
+
+      &.red {
+        .margin {
+          background-color: var(--mantine-color-red-2);
+        }
+
+        .event {
+          background-color: var(--mantine-color-red-4);
+        }
+      }
+    }
+
+    &.track0 {
+      top: calc($track-height * 0);
+    }
+
+    &.track1 {
+      top: calc($track-height * 1);
+    }
+
+    &.track2 {
+      top: calc($track-height * 2);
+    }
+
+    &.track3 {
+      top: calc($track-height * 3);
+    }
+
+    &.track4 {
+      top: calc($track-height * 4);
+    }
+
+    &.track5 {
+      top: calc($track-height * 5);
+    }
+
+    &.track6 {
+      top: calc($track-height * 6);
+    }
+
+    &.track7 {
+      top: calc($track-height * 7);
+    }
+
+    &.track8 {
+      top: calc($track-height * 8);
+    }
+
+    &.track9 {
+      top: calc($track-height * 9);
+    }
+
+    &.track10 {
+      top: calc($track-height * 10);
+    }
+
+    &.track11 {
+      top: calc($track-height * 11);
+    }
+
+    &.track12 {
+      top: calc($track-height * 12);
+    }
+
+    &.track13 {
+      top: calc($track-height * 13);
+    }
+
+    &.track14 {
+      top: calc($track-height * 14);
+    }
+
+    &.track15 {
+      top: calc($track-height * 15);
+    }
+
+    &.track16 {
+      top: calc($track-height * 16);
+    }
+
+    &.track17 {
+      top: calc($track-height * 17);
+    }
+
+    &.track18 {
+      top: calc($track-height * 18);
+    }
+
+    &.track19 {
+      top: calc($track-height * 19);
+    }
+
+    &.track20 {
+      top: calc($track-height * 20);
+    }
+  }
+}

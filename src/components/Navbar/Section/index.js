@@ -6,7 +6,7 @@ import './style.scss';
 
 const Section = ({ title = '', children = '', Icon, iconStyle = {}, compact = false, description = '', isSetting }) => {
   const icon = Icon ? <Icon size="22" style={iconStyle} /> : '';
-  const classes = ['section', compact ? 'compact' : ''].join(' ');
+  const classes = ['section', compact ? 'compact' : '', description ? '' : 'empty'].join(' ');
 
   let header = '';
 
@@ -14,13 +14,13 @@ const Section = ({ title = '', children = '', Icon, iconStyle = {}, compact = fa
     header = (
       <Accordion variant="contained" radius="md" chevronPosition="right">
         <Accordion.Item value="a">
-          <Accordion.Control icon={icon}>{title}</Accordion.Control>
+          <Accordion.Control disabled={!description} icon={icon}>
+            {title}
+          </Accordion.Control>
           <Accordion.Panel>{description}</Accordion.Panel>
         </Accordion.Item>
       </Accordion>
     );
-  } else if (isSetting) {
-    header = <>{title}</>;
   } else {
     header = <Divider labelPosition="left" label={title} />;
   }

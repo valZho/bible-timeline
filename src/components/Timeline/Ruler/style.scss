@@ -1,12 +1,27 @@
-.ruler {
+.rulerContainer {
   position: relative;
-  height: 50px;
-  width: 100%;
+  height: 80px;
   z-index: 0;
+  background: orange;
 
   .tick {
     display: inline-block;
-    height: 100%;
+    position: relative;
+    bottom: 0;
     border-left: solid 1px var(--mantine-color-text);
+
+    &.normal {
+      height: 50%;
+    }
+
+    &.shmita {
+      height: 75%;
+      background: blue;
+    }
+
+    &.jubilee {
+      height: 100%;
+      background: yellow;
+    }
   }
 }
