@@ -31,7 +31,7 @@ const Ruler = () => {
     className: 'shmitaTick',
     strokeWidth: scale,
     strokeLinecap: 'round',
-    y1: '60%',
+    y1: `${60 + scale}%`,
     y2: '100%',
   };
 
@@ -40,7 +40,7 @@ const Ruler = () => {
     className: 'jubileeTick',
     strokeWidth: scale,
     strokeLinecap: 'round',
-    y1: '40%',
+    y1: `${40 + scale}%`,
     y2: '100%',
   };
 
@@ -77,7 +77,7 @@ const Ruler = () => {
     .map((_, i) => {
       const year = (i + 1) * cycle + dateOffset;
       return (
-        <text x={placeText(year)} y="20%" textAnchor="middle" fontSize="0.7rem" fontWeight="bold">
+        <text x={placeText(year)} y="30%" textAnchor="middle" fontSize="0.7rem" fontWeight="bold">
           {t('timeline.date', { year, era: t('timeline.am') })}
         </text>
       );
@@ -115,29 +115,7 @@ const Ruler = () => {
         <rect x="0" y="0" width="100%" height="100%" fill="url(#Cycle)" />
         <rect className="mask" x="0" y="0" width={scale * 1.5} height="100%" fill="white" />
         <rect x="0" y="0" width="100%" height="100%" fill="url(#YearMarks)" />
-
         {jubileeLabels}
-        {/* <text x={placeText(1)} y="70%" textAnchor="middle" fontSize="0.6rem">
-          1
-        </text>
-        <text x={placeText(2)} y="70%" textAnchor="middle" fontSize="0.6rem">
-          2
-        </text>
-        <text x={placeText(49)} y="70%" textAnchor="middle" fontSize="0.6rem">
-          49
-        </text>
-        <text x={placeText(98)} y="70%" textAnchor="middle" fontSize="0.6rem">
-          98
-        </text>
-        <text x={placeText(146)} y="70%" textAnchor="middle" fontSize="0.6rem">
-          146
-        </text>
-        <text x={placeText(130)} y="70%" textAnchor="middle" fontSize="0.6rem">
-          130
-        </text>
-        <text x={placeText(235)} y="70%" textAnchor="middle" fontSize="0.6rem">
-          235
-        </text> */}
       </svg>
     </div>
   );
