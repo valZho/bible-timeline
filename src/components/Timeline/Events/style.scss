@@ -3,6 +3,7 @@ $track-count: 16;
 $margin: 3px;
 $events-container-height: $track-count * $track-height + 10px;
 $bar-height: $track-height * 0.5;
+$mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pink, red, teal, violet, yellow;
 
 .eventsContainer {
   z-index: 100;
@@ -24,19 +25,17 @@ $bar-height: $track-height * 0.5;
       border-radius: 3px;
       overflow: hidden;
 
-      .base { fill: var(--mantine-color-blue-4); }
-      .margin { fill: var(--mantine-color-blue-2); }
-      &.yellow {
-        .base { fill: var(--mantine-color-yellow-4); }
-        .margin { fill: var(--mantine-color-yellow-2); }
+      .base {
+        fill: var(--mantine-color-blue-text);
+        @each $color in $mantine-colors {
+          &.#{$color} {
+            fill: var(--mantine-color-#{$color}-text);
+          }
+        }
       }
-      &.green {
-        .base { fill: var(--mantine-color-green-4); }
-        .margin { fill: var(--mantine-color-green-2); }
-      }
-      &.red {
-        .base { fill: var(--mantine-color-red-4); }
-        .margin { fill: var(--mantine-color-red-2); }
+
+      .margin {
+        fill: rgba(255, 255, 255, 0.6)
       }
 
       .gradient {

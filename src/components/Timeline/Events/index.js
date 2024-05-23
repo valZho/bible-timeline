@@ -16,7 +16,7 @@ const Events = () => {
     console.log(biblical);
 
     const bar = ({ color, marginStart, width, fullWidth, marginEnd }, key) => (
-      <svg className={`bar ${color || ''}`} version="1.1" width={fullWidth} height="10">
+      <svg className="bar" version="1.1" width={fullWidth} height="10">
         <defs>
           <linearGradient id="shadow" x1="0" x2="0" y1="0" y2="1">
             <stop offset="30%" stopColor="black" stopOpacity="0" />
@@ -32,7 +32,7 @@ const Events = () => {
             <stop offset="100%" stopColor="black" stopOpacity="0.2" />
           </linearGradient>
         </defs>
-        <rect className="base" width="100%" height="100%" fill="blue" />
+        <rect className={`base ${color || ''}`} width="100%" height="100%" fill="blue" />
         <rect className="margin" width={marginStart * 2} height="100%" fill="lightblue" />
         <rect className="margin" width={marginEnd * 2} x={fullWidth - marginEnd * 2} height="100%" fill="lightblue" />
         <rect className="start" width={marginStart ? 1 : 0} height="100%" x={marginStart} fill="black" />

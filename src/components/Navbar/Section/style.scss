@@ -1,5 +1,5 @@
 .section {
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
 
   p+p {
     margin-top: 1rem;
@@ -8,14 +8,14 @@
   .mantine-Accordion-control {
     .mantine-Accordion-icon {
       background: var(--mantine-color-dimmed);
-      background: var(--mantine-color-anchor);
+      background: var(--mantine-color-lime-light-color);
       color: var(--mantine-color-body);
       padding: 2px 10px;
       border-radius: 100px;
     }
     .mantine-Accordion-label {
       font-weight: 700;
-      // color: var(--mantine-color-anchor);
+      color: var(--mantine-color-text);
     };
   }
 

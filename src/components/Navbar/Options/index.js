@@ -43,8 +43,8 @@ const Timeline = () => {
   const [margins, setMargins] = useRecoilState(OPTIONS.margins);
   const [jubilee, setJubilee] = useRecoilState(OPTIONS.jubilee);
 
+  const controlsColor = 'dark.3';
   const scaleMax = 50;
-
   const agesLink = (
     <Anchor
       href="https://biblearchaeology.org/research/topics/biblical-chronologies/4767-from-adam-to-abraham-the-latest-on-the-genesis-5-and-11-project"
@@ -61,7 +61,7 @@ const Timeline = () => {
         Icon={IconBook}
       >
         <SegmentedControl
-          color="blue"
+          color={controlsColor}
           size="xs"
           value={ages}
           onChange={setAges}
@@ -81,7 +81,7 @@ const Timeline = () => {
         Icon={IconSquareHalf}
       >
         <SegmentedControl
-          color="blue"
+          color={controlsColor}
           size="xs"
           value={margins}
           onChange={setMargins}
@@ -100,7 +100,7 @@ const Timeline = () => {
         Icon={IconConfetti}
       >
         <SegmentedControl
-          color="blue"
+          color={controlsColor}
           size="xs"
           value={jubilee}
           onChange={setJubilee}
@@ -120,6 +120,7 @@ const Timeline = () => {
         iconStyle={{ transform: 'rotate(90deg)' }}
       >
         <Slider
+          color={controlsColor}
           value={scale}
           onChange={setScale}
           min={1}
