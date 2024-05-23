@@ -109,41 +109,52 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true, trackMin = 
 
   // set vertical tracks on events
   let trackCount = parseInt(trackMin, 10) || 1;
-  let nextTrack = 0;
-  let lastTrack = trackCount - 1;
+  let tryNext = 0;
   const tracks = Array(trackCount).fill(-500, 0, trackCount);
   const buffer = 0; // right-side pixel buffer before slotting new event on same track
 
-  timeline.forEach(e => {
+  timeline.forEach((e, i) => {
+    // if trackMin is "all" then every event is just in a sequential track
+    if (trackMin === 'all') {
+      e.display.track = i;
+      return;
+    }
+
     let infiniteLoopProtection = 0;
-    let addTrack = trackMin === 'all';
-    console.log('====>', e.title, addTrack, trackMin);
-    for (let t = nextTrack; t < trackCount && infiniteLoopProtection < trackCount + 2; t++, infiniteLoopProtection++) {
+    let addNewTrack = false;
+    for (
+      let t = tryNext;
+      t < trackCount && infiniteLoopProtection < timeline.length * 2;
+      t++, infiniteLoopProtection++
+    ) {
+      // if this event fits on this track, add it
       if (tracks[t] + buffer + e.extraBuffer < e.display.left) {
         e.display.track = t;
         tracks[t] = e.display.right;
-        nextTrack = t === lastTrack ? 0 : t + 1;
-        break;
-      }
-      // reached the last track without placing, but didn't start at first track
-      // reset t to start at first track and run loop again
-      if (t === lastTrack && nextTrack > 0 && !addTrack) {
-        console.log('NOPE!');
-        t = -1;
-        addTrack = true;
+        tryNext = t === tracks.length - 1 ? 0 : t + 1;
         continue;
       }
 
-      // if we already reset the loop, then that means the event couldn't fit and
-      // we need to add a new track
-      tracks.push(-500);
+      // track didn't fit, and this is the last track
+      if (t === tracks.length - 1 && !addNewTrack) {
+        // start over at beginning and try again
+        t = -1;
+        // if we make it here again, it means we need to add a new track
+        addNewTrack = true;
+        continue;
+      }
+
+      // tried looping through whole track array unsuccessfully
+      // add this to a new track
+      e.display.track = t;
+      tracks.push(e.display.right);
+      tryNext = 0;
       trackCount++;
-      lastTrack++;
     }
   });
 
   // get a final count of tracks actually used
-  trackCount = tracks.filter(t => t > 0).length;
+  trackCount = trackMin === 'all' ? timeline.length : tracks.filter(t => t > 0).length;
 
   return {
     farRight,
