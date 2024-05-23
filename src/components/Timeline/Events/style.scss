@@ -83,6 +83,14 @@ $bar-height: $track-height * 0.5;
       }
     }
 
+    .flag {
+      position: absolute;
+      bottom: $track-height - $bar-height + 2px;
+      height: 1000px;
+      width: 1px;
+      background: var(--mantine-color-text);
+    }
+
     &.track0 {
       top: calc($track-height * 0);
     }

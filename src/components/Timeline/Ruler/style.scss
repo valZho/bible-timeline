@@ -1,16 +1,25 @@
 .rulerContainer {
   position: relative;
   height: 50px;
-  margin-bottom: 20px;
-  border-bottom: solid 1px var(--mantine-color-text);
+  margin: 20px 0 ;
+  border-bottom: solid 3px var(--mantine-color-text);
   z-index: 0;
 
   .ruler {
-    .tickMark {
+    text {
       fill: var(--mantine-color-text);
     }
-    .shmita {
-      // fill: var(--mantine-color-green-3)
+    .mask {
+      fill: var(--mantine-color-body);
+    }
+    .yearTick {
+      stroke: var(--mantine-color-text);
+    }
+    .shmitaTick {
+      stroke: var(--mantine-color-green-3);
+    }
+    .jubileeTick {
+      stroke: var(--mantine-color-yellow-4);
     }
   }
 }

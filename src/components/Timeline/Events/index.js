@@ -15,18 +15,7 @@ const Events = () => {
   const createEvents = useCallback(() => {
     console.log(biblical);
 
-    const bar = ({ color, marginStart, width, marginEnd }) => (
-      <div className={`bar ${color || ''}`}>
-        <div className="margin" style={{ width: marginStart }} />
-        <div className="event" style={{ maxWidth: width }}>
-          <div className="margin" style={{ minWidth: marginStart }} />
-          <div className="margin" style={{ width: marginEnd }} />
-        </div>
-        <div className="margin" style={{ width: marginEnd }} />
-      </div>
-    );
-
-    const bar2 = ({ color, marginStart, width, fullWidth, marginEnd }, key) => (
+    const bar = ({ color, marginStart, width, fullWidth, marginEnd }, key) => (
       <svg className={`bar ${color || ''}`} version="1.1" width={fullWidth} height="10">
         <defs>
           <linearGradient id="shadow" x1="0" x2="0" y1="0" y2="1">
@@ -87,10 +76,10 @@ const Events = () => {
             width: e.display.fullWidth, // add 2 pixels for borders
           }}
         >
-          {bar2(e.display, e.key)}
+          {bar(e.display, e.key)}
           {labels(e)}
-          <div className="flagStart" />
-          <div className="flagEnd" />
+          <div className="flag" style={{ left: e.display.marginStart }} />
+          <div className="flag" style={{ left: e.display.marginEnd + e.display.width }} />
         </div>
       );
     });
