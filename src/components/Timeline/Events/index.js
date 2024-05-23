@@ -12,7 +12,8 @@ const Events = () => {
   const { events, farRight, trackCount } = useRecoilValue(EVENTS);
   const margins = useRecoilValue(OPTIONS.margins);
 
-  const trackHeight = 46;
+  const trackHeight = 60;
+  const flagHeight = (trackCount + 2) * trackHeight;
 
   const createEvents = useCallback(() => {
     console.log(events);
@@ -81,18 +82,15 @@ const Events = () => {
         >
           {bar(e.display, e.key)}
           {labels(e)}
-          <div className="flag" style={{ height: (trackCount + 2) * 46, left: e.display.marginStart }} />
-          <div
-            className="flag"
-            style={{ height: (trackCount + 2) * 46, left: e.display.marginEnd + e.display.width }}
-          />
+          <div className="flag" style={{ height: flagHeight, left: e.display.marginStart }} />
+          <div className="flag" style={{ height: flagHeight, left: e.display.marginEnd + e.display.width }} />
         </div>
       );
     });
-  }, [events, margins, t]);
+  }, [events, margins, flagHeight, t]);
 
   return (
-    <div className="eventsContainer" style={{ width: farRight + 200 }}>
+    <div className="eventsContainer" style={{ width: farRight + 200, height: trackHeight * (trackCount + 1) }}>
       {createEvents()}
     </div>
   );

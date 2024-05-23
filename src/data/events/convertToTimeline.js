@@ -142,6 +142,9 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true, trackMin = 
     }
   });
 
+  // get a final count of tracks actually used
+  trackCount = tracks.filter(t => t > 0).length;
+
   return {
     farRight,
     lastDate,
