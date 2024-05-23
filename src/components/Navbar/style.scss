@@ -1,12 +1,14 @@
+$drawer-handle-color: var(--mantine-color-gray-7);
+
 .mantine-Burger-root {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1000;
   box-sizing: content-box;
-  border-left: solid 2px var(--mantine-color-blue-filled);
-  border-right: solid 2px var(--mantine-color-blue-filled);
-  background: var(--mantine-color-blue-filled);
+  border-left: solid 2px $drawer-handle-color;
+  border-right: solid 2px $drawer-handle-color;
+  background: $drawer-handle-color;
   height: 100%;
   opacity: 1;
   transition-property: opacity, left;
@@ -33,23 +35,28 @@
 }
 
 .navbar {
+  position: relative;
+  z-index: 500;
+  background: var(--mantine-color-body);
+
   .mantine-Drawer-header {
-    .mantine-Drawer-title {
-      color: var(--mantine-color-anchor);
-      font-size: 24pt;
-      font-weight: 700;
-    }
-    @media (min-width: 487px) {
-      .mantine-Drawer-close {
+    position: absolute;
+    right: 0;
+    padding-left: 0;
+    width: 44px;
+
+    .mantine-Drawer-close {
+      margin-left: 0;
+      @media (min-width: 487px) {
         display: none;
       }
     }
   }
 
   .mantine-Drawer-body {
-    margin-top: 10px;
-    height: calc(100% - 15px - (3.75rem * var(--mantine-scale)));
-    max-height: calc(100% - 15px - (3.75rem * var(--mantine-scale)));
+    margin-top: 20px;
+    height: calc(100% + 40px - (3.75rem * var(--mantine-scale)));
+    max-height: calc(100% + 40px - (3.75rem * var(--mantine-scale)));
   }
 
   .mantine-Tabs-root {

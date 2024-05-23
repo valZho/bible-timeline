@@ -120,7 +120,7 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true, trackMin = 
     console.log('====>', e.title, addTrack, trackMin);
     for (let t = nextTrack; t < trackCount && infiniteLoopProtection < trackCount + 2; t++, infiniteLoopProtection++) {
       if (tracks[t] + buffer + e.extraBuffer < e.display.left) {
-        e.display.track = t + 1;
+        e.display.track = t;
         tracks[t] = e.display.right;
         nextTrack = t === lastTrack ? 0 : t + 1;
         break;

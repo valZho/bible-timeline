@@ -34,7 +34,7 @@ const Navbar = () => {
         withinPortal={false}
       >
         <Tabs defaultValue="options" variant="outline">
-          <Tabs.List grow>
+          <Tabs.List>
             <Tabs.Tab value="options">
               <IconSettingsFilled className="timelineIcon" size={18} stroke="1.5" />
               <span>{t('nav.options.tab')}</span>

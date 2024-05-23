@@ -6,9 +6,10 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
 .eventsContainer {
   z-index: 100;
   position: relative;
+  top: 50px;
   overflow-x: visible;
-  overflow-y: auto;
   flex-grow: 2;
+  z-index: 1;
 
   .eventWrapper {
     position: absolute;

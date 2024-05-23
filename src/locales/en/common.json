@@ -1,6 +1,7 @@
 {
+  "title": "Biblical Timeline",
   "nav": {
-    "title": "Bible Timeline",
+    "title": "",
     "options": {
       "tab": "Timeline Options"
     },

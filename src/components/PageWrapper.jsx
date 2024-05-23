@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { LoadingOverlay, Affix, Switch, useMantineColorScheme, useMantineTheme, rem } from '@mantine/core';
+import { LoadingOverlay, Affix, Switch, Title, useMantineColorScheme, useMantineTheme, rem } from '@mantine/core';
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
 
 import Navbar from './Navbar';
@@ -24,9 +24,11 @@ const PageWrapper = () => {
         overlayProps={{ blur: 2 }}
         loaderProps={{ color: 'blue', type: 'dots', size: 'xl' }}
       />
-      <Navbar />
       <Timeline />
-      <Affix position={{ bottom: 10, right: 10 }}>
+      <Affix position={{ top: 20, left: 40 + 48 }}>
+        <Title order={1}>{t('title')}</Title>
+      </Affix>
+      <Affix position={{ top: 20, right: 40 }}>
         <Switch
           size="lg"
           onLabel={sunIcon}
@@ -37,6 +39,7 @@ const PageWrapper = () => {
           }}
         />
       </Affix>
+      <Navbar />
     </div>
   );
 };
