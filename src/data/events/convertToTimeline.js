@@ -4,10 +4,10 @@
  * @param {object} events - a keyed object containing all the events to parse
  * @param {number} scale - the scale of the calendar - number of pixels wide per year
  * @param {truthy} margins - ['on', ''] - show margins of error?
- * @param {string} jubilee - ['inclusive', 'exclusive', 'intercalated'] - jubilee calculation method
+ * @param {string} tracksOption - ['auto', '10', '20'] - the number of tracks to start with
  * @returns {array} - an array of events normalized for processed[key] to the timeline
  */
-const convertToTimeline = ({ events = {}, scale = 4, margins = true }) => {
+const convertToTimeline = ({ events = {}, scale = 4, margins = true, trackMin = 'auto' }) => {
   // PARSE THE EVENTS OBJECTS INTO A TIMELINE ARRAY
   // final processed[key] should an array of display object sorted by start date
   //
@@ -102,36 +102,50 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true }) => {
     infiniteLoopProtection++;
   }
 
-  // export events to array and sort by start
+  // export events to an array and sort by start
   const timeline = Object.keys(processed)
     .map(key => processed[key])
     .sort((a, b) => a.display.left - b.display.left);
 
   // set vertical tracks on events
-  const buffer = 100; // right-side pixel buffer before slotting new event on same track
-  const trackCount = 16;
-  const lastTrack = trackCount - 1;
-  const tracks = Array(trackCount).fill(-500, 0, trackCount);
+  let trackCount = parseInt(trackMin, 10) || 1;
   let nextTrack = 0;
+  let lastTrack = trackCount - 1;
+  const tracks = Array(trackCount).fill(-500, 0, trackCount);
+  const buffer = 0; // right-side pixel buffer before slotting new event on same track
 
   timeline.forEach(e => {
     let infiniteLoopProtection = 0;
+    let addTrack = trackMin === 'all';
+    console.log('====>', e.title, addTrack, trackMin);
     for (let t = nextTrack; t < trackCount && infiniteLoopProtection < trackCount + 2; t++, infiniteLoopProtection++) {
       if (tracks[t] + buffer + e.extraBuffer < e.display.left) {
-        e.display.track = t;
+        e.display.track = t + 1;
         tracks[t] = e.display.right;
         nextTrack = t === lastTrack ? 0 : t + 1;
         break;
       }
       // reached the last track without placing, but didn't start at first track
       // reset t to start at first track and run loop again
-      if (t === lastTrack && nextTrack > 0) t = -1;
+      if (t === lastTrack && nextTrack > 0 && !addTrack) {
+        console.log('NOPE!');
+        t = -1;
+        addTrack = true;
+        continue;
+      }
+
+      // if we already reset the loop, then that means the event couldn't fit and
+      // we need to add a new track
+      tracks.push(-500);
+      trackCount++;
+      lastTrack++;
     }
   });
 
   return {
     farRight,
     lastDate,
+    trackCount,
     events: timeline,
   };
 };

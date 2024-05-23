@@ -3,7 +3,7 @@ import genesis11 from './genesis11';
 
 import convertToTimeline from './convertToTimeline';
 
-const getBiblicalEvents = ({ ages, scale, margins }) => {
+const getEvents = ({ ages, scale, margins, trackMin }) => {
   // FIRST GENERATE A KEYED OBJECT OF EVENTS
   // using an object first makes it much easier to reference events for doing relative dates
   //
@@ -30,12 +30,12 @@ const getBiblicalEvents = ({ ages, scale, margins }) => {
   //
   const MT = ages === 'mt';
   const LXX = ages === 'lxx';
-  const biblicalEvents = {
+  const events = {
     ...genesis5(MT, LXX),
     ...genesis11(MT, LXX),
   };
 
-  return convertToTimeline({ events: biblicalEvents, scale, margins });
+  return convertToTimeline({ events, scale, margins, trackMin });
 };
 
-export { getBiblicalEvents };
+export default getEvents;

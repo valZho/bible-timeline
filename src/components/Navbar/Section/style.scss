@@ -27,16 +27,6 @@
     }
   }
 
-  // set the spacing on the top line
-  .mantine-Divider-root {
-    margin-top: 0;
-    margin-bottom: .75rem;
-
-    .mantine-Divider-label {
-      font-size: 1rem;
-    }
-  }
-
   // the last item doesn't need a bottom margin
   &:last-child {
     margin-bottom: 0;

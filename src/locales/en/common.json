@@ -19,9 +19,6 @@
         "copyright": "<0 /> 2024, Darren Doyle",
         "contact": "Contact"
       }
-    },
-    "settings": {
-      "tab": "Settings"
     }
   },
   "options": {
@@ -44,18 +41,22 @@
       "inclusive": "Inclusive",
       "exclusive": "Exclusive",
       "intercalated": "Intercalated"
-    }
-  },
-  "settings": {
-    "theme": {
-      "title": "Website Theme",
-      "light": "Light",
-      "dark": "Dark"
     },
-    "scale": {
-      "title": "Timeline Size Scale",
-      "bigger": "Bigger",
-      "smaller": "Smaller"
+    "display": {
+      "title": "Timeline Display",
+      "scale": {
+        "title": "Horizontal Scale",
+        "bigger": "Bigger",
+        "smaller": "Smaller"
+      },
+      "trackMin": {
+        "title": "Number of Vertical Tracks",
+        "auto": "Auto",
+        "ten": "10",
+        "twenty": "20",
+        "thirty": "30",
+        "all": "Unlimited"
+      }
     }
   },
   "timeline": {

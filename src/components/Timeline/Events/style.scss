@@ -1,15 +1,14 @@
 $track-height: 46px;
-$track-count: 16;
-$margin: 3px;
-$events-container-height: $track-count * $track-height + 10px;
+$margin: 0 3px 3px 3px;
 $bar-height: $track-height * 0.5;
 $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pink, red, teal, violet, yellow;
 
 .eventsContainer {
   z-index: 100;
   position: relative;
-  height: $events-container-height;
-  overflow: visible;
+  overflow-x: visible;
+  overflow-y: auto;
+  flex-grow: 2;
 
   .eventWrapper {
     position: absolute;
@@ -88,90 +87,6 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
       height: 1000px;
       width: 1px;
       background: var(--mantine-color-text);
-    }
-
-    &.track0 {
-      top: calc($track-height * 0);
-    }
-
-    &.track1 {
-      top: calc($track-height * 1);
-    }
-
-    &.track2 {
-      top: calc($track-height * 2);
-    }
-
-    &.track3 {
-      top: calc($track-height * 3);
-    }
-
-    &.track4 {
-      top: calc($track-height * 4);
-    }
-
-    &.track5 {
-      top: calc($track-height * 5);
-    }
-
-    &.track6 {
-      top: calc($track-height * 6);
-    }
-
-    &.track7 {
-      top: calc($track-height * 7);
-    }
-
-    &.track8 {
-      top: calc($track-height * 8);
-    }
-
-    &.track9 {
-      top: calc($track-height * 9);
-    }
-
-    &.track10 {
-      top: calc($track-height * 10);
-    }
-
-    &.track11 {
-      top: calc($track-height * 11);
-    }
-
-    &.track12 {
-      top: calc($track-height * 12);
-    }
-
-    &.track13 {
-      top: calc($track-height * 13);
-    }
-
-    &.track14 {
-      top: calc($track-height * 14);
-    }
-
-    &.track15 {
-      top: calc($track-height * 15);
-    }
-
-    &.track16 {
-      top: calc($track-height * 16);
-    }
-
-    &.track17 {
-      top: calc($track-height * 17);
-    }
-
-    &.track18 {
-      top: calc($track-height * 18);
-    }
-
-    &.track19 {
-      top: calc($track-height * 19);
-    }
-
-    &.track20 {
-      top: calc($track-height * 20);
     }
   }
 }

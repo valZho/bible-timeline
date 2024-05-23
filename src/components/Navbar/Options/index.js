@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { atom, useRecoilState } from 'recoil';
 import { recoilPersist } from 'recoil-persist';
 
-import { SegmentedControl, Anchor, Slider } from '@mantine/core';
+import { SegmentedControl, Anchor, Slider, Divider } from '@mantine/core';
 import { IconBook, IconSquareHalf, IconConfetti, IconAntennaBars5 } from '@tabler/icons-react';
 
 import Section from '../Section';
@@ -33,6 +33,11 @@ OPTIONS.jubilee = atom({
   default: 'exclusive',
   effects_UNSTABLE: [persistAtom],
 });
+OPTIONS.trackMin = atom({
+  key: 'optionsTrackMin',
+  default: 'auto',
+  effects_UNSTABLE: [persistAtom],
+});
 export { OPTIONS };
 // —————————————————————————————————————————————————————
 
@@ -42,6 +47,7 @@ const Timeline = () => {
   const [ages, setAges] = useRecoilState(OPTIONS.ages);
   const [margins, setMargins] = useRecoilState(OPTIONS.margins);
   const [jubilee, setJubilee] = useRecoilState(OPTIONS.jubilee);
+  const [trackMin, setTrackMin] = useRecoilState(OPTIONS.trackMin);
 
   const controlsColor = 'dark.3';
   const scaleMax = 50;
@@ -115,10 +121,11 @@ const Timeline = () => {
 
       <Section
         isSetting
-        title={t('settings.scale.title')}
+        title={t('options.display.title')}
         Icon={IconAntennaBars5}
         iconStyle={{ transform: 'rotate(90deg)' }}
       >
+        <Divider label={t('options.display.scale.title')} labelPosition="left" size="md" />
         <Slider
           color={controlsColor}
           value={scale}
@@ -129,11 +136,26 @@ const Timeline = () => {
           size="md"
           label={null}
           marks={[
-            { value: 1, label: t('settings.scale.smaller') },
+            { value: 1, label: t('options.display.scale.smaller') },
             { value: scaleMax * 0.25, label: '' },
             { value: scaleMax * 0.5, label: '' },
             { value: scaleMax * 0.75, label: '' },
-            { value: scaleMax, label: t('settings.scale.bigger') },
+            { value: scaleMax, label: t('options.display.scale.bigger') },
+          ]}
+        />
+        <Divider label={t('options.display.trackMin.title')} labelPosition="left" size="md" />
+        <SegmentedControl
+          color={controlsColor}
+          size="xs"
+          value={trackMin}
+          onChange={setTrackMin}
+          fullWidth
+          data={[
+            { value: 'auto', label: t('options.display.trackMin.auto') },
+            { value: '10', label: t('options.display.trackMin.ten') },
+            { value: '20', label: t('options.display.trackMin.twenty') },
+            { value: '30', label: t('options.display.trackMin.thirty') },
+            { value: 'all', label: t('options.display.trackMin.all') },
           ]}
         />
       </Section>

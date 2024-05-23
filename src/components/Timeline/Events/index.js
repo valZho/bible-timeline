@@ -9,11 +9,13 @@ import './style.scss';
 
 const Events = () => {
   const { t } = useTranslation();
-  const { biblical, farRight } = useRecoilValue(EVENTS);
+  const { events, farRight, trackCount } = useRecoilValue(EVENTS);
   const margins = useRecoilValue(OPTIONS.margins);
 
+  const trackHeight = 46;
+
   const createEvents = useCallback(() => {
-    console.log(biblical);
+    console.log(events);
 
     const bar = ({ color, marginStart, width, fullWidth, marginEnd }, key) => (
       <svg className="bar" version="1.1" width={fullWidth} height="10">
@@ -66,24 +68,28 @@ const Events = () => {
       </div>
     );
 
-    return biblical.map(e => {
+    return events?.map(e => {
       return (
         <div
           className={`eventWrapper ${e.color ?? ''} track${e.display.track}`}
           key={e.key}
           style={{
+            top: e.display.track * trackHeight,
             left: e.display.left,
             width: e.display.fullWidth, // add 2 pixels for borders
           }}
         >
           {bar(e.display, e.key)}
           {labels(e)}
-          <div className="flag" style={{ left: e.display.marginStart }} />
-          <div className="flag" style={{ left: e.display.marginEnd + e.display.width }} />
+          <div className="flag" style={{ height: (trackCount + 2) * 46, left: e.display.marginStart }} />
+          <div
+            className="flag"
+            style={{ height: (trackCount + 2) * 46, left: e.display.marginEnd + e.display.width }}
+          />
         </div>
       );
     });
-  }, [biblical, margins, t]);
+  }, [events, margins, t]);
 
   return (
     <div className="eventsContainer" style={{ width: farRight + 200 }}>

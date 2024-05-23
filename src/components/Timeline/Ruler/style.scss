@@ -1,9 +1,12 @@
 .rulerContainer {
   position: relative;
   height: 50px;
-  margin: 20px 0 ;
+  min-height: 50px;
+  margin: 20px 0 0;
   border-bottom: solid 3px var(--mantine-color-text);
-  z-index: 0;
+  z-index: 100;
+  flex-shrink: 0;
+  flex-grow: 0;
 
   .ruler {
     text {
