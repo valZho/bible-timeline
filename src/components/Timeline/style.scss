@@ -6,7 +6,7 @@ $margin: 20px;
   box-sizing: border-box;
   margin: $margin*4 $margin $margin $margin+48px;
   padding-left: $margin;
-  height: calc(100% - $margin * 5);
+  height: calc(100% - $margin * 6);
   // display: flex;
   flex-flow: column nowrap;
   justify-items: flex-start;

@@ -1,6 +1,16 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { LoadingOverlay, Affix, Switch, Title, useMantineColorScheme, useMantineTheme, rem } from '@mantine/core';
+import { Trans, useTranslation } from 'react-i18next';
+import {
+  LoadingOverlay,
+  Affix,
+  Switch,
+  Title,
+  Text,
+  Kbd,
+  useMantineColorScheme,
+  useMantineTheme,
+  rem,
+} from '@mantine/core';
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
 
 import Navbar from './Navbar';
@@ -25,6 +35,11 @@ const PageWrapper = () => {
         loaderProps={{ color: 'blue', type: 'dots', size: 'xl' }}
       />
       <Timeline />
+      <Affix position={{ bottom: 15, left: 40 + 48 }}>
+        <Text className="scrollingTip" size="xs">
+          <Trans i18nKey="tip" components={[<Kbd size="xs" />]} />
+        </Text>
+      </Affix>
       <Affix position={{ top: 20, left: 40 + 48 }}>
         <Title order={1}>{t('title')}</Title>
       </Affix>
