@@ -43,7 +43,7 @@ const Timeline = () => {
   const [margins, setMargins] = useRecoilState(OPTIONS.margins);
   const [jubilee, setJubilee] = useRecoilState(OPTIONS.jubilee);
 
-  const scaleMax = 40;
+  const scaleMax = 50;
 
   const agesLink = (
     <Anchor

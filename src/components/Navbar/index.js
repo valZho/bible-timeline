@@ -7,7 +7,6 @@ import { useDisclosure } from '@mantine/hooks';
 
 import Options from './Options';
 import Info from './Info';
-import Settings from './Settings';
 
 import './style.scss';
 
@@ -37,13 +36,8 @@ const Navbar = () => {
         <Tabs defaultValue="options" variant="outline">
           <Tabs.List grow>
             <Tabs.Tab value="options">
-              <IconAlignRight className="timelineIcon" size={18} stroke="1.5" />
+              <IconSettingsFilled className="timelineIcon" size={18} stroke="1.5" />
               <span>{t('nav.options.tab')}</span>
-            </Tabs.Tab>
-
-            <Tabs.Tab value="settings">
-              <IconSettingsFilled size={18} stroke="1.5" />
-              <span>{t('nav.settings.tab')}</span>
             </Tabs.Tab>
 
             <Tabs.Tab value="info">
@@ -58,10 +52,6 @@ const Navbar = () => {
 
           <Tabs.Panel value="info">
             <Info />
-          </Tabs.Panel>
-
-          <Tabs.Panel value="settings">
-            <Settings />
           </Tabs.Panel>
         </Tabs>
       </Drawer>
