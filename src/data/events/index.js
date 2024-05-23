@@ -1,5 +1,5 @@
-import adamToFlood from './adamToFlood';
-import shemToTerah from './shemToTerah';
+import genesis5 from './genesis5';
+import genesis11 from './genesis11';
 
 import convertToTimeline from './convertToTimeline';
 
@@ -31,8 +31,8 @@ const getBiblicalEvents = ({ ages, scale, margins }) => {
   const MT = ages === 'mt';
   const LXX = ages === 'lxx';
   const biblicalEvents = {
-    ...adamToFlood(MT, LXX),
-    ...shemToTerah(MT, LXX),
+    ...genesis5(MT, LXX),
+    ...genesis11(MT, LXX),
   };
 
   return convertToTimeline({ events: biblicalEvents, scale, margins });

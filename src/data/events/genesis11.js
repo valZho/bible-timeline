@@ -4,7 +4,7 @@
  * @param {boolean} LXX - is Septuagint selected?
  * @returns {object}
  */
-const shemToTerah = (MT, LXX) => {
+const genesis11 = (MT, LXX) => {
   // it's easier to create objects as they appear in Bible
   // e.g.,
   // and then normalize them to our event format afterwards
@@ -51,4 +51,4 @@ const shemToTerah = (MT, LXX) => {
   return events;
 };
 
-export default shemToTerah;
+export default genesis11;

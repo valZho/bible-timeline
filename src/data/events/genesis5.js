@@ -4,7 +4,7 @@
  * @param {boolean} LXX - is Septuagint selected?
  * @returns {object}
  */
-const adamToFlood = (MT, LXX) => {
+const genesis5 = (MT, LXX) => {
   // it's easier to create objects as they appear in Bible
   // and then normalize them to our event format afterwards
   const events = {
@@ -17,7 +17,7 @@ const adamToFlood = (MT, LXX) => {
     enoch: { relative: { id: 'jared' }, fatherAt: MT ? 65 : 165, years: 365 },
     methuselah: { relative: { id: 'enoch' }, fatherAt: 187, years: 969 },
     lamech: { relative: { id: 'methuselah' }, fatherAt: LXX ? 182 : 188, years: LXX ? 777 : 753 },
-    noah: { relative: { id: 'lamech' }, fatherAt: 600, years: 950 },
+    noah: { relative: { id: 'lamech' }, fatherAt: 600, years: 950, color: 'green' },
     flood: { relative: { id: 'noah' }, years: 1, exact: true, color: 'red', extraBuffer: 500 },
   };
 
@@ -34,4 +34,4 @@ const adamToFlood = (MT, LXX) => {
   return events;
 };
 
-export default adamToFlood;
+export default genesis5;
