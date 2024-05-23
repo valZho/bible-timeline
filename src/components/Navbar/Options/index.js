@@ -50,7 +50,7 @@ const Timeline = () => {
   const [trackMin, setTrackMin] = useRecoilState(OPTIONS.trackMin);
 
   const controlsColor = 'dark.3';
-  const scaleMax = 50;
+  const scaleMax = 20;
   const agesLink = (
     <Anchor
       href="https://biblearchaeology.org/research/topics/biblical-chronologies/4767-from-adam-to-abraham-the-latest-on-the-genesis-5-and-11-project"
@@ -134,7 +134,7 @@ const Timeline = () => {
           max={scaleMax}
           step={1}
           size="md"
-          label={null}
+          // label={null}
           marks={[
             { value: 1, label: t('options.display.scale.smaller') },
             { value: scaleMax * 0.25, label: '' },
