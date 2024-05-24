@@ -70,39 +70,118 @@
     "date_wMargin_one": "{{year}} {{era}} ±{{count}}yr",
     "date_wMargin_other": "{{year}} {{era}} ±{{count}}yrs",
     "year_one": "{{count}} year",
-    "year_other": "{{count}} years"
+    "year_other": "{{count}} years",
+    "source_wTags": "<strong>Source:</strong> {{reference}}"
   },
   "eventPicker": {
     "button": "Jump to an event..."
   },
   "events": {
-    "adam": "Adam",
-    "seth": "Seth",
-    "enosh": "Enosh",
-    "kenan": "Kenan",
-    "mahalalel": "Mahalalel",
-    "jared": "Jared",
-    "enoch": "Enoch",
-    "methuselah": "Methuselah",
-    "lamech": "Lamech",
-    "noah": "Noah",
+    "adam": {
+      "title": "Adam",
+      "source": "Genesis 5:3-5"
+    },
+    "seth": {
+      "title": "Seth",
+      "source": ""
+    },
+    "enosh": {
+      "title": "Enosh",
+      "source": ""
+    },
+    "kenan": {
+      "title": "Kenan",
+      "source": ""
+    },
+    "mahalalel": {
+      "title": "Mahalalel",
+      "source": ""
+    },
+    "jared": {
+      "title": "Jared",
+      "source": ""
+    },
+    "enoch": {
+      "title": "Enoch",
+      "source": ""
+    },
+    "methuselah": {
+      "title": "Methuselah",
+      "source": ""
+    },
+    "lamech": {
+      "title": "Lamech",
+      "source": ""
+    },
+    "noah": {
+      "title": "Noah",
+      "source": ""
+    },
 
-    "flood": "Flood",
+    "flood": {
+      "title": "Flood",
+      "source": ""
+    },
 
-    "shem": "Shem",
-    "ham": "Ham",
-    "japheth": "Japheth",
-    "arphaxad": "Arphaxad",
-    "kainan": "Kainan",
-    "shelah": "Shelah",
-    "eber": "Eber",
-    "peleg": "Peleg",
-    "reu": "Reu",
-    "serug": "Serug",
-    "nahor": "Nahor",
-    "terah": "Terah",
-    "abraham": "Abraham",
-    "isaac": "Isaac",
-    "jacob": "Jacob"
+    "shem": {
+      "title": "Shem",
+      "source": ""
+    },
+    "ham": {
+      "title": "Ham",
+      "source": ""
+    },
+    "japheth": {
+      "title": "Japheth",
+      "source": ""
+    },
+    "arphaxad": {
+      "title": "Arphaxad",
+      "source": ""
+    },
+    "kainan": {
+      "title": "Kainan",
+      "source": ""
+    },
+    "shelah": {
+      "title": "Shelah",
+      "source": ""
+    },
+    "eber": {
+      "title": "Eber",
+      "source": ""
+    },
+    "peleg": {
+      "title": "Peleg",
+      "source": ""
+    },
+    "reu": {
+      "title": "Reu",
+      "source": ""
+    },
+    "serug": {
+      "title": "Serug",
+      "source": ""
+    },
+    "nahor": {
+      "title": "Nahor",
+      "source": ""
+    },
+    "terah": {
+      "title": "Terah",
+      "source": ""
+    },
+    "abraham": {
+      "title": "Abraham",
+      "source": ""
+    },
+    "isaac": {
+      "title": "Isaac",
+      "source": ""
+    },
+    "jacob": {
+      "title": "Jacob",
+      "source": ""
+    }
   }
 }

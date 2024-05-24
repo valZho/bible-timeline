@@ -32,7 +32,8 @@ const genesis11 = (MT, LXX) => {
 
   // normalize event objects
   Object.keys(events).forEach(key => {
-    events[key].title = `events.${key}`;
+    events[key].title = `events.${key}.title`;
+    events[key].source = `events.${key}.source`;
     events[key].margin = 0.5;
 
     // set the years length for all but last item

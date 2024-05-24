@@ -3,6 +3,10 @@
   bottom: 60px;
   left: 85px;
   z-index: 20;
+
+  button {
+    box-shadow: 0 4px 8px rgba(0,0,0,.6);
+  }
 }
 
 .eventPickerMenu {

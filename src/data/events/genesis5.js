@@ -23,7 +23,8 @@ const genesis5 = (MT, LXX) => {
 
   // normalize event objects
   Object.keys(events).forEach(key => {
-    events[key].title = `events.${key}`;
+    events[key].title = `events.${key}.title`;
+    events[key].source = `events.${key}.source`;
     if (key !== 'adam') events[key].margin = 0.5;
     if (events[key].relative) {
       events[key].relative.start = events[events[key].relative.id].fatherAt;

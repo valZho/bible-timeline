@@ -2,13 +2,13 @@ import React from 'react';
 
 // next.js default imports
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { M_PLUS_2 } from 'next/font/google';
 
 // Mantine UI imports
 import '@mantine/core/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
-const inter = Inter({ subsets: ['latin'] });
+const font = M_PLUS_2({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Bible Timeline',
@@ -25,7 +25,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body className={inter.className}>
+      <body className={font.className}>
         <MantineProvider>{children}</MantineProvider>
       </body>
     </html>
