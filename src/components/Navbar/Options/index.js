@@ -35,7 +35,7 @@ OPTIONS.jubilee = atom({
 });
 OPTIONS.trackMin = atom({
   key: 'optionsTrackMin',
-  default: 'auto',
+  default: '20',
   effects_UNSTABLE: [persistAtom],
 });
 export { OPTIONS };
