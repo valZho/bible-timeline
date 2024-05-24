@@ -25,7 +25,6 @@ const PageWrapper = () => {
   const sunIcon = <IconSun style={iconStyle} stroke={2.5} color={theme.colors.yellow[4]} />;
   const moonIcon = <IconMoonStars style={iconStyle} stroke={2.5} color={theme.colors.blue[6]} />;
 
-  console.log('--->', theme);
   return (
     <div className="pageWrapper">
       <LoadingOverlay
