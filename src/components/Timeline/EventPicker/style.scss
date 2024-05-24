@@ -1,0 +1,20 @@
+.eventPicker {
+  position: fixed;
+  bottom: 60px;
+  left: 85px;
+  z-index: 20;
+}
+
+.eventPickerMenu {
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 75%;
+  max-width: 75% !important;
+  align-items: stretch;
+
+  .mantine-Menu-item {
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: auto;
+  }
+}

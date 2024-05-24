@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 import { useTranslation } from 'react-i18next';
+import { Skeleton } from '@mantine/core';
 
 import { OPTIONS } from '../../Navbar/Options';
 import { EVENTS } from '../../../data/EventsProvider';
@@ -48,7 +49,7 @@ const Ruler = () => {
     .fill(0)
     .map((_, i) => {
       const x = scale * 7 * (i + 1) - scale / 2;
-      return <line {...shmitaTickProps} x1={x} x2={x} />;
+      return <line key={`shmita${x}`} {...shmitaTickProps} x1={x} x2={x} />;
     });
 
   let cycle, jX, dateOffset;
@@ -76,30 +77,39 @@ const Ruler = () => {
     .fill(0)
     .map((_, i) => {
       const year = (i + 1) * cycle + dateOffset;
+      // if the scale is too low, then remove every other label to avoid overlaps
+      if (i % 2 && scale < 2) return '';
       return (
-        <text x={placeText(year)} y="30%" textAnchor="middle" fontSize="0.7rem" fontWeight="bold">
+        <text key={`jText${year}`} x={placeText(year)} y="25%" textAnchor="middle" fontSize="0.8rem" fontWeight="bold">
           {t('timeline.date', { year, era: t('timeline.am') })}
         </text>
       );
     });
 
+  let intercalation = 0;
   const shmitaLabels =
-    scale < 12
+    scale < 10
       ? ''
       : Array(Math.ceil(totalYears / 7))
           .fill(0)
           .map((_, i) => {
-            const year = (i + 1) * 7 + dateOffset;
+            // do stuff every 7th year
+            if (!((i + 1) % 7)) {
+              if (jubilee === 'intercalated') intercalation++;
+              // skip labels next to jubilees to avoid collision
+              return '';
+            }
+            const year = (i + 1) * 7 + intercalation;
             return (
-              <text x={placeText(year)} y="40%" textAnchor="middle" fontSize="0.6rem">
+              <text key={`sText${year}`} x={placeText(year)} y="45%" textAnchor="middle" fontSize="0.7rem">
                 {t('timeline.date', { year, era: t('timeline.am') })}
               </text>
             );
           });
 
-  return (
-    <div className="rulerContainer" style={{ width: farRight + 200 }}>
-      <svg version="1.1" className="ruler" width="100%" height="100%">
+  return farRight ? (
+    <div className="rulerContainer" style={{ width: farRight + 200 + 20 }}>
+      <svg version="1.1" className="ruler" width={farRight + 200} height="100%">
         <defs>
           <pattern id="YearMarks" x="0" y="0" width={scale} height="100%" patternUnits="userSpaceOnUse">
             {scale < 6 ? '' : <line {...yearTickProps} />}
@@ -115,9 +125,13 @@ const Ruler = () => {
         <rect x="0" y="0" width="100%" height="100%" fill="url(#Cycle)" />
         <rect className="mask" x="0" y="0" width={scale * 1.5} height="100%" fill="white" />
         <rect x="0" y="0" width="100%" height="100%" fill="url(#YearMarks)" />
+        <line {...yearTickProps} y1="2%" />
+        {shmitaLabels}
         {jubileeLabels}
       </svg>
     </div>
+  ) : (
+    <Skeleton width="100%" height="70px" />
   );
 };
 

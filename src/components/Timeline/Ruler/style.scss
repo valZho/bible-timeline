@@ -1,14 +1,19 @@
+$margin: 20px;
+
 .rulerContainer {
   position: sticky;
   top: 0;
   height: 70px;
+  width: 100%;
   min-height: 50px;
-  padding-top: 20px;
+  padding-top: $margin;
+  padding-left: $margin;
   border-bottom: solid 3px var(--mantine-color-text);
-  z-index: 100;
+  z-index: 80;
   flex-shrink: 0;
   flex-grow: 0;
   background: var(--mantine-color-body);
+  box-shadow: 0 2px 4px rgba(0,0,0,.4);
 
   .ruler {
     text {
@@ -24,7 +29,7 @@
       stroke: var(--mantine-color-blue-text);
     }
     .jubileeTick {
-      stroke: var(--mantine-color-violet-text);
+      stroke: var(--mantine-color-yellow-text);
     }
   }
 }

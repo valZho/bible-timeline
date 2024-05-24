@@ -72,6 +72,9 @@
     "year_one": "{{count}} year",
     "year_other": "{{count}} years"
   },
+  "eventPicker": {
+    "button": "Jump to an event..."
+  },
   "events": {
     "adam": "Adam",
     "seth": "Seth",

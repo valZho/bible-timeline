@@ -7,7 +7,7 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
   z-index: 100;
   position: relative;
   top: 50px;
-  overflow-x: visible;
+  margin-left: 20px;
   flex-grow: 2;
   z-index: 1;
 
@@ -36,11 +36,6 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
 
       .margin {
         fill: rgba(255, 255, 255, 0.6)
-      }
-
-      .gradient {
-        height: $bar-height;
-        fill: linear-gradient(60deg, rgba(255, 255, 255, .1), rgba(0, 0, 0, .1), rgba(255, 255, 255, .1));
       }
     }
 
@@ -87,7 +82,7 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
       bottom: $track-height - $bar-height + 2px;
       height: 1000px;
       width: 1px;
-      background: var(--mantine-color-text);
+      background: var(--mantine-color-dimmed);
     }
   }
 }

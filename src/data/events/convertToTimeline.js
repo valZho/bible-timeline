@@ -120,8 +120,9 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true, trackMin = 
       return;
     }
 
+    // all other trackMin types will try to reuse tracks
     let infiniteLoopProtection = 0;
-    let addNewTrack = false;
+    let alreadyRestartedLoop = false;
     for (
       let t = tryNext;
       t < trackCount && infiniteLoopProtection < timeline.length * 2;
@@ -129,27 +130,31 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true, trackMin = 
     ) {
       // if this event fits on this track, add it
       if (tracks[t] + buffer + e.extraBuffer < e.display.left) {
-        e.display.track = t;
+        tryNext = t === trackCount - 1 ? 0 : t + 1;
         tracks[t] = e.display.right;
-        tryNext = t === tracks.length - 1 ? 0 : t + 1;
-        continue;
+        e.display.track = t;
+        break;
       }
 
-      // track didn't fit, and this is the last track
-      if (t === tracks.length - 1 && !addNewTrack) {
-        // start over at beginning and try again
+      // is this the last track?
+      // have we not already looped over from the beginning?
+      // if yes, loop back to the first track and keep trying
+      if (t === trackCount - 1 && !alreadyRestartedLoop) {
+        alreadyRestartedLoop = true;
         t = -1;
-        // if we make it here again, it means we need to add a new track
-        addNewTrack = true;
         continue;
       }
 
-      // tried looping through whole track array unsuccessfully
-      // add this to a new track
-      e.display.track = t;
-      tracks.push(e.display.right);
-      tryNext = 0;
-      trackCount++;
+      // did we already loop around from the beginning?
+      // are we back to where we started?
+      // if yes, there's no room, add this to a new track
+      if (alreadyRestartedLoop && t === tryNext) {
+        e.display.track = trackCount;
+        tracks.push(e.display.right);
+        tryNext = 0; // loop to start
+        trackCount++;
+        break;
+      }
     }
   });
 

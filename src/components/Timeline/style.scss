@@ -2,10 +2,8 @@ $margin: 20px;
 
 .timelineContainer {
   position: relative;
-  overflow: auto;
   box-sizing: border-box;
   margin: $margin*4 $margin $margin $margin+48px;
-  padding-left: $margin;
   height: calc(100% - $margin * 6);
   // display: flex;
   flex-flow: column nowrap;
@@ -14,4 +12,8 @@ $margin: 20px;
   border: solid 2px var(--mantine-color-gray-filled);
   box-shadow: 0 $margin/2 $margin rgba(0, 0, 0, .4);
   border-radius: 10px;
+
+  .mantine-ScrollArea-scrollbar {
+    z-index: 100;
+  }
 }

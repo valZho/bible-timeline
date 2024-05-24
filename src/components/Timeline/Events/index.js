@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
+import { Affix } from '@mantine/core';
 
 import { OPTIONS } from '../../Navbar/Options';
 import { EVENTS } from '../../../data/EventsProvider';
@@ -16,8 +17,6 @@ const Events = () => {
   const flagHeight = (trackCount + 2) * trackHeight;
 
   const createEvents = useCallback(() => {
-    console.log(events);
-
     const bar = ({ color, marginStart, width, fullWidth, marginEnd }, key) => (
       <svg className="bar" version="1.1" width={fullWidth} height="10">
         <defs>
@@ -83,7 +82,7 @@ const Events = () => {
           {bar(e.display, e.key)}
           {labels(e)}
           <div className="flag" style={{ height: flagHeight, left: e.display.marginStart }} />
-          <div className="flag" style={{ height: flagHeight, left: e.display.marginEnd + e.display.width }} />
+          <div className="flag" style={{ height: flagHeight, right: e.display.marginEnd - 1 }} />
         </div>
       );
     });
