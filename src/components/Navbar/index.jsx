@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { IconAlignRight, IconSettingsFilled, IconInfoCircleFilled } from '@tabler/icons-react';
+import { IconSettings, IconCodeAsterix } from '@tabler/icons-react';
 import { Drawer, Burger, Tabs } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 import Options from './Options';
-import Info from './Info';
+import Project from './Project';
 
 import './style.scss';
 
@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <>
       <Burger
-        className={navOpen ? 'navOpen' : ''}
+        className={`navbarBurger ${navOpen ? 'navOpen' : ''}`}
         opened={navOpen}
         onClick={navToggle.toggle}
         aria-label="Toggle navbar"
@@ -25,24 +25,27 @@ const Navbar = () => {
       <Drawer
         className="navbar"
         position="left"
-        title={t('nav.title')}
+        title=""
         opened={navOpen}
         onClose={navToggle.close}
         closeOnEscape={false}
         closeOnClickOutside={false}
         transitionProps={{ duration: 500 }}
         withinPortal={false}
+        withOverlay={false}
+        trapFocus={false}
+        lockScroll={false}
       >
         <Tabs defaultValue="options" variant="outline">
           <Tabs.List>
             <Tabs.Tab value="options">
-              <IconSettingsFilled className="timelineIcon" size={18} stroke="1.5" />
-              <span>{t('nav.options.tab')}</span>
+              <IconSettings className="timelineIcon" size={20} stroke="1.5" />
+              <span>{t('options.title')}</span>
             </Tabs.Tab>
 
-            <Tabs.Tab value="info">
-              <IconInfoCircleFilled size={18} stroke="1.5" />
-              <span>{t('nav.info.tab')}</span>
+            <Tabs.Tab value="project">
+              <IconCodeAsterix size={20} stroke="1.5" />
+              <span>{t('project.title')}</span>
             </Tabs.Tab>
           </Tabs.List>
 
@@ -50,8 +53,8 @@ const Navbar = () => {
             <Options />
           </Tabs.Panel>
 
-          <Tabs.Panel value="info">
-            <Info />
+          <Tabs.Panel value="project">
+            <Project />
           </Tabs.Panel>
         </Tabs>
       </Drawer>

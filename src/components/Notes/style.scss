@@ -1,0 +1,37 @@
+.notesLabel {
+  display: inline-block;
+  border-left: solid 2px var(--mantine-color-dimmed);
+  margin-left: 20px;
+  padding-left: 12px;
+  line-height: 38px;
+  vertical-align: middle;
+
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  a {
+    color: var(--mantine-color-gray-6);
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.3rem;
+    text-decoration: none;
+
+    svg {
+      margin-right: 5px
+    }
+
+    background: transparent;
+    padding: 2px 15px 2px 5px;
+    border-radius: 7px;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+      background-color: var(--mantine-color-anchor);
+    }
+  }
+}

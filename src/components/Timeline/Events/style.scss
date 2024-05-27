@@ -1,7 +1,16 @@
-$track-height: 46px;
+$track-height: 35px;
 $margin: 0 3px 3px 3px;
-$bar-height: $track-height * 0.5;
+
+$bar-height: 5px;
+$bar-shadow: 0px 5px 4px rgba(0, 0, 0, 0.5);
+
 $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pink, red, teal, violet, yellow;
+
+.mantine-Loader-root {
+  transform: rotate(90deg);
+  // reverse x and y here as it is rotated
+  filter: drop-shadow(5px 0px 4px rgba(0, 0, 0, 0.5));
+}
 
 .eventsContainer {
   z-index: 100;
@@ -16,13 +25,15 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
     top: 50px;
     left: 0;
     height: $track-height;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
 
     .bar {
       height: $bar-height;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, .6);
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.5));
       position: relative;
       z-index: 100;
-      border-radius: 3px;
       overflow: hidden;
 
       .base {
@@ -46,7 +57,8 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
       flex-flow: row nowrap;
       justify-content: space-between;
       font-size: .75rem;
-      padding-left: 5px;
+      padding: 2px 0 0 10px;
+      margin-left: 2px;
       z-index: 50;
 
       .title {
@@ -58,7 +70,7 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
         background: var(--mantine-color-body);
         flex-shrink: 0;
         position: sticky;
-        left: 0;
+        left: 20px;
 
         &::after {
           content: '';
@@ -66,9 +78,9 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
           position: absolute;
           left: 100%;
           top: 0;
-          width: 100px;
+          width: 150px;
           height: 100%;
-          background: linear-gradient(90deg, var(--mantine-color-body) 20%, transparent);
+          background: linear-gradient(90deg, var(--mantine-color-body) 30%, transparent);
         }
       }
 
@@ -79,10 +91,33 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
 
     .flag {
       position: absolute;
-      bottom: $track-height - $bar-height + 2px;
+      bottom: $track-height - $bar-height;
       height: 1000px;
       width: 1px;
       background: var(--mantine-color-dimmed);
+      opacity: 0.5;
+      pointer-events: none;
     }
   }
 }
+
+.mantine-HoverCard-dropdown {
+  position: sticky;
+  left: 25px;
+  background-color: var(--mantine-color-text) !important;
+  border: none !important;
+  padding: 5px 10px !important;
+  margin-left: 25px;
+
+  .sourceContent {
+    color: var(--mantine-color-body);
+    a {
+      color: var(--mantine-color-blue-8);
+      :root[data-mantine-color-scheme='light'] & {
+        color: var(--mantine-color-blue-2);
+      }
+    }
+  }
+}
+
+

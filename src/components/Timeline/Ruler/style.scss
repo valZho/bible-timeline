@@ -1,4 +1,6 @@
 $margin: 20px;
+$background: var(--mantine-color-gray-5);
+$line: var(--mantine-color-dark-filled);
 
 .rulerContainer {
   position: sticky;
@@ -8,22 +10,26 @@ $margin: 20px;
   min-height: 50px;
   padding-top: $margin;
   padding-left: $margin;
-  border-bottom: solid 3px var(--mantine-color-text);
-  z-index: 80;
+  border-bottom: solid 4px $line;
+  z-index: 100;
   flex-shrink: 0;
   flex-grow: 0;
-  background: var(--mantine-color-body);
-  box-shadow: 0 2px 4px rgba(0,0,0,.4);
+  background: $background;
+  box-shadow: 0 3px 20px rgba(0,0,0,.6);
+
+  &.skeleton {
+    border-bottom: none;
+  }
 
   .ruler {
     text {
-      fill: var(--mantine-color-text);
+      fill: $line;
     }
     .mask {
-      fill: var(--mantine-color-body);
+      fill: $background;
     }
     .yearTick {
-      stroke: var(--mantine-color-text);
+      stroke: $line;
     }
     .shmitaTick {
       stroke: var(--mantine-color-blue-text);

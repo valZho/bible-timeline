@@ -22,7 +22,7 @@ const Section = ({ title = '', children = '', Icon, iconStyle = {}, compact = fa
       </Accordion>
     );
   } else {
-    header = <Divider labelPosition="left" label={title} />;
+    header = !compact && <Divider labelPosition="left" label={title} />;
   }
 
   return (

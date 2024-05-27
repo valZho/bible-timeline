@@ -1,9 +1,12 @@
-import genesis5 from './genesis5';
-import genesis11 from './genesis11';
+import data1 from './data-1';
+import data2 from './data-2';
+import data3 from './data-3';
+import data4 from './data-4';
+import data5 from './data-5';
 
-import convertToTimeline from './convertToTimeline';
+import convertToTimeline from './utils/convertToTimeline';
 
-const getEvents = ({ ages, scale, margins, trackMin }) => {
+const getEvents = ({ ages, ...options }) => {
   // FIRST GENERATE A KEYED OBJECT OF EVENTS
   // using an object first makes it much easier to reference events for doing relative dates
   //
@@ -31,11 +34,14 @@ const getEvents = ({ ages, scale, margins, trackMin }) => {
   const MT = ages === 'mt';
   const LXX = ages === 'lxx';
   const events = {
-    ...genesis5(MT, LXX),
-    ...genesis11(MT, LXX),
+    ...data1(MT, LXX),
+    ...data2(MT, LXX),
+    ...data3(),
+    ...data4(),
+    ...data5(),
   };
 
-  return convertToTimeline({ events, scale, margins, trackMin });
+  return convertToTimeline({ events, ...options });
 };
 
 export default getEvents;

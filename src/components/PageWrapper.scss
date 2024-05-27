@@ -4,17 +4,15 @@
   overflow: auto;
 }
 
-.mantine-Switch-track {
-  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
-}
-
-.scrollingTip {
+.mantine-Text-root.scrollingTip {
   color: var(--mantine-color-dimmed);
 }
 
 .pageTitle {
-  filter: drop-shadow(-3px 4px 3px rgba(0,0,0,1));
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.5));
   color: var(--mantine-color-blue-3);
+  display: inline-block;
+  vertical-align: middle;
 
   .logo {
     display: inline-block;
@@ -22,18 +20,28 @@
     color: white;
     transform: shadow;
     margin-right: 10px;
-    .biblePages { fill: #777; }
-    .bibleCross { stroke: var(--mantine-color-yellow-3); }
-    .bibleCover { fill: var(--mantine-color-indigo-8); }
-    .calendarTitle { fill: var(--mantine-color-red-8)}
+    .biblePages { fill: var(--mantine-color-dark-4); }
+    .bibleCross { stroke: var(--mantine-color-dark-4); }
+    .bibleCover { fill: white; }
+    .calendarTitle { fill: var(--mantine-color-blue-4)}
+    .calendarRings { stroke: var(--mantine-color-gray-5)}
     .calendarDate {
       &.date1 { stroke: var(--mantine-color-blue-8); }
-      &.date2 { stroke: var(--mantine-color-green-8); }
+      &.date2 { stroke: var(--mantine-color-yellow-8); }
       &.date3 { stroke: var(--mantine-color-red-8); }
-      &.date4 { stroke: var(--mantine-color-orange-8); }
-      &.date5 { stroke: var(--mantine-color-blue-8); }
-      &.date6 { stroke: var(--mantine-color-red-8); }
-      &.date7 { stroke: var(--mantine-color-grape-8); }
+      &.date4 { stroke: var(--mantine-color-lime-8); }
+      &.date5 { stroke: var(--mantine-color-cyan-5); }
+      &.date6 { stroke: var(--mantine-color-gray-5); }
+      &.date7 { stroke: var(--mantine-color-grape-7); }
     }
   }
+}
+
+.calendarControl {
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+  margin-right: 10px;
+}
+
+.themeControl {
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
 }

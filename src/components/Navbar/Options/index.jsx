@@ -1,45 +1,15 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { atom, useRecoilState } from 'recoil';
-import { recoilPersist } from 'recoil-persist';
+import { useRecoilState } from 'recoil';
 
 import { SegmentedControl, Anchor, Slider, Divider } from '@mantine/core';
-import { IconBook, IconSquareHalf, IconConfetti, IconAntennaBars5 } from '@tabler/icons-react';
+import { IconBook, IconSquareHalf, IconConfetti, IconAntennaBars5, IconCross } from '@tabler/icons-react';
 
+import OPTIONS from '@/data/state-options';
+import BibleLink from '@/components/BibleLink';
 import Section from '../Section';
+
 import './style.scss';
-
-const { persistAtom } = recoilPersist();
-
-// —————————————— OPTION STATE & STORAGE ———————————————
-const OPTIONS = {};
-OPTIONS.scale = atom({
-  key: 'optionsScale',
-  default: 4,
-  effects_UNSTABLE: [persistAtom],
-});
-OPTIONS.ages = atom({
-  key: 'optionsAges',
-  default: 'best',
-  effects_UNSTABLE: [persistAtom],
-});
-OPTIONS.margins = atom({
-  key: 'optionsMargins',
-  default: 'on',
-  effects_UNSTABLE: [persistAtom],
-});
-OPTIONS.jubilee = atom({
-  key: 'optionsJubilee',
-  default: 'exclusive',
-  effects_UNSTABLE: [persistAtom],
-});
-OPTIONS.trackMin = atom({
-  key: 'optionsTrackMin',
-  default: '20',
-  effects_UNSTABLE: [persistAtom],
-});
-export { OPTIONS };
-// —————————————————————————————————————————————————————
 
 const Timeline = () => {
   const { t } = useTranslation();
@@ -48,9 +18,11 @@ const Timeline = () => {
   const [margins, setMargins] = useRecoilState(OPTIONS.margins);
   const [jubilee, setJubilee] = useRecoilState(OPTIONS.jubilee);
   const [trackMin, setTrackMin] = useRecoilState(OPTIONS.trackMin);
+  const [crucifixion, setCrucifixion] = useRecoilState(OPTIONS.crucifixion);
 
-  const controlsColor = 'dark.3';
+  const controlsColor = 'yellow.5';
   const scaleMax = 20;
+
   const agesLink = (
     <Anchor
       href="https://biblearchaeology.org/research/topics/biblical-chronologies/4767-from-adam-to-abraham-the-latest-on-the-genesis-5-and-11-project"
@@ -68,6 +40,7 @@ const Timeline = () => {
       >
         <SegmentedControl
           color={controlsColor}
+          autoContrast
           size="xs"
           value={ages}
           onChange={setAges}
@@ -88,6 +61,7 @@ const Timeline = () => {
       >
         <SegmentedControl
           color={controlsColor}
+          autoContrast
           size="xs"
           value={margins}
           onChange={setMargins}
@@ -107,6 +81,7 @@ const Timeline = () => {
       >
         <SegmentedControl
           color={controlsColor}
+          autoContrast
           size="xs"
           value={jubilee}
           onChange={setJubilee}
@@ -115,6 +90,33 @@ const Timeline = () => {
             { value: 'inclusive', label: t('options.jubilee.inclusive') },
             { value: 'exclusive', label: t('options.jubilee.exclusive') },
             { value: 'intercalated', label: t('options.jubilee.intercalated') },
+          ]}
+        />
+      </Section>
+
+      <Section
+        isSetting
+        title={t('options.crucifixion.title')}
+        description={
+          <Trans
+            i18nKey="options.crucifixion.description_wTags"
+            components={[<BibleLink bibleRef="John19:31" />, <BibleLink bibleRef="Matt12:40" />]}
+          />
+        }
+        Icon={IconCross}
+      >
+        <Slider
+          color={controlsColor}
+          value={crucifixion}
+          onChange={setCrucifixion}
+          min={27}
+          max={33}
+          step={1}
+          size="md"
+          marks={[
+            { value: 27, label: t('options.crucifixion.optionLabels.0') },
+            { value: 30, label: t('options.crucifixion.optionLabels.1') },
+            { value: 33, label: t('options.crucifixion.optionLabels.2') },
           ]}
         />
       </Section>
@@ -146,6 +148,7 @@ const Timeline = () => {
         <Divider label={t('options.display.trackMin.title')} labelPosition="left" size="md" />
         <SegmentedControl
           color={controlsColor}
+          autoContrast
           size="xs"
           value={trackMin}
           onChange={setTrackMin}

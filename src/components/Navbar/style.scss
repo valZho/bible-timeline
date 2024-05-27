@@ -1,23 +1,35 @@
-$drawer-handle-color: var(--mantine-color-gray-7);
+$drawer-handle-color: var(--mantine-color-blue-filled);
+$drawer-handle-color-hover: var(--mantine-color-blue-filled-hover);
 
-.mantine-Burger-root {
+$z-index: 210;
+
+.navbarBurger.mantine-Burger-root {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1000;
+  z-index: $z-index + 1;
   box-sizing: content-box;
   border-left: solid 2px $drawer-handle-color;
   border-right: solid 2px $drawer-handle-color;
   background: $drawer-handle-color;
   height: 100%;
   opacity: 1;
-  transition-property: opacity, left;
-  transition-duration: 500ms;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition-property: opacity, left, box-shadow;
+  transition-duration: 0.5s;
   transition-timing-function: ease;
+
+  &:hover {
+    border-left-color: $drawer-handle-color-hover;
+    border-right-color: $drawer-handle-color-hover;
+    background: $drawer-handle-color-hover;
+  }
 
   &.navOpen {
     left: calc(27.5rem * var(--mantine-scale));
+    box-shadow: 10px 0 10px rgba(0, 0, 0, .6);
     @media (max-width: 488px) {
+      box-shadow: 0 0 0 rgba(0,0,0,0);
       opacity: 0;
     }
   }
@@ -36,7 +48,7 @@ $drawer-handle-color: var(--mantine-color-gray-7);
 
 .navbar {
   position: relative;
-  z-index: 500;
+  z-index: $z-index;
   background: var(--mantine-color-body);
 
   .mantine-Drawer-header {
@@ -51,6 +63,10 @@ $drawer-handle-color: var(--mantine-color-gray-7);
         display: none;
       }
     }
+  }
+
+  .mantine-Drawer-content {
+    opacity: 1 !important;
   }
 
   .mantine-Drawer-body {

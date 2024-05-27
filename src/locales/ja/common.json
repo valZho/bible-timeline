@@ -1,6 +1,246 @@
 {
-  "page": {
-    "title": "聖書年表"
+  "title": "聖書年表",
+  "bibleVersions": "ja jcb-83",
+  "timeline": {
+    "textSeparator": "  •  ",
+    "dateAM": "AM{{year}}年",
+    "dateAD": "西暦{{year}}年",
+    "dateBC": "紀元前{{year}}年",
+    "date_wMargin_other": "{{date}}±{{count}}年",
+    "year_other": "{{count}}年",
+    "source": "Source:"
+  },
+  "events": {
+    "adam": {
+      "title": "アダム",
+      "source": "Gen5:5"
+    },
+    "seth": {
+      "title": "セツ",
+      "source": "Gen5:3,8"
+    },
+    "enosh": {
+      "title": "エノシュ",
+      "source": "Gen5:6,11"
+    },
+    "kenan": {
+      "title": "ケナン",
+      "source": "Gen5:9,14"
+    },
+    "mahalalel": {
+      "title": "マハラルエル",
+      "source": "Gen5:12,17"
+    },
+    "jared": {
+      "title": "エレデ",
+      "source": "Gen5:15,20"
+    },
+    "enoch": {
+      "title": "エノク",
+      "source": "Gen5:18,23"
+    },
+    "methuselah": {
+      "title": "メトシェラ",
+      "source": "Gen5:21,27"
+    },
+    "lamech": {
+      "title": "レメク",
+      "source": "Gen5:25,31"
+    },
+    "noah": {
+      "title": "ノア",
+      "source": "Gen5:28"
+    },
+
+    "flood": {
+      "title": "Flood",
+      "source": "Gen7:11, Gen8:13"
+    },
+
+    "shem": {
+      "title": "セム",
+      "source": "Gen11:10-11"
+    },
+    "arphaxad": {
+      "title": "Arphaxad",
+      "source": "Gen11:10-13"
+    },
+    "kainan": {
+      "title": "Kainan",
+      "source": "(Septuagint Only) Gen11:12-13"
+    },
+    "shelah": {
+      "title": "Shelah",
+      "source": "Gen11:12-15"
+    },
+    "eber": {
+      "title": "Eber",
+      "source": "Gen11:14-17"
+    },
+    "peleg": {
+      "title": "Peleg",
+      "source": "Gen11:15-19"
+    },
+    "reu": {
+      "title": "Reu",
+      "source": "Gen11:17-21"
+    },
+    "serug": {
+      "title": "Serug",
+      "source": "Gen11:19-23"
+    },
+    "nahor": {
+      "title": "Nahor",
+      "source": "Gen11:21-25"
+    },
+    "terah": {
+      "title": "Terah",
+      "source": "Gen11:24,32"
+    },
+    "abraham": {
+      "title": "Abraham",
+      "source": "Gen25:7"
+    },
+    "isaac": {
+      "title": "Isaac",
+      "source": ""
+    },
+    "jacob": {
+      "title": "Jacob",
+      "source": ""
+    },
+    "covenant": {
+      "title": "God's covenant with Abraham",
+      "source": ""
+    },
+    "sojourn430": {
+      "title": "Sojourning (430 Years)",
+      "source": ""
+    },
+    "sojourn400": {
+      "title": "Sojourning (400 Years)",
+      "source": ""
+    },
+    "sojourn450": {
+      "title": "Sojourning (450 Years)",
+      "source": ""
+    },
+    "exodus": {
+      "title": "The Exodus",
+      "source": ""
+    },
+    "wandering": {
+      "title": "Wandering in the Desert",
+      "source": ""
+    },
+    "conquering": {
+      "title": "Taking the Promised Land",
+      "source": ""
+    },
+    "temple1start": {
+      "title": "The Building of the First Temple",
+      "source": ""
+    },
+    "solomon": {
+      "title": "Solomon's Reign",
+      "source": ""
+    },
+    "rehoboam": {
+      "title": "Rehoboam's Reign",
+      "source": ""
+    },
+    "abijam": {
+      "title": "Abijam's Reign",
+      "source": ""
+    },
+    "asa": {
+      "title": "Asa's Reign",
+      "source": ""
+    },
+    "jehoshaphat": {
+      "title": "Jehoshaphat's Reign",
+      "source": ""
+    },
+    "jehoram": {
+      "title": "Jehoram's Reign",
+      "source": ""
+    },
+    "ahaziah": {
+      "title": "Ahaziah's Reign",
+      "source": ""
+    },
+    "athaliah": {
+      "title": "Athaliah's Reign",
+      "source": ""
+    },
+    "joash": {
+      "title": "Joash's Reign",
+      "source": ""
+    },
+    "amaziah": {
+      "title": "Amaziah's Reign",
+      "source": ""
+    },
+    "uzziah": {
+      "title": "Uzziah's Reign",
+      "source": ""
+    },
+    "jotham": {
+      "title": "Jotham's Reign",
+      "source": ""
+    },
+    "ahaz": {
+      "title": "Ahaz's Reign",
+      "source": ""
+    },
+    "hezekiah": {
+      "title": "Hezekiah's Reign",
+      "source": ""
+    },
+    "manasseh": {
+      "title": "Manasseh's Reign",
+      "source": ""
+    },
+    "amon": {
+      "title": "Amon's Reign",
+      "source": ""
+    },
+    "josiah": {
+      "title": "Josiah's Reign",
+      "source": ""
+    },
+    "jehoahaz": {
+      "title": "Jehoahaz's Reign",
+      "source": ""
+    },
+    "eliakim": {
+      "title": "Eliakim's Reign",
+      "source": ""
+    },
+    "jehoiachin": {
+      "title": "Jehoiachin's Reign",
+      "source": ""
+    },
+    "zedekiah": {
+      "title": "Zedekiah's Reign",
+      "source": ""
+    },
+    "exile": {
+      "title": "The Exile",
+      "source": ""
+    },
+    "dan69weeks": {
+      "title": "First 69 Weeks of Daniel",
+      "source": ""
+    },
+    "messiah": {
+      "title": "Jesus Christ",
+      "source": ""
+    },
+    "temple2end": {
+      "title": "Second Temple Destroyed",
+      "source": ""
+    }
   },
   "names": {
     "adam": "アダム",

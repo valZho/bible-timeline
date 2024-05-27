@@ -4,7 +4,7 @@
  * @param {boolean} LXX - is Septuagint selected?
  * @returns {object}
  */
-const genesis11 = (MT, LXX) => {
+const eventData2 = (MT, LXX) => {
   // it's easier to create objects as they appear in Bible
   // e.g.,
   // and then normalize them to our event format afterwards
@@ -32,8 +32,6 @@ const genesis11 = (MT, LXX) => {
 
   // normalize event objects
   Object.keys(events).forEach(key => {
-    events[key].title = `events.${key}.title`;
-    events[key].source = `events.${key}.source`;
     events[key].margin = 0.5;
 
     // set the years length for all but last item
@@ -52,4 +50,4 @@ const genesis11 = (MT, LXX) => {
   return events;
 };
 
-export default genesis11;
+export default eventData2;

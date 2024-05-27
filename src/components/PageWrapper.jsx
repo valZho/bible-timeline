@@ -1,25 +1,32 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Affix, Switch, Title, Text, Kbd, useMantineColorScheme, useMantineTheme, rem } from '@mantine/core';
-import { IconSun, IconMoonStars, IconCalendarMonth, IconBible } from '@tabler/icons-react';
+import { useRecoilState } from 'recoil';
 
+import { Affix, Title, Text, Kbd, useMantineColorScheme, useMantineTheme, rem, SegmentedControl } from '@mantine/core';
+import { IconSun, IconMoonStars } from '@tabler/icons-react';
+import IconBiblicalTimeline from './IconBiblicalTimeline';
+
+import OPTIONS from '../data/state-options';
+
+import Notes from './Notes';
 import Navbar from './Navbar';
 import Timeline from './Timeline';
-import IconBiblicalTimeline from './IconBiblicalTimeline';
 import './PageWrapper.scss';
 
 const PageWrapper = () => {
-  const { setColorScheme, colorScheme } = useMantineColorScheme();
   const { t } = useTranslation();
+  const [calendar, setCalendar] = useRecoilState(OPTIONS.calendar);
+  const { setColorScheme, colorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();
 
   const iconStyle = { width: rem(16), height: rem(16) };
-  const sunIcon = <IconSun style={iconStyle} stroke={2.5} color={theme.colors.yellow[4]} />;
-  const moonIcon = <IconMoonStars style={iconStyle} stroke={2.5} color={theme.colors.blue[6]} />;
+  const sunIcon = <IconSun style={iconStyle} stroke={2.5} />;
+  const moonIcon = <IconMoonStars style={iconStyle} stroke={2.5} />;
 
   return (
     <div className="pageWrapper">
       <Timeline />
+      <Navbar />
 
       {/* scrolling notice */}
       <Affix position={{ bottom: 15, left: 40 + 48 }}>
@@ -34,21 +41,38 @@ const PageWrapper = () => {
           <IconBiblicalTimeline className="logo" size="50" stroke="1" />
           {t('title')}
         </Title>
+        <Notes />
       </Affix>
 
-      {/* theme picker */}
+      {/* theme and calendar pickers */}
       <Affix position={{ top: 20, right: 40 }}>
-        <Switch
-          size="lg"
-          onLabel={sunIcon}
-          offLabel={moonIcon}
-          checked={colorScheme === 'light'}
-          onChange={e => {
-            setColorScheme(e?.currentTarget?.checked ? 'light' : 'dark');
-          }}
+        <SegmentedControl
+          className="calendarControl"
+          size="xs"
+          radius="xl"
+          color={theme.colors.yellow[5]}
+          autoContrast
+          data={[
+            { label: 'Gregorian', value: 'ce' },
+            { label: 'Hebrew', value: 'am' },
+          ]}
+          value={calendar}
+          onChange={setCalendar}
+        />
+        <SegmentedControl
+          className="themeControl"
+          size="xs"
+          radius="xl"
+          color={theme.colors.yellow[5]}
+          autoContrast
+          data={[
+            { label: sunIcon, value: 'light' },
+            { label: moonIcon, value: 'dark' },
+          ]}
+          value={colorScheme}
+          onChange={setColorScheme}
         />
       </Affix>
-      <Navbar />
     </div>
   );
 };

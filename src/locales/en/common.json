@@ -1,32 +1,28 @@
 {
   "title": "Biblical Timeline",
+  "bibleVersions": "en CSB-1713 NIV-111 ESV-59",
   "tip": "<strong>TIP:</strong> Hold down the <0>Shift</0> key for horizontal scrolling",
-  "nav": {
-    "title": "",
-    "options": {
-      "tab": "Timeline Options"
-    },
-    "info": {
-      "tab": "Info",
-      "inclusiveTime": {
-        "title": "Inclusive Time",
-        "description_wTags": "It is important to understand that the Bible uses an <strong><i>inclusive</i></strong> reconing of time which can be foreign to our modern, Western, <i>exclusive</i> reconing about time.<br /><br />To illustrate, only a full year after birth would we moderns say that a baby is one year old, i.e., they have been alive for a year. In Ancient Isreal, as soon as they were born, it would have been said that they were one, i.e., they were in their first year.<br /><br />Applying this to a Biblical example, in Genesis 5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we moderns should understand it to mean that he was what we would call 499 years old and \"in his 500th year\" when he became a father. This has obvious implications on dates, and is something to keep in mind."
-      },
-      "project": {
-        "title": "Project Info",
-        "description": "This project began as a quickly hobbled together collection of PHP and CSS just to visualize and verify some things I was reading about. Fast forward a couple of years, and I am now rebuilding it (with modern tools) into something that will hopefully be more stable and usable for more than just me!",
-        "description2": "While I have included many options to accommodate differing views, interpretations, and sources, I doubt I have covered all scenarios. In other words, I am in no way claiming any sort of expertise on this topic, but I'm also not claiming to come to this completely without opinion either. Mostly I just felt like lending some of my development skills towards visualizing what turns out to a be a tricky and contended subject. Feel free to send me a message if you think there's something that could be improved or added, or if you are so inclined and able, the code for this whole site is available on Github for you to tinker around with yourself.",
-        "cookies": "Cookies are used for saving preferences only.",
-        "builtWith": "Built With",
-        "copyright": "<0 /> 2024, Darren Doyle",
-        "contact": "Contact"
-      }
+  "notes": {
+    "title": "Notes...",
+    "inclusiveTime": {
+      "title": "Inclusive Time",
+      "description_wTags": "It is important to understand that the Bible uses an <strong><i>inclusive</i></strong> reconing of time which can be foreign to our modern, Western, <i>exclusive</i> reconing about time.<br /><br />To illustrate, only a full year after birth would we moderns say that a baby is one year old, i.e., they have been alive for a year. In Ancient Isreal, as soon as they were born, it would have been said that they were one, i.e., they were in their first year.<br /><br />Applying this to a Biblical example, in Gen5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we moderns should understand it to mean that he was what we would call 499 years old and \"in his 500th year\" when he became a father. This has obvious implications on dates, and is something to keep in mind."
     }
   },
+  "project": {
+    "title": "Project",
+    "description": "This project began in 2020 as a quickly hobbled together collection of PHP and CSS I threw together over a weekend just to visualize and verify some things I was reading about. Fast forward to 2024, where I have revisited the idea, but this time set out to build it properly — from the ground up, with modern web dev tools — into something that will hopefully be more usable for, not just me, but anyone who might find it useful!",
+    "description2_wTags": "While I have included many options to accommodate differing views, interpretations, and sources, I doubt I have covered all scenarios. In other words, <i>I am in no way claiming any sort of expertise on this topic</i> ... but I'm also not claiming to come to this completely without opinion either. Mostly, though, I just wanted to do something with my development skills that might help someone else. Feel free to send me a message if you think there's something that could be improved or added, or if you are so inclined and able, the code for this project is available on Github for you to fork and tinker around with yourself.",
+    "cookies": "Cookies are used for saving preferences only.",
+    "builtWith": "Built With",
+    "copyright": "<0 /> 2024, Darren Doyle",
+    "contact": "Contact"
+  },
   "options": {
+    "title": "Timeline Options",
     "ages": {
       "title": "Manuscript Source",
-      "description_wTags": "The ages of Adam through Terah found in Genesis 5 and 11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC — and I'm not even going to bother with the Samaritan Pentateuch.<br /><br />There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to these dates (with a couple of exceptions). In particular, I have heavily referenced <0>the work of Henry B. Smith Jr. of the Associates of Biblical Research</0> on the topic, and the \"$t(options.ages.best)\" option is based on his assertions: mostly following the LXX, but <br /><br />Despite the preponderance of evidence, and by what I would consider a quirk of history, all English bible translations — even the most recent (and I can't speak for translations in other languages) — are still using the ages found in the MT.<br /><br />I recommend keeping this option set to \"$t(options.ages.best)\", but it can be useful to force it to use solely the MT or the LXX.",
+      "description_wTags": "The ages of Adam through Terah found in Genesis 5 & 11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC (and I'm not going to bother with the Samaritan Pentateuch which appears to have a lot of problems in this area).<br /><br />There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to these dates (with a couple of exceptions). In particular, I have heavily referenced <0>the work of Henry B. Smith Jr. of the Associates of Biblical Research</0> on the topic, and the \"$t(options.ages.best)\" option is based on his assertions: mostly following the LXX.<br /><br />It's important to note that, despite the preponderance of evidence, and by what I would consider a quirk of history, all English bible translations — even the most recent (and I can't speak for translations in other languages) — are still using the ages found in the MT.<br /><br />I recommend keeping this option set to \"$t(options.ages.best)\", but I have included the ability to set the timeline to use solely the MT or the LXX for the patriarch ages.",
       "septuagint": "Septuagint",
       "masoretic": "Masoretic",
       "best": "Best Attested"
@@ -44,6 +40,11 @@
       "exclusive": "Exclusive",
       "intercalated": "Intercalated"
     },
+    "crucifixion": {
+      "title": "Crucifixion Date",
+      "description_wTags": "There is some dispute as to the exact year that Jesus was crucified. Here you can set what A.D. year the timeline uses for the Crucifixion.<br /><br >For a more detailed discussion on the topic, see the relevant section in the notes.<br /><br /><strong>NOTE:</strong> <i>All</i> Gregorian dates on the timeline are calculated from this date.",
+      "optionLabels": ["27 A.D.", "30 A.D.", "33 A.D."]
+    },
     "display": {
       "title": "Timeline Display",
       "scale": {
@@ -52,7 +53,7 @@
         "smaller": "Smaller"
       },
       "trackMin": {
-        "title": "Number of Vertical Tracks",
+        "title": "Minimum Number of Vertical Tracks",
         "auto": "Auto",
         "ten": "10",
         "twenty": "20",
@@ -63,124 +64,339 @@
   },
   "timeline": {
     "textSeparator": "  •  ",
-    "am": "AM",
-    "ad": "AD",
-    "bc": "BC",
-    "date": "{{year}} {{era}}",
-    "date_wMargin_one": "{{year}} {{era}} ±{{count}}yr",
-    "date_wMargin_other": "{{year}} {{era}} ±{{count}}yrs",
+    "dateAM": "{{year}} AM",
+    "dateAD": "{{year}} AD",
+    "dateBC": "{{year}} BC",
+    "date_wMargin_one": "{{date}} ±{{count}}yr",
+    "date_wMargin_other": "{{date}} ±{{count}}yrs",
     "year_one": "{{count}} year",
     "year_other": "{{count}} years",
-    "source_wTags": "<strong>Source:</strong> {{reference}}"
+    "source": "Source:"
   },
   "eventPicker": {
-    "button": "Jump to an event..."
+    "button": "Go to Event..."
+  },
+  "bible": {
+    "Genesis": "Genesis",
+    "Exodus": "Exodus",
+    "Leviticus": "Leviticus",
+    "Numbers": "Numbers",
+    "Deuteronomy": "Deuteronomy",
+    "Joshua": "Joshua",
+    "Judges": "Judges",
+    "Ruth": "Ruth",
+    "1 Samuel": "1 Samuel",
+    "2 Samuel": "2 Samuel",
+    "1 Kings": "1 Kings",
+    "2 Kings": "2 Kings",
+    "1 Chronicles": "1 Chronicles",
+    "2 Chronicles": "2 Chronicles",
+    "Ezra": "Ezra",
+    "Nehemiah": "Nehemiah",
+    "Esther": "Esther",
+    "Job": "Job",
+    "Psalms": "Psalms",
+    "Proverbs": "Proverbs",
+    "Ecclesiastes": "Ecclesiastes",
+    "Song of Solomon": "Song of Solomon",
+    "Isaiah": "Isaiah",
+    "Jeremiah": "Jeremiah",
+    "Lamentations": "Lamentations",
+    "Ezekiel": "Ezekiel",
+    "Daniel": "Daniel",
+    "Hosea": "Hosea",
+    "Joel": "Joel",
+    "Amos": "Amos",
+    "Obadiah": "Obadiah",
+    "Jonah": "Jonah",
+    "Micah": "Micah",
+    "Nahum": "Nahum",
+    "Habakkuk": "Habakkuk",
+    "Zephaniah": "Zephaniah",
+    "Haggai": "Haggai",
+    "Zechariah": "Zechariah",
+    "Malachi": "Malachi",
+    "Matthew": "Matthew",
+    "Mark": "Mark",
+    "Luke": "Luke",
+    "John": "John",
+    "Acts": "Acts",
+    "Romans": "Romans",
+    "1 Corinthians": "1 Corinthians",
+    "2 Corinthians": "2 Corinthians",
+    "Galatians": "Galatians",
+    "Ephesians": "Ephesians",
+    "Philippians": "Philippians",
+    "Colossians": "Colossians",
+    "1 Thessalonians": "1 Thessalonians",
+    "2 Thessalonians": "2 Thessalonians",
+    "1 Timothy": "1 Timothy",
+    "2 Timothy": "2 Timothy",
+    "Titus": "Titus",
+    "Philemon": "Philemon",
+    "Hebrews": "Hebrews",
+    "James": "James",
+    "1 Peter": "1 Peter",
+    "2 Peter": "2 Peter",
+    "1 John": "1 John",
+    "2 John": "2 John",
+    "3 John": "3 John",
+    "Jude": "Jude",
+    "Revelation": "Revelation"
   },
   "events": {
     "adam": {
       "title": "Adam",
-      "source": "Genesis 5:3-5"
+      "source": "Gen5:5"
     },
     "seth": {
       "title": "Seth",
-      "source": ""
+      "source": "Gen5:3,8"
     },
     "enosh": {
       "title": "Enosh",
-      "source": ""
+      "source": "Gen5:6,11"
     },
     "kenan": {
       "title": "Kenan",
-      "source": ""
+      "source": "Gen5:9,14"
     },
     "mahalalel": {
       "title": "Mahalalel",
-      "source": ""
+      "source": "Gen5:12,17"
     },
     "jared": {
       "title": "Jared",
-      "source": ""
+      "source": "Gen5:15,20"
     },
     "enoch": {
       "title": "Enoch",
-      "source": ""
+      "source": "Gen5:18,23"
     },
     "methuselah": {
       "title": "Methuselah",
-      "source": ""
+      "source": "Gen5:21,27"
     },
     "lamech": {
       "title": "Lamech",
-      "source": ""
+      "source": "Gen5:25,31"
     },
     "noah": {
       "title": "Noah",
-      "source": ""
+      "source": "Gen5:28"
     },
 
     "flood": {
       "title": "Flood",
-      "source": ""
+      "source": "Gen7:11, Gen8:13"
     },
 
     "shem": {
       "title": "Shem",
-      "source": ""
-    },
-    "ham": {
-      "title": "Ham",
-      "source": ""
-    },
-    "japheth": {
-      "title": "Japheth",
-      "source": ""
+      "source": "Gen11:10-11"
     },
     "arphaxad": {
       "title": "Arphaxad",
-      "source": ""
+      "source": "Gen11:10-13"
     },
     "kainan": {
       "title": "Kainan",
-      "source": ""
+      "source": "(Septuagint Only) Gen11:12-13"
     },
     "shelah": {
       "title": "Shelah",
-      "source": ""
+      "source": "Gen11:12-15"
     },
     "eber": {
       "title": "Eber",
-      "source": ""
+      "source": "Gen11:14-17"
     },
     "peleg": {
       "title": "Peleg",
-      "source": ""
+      "source": "Gen11:15-19"
     },
     "reu": {
       "title": "Reu",
-      "source": ""
+      "source": "Gen11:17-21"
     },
     "serug": {
       "title": "Serug",
-      "source": ""
+      "source": "Gen11:19-23"
     },
     "nahor": {
       "title": "Nahor",
-      "source": ""
+      "source": "Gen11:21-25"
     },
     "terah": {
       "title": "Terah",
-      "source": ""
+      "source": "Gen11:24,32"
     },
     "abraham": {
       "title": "Abraham",
+      "source": "Gen12:4, Gen25:7, Acts7:4"
+    },
+    "covenant": {
+      "title": "God's covenant with Abraham",
+      "source": "Gen17:1-2"
+    },
+    "sojourn430": {
+      "title": "Sojourning (430 Years)",
+      "source": ""
+    },
+    "sojourn400": {
+      "title": "Sojourning (400 Years)",
+      "source": ""
+    },
+    "sojourn450": {
+      "title": "Sojourning (450 Years)",
       "source": ""
     },
     "isaac": {
       "title": "Isaac",
-      "source": ""
+      "source": "Gen21:5,Gen35:28"
     },
     "jacob": {
-      "title": "Jacob",
+      "title": "Jacob (Israel)",
+      "source": "Gen25:26, Gen47:28"
+    },
+    "jacobInEgypt": {
+      "title": "Jacob's Time in Egypt",
+      "source": "Gen47:28"
+    },
+    "joseph": {
+      "title": "Joseph",
+      "source": "Gen41:46, Gen50:26"
+    },
+    "josephEnslaved": {
+      "title": "Joseph Enslaved in Egypt",
+      "source": "Gen37:2"
+    },
+    "egyptFeastAndFamine": {
+      "title": "7yrs of Plenty + 7yrs of Famine",
+      "source": "Gen41:46-53, Gen45:4-6"
+    },
+    "exodus": {
+      "title": "The Exodus",
+      "source": ""
+    },
+    "moses": {
+      "title": "Moses",
+      "source": "Exo7:7, Deu34:7"
+    },
+    "mosesMidian": {
+      "title": "Moses in Midian",
+      "source": "Acts7:23-29"
+    },
+    "wandering": {
+      "title": "Wandering in the Desert",
+      "source": ""
+    },
+    "conquering": {
+      "title": "Taking the Promised Land",
+      "source": ""
+    },
+    "temple1start": {
+      "title": "The Building of the First Temple",
+      "source": ""
+    },
+    "solomon": {
+      "title": "Solomon's Reign",
+      "source": ""
+    },
+    "rehoboam": {
+      "title": "Rehoboam's Reign",
+      "source": ""
+    },
+    "abijam": {
+      "title": "Abijam's Reign",
+      "source": ""
+    },
+    "asa": {
+      "title": "Asa's Reign",
+      "source": ""
+    },
+    "jehoshaphat": {
+      "title": "Jehoshaphat's Reign",
+      "source": ""
+    },
+    "jehoram": {
+      "title": "Jehoram's Reign",
+      "source": ""
+    },
+    "ahaziah": {
+      "title": "Ahaziah's Reign",
+      "source": ""
+    },
+    "athaliah": {
+      "title": "Athaliah's Reign",
+      "source": ""
+    },
+    "joash": {
+      "title": "Joash's Reign",
+      "source": ""
+    },
+    "amaziah": {
+      "title": "Amaziah's Reign",
+      "source": ""
+    },
+    "uzziah": {
+      "title": "Uzziah's Reign",
+      "source": ""
+    },
+    "jotham": {
+      "title": "Jotham's Reign",
+      "source": ""
+    },
+    "ahaz": {
+      "title": "Ahaz's Reign",
+      "source": ""
+    },
+    "hezekiah": {
+      "title": "Hezekiah's Reign",
+      "source": ""
+    },
+    "manasseh": {
+      "title": "Manasseh's Reign",
+      "source": ""
+    },
+    "amon": {
+      "title": "Amon's Reign",
+      "source": ""
+    },
+    "josiah": {
+      "title": "Josiah's Reign",
+      "source": ""
+    },
+    "jehoahaz": {
+      "title": "Jehoahaz's Reign",
+      "source": ""
+    },
+    "eliakim": {
+      "title": "Eliakim's Reign",
+      "source": ""
+    },
+    "jehoiachin": {
+      "title": "Jehoiachin's Reign",
+      "source": ""
+    },
+    "zedekiah": {
+      "title": "Zedekiah's Reign",
+      "source": ""
+    },
+    "exile": {
+      "title": "The Exile",
+      "source": ""
+    },
+    "dan69weeks": {
+      "title": "First 69 Weeks of Daniel",
+      "source": ""
+    },
+    "messiah": {
+      "title": "Jesus Christ",
+      "source": ""
+    },
+    "temple2end": {
+      "title": "Second Temple Destroyed",
       "source": ""
     }
   }
