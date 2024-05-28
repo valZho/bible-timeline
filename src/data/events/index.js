@@ -1,12 +1,14 @@
-import data1 from './data-1';
-import data2 from './data-2';
-import data3 from './data-3';
-import data4 from './data-4';
-import data5 from './data-5';
+import bibleData1 from './bible/data-1';
+import bibleData2 from './bible/data-2';
+import bibleData3 from './bible/data-3';
+import bibleData4 from './bible/data-4';
+import bibleData5 from './bible/data-5';
+
+import secularData1 from './secular/data-1';
 
 import convertToTimeline from './utils/convertToTimeline';
 
-const getEvents = ({ ages, ...options }) => {
+const getEvents = ({ ages, jubilee, ...options }) => {
   // FIRST GENERATE A KEYED OBJECT OF EVENTS
   // using an object first makes it much easier to reference events for doing relative dates
   //
@@ -33,15 +35,21 @@ const getEvents = ({ ages, ...options }) => {
   //
   const MT = ages === 'mt';
   const LXX = ages === 'lxx';
-  const events = {
-    ...data1(MT, LXX),
-    ...data2(MT, LXX),
-    ...data3(),
-    ...data4(),
-    ...data5(),
+  const INTERCALATED = jubilee === 'intercalated';
+
+  const bibleEvents = {
+    ...bibleData1(MT, LXX),
+    ...bibleData2(MT, LXX),
+    ...bibleData3(),
+    ...bibleData4(),
+    ...bibleData5(INTERCALATED),
   };
 
-  return convertToTimeline({ events, ...options });
+  const secularEvents = {
+    ...secularData1(),
+  };
+
+  return convertToTimeline({ bibleEvents, secularEvents, ...options });
 };
 
 export default getEvents;

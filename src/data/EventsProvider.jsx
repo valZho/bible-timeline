@@ -16,6 +16,7 @@ const EventsProvider = () => {
   const margins = useRecoilValue(OPTIONS.margins);
   const trackMin = useRecoilValue(OPTIONS.trackMin);
   const crucifixion = useRecoilValue(OPTIONS.crucifixion);
+  const jubilee = useRecoilValue(OPTIONS.jubilee);
 
   useEffect(() => {
     const { events, ceConvert, farRight, trackCount } = getEvents({
@@ -24,13 +25,14 @@ const EventsProvider = () => {
       margins: margins === 'on',
       trackMin,
       crucifixion,
+      jubilee,
     });
 
     setEvents(events);
     setCeConvert(ceConvert);
     setFarRight(farRight);
     setTrackCount(trackCount);
-  }, [ages, scale, margins, trackMin, crucifixion, setEvents, setCeConvert, setFarRight, setTrackCount]);
+  }, [ages, scale, margins, trackMin, crucifixion, jubilee, setEvents, setCeConvert, setFarRight, setTrackCount]);
 
   return <></>;
 };

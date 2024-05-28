@@ -85,7 +85,6 @@ const Ruler = () => {
       const yearAM = (i + 1) * cycle + dateOffset;
       // if the scale is too low, then remove every other label to avoid overlaps
       if (i % 2 && scale < 2) return '';
-      const { year, label } = getDate({ yearAM, need: calendar, ...ceConvert });
       return (
         <text
           key={`jText${yearAM}`}
@@ -95,7 +94,7 @@ const Ruler = () => {
           fontSize="0.8rem"
           fontWeight="bold"
         >
-          {t(`timeline.${label}`, { year })}
+          {t(...getDate({ yearAM, need: calendar, ...ceConvert }).label)}
         </text>
       );
     });
@@ -114,10 +113,9 @@ const Ruler = () => {
           return '';
         }
         const yearAM = (i + 1) * 7 + intercalation;
-        const { year, label } = getDate({ yearAM, need: calendar, ...ceConvert });
         return (
           <text key={`sText${yearAM}`} x={placeText(yearAM)} y="45%" textAnchor="middle" fontSize="0.7rem">
-            {t(`timeline.${label}`, { year })}
+            {t(...getDate({ yearAM, need: calendar, ...ceConvert }).label)}
           </text>
         );
       });

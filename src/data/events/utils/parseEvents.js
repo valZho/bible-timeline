@@ -49,8 +49,9 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
   // }
 
   processed[key] = {
+    ...src,
     key,
-    years: src.years,
+    years: src.years || 0,
     extraBuffer: src.extraBuffer || 0,
     marginWidth: (src.margin || 0) * 2 * scale,
     display: {
@@ -59,6 +60,8 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
       track: 0,
     },
   };
+
+  if (key === 'temple2end') console.log('>>>>>>>>', key, src);
 
   // START DATE & MARGIN START -------------------------
   // specific start date
@@ -110,6 +113,8 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
 
   // UPDATE GLOBAL MAX VALUES -------------------------
   // farRight = Math.max(farRight, processed[key].display.right);
+
+  if (key === 'temple2end') console.log('========>', key, processed[key]);
 
   return {
     related: processed[key],

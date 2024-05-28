@@ -395,9 +395,23 @@
       "title": "Jesus Christ",
       "source": ""
     },
+
+
+    "pyramidDjoser": {
+      "title": "The Building of the Pyramid of Djoser"
+    },
+    "pyramidsGiza": {
+      "title": "The Building of the Great Pyramids of Giza"
+    },
     "temple2end": {
       "title": "Second Temple Destroyed",
       "source": ""
+    },
+    "israelReformed": {
+      "title": "Reestablishment of Nation of Israel"
+    },
+    "today": {
+      "title": "TODAY"
     }
   }
 }

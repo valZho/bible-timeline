@@ -3,16 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
 import { HoverCard, LoadingOverlay, Text } from '@mantine/core';
 
-import OPTIONS from '../../../data/state-options';
-import CALENDAR from '../../../data/state-calendar';
-
-import BibleLink from '../../BibleLink';
+import OPTIONS from '@/data/state-options';
+import CALENDAR from '@/data/state-calendar';
+import BibleLink from '@/components/BibleLink';
+import getDate from '@/data/events/utils/getDate';
 
 import './style.scss';
 
 const Events = () => {
   const { t } = useTranslation();
   const events = useRecoilValue(CALENDAR.events);
+  const ceConvert = useRecoilValue(CALENDAR.ceConvert);
   const farRight = useRecoilValue(CALENDAR.farRight);
   const trackCount = useRecoilValue(CALENDAR.trackCount);
   const margins = useRecoilValue(OPTIONS.margins);
@@ -43,31 +44,35 @@ const Events = () => {
       endCE,
       display: { hideEndDate },
     }) => {
-      let startDate, endDate;
-
-      if (calendar === 'am') {
-        startDate = t('timeline.dateAM', { year: startAM });
-        endDate = t('timeline.dateAM', { year: endAM });
-      } else {
-        startDate = t(`timeline.date${startCE > 0 ? 'AD' : 'BC'}`, { year: Math.abs(startCE) });
-        endDate = t(`timeline.date${endCE > 0 ? 'AD' : 'BC'}`, { year: Math.abs(endCE) });
-      }
-
-      if (margins) {
-        startDate = marginStart ? t('timeline.date_wMargin', { date: startDate, count: marginStart }) : startDate;
-        endDate = marginEnd ? t('timeline.date_wMargin', { date: endDate, count: marginEnd }) : endDate;
-      }
-
       return (
         <div className="labels">
           <div className="start">
             <span className="title">{t(`events.${key}.title`)}</span>
             {t('timeline.textSeparator')}
-            {startDate}
-            {t('timeline.textSeparator')}
-            <i>{t('timeline.year', { count: years })}</i>
+            {t(
+              ...getDate({
+                yearAM: startAM,
+                yearCE: startCE,
+                need: calendar,
+                ...ceConvert,
+              }).label,
+            )}
+            {years !== 0 && t('timeline.textSeparator')}
+            {years !== 0 && <i>{t('timeline.year', { count: years })}</i>}
           </div>
-          {!hideEndDate && <div className="end">{endDate}</div>}
+          {!hideEndDate && (
+            <div className="end">
+              {' '}
+              {t(
+                ...getDate({
+                  yearAM: endAM,
+                  yearCE: endCE,
+                  need: calendar,
+                  ...ceConvert,
+                }).label,
+              )}
+            </div>
+          )}
         </div>
       );
     };

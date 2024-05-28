@@ -1,5 +1,6 @@
 import parseEvents from './parseEvents';
 import addGregorian from './addGregorian';
+import addHebrew from './addHebrew';
 import setTracks from './setTracks';
 
 /**
@@ -11,7 +12,14 @@ import setTracks from './setTracks';
  * @param {string} tracksOption - ['auto', '10', '20'] - the number of tracks to start with
  * @returns {array} - an array of events normalized for processed[key] to the timeline
  */
-const convertToTimeline = ({ events = {}, scale = 4, margins = true, trackMin = 'auto', crucifixion = 30 }) => {
+const convertToTimeline = ({
+  bibleEvents = {},
+  secularEvents = {},
+  scale = 4,
+  margins = true,
+  trackMin = 'auto',
+  crucifixion = 30,
+}) => {
   // we need to hold processed data in an intermediate keyed object
   // so that we can reference them for relative dates
   const processed = {};
@@ -19,13 +27,21 @@ const convertToTimeline = ({ events = {}, scale = 4, margins = true, trackMin = 
   // keep track of our max values for timeline display
   let farRight = 0;
 
-  // KICK OFF THE PROCESSING LOOP!
-  Object.keys(events).forEach(key => {
-    farRight = parseEvents({ key, events, processed, scale, margins, farRight }).farRight;
+  // RECURSIVELY PROCESS THE HEBREW DATES
+  Object.keys(bibleEvents).forEach(key => {
+    farRight = parseEvents({ key, events: bibleEvents, processed, scale, margins, farRight }).farRight;
   });
 
   // add Gregorian Dates
   const ceConvert = addGregorian({ events: processed, knownDate: crucifixion });
+
+  // add Hebrew Dates to secular events
+  addHebrew({ events: secularEvents, ...ceConvert });
+
+  // RECURSIVELY PROCESS THE GREGORIAN DATES
+  Object.keys(secularEvents).forEach(key => {
+    farRight = parseEvents({ key, events: secularEvents, processed, scale, margins, farRight }).farRight;
+  });
 
   // export events to an array and sort by start
   const eventArray = Object.keys(processed)

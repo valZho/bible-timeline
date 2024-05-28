@@ -9,14 +9,11 @@ import getDate from './getDate';
  * @returns {number} the shift factor for converting dates
  */
 const addGregorian = ({ events = {}, knownKey = 'messiah', knownDate = 30, start = false }) => {
-  const relatedDate = start ? events[knownKey]?.startAM : events[knownKey].endAM - 1;
+  const relatedDate = start ? events[knownKey]?.startAM : events[knownKey].endAM;
   if (!relatedDate) return;
 
-  // const shift = knownDate - relatedDate;
-  const shift = -3 - events['messiah']?.startAM;
+  const shift = knownDate + (start ? 1 : -1) - relatedDate;
   const push = knownDate > 0 ? 'ad' : 'bc';
-
-  console.log(shift, push);
 
   Object.keys(events).forEach(key => {
     events[key].startCE = getDate({ yearAM: events[key].startAM, need: 'ce', shift, push }).year;
