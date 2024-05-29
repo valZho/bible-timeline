@@ -21,7 +21,7 @@
     text-decoration: none;
 
     svg {
-      margin-right: 5px
+      margin-right: 2px
     }
 
     background: transparent;
@@ -32,6 +32,40 @@
     &:hover {
       color: white;
       background-color: var(--mantine-color-anchor);
+    }
+
+    @media (max-width: 850px) {
+      font-size: 1rem !important;
+    }
+  }
+
+  @media (max-width: 680px) {
+    margin-left: 10px;
+    padding-left: 0;
+  }
+
+  @media (max-width: 480px) {
+    border-left: none;
+    padding-left: 0;
+    margin-left: -30px;
+  }
+
+  @media (max-width: 320px) {
+    a {
+      display: inline-block;
+      border-radius: 100px;
+      width: 41px;
+      height: 41px;
+      overflow: hidden;
+      background: var(--mantine-color-blue-filled);
+      color: transparent;
+      &:hover { background: var(--mantine-color-blue-filled) }
+      svg {
+        position: relative;
+        left: 4px;
+        top: -3px;
+        stroke: white;
+      }
     }
   }
 }

@@ -3,7 +3,8 @@
   "bibleVersions": "en CSB-1713 NIV-111 ESV-59",
   "tip": "<strong>TIP:</strong> Hold down the <0>Shift</0> key for horizontal scrolling",
   "notes": {
-    "title": "Notes...",
+    "title": "Important Notes",
+    "button": "NOTES",
     "inclusiveTime": {
       "title": "Inclusive Time",
       "description_wTags": "It is important to understand that the Bible uses an <strong><i>inclusive</i></strong> reconing of time which can be foreign to our modern, Western, <i>exclusive</i> reconing about time.<br /><br />To illustrate, only a full year after birth would we moderns say that a baby is one year old, i.e., they have been alive for a year. In Ancient Isreal, as soon as they were born, it would have been said that they were one, i.e., they were in their first year.<br /><br />Applying this to a Biblical example, in Gen5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we moderns should understand it to mean that he was what we would call 499 years old and \"in his 500th year\" when he became a father. This has obvious implications on dates, and is something to keep in mind."
@@ -44,6 +45,10 @@
       "title": "Crucifixion Date",
       "description_wTags": "There is some dispute as to the exact year that Jesus was crucified. Here you can set what A.D. year the timeline uses for the Crucifixion.<br /><br >For a more detailed discussion on the topic, see the relevant section in the notes.<br /><br /><strong>NOTE:</strong> <i>All</i> Gregorian dates on the timeline are calculated from this date.",
       "optionLabels": ["27 A.D.", "30 A.D.", "33 A.D."]
+    },
+    "calendar": {
+      "ce": "CE",
+      "am": "AM"
     },
     "display": {
       "title": "Timeline Display",
@@ -395,7 +400,6 @@
       "title": "Jesus Christ",
       "source": ""
     },
-
 
     "pyramidDjoser": {
       "title": "The Building of the Pyramid of Djoser"

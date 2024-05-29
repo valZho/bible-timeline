@@ -6,6 +6,15 @@
 
 .mantine-Text-root.scrollingTip {
   color: var(--mantine-color-dimmed);
+  white-space: nowrap;
+
+  @media (max-width: 500px) {
+    margin-left: -40px;
+  }
+
+  @media (max-width: 380px) {
+    display: none;
+  }
 }
 
 .pageTitle {
@@ -13,6 +22,28 @@
   color: var(--mantine-color-blue-3);
   display: inline-block;
   vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 50px;
+  line-height: 50px;
+
+  @media (max-width: 730px) {
+    font-size: 1.3rem !important;
+  }
+
+  @media (max-width: 680px) {
+    margin-left: -30px !important;
+  }
+
+  @media (max-width: 570px) {
+    color: transparent;
+    width: 50px;
+    .logo { margin-right: 0; }
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 
   .logo {
     display: inline-block;
@@ -37,11 +68,17 @@
   }
 }
 
-.calendarControl {
-  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
-  margin-right: 10px;
-}
+.rightToggles {
+  .calendarControl {
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+    margin-right: 10px;
+  }
 
-.themeControl {
-  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+  .themeControl {
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (max-width: 680px) {
+    margin-right: -30px !important;
+  }
 }

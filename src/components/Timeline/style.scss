@@ -1,4 +1,5 @@
 $margin: 20px;
+$smallMargin: 10px;
 
 .timelineContainer {
   position: relative;
@@ -26,5 +27,14 @@ $margin: 20px;
 
   .mantine-ScrollArea-scrollbar {
     z-index: 10;
+  }
+
+  @media (max-width: 680px) {
+    margin: $margin*4 $smallMargin $margin $smallMargin+38px;
+  }
+
+  @media (max-width: 380px) {
+    margin-bottom: $smallMargin;
+    height: calc(100% - $margin*4 - $smallMargin);
   }
 }

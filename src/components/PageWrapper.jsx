@@ -36,7 +36,7 @@ const PageWrapper = () => {
       </Affix>
 
       {/* title */}
-      <Affix position={{ top: 20, left: 40 + 48 }}>
+      <Affix position={{ top: 15, left: 40 + 48 }}>
         <Title order={1} className="pageTitle">
           <IconBiblicalTimeline className="logo" size="50" stroke="1" />
           {t('title')}
@@ -45,7 +45,7 @@ const PageWrapper = () => {
       </Affix>
 
       {/* theme and calendar pickers */}
-      <Affix position={{ top: 20, right: 40 }}>
+      <Affix position={{ top: 20, right: 40 }} className="rightToggles">
         <SegmentedControl
           className="calendarControl"
           size="xs"
@@ -53,8 +53,8 @@ const PageWrapper = () => {
           color={theme.colors.yellow[5]}
           autoContrast
           data={[
-            { label: 'Gregorian', value: 'ce' },
-            { label: 'Hebrew', value: 'am' },
+            { label: t('options.calendar.am'), value: 'am' },
+            { label: t('options.calendar.ce'), value: 'ce' },
           ]}
           value={calendar}
           onChange={setCalendar}
@@ -66,8 +66,8 @@ const PageWrapper = () => {
           color={theme.colors.yellow[5]}
           autoContrast
           data={[
-            { label: sunIcon, value: 'light' },
             { label: moonIcon, value: 'dark' },
+            { label: sunIcon, value: 'light' },
           ]}
           value={colorScheme}
           onChange={setColorScheme}

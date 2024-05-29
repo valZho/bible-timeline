@@ -35,7 +35,7 @@ const optionsState = {
 
   calendar: atom({
     key: 'optionsCalendar',
-    default: 'ce',
+    default: 'am',
     effects_UNSTABLE: [persistAtom],
   }),
 

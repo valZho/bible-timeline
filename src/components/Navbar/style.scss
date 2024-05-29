@@ -3,6 +3,8 @@ $drawer-handle-color-hover: var(--mantine-color-blue-filled-hover);
 
 $z-index: 210;
 
+$hamburger-hide-width: 520px;
+
 .navbarBurger.mantine-Burger-root {
   position: absolute;
   left: 0;
@@ -25,12 +27,26 @@ $z-index: 210;
     background: $drawer-handle-color-hover;
   }
 
+  @media (max-width: 680px) {
+    width: 20px;
+    .mantine-Burger-burger {
+      left: 3px !important;
+    }
+  }
+
   &.navOpen {
     left: calc(27.5rem * var(--mantine-scale));
     box-shadow: 10px 0 10px rgba(0, 0, 0, .6);
-    @media (max-width: 488px) {
+
+    // hide the bar on narrow screens
+    @media (max-width: $hamburger-hide-width) {
       box-shadow: 0 0 0 rgba(0,0,0,0);
       opacity: 0;
+
+      .mantine-Drawer-inner {
+        // display: inline-block;
+        max-width: 80%;
+      }
     }
   }
 
@@ -59,7 +75,7 @@ $z-index: 210;
 
     .mantine-Drawer-close {
       margin-left: 0;
-      @media (min-width: 487px) {
+      @media (min-width: $hamburger-hide-width) {
         display: none;
       }
     }

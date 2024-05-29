@@ -4,6 +4,14 @@
   left: 85px;
   z-index: 30;
 
+  @media (max-width: 680px) {
+    left: 60px;
+  }
+
+  @media (max-width: 380px) {
+    bottom: 30px;
+  }
+
   &.skeleton,
   button {
     box-shadow: 0 4px 8px rgba(0,0,0,.6);
