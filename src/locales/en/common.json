@@ -102,10 +102,15 @@
     "dateAM": "{{year}} AM",
     "dateAD": "{{year}} AD",
     "dateBC": "{{year}} BC",
+    "dateFuzzyAM": "ca.{{year}} AM",
+    "dateFuzzyAD": "ca.{{year}} AD",
+    "dateFuzzyBC": "ca.{{year}} BC",
     "date_wMargin_one": "{{date}} ±{{count}}yr",
     "date_wMargin_other": "{{date}} ±{{count}}yrs",
     "year_one": "{{count}} year",
     "year_other": "{{count}} years",
+    "yearFuzzy_one": "≈{{count}} year",
+    "yearFuzzy_other": "≈{{count}} years",
     "source": "Source:",
     "placement": "Placement:",
     "relativeStart_wTags_one": "{{count}} year from the beginning of: <0>$t(events.{{id}}.title)</0>",
@@ -187,7 +192,7 @@
     "Revelation": "Revelation"
   },
   "events": {
-    "PATRIARCHS": "——————————————————————————————————————————————————————",
+    "PATRIARCHS": "—————————————————————————————————————————————————————————————————",
 
     "adam": {
       "title": "Adam",
@@ -251,6 +256,11 @@
       "source": "Gen11:10-11",
       "placement": ""
     },
+    "nimrod": {
+      "title": "Nimrod [Speculation]",
+      "source": "",
+      "placement": ""
+    },
     "arphaxad": {
       "title": "Arphaxad",
       "source": "Gen11:10-13",
@@ -297,7 +307,7 @@
       "placement": ""
     },
 
-    "ABRAHAM to the PROMISED LAND": "——————————————————————————————————————————————————————",
+    "ABRAHAM to the PROMISED LAND": "———————————————————————————————————————————————",
 
     "abraham": {
       "title": "Abraham",
@@ -369,6 +379,11 @@
       "source": "Acts7:23-29",
       "placement": ""
     },
+    "joshua": {
+      "title": "Joshua",
+      "source": "Josh14:7, Josh24:29",
+      "placement": ""
+    },
     "wandering": {
       "title": "Wandering in the Desert",
       "source": "",
@@ -379,8 +394,13 @@
       "source": "",
       "placement": ""
     },
+    "judges": {
+      "title": "Time of the Judges",
+      "source": "",
+      "placement": ""
+    },
 
-    "KINGDOM AGE": "——————————————————————————————————————————————————————",
+    "KINGDOM AGE": "————————————————————————————————————————————————————————————————",
 
     "temple1start": {
       "title": "The Building of the First Temple",
@@ -508,15 +528,53 @@
       "placement": ""
     },
 
-    "ANCIENT HISTORY": "——————————————————————————————————————————————————————",
+    "ROME": "———————————————————————————————————————————————————————————————————————",
+
+    "rome_augustus": {
+      "title": "Reign of Augustus",
+      "source": "",
+      "placement": "27 BC - 14 AD"
+    },
+    "rome_tiberius": {
+      "title": "Reign of Tiberius",
+      "source": "",
+      "placement": "14-37 AD"
+    },
+    "rome_caligula": {
+      "title": "Reign of Caligula",
+      "source": "",
+      "placement": "37-41 AD"
+    },
+    "rome_claudius": {
+      "title": "Reign of Claudius",
+      "source": "",
+      "placement": "41-54 AD"
+    },
+    "rome_nero": {
+      "title": "Reign of Nero",
+      "source": "",
+      "placement": "54-68 AD"
+    },
+    "rome_vespasian": {
+      "title": "Reign of Vespasian",
+      "source": "",
+      "placement": "69-79 AD"
+    },
+    "rome_constantine1": {
+      "title": "Reign of Constantine I",
+      "source": "",
+      "placement": "306-337 AD"
+    },
+
+    "ANCIENT(ish) HISTORY": "———————————————————————————————————————————————————————",
 
     "pyramidDjoser": {
-      "title": "The Building of the Pyramid of Djoser",
+      "title": "Pyramid of Djoser Built",
       "source": "",
       "placement": "2630-2610 BC"
     },
     "pyramidsGiza": {
-      "title": "The Building of the Great Pyramids of Giza",
+      "title": "The Great Pyramids of Giza Built",
       "source": "",
       "placement": "2550-2410 BC"
     },
@@ -525,8 +583,23 @@
       "source": "",
       "placement": "70 AD"
     },
+    "niceanCouncil": {
+      "title": "The Council of Nicea",
+      "source": "",
+      "placement": "325 AD"
+    },
+    "blackDeath": {
+      "title": "The Black Plague",
+      "source": "",
+      "placement": "1346-1353 AD"
+    },
+    "reformation": {
+      "title": "The Reformation",
+      "source": "",
+      "placement": "1517-1685 AD"
+    },
 
-    "WARS": "——————————————————————————————————————————————————————",
+    "WARS": "———————————————————————————————————————————————————————————————————————",
 
     "war_7years": {
       "title": "The Seven Years War",
@@ -534,7 +607,7 @@
       "placement": "1756-1763 AD"
     },
     "war_americanRevolution": {
-      "title": "The American Revolutionary War",
+      "title": "The American Revolution",
       "source": "",
       "placement": "1775-1783 AD"
     },
@@ -543,13 +616,68 @@
       "source": "",
       "placement": "1792-1802 AD"
     },
+    "war_napoleonic": {
+      "title": "The Napoleonic Wars",
+      "source": "",
+      "placement": "1803-1815 AD"
+    },
+    "war_americanCivil": {
+      "title": "The American Civil War",
+      "source": "",
+      "placement": "1861-1865 AD"
+    },
+    "war_wwi": {
+      "title": "World War I",
+      "source": "",
+      "placement": "1914-1918 AD"
+    },
+    "war_wwii": {
+      "title": "World War II",
+      "source": "",
+      "placement": "1939-1945 AD"
+    },
+    "war_korean": {
+      "title": "The Korean War",
+      "source": "",
+      "placement": "1950-1953 AD"
+    },
+    "war_vietnam": {
+      "title": "The Vietnam War",
+      "source": "",
+      "placement": "1955-1975 AD"
+    },
+    "war_cold": {
+      "title": "The Cold War",
+      "source": "",
+      "placement": "1947-1991 AD"
+    },
+    "war_gulf": {
+      "title": "The Gulf War",
+      "source": "",
+      "placement": "1990-1991 AD"
+    },
+    "war_terror": {
+      "title": "The War on Terror",
+      "source": "",
+      "placement": "2001-2021 AD"
+    },
 
-    "MODERN(ish) HISTORY": "——————————————————————————————————————————————————————",
+    "MODERN(ish) HISTORY": "————————————————————————————————————————————————————————",
 
+    "greatDepression": {
+      "title": "The Great Depression",
+      "source": "",
+      "placement": "1929-1939 AD"
+    },
     "israelReformed": {
-      "title": "Reestablishment of the Nation of Israel",
+      "title": "Restoration of Israel",
       "source": "",
       "placement": "1948 AD"
+    },
+    "moonLanding": {
+      "title": "First Moon Landing",
+      "source": "",
+      "placement": "1969 AD"
     },
 
     "today": {

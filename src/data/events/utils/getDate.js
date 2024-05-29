@@ -6,15 +6,18 @@
  * @param {string} need - ['am', 'ce'] - which type of date do we need to return
  * @param {number} shift - the shift factor for converting dates
  * @param {string} push - ['ad', 'bc'] which dates get "pushed" when crossing year 0
+ * @param {boolean} fuzzy - fuzzy dates? (changes label)
  * @returns - ( year: {number}, label: [{string}, { year: {number} }] )
  */
-const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc' }) => {
+const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc', fuzzy = false }) => {
   let newDate;
+
+  const labelBase = `timeline.date${fuzzy ? 'Fuzzy' : ''}`;
 
   // NEED AM DATE -----
   if (need === 'am') {
     // already have AM date, no conversion necessary
-    if (yearAM) return { year: yearAM, label: ['timeline.dateAM', { year: yearAM }] };
+    if (yearAM) return { year: yearAM, label: [`${labelBase}AM`, { year: yearAM }] };
 
     // have CE date > convert
     if (yearCE) {
@@ -22,14 +25,13 @@ const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc' }) => {
       // NO YEAR ZERO!
       if (push === 'ad' && yearCE > 0) newDate--;
       if (push === 'bc' && yearCE < 0) newDate++;
-      return { year: newDate, label: ['timeline.dateAM', { year: newDate }] };
+      return { year: newDate, label: [`${labelBase}AM`, { year: newDate }] };
     }
 
     // NEED CE DATE ---
   } else {
     // already have CE date, no conversion necessary
-    if (yearCE)
-      return { year: yearCE, label: [`timeline.${yearCE > 0 ? 'dateAD' : 'dateBC'}`, { year: Math.abs(yearCE) }] };
+    if (yearCE) return { year: yearCE, label: [`${labelBase}${yearCE > 0 ? 'AD' : 'BC'}`, { year: Math.abs(yearCE) }] };
 
     // need CE and we have AM date > convert
     if (yearAM) {
@@ -37,7 +39,7 @@ const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc' }) => {
       // NO YEAR ZERO!
       if (push === 'ad' && newDate >= 0) newDate++;
       if (push === 'bc' && newDate <= 0) newDate--;
-      return { year: newDate, label: [`timeline.${newDate > 0 ? 'dateAD' : 'dateBC'}`, { year: Math.abs(newDate) }] };
+      return { year: newDate, label: [`${labelBase}${newDate > 0 ? 'AD' : 'BC'}`, { year: Math.abs(newDate) }] };
     }
   }
 

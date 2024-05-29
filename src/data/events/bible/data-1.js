@@ -18,7 +18,7 @@ const eventData1 = (MT, LXX) => {
     methuselah: { relative: { id: 'enoch' }, fatherAt: 187, years: 969 },
     lamech: { relative: { id: 'methuselah' }, fatherAt: LXX ? 182 : 188, years: LXX ? 777 : 753 },
     noah: { relative: { id: 'lamech' }, fatherAt: 600, years: 950 },
-    flood: { relative: { id: 'noah' }, years: 1, exact: true, color: 'red', extraBuffer: 500, hideEndDate: true },
+    flood: { relative: { id: 'noah' }, years: 1, exact: true, color: 'red', buffer: 500, hideEndDate: true },
   };
 
   // normalize event objects

@@ -3,12 +3,12 @@
  * @param {array} events - the date-sorted array of all the events
  * @param {string} trackMin - ['auto', 'all', '{number}', ...] the minimum number of tracks to use
  */
-const setTracks = ({ events = [], trackMin = '20' }) => {
+const setTracks = ({ events = [], trackMin = '20', scale = 4 }) => {
   // set vertical tracks on events
   let trackCount = parseInt(trackMin, 10) || 1;
   let tryNext = 0;
   const tracks = Array(trackCount).fill(-500, 0, trackCount);
-  const buffer = 200; // right-side pixel buffer before slotting new event on same track
+  const buffer = Math.ceil(1500 / scale); // right-side pixel buffer before slotting new event on same track
 
   events.forEach((e, i) => {
     // if trackMin is "all" then every event is just in a sequential track
@@ -21,10 +21,12 @@ const setTracks = ({ events = [], trackMin = '20' }) => {
     let infiniteLoopProtection = 0;
     let alreadyRestartedLoop = false;
     for (let t = tryNext; t < trackCount && infiniteLoopProtection < events.length * 2; t++, infiniteLoopProtection++) {
+      const buffedRight = e.display.right + buffer + e.display.buffer;
+
       // if this event fits on this track, add it
-      if (tracks[t] + buffer + e.extraBuffer < e.display.left) {
+      if (tracks[t] < e.display.left) {
+        tracks[t] = buffedRight;
         tryNext = t === trackCount - 1 ? 0 : t + 1;
-        tracks[t] = e.display.right;
         e.display.track = t;
         break;
       }
@@ -43,7 +45,7 @@ const setTracks = ({ events = [], trackMin = '20' }) => {
       // if yes, there's no room, add this to a new track
       if (alreadyRestartedLoop && t === tryNext) {
         e.display.track = trackCount;
-        tracks.push(e.display.right);
+        tracks.push(buffedRight);
         tryNext = 0; // loop to start
         trackCount++;
         break;

@@ -4,8 +4,8 @@
  */
 const eventData4 = () => {
   const events = {
-    temple1start: { relative: { id: 'exodus', end: 480 }, years: 7, exact: true, color: 'yellow', extraBuffer: 200 },
-    solomon: { relative: { id: 'temple1start', start: -4 }, years: 40, exact: true, color: 'violet' },
+    temple1start: { relative: { id: 'exodus', end: 480 }, years: 7, exact: true, color: 'cyan', extraBuffer: 200 },
+    solomon: { relative: { id: 'temple1start', start: -4 }, years: 40, exact: true, color: 'grape' },
   };
 
   // need solomon in there for reference
@@ -39,7 +39,7 @@ const eventData4 = () => {
       relative: { id: kings[i - 1][0], end: 0 },
       years: kings[i][1],
       exact: true,
-      color: 'violet',
+      color: 'grape',
     };
   }
 

@@ -5,6 +5,9 @@ import bibleData4 from './bible/data-4';
 import bibleData5 from './bible/data-5';
 
 import secularData1 from './secular/data-1';
+import secularData2 from './secular/data-2';
+import secularData3 from './secular/data-3';
+import secularData4 from './secular/data-4';
 
 import convertToTimeline from './utils/convertToTimeline';
 
@@ -47,6 +50,9 @@ const getEvents = ({ ages, jubilee, ...options }) => {
 
   const secularEvents = {
     ...secularData1(),
+    ...secularData2(),
+    ...secularData3(),
+    ...secularData4(),
   };
 
   return convertToTimeline({ bibleEvents, secularEvents, ...options });

@@ -49,7 +49,7 @@ const convertToTimeline = ({
     .sort((a, b) => a.display.left - b.display.left);
 
   // place events in vertical tracks
-  const { events: timeline, trackCount } = setTracks({ events: eventArray, trackMin });
+  const { events: timeline, trackCount } = setTracks({ events: eventArray, trackMin, scale });
 
   return {
     events: timeline,

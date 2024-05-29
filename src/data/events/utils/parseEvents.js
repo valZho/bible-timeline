@@ -52,9 +52,10 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
     ...src,
     key,
     years: src.years || 0,
-    extraBuffer: src.extraBuffer || 0,
     marginWidth: (src.margin || 0) * 2 * scale,
     display: {
+      fuzzy: src.fuzzy ?? false,
+      buffer: src.buffer ?? 0,
       color: src.color,
       hideEndDate: src.hideEndDate,
       track: 0,

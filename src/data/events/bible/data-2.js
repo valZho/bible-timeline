@@ -11,8 +11,8 @@ const eventData2 = (MT, LXX) => {
   const events = {
     // Shem was 100 years old when he had Arphaxad which was 2 years after the flood
     // end of flood + 2 years - 100 years old
-    shem: { relative: { id: 'flood', end: 2 - 100 }, fatherAt: 100, yearsAfter: 500 },
-    arphaxad: { relative: { id: 'shem' }, fatherAt: MT ? 35 : 135, yearsAfter: MT ? 403 : LXX ? 400 : 430 },
+    shem: { relative: { id: 'arphaxad', start: -100 }, fatherAt: 100, yearsAfter: 500 },
+    arphaxad: { relative: { id: 'flood', end: 2 }, fatherAt: MT ? 35 : 135, yearsAfter: MT ? 403 : LXX ? 400 : 430 },
     kainan: { relative: { id: 'arphaxad' }, fatherAt: 130, yearsAfter: 330 },
     shelah: {
       relative: { id: MT ? 'arphaxad' : 'kainan' },
@@ -37,15 +37,22 @@ const eventData2 = (MT, LXX) => {
     // set the years length for all but last item
     if (key !== 'terah') {
       events[key].years = events[key].fatherAt + events[key].yearsAfter;
-      delete events[key].yearsAfter;
     }
 
-    // set relative start date for all but first item
-    if (key !== 'shem') {
+    // shem and arphaxad are weird
+    if (key !== 'shem' && key !== 'arphaxad') {
       events[key].relative.start = events[events[key].relative.id].fatherAt;
-      delete events[events[key].relative.id].fatherAt;
     }
   });
+
+  // cleanup
+  Object.keys(events).forEach(key => {
+    delete events[key].yearsAfter;
+    delete events[key].fatherAt;
+  });
+
+  // This is just guesswork based on the ages and birth years of the others and the fact the nimrod is Shem's grandson
+  events.nimrod = { relative: { id: 'shem', start: MT ? 120 : 260 }, years: MT ? 430 : 500, fuzzy: true };
 
   return events;
 };
