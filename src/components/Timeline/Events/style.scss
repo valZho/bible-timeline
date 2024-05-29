@@ -118,9 +118,12 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
         color: var(--mantine-color-blue-2);
       }
     }
-    span {
+    span.id {
       font-weight: 700;
-      color: var(--mantine-color-blue-1);
+      color: var(--mantine-color-grape-8);
+      :root[data-mantine-color-scheme='light'] & {
+        color: var(--mantine-color-grape-2);
+      }
     }
   }
 }

@@ -12,11 +12,14 @@ import './style.scss';
 
 const Events = () => {
   const { t } = useTranslation();
+
   const events = useRecoilValue(CALENDAR.events);
   const ceConvert = useRecoilValue(CALENDAR.ceConvert);
   const farRight = useRecoilValue(CALENDAR.farRight);
   const trackCount = useRecoilValue(CALENDAR.trackCount);
+
   const margins = useRecoilValue(OPTIONS.margins);
+  const showSource = useRecoilValue(OPTIONS.showSource);
   const calendar = useRecoilValue(OPTIONS.calendar);
 
   const trackHeight = 28;
@@ -80,7 +83,23 @@ const Events = () => {
       );
     };
 
-    return events?.map(e => {
+    const eventWrapper = e => (
+      <div
+        className={`eventWrapper ${e.color ?? ''} track${e.display.track}`}
+        style={{
+          top: e.display.track * trackHeight,
+          left: e.display.left,
+          width: e.display.fullWidth, // add 2 pixels for borders
+        }}
+      >
+        {bar(e.display, e.key)}
+        {labels(e)}
+        <div className="flag" style={{ height: flagHeight, left: e.display.marginStart }} />
+        <div className="flag" style={{ height: flagHeight, right: e.display.marginEnd - 1 }} />
+      </div>
+    );
+
+    const eventWrapperWithSource = e => {
       const source = t(`events.${e.key}.source`);
       let placement = t(`events.${e.key}.placement`);
       if (!placement && e.relative) {
@@ -91,11 +110,10 @@ const Events = () => {
               count: e.relative.start ?? e.relative.end,
               id: e.relative.id,
             }}
-            components={[<span />]}
+            components={[<span className="id" />]}
           />
         );
       }
-
       return (
         <HoverCard
           key={e.key}
@@ -110,21 +128,7 @@ const Events = () => {
           arrowSize={10}
           arrowPosition="side"
         >
-          <HoverCard.Target>
-            <div
-              className={`eventWrapper ${e.color ?? ''} track${e.display.track}`}
-              style={{
-                top: e.display.track * trackHeight,
-                left: e.display.left,
-                width: e.display.fullWidth, // add 2 pixels for borders
-              }}
-            >
-              {bar(e.display, e.key)}
-              {labels(e)}
-              <div className="flag" style={{ height: flagHeight, left: e.display.marginStart }} />
-              <div className="flag" style={{ height: flagHeight, right: e.display.marginEnd - 1 }} />
-            </div>
-          </HoverCard.Target>
+          <HoverCard.Target>{eventWrapper(e)}</HoverCard.Target>
           <HoverCard.Dropdown>
             {placement && (
               <Text className="placementContent" size="xs">
@@ -139,8 +143,15 @@ const Events = () => {
           </HoverCard.Dropdown>
         </HoverCard>
       );
-    });
-  }, [events, t, calendar, ceConvert, margins, flagHeight]);
+    };
+
+    return events?.map(
+      e => {
+        return showSource ? eventWrapperWithSource(e) : eventWrapper(e);
+      },
+      [events, t, calendar, ceConvert, margins, flagHeight],
+    );
+  });
 
   return events.length ? (
     <div className="eventsContainer" style={{ width: farRight + 200, height: trackHeight * (trackCount + 1) }}>

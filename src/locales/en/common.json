@@ -48,7 +48,7 @@
     "tab": "Timeline Options",
     "notificationTitle": "What are all these settings?",
     "notificationText": "For detailed information about these options, why they're here and what they do, please see the notes.",
-    "calendar": {
+    "calculations": {
       "title": "Date Calculation",
       "ages": {
         "title": "Manuscript Source",
@@ -86,6 +86,10 @@
         "title": "Margin of Error",
         "on": "Show",
         "off": "Hide"
+      },
+      "showSource": {
+        "title": "Event Details (for nerds)",
+        "label": "Show reference tooltips?"
       },
       "calendar": {
         "ce": "CE",
@@ -532,21 +536,16 @@
     "war_americanRevolution": {
       "title": "The American Revolutionary War",
       "source": "",
-      "placement": "1756-1763 AD"
+      "placement": "1775-1783 AD"
     },
     "war_frenchRevolution": {
       "title": "The French Revolutionary Wars",
       "source": "",
-      "placement": "1789 AD"
+      "placement": "1792-1802 AD"
     },
 
     "MODERN(ish) HISTORY": "——————————————————————————————————————————————————————",
 
-    "usa": {
-      "title": "USA Declaration of Independence",
-      "source": "",
-      "placement": "1776 AD"
-    },
     "israelReformed": {
       "title": "Reestablishment of the Nation of Israel",
       "source": "",

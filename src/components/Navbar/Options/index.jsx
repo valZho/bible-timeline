@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
 
-import { SegmentedControl, Slider, Alert, Accordion, Text } from '@mantine/core';
+import { SegmentedControl, Slider, Alert, Accordion, Text, Switch } from '@mantine/core';
 import { IconSettingsQuestion } from '@tabler/icons-react';
 
 import OPTIONS from '@/data/state-options';
@@ -14,13 +14,16 @@ const Timeline = () => {
 
   const [panels, setPanels] = useRecoilState(OPTIONS.panels);
 
+  // calculations settings
   const [ages, setAges] = useRecoilState(OPTIONS.ages);
-  const [margins, setMargins] = useRecoilState(OPTIONS.margins);
   const [jubilee, setJubilee] = useRecoilState(OPTIONS.jubilee);
   const [crucifixion, setCrucifixion] = useRecoilState(OPTIONS.crucifixion);
 
+  // display settings
+  const [margins, setMargins] = useRecoilState(OPTIONS.margins);
   const [scale, setScale] = useRecoilState(OPTIONS.scale);
   const [trackMin, setTrackMin] = useRecoilState(OPTIONS.trackMin);
+  const [showSource, setShowSource] = useRecoilState(OPTIONS.showSource);
 
   const controlsColor = 'yellow.5';
   const scaleMax = 20;
@@ -46,10 +49,10 @@ const Timeline = () => {
 
       <Accordion variant="contained" multiple value={panels} onChange={setPanels}>
         <Accordion.Item key="calendar" value="calendar">
-          <Accordion.Control>{t('options.calendar.title')}</Accordion.Control>
+          <Accordion.Control>{t('options.calculations.title')}</Accordion.Control>
           <Accordion.Panel>
             <Text className="settingTitle" size="sm">
-              {t('options.calendar.ages.title')}
+              {t('options.calculations.ages.title')}
             </Text>
             <SegmentedControl
               color={controlsColor}
@@ -59,14 +62,14 @@ const Timeline = () => {
               onChange={setAges}
               fullWidth
               data={[
-                { value: 'best', label: t('options.calendar.ages.best') },
-                { value: 'lxx', label: t('options.calendar.ages.septuagint') },
-                { value: 'mt', label: t('options.calendar.ages.masoretic') },
+                { value: 'best', label: t('options.calculations.ages.best') },
+                { value: 'lxx', label: t('options.calculations.ages.septuagint') },
+                { value: 'mt', label: t('options.calculations.ages.masoretic') },
               ]}
             />
 
             <Text className="settingTitle" size="sm">
-              {t('options.calendar.jubilee.title')}
+              {t('options.calculations.jubilee.title')}
             </Text>
             <SegmentedControl
               color={controlsColor}
@@ -76,14 +79,14 @@ const Timeline = () => {
               onChange={setJubilee}
               fullWidth
               data={[
-                { value: 'inclusive', label: t('options.calendar.jubilee.inclusive') },
-                { value: 'exclusive', label: t('options.calendar.jubilee.exclusive') },
-                { value: 'intercalated', label: t('options.calendar.jubilee.intercalated') },
+                { value: 'inclusive', label: t('options.calculations.jubilee.inclusive') },
+                { value: 'exclusive', label: t('options.calculations.jubilee.exclusive') },
+                { value: 'intercalated', label: t('options.calculations.jubilee.intercalated') },
               ]}
             />
 
             <Text className="settingTitle" size="sm">
-              {t('options.calendar.crucifixion.title')}
+              {t('options.calculations.crucifixion.title')}
             </Text>
             <Slider
               color={controlsColor}
@@ -94,9 +97,9 @@ const Timeline = () => {
               step={1}
               size="md"
               marks={[
-                { value: 27, label: t('options.calendar.crucifixion.optionLabels.0') },
-                { value: 30, label: t('options.calendar.crucifixion.optionLabels.1') },
-                { value: 33, label: t('options.calendar.crucifixion.optionLabels.2') },
+                { value: 27, label: t('options.calculations.crucifixion.optionLabels.0') },
+                { value: 30, label: t('options.calculations.crucifixion.optionLabels.1') },
+                { value: 33, label: t('options.calculations.crucifixion.optionLabels.2') },
               ]}
             />
           </Accordion.Panel>
@@ -116,8 +119,8 @@ const Timeline = () => {
               onChange={setMargins}
               fullWidth
               data={[
-                { value: 'on', label: t('options.display.margins.on') },
                 { value: '', label: t('options.display.margins.off') },
+                { value: 'on', label: t('options.display.margins.on') },
               ]}
             />
 
@@ -146,7 +149,6 @@ const Timeline = () => {
               {t('options.display.trackMin.title')}
             </Text>
             <SegmentedControl
-              label={t('options.display.trackMin.title')}
               color={controlsColor}
               autoContrast
               size="xs"
@@ -160,6 +162,18 @@ const Timeline = () => {
                 { value: '30', label: t('options.display.trackMin.thirty') },
                 { value: 'all', label: t('options.display.trackMin.all') },
               ]}
+            />
+
+            <Text className="settingTitle" size="sm">
+              {t('options.display.showSource.title')}
+            </Text>
+            <Switch
+              color={controlsColor}
+              size="md"
+              checked={showSource}
+              onChange={e => setShowSource(e.currentTarget.checked)}
+              label={t('options.display.showSource.label')}
+              labelPosition="left"
             />
           </Accordion.Panel>
         </Accordion.Item>
