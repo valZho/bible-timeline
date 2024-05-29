@@ -17,15 +17,20 @@ export default [
   },
   { title: 'Recoil', link: 'https://recoiljs.org', icon: IconBrandReact, c1: 'rgb(53, 120, 229)' },
   {
+    title: 'Mantine UI',
+    link: 'https://mantine.dev',
+    icon: IconBrandMantine,
+    c1: 'rgb(51, 154, 240)',
+  },
+  {
     title: 'Recoil-Persist',
     link: 'https://www.npmjs.com/package/recoil-persist',
     icon: IconBrandNpm,
   },
   {
-    title: 'Mantine UI',
-    link: 'https://mantine.dev',
-    icon: IconBrandMantine,
-    c1: 'rgb(51, 154, 240)',
+    title: 'Chapter-and-Verse',
+    link: 'https://www.npmjs.com/package/chapter-and-verse',
+    icon: IconBrandNpm,
   },
   {
     title: 'i18next',
