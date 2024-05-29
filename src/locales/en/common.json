@@ -8,19 +8,7 @@
     "inclusiveTime": {
       "title": "Inclusive Time",
       "description_wTags": "It is important to understand that the Bible uses an <strong><i>inclusive</i></strong> reconing of time which can be foreign to our modern, Western, <i>exclusive</i> reconing about time.<br /><br />To illustrate, only a full year after birth would we moderns say that a baby is one year old, i.e., they have been alive for a year. In Ancient Isreal, as soon as they were born, it would have been said that they were one, i.e., they were in their first year.<br /><br />Applying this to a Biblical example, in Gen5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we moderns should understand it to mean that he was what we would call 499 years old and \"in his 500th year\" when he became a father. This has obvious implications on dates, and is something to keep in mind."
-    }
-  },
-  "project": {
-    "title": "Project",
-    "description": "This project began in 2020 as a quickly hobbled together collection of PHP and CSS I threw together over a weekend just to visualize and verify some things I was reading about. Fast forward to 2024, where I have revisited the idea, but this time set out to build it properly — from the ground up, with modern web dev tools — into something that will hopefully be more usable for, not just me, but anyone who might find it useful!",
-    "description2_wTags": "While I have included many options to accommodate differing views, interpretations, and sources, I doubt I have covered all scenarios. In other words, <i>I am in no way claiming any sort of expertise on this topic</i> ... but I'm also not claiming to come to this completely without opinion either. Mostly, though, I just wanted to do something with my development skills that might help someone else. Feel free to send me a message if you think there's something that could be improved or added, or if you are so inclined and able, the code for this project is available on Github for you to fork and tinker around with yourself.",
-    "cookies": "Cookies are used for saving preferences only.",
-    "builtWith": "Built With",
-    "copyright": "<0 /> 2024, Darren Doyle",
-    "contact": "Contact"
-  },
-  "options": {
-    "title": "Timeline Options",
+    },
     "ages": {
       "title": "Manuscript Source",
       "description_wTags": "The ages of Adam through Terah found in Genesis 5 & 11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC (and I'm not going to bother with the Samaritan Pentateuch which appears to have a lot of problems in this area).<br /><br />There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to these dates (with a couple of exceptions). In particular, I have heavily referenced <0>the work of Henry B. Smith Jr. of the Associates of Biblical Research</0> on the topic, and the \"$t(options.ages.best)\" option is based on his assertions: mostly following the LXX.<br /><br />It's important to note that, despite the preponderance of evidence, and by what I would consider a quirk of history, all English bible translations — even the most recent (and I can't speak for translations in other languages) — are still using the ages found in the MT.<br /><br />I recommend keeping this option set to \"$t(options.ages.best)\", but I have included the ability to set the timeline to use solely the MT or the LXX for the patriarch ages.",
@@ -45,13 +33,42 @@
       "title": "Crucifixion Date",
       "description_wTags": "There is some dispute as to the exact year that Jesus was crucified. Here you can set what A.D. year the timeline uses for the Crucifixion.<br /><br >For a more detailed discussion on the topic, see the relevant section in the notes.<br /><br /><strong>NOTE:</strong> <i>All</i> Gregorian dates on the timeline are calculated from this date.",
       "optionLabels": ["27 A.D.", "30 A.D.", "33 A.D."]
-    },
+    }
+  },
+  "project": {
+    "tab": "Project",
+    "description": "This project began in 2020 as a quickly hobbled together collection of PHP and CSS I threw together over a weekend just to visualize and verify some things I was reading about. Fast forward to 2024, where I have revisited the idea, but this time set out to build it properly — from the ground up, with modern web dev tools — into something that will hopefully be more usable for, not just me, but anyone who might find it useful!",
+    "description2_wTags": "While I have included many options to accommodate differing views, interpretations, and sources, I doubt I have covered all scenarios. In other words, <i>I am in no way claiming any sort of expertise on this topic</i> ... but I'm also not claiming to come to this completely without opinion either. Mostly, though, I just wanted to do something with my development skills that might help someone else. Feel free to send me a message if you think there's something that could be improved or added, or if you are so inclined and able, the code for this project is available on Github for you to fork and tinker around with yourself.",
+    "cookies": "Cookies are used for saving preferences only.",
+    "builtWith": "Built With",
+    "copyright": "<0 /> 2024, Darren Doyle",
+    "contact": "Contact"
+  },
+  "options": {
+    "tab": "Timeline Options",
+    "notificationTitle": "What are all these settings?",
+    "notificationText": "For detailed information about these options, why they're here and what they do, please see the notes.",
     "calendar": {
-      "ce": "CE",
-      "am": "AM"
+      "title": "Date Calculation",
+      "ages": {
+        "title": "Manuscript Source",
+        "septuagint": "Septuagint",
+        "masoretic": "Masoretic",
+        "best": "Best Attested"
+      },
+      "jubilee": {
+        "title": "Jubilee Years",
+        "inclusive": "Inclusive",
+        "exclusive": "Exclusive",
+        "intercalated": "Intercalated"
+      },
+      "crucifixion": {
+        "title": "Crucifixion Date",
+        "optionLabels": ["27 A.D.", "30 A.D.", "33 A.D."]
+      }
     },
     "display": {
-      "title": "Timeline Display",
+      "title": "Display Options",
       "scale": {
         "title": "Horizontal Scale",
         "bigger": "Bigger",
@@ -64,6 +81,15 @@
         "twenty": "20",
         "thirty": "30",
         "all": "Unlimited"
+      },
+      "margins": {
+        "title": "Margin of Error",
+        "on": "Show",
+        "off": "Hide"
+      },
+      "calendar": {
+        "ce": "CE",
+        "am": "AM"
       }
     }
   },
@@ -76,7 +102,14 @@
     "date_wMargin_other": "{{date}} ±{{count}}yrs",
     "year_one": "{{count}} year",
     "year_other": "{{count}} years",
-    "source": "Source:"
+    "source": "Source:",
+    "placement": "Placement:",
+    "relativeStart_wTags_one": "{{count}} year from the beginning of: <0>$t(events.{{id}}.title)</0>",
+    "relativeStart_wTags_zero": "At the beginning of: <0>$t(events.{{id}}.title)</0>",
+    "relativeStart_wTags_other": "{{count}} years from the beginning of: <0>$t(events.{{id}}.title)</0>",
+    "relativeEnd_wTags_one": "{{count}} year from the end of: <0>$t(events.{{id}}.title)</0>",
+    "relativeEnd_wTags_zero": "At the end of: <0>$t(events.{{id}}.title)</0>",
+    "relativeEnd_wTags_other": "{{count}} years from the end of: <0>$t(events.{{id}}.title)</0>"
   },
   "eventPicker": {
     "button": "Go to Event..."
@@ -150,272 +183,380 @@
     "Revelation": "Revelation"
   },
   "events": {
+    "PATRIARCHS": "——————————————————————————————————————————————————————",
+
     "adam": {
       "title": "Adam",
-      "source": "Gen5:5"
+      "source": "Gen5:5",
+      "placement": "At creation"
     },
     "seth": {
       "title": "Seth",
-      "source": "Gen5:3,8"
+      "source": "Gen5:3,8",
+      "placement": ""
     },
     "enosh": {
       "title": "Enosh",
-      "source": "Gen5:6,11"
+      "source": "Gen5:6,11",
+      "placement": ""
     },
     "kenan": {
       "title": "Kenan",
-      "source": "Gen5:9,14"
+      "source": "Gen5:9,14",
+      "placement": ""
     },
     "mahalalel": {
       "title": "Mahalalel",
-      "source": "Gen5:12,17"
+      "source": "Gen5:12,17",
+      "placement": ""
     },
     "jared": {
       "title": "Jared",
-      "source": "Gen5:15,20"
+      "source": "Gen5:15,20",
+      "placement": ""
     },
     "enoch": {
       "title": "Enoch",
-      "source": "Gen5:18,23"
+      "source": "Gen5:18,23",
+      "placement": ""
     },
     "methuselah": {
       "title": "Methuselah",
-      "source": "Gen5:21,27"
+      "source": "Gen5:21,27",
+      "placement": ""
     },
     "lamech": {
       "title": "Lamech",
-      "source": "Gen5:25,31"
+      "source": "Gen5:25,31",
+      "placement": ""
     },
     "noah": {
       "title": "Noah",
-      "source": "Gen5:28"
+      "source": "Gen5:28",
+      "placement": ""
     },
 
     "flood": {
-      "title": "Flood",
-      "source": "Gen7:11, Gen8:13"
+      "title": "The Flood",
+      "source": "Gen7:11, Gen8:13",
+      "placement": ""
     },
 
     "shem": {
       "title": "Shem",
-      "source": "Gen11:10-11"
+      "source": "Gen11:10-11",
+      "placement": ""
     },
     "arphaxad": {
       "title": "Arphaxad",
-      "source": "Gen11:10-13"
+      "source": "Gen11:10-13",
+      "placement": ""
     },
     "kainan": {
       "title": "Kainan",
-      "source": "(Septuagint Only) Gen11:12-13"
+      "source": "(Septuagint Only) Gen11:12-13",
+      "placement": ""
     },
     "shelah": {
       "title": "Shelah",
-      "source": "Gen11:12-15"
+      "source": "Gen11:12-15",
+      "placement": ""
     },
     "eber": {
       "title": "Eber",
-      "source": "Gen11:14-17"
+      "source": "Gen11:14-17",
+      "placement": ""
     },
     "peleg": {
       "title": "Peleg",
-      "source": "Gen11:15-19"
+      "source": "Gen11:15-19",
+      "placement": ""
     },
     "reu": {
       "title": "Reu",
-      "source": "Gen11:17-21"
+      "source": "Gen11:17-21",
+      "placement": ""
     },
     "serug": {
       "title": "Serug",
-      "source": "Gen11:19-23"
+      "source": "Gen11:19-23",
+      "placement": ""
     },
     "nahor": {
       "title": "Nahor",
-      "source": "Gen11:21-25"
+      "source": "Gen11:21-25",
+      "placement": ""
     },
     "terah": {
       "title": "Terah",
-      "source": "Gen11:24,32"
+      "source": "Gen11:24,32",
+      "placement": ""
     },
+
+    "ABRAHAM to the PROMISED LAND": "——————————————————————————————————————————————————————",
+
     "abraham": {
       "title": "Abraham",
-      "source": "Gen12:4, Gen25:7, Acts7:4"
+      "source": "Gen12:4, Gen25:7, Acts7:4",
+      "placement": ""
     },
     "covenant": {
       "title": "God's covenant with Abraham",
-      "source": "Gen17:1-2"
+      "source": "Gen17:1-2",
+      "placement": ""
     },
     "sojourn430": {
       "title": "Sojourning (430 Years)",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "sojourn400": {
       "title": "Sojourning (400 Years)",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "sojourn450": {
       "title": "Sojourning (450 Years)",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "isaac": {
       "title": "Isaac",
-      "source": "Gen21:5,Gen35:28"
+      "source": "Gen21:5,Gen35:28",
+      "placement": ""
     },
     "jacob": {
       "title": "Jacob (Israel)",
-      "source": "Gen25:26, Gen47:28"
+      "source": "Gen25:26, Gen47:28",
+      "placement": ""
     },
     "jacobInEgypt": {
       "title": "Jacob's Time in Egypt",
-      "source": "Gen47:28"
+      "source": "Gen47:28",
+      "placement": ""
     },
     "joseph": {
       "title": "Joseph",
-      "source": "Gen41:46, Gen50:26"
+      "source": "Gen41:46, Gen50:26",
+      "placement": ""
     },
     "josephEnslaved": {
       "title": "Joseph Enslaved in Egypt",
-      "source": "Gen37:2"
+      "source": "Gen37:2",
+      "placement": ""
     },
     "egyptFeastAndFamine": {
       "title": "7yrs of Plenty + 7yrs of Famine",
-      "source": "Gen41:46-53, Gen45:4-6"
+      "source": "Gen41:46-53, Gen45:4-6",
+      "placement": ""
     },
     "exodus": {
       "title": "The Exodus",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "moses": {
       "title": "Moses",
-      "source": "Exo7:7, Deu34:7"
+      "source": "Exo7:7, Deu34:7",
+      "placement": ""
     },
     "mosesMidian": {
       "title": "Moses in Midian",
-      "source": "Acts7:23-29"
+      "source": "Acts7:23-29",
+      "placement": ""
     },
     "wandering": {
       "title": "Wandering in the Desert",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "conquering": {
       "title": "Taking the Promised Land",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
+
+    "KINGDOM AGE": "——————————————————————————————————————————————————————",
+
     "temple1start": {
       "title": "The Building of the First Temple",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "solomon": {
       "title": "Solomon's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "rehoboam": {
       "title": "Rehoboam's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "abijam": {
       "title": "Abijam's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "asa": {
       "title": "Asa's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "jehoshaphat": {
       "title": "Jehoshaphat's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "jehoram": {
       "title": "Jehoram's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "ahaziah": {
       "title": "Ahaziah's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "athaliah": {
       "title": "Athaliah's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "joash": {
       "title": "Joash's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "amaziah": {
       "title": "Amaziah's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "uzziah": {
       "title": "Uzziah's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "jotham": {
       "title": "Jotham's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "ahaz": {
       "title": "Ahaz's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "hezekiah": {
       "title": "Hezekiah's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "manasseh": {
       "title": "Manasseh's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "amon": {
       "title": "Amon's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "josiah": {
       "title": "Josiah's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "jehoahaz": {
       "title": "Jehoahaz's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "eliakim": {
       "title": "Eliakim's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "jehoiachin": {
       "title": "Jehoiachin's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "zedekiah": {
       "title": "Zedekiah's Reign",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "exile": {
       "title": "The Exile",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "dan69weeks": {
       "title": "First 69 Weeks of Daniel",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
     "messiah": {
       "title": "Jesus Christ",
-      "source": ""
+      "source": "",
+      "placement": ""
     },
 
+    "ANCIENT HISTORY": "——————————————————————————————————————————————————————",
+
     "pyramidDjoser": {
-      "title": "The Building of the Pyramid of Djoser"
+      "title": "The Building of the Pyramid of Djoser",
+      "source": "",
+      "placement": "2630-2610 BC"
     },
     "pyramidsGiza": {
-      "title": "The Building of the Great Pyramids of Giza"
+      "title": "The Building of the Great Pyramids of Giza",
+      "source": "",
+      "placement": "2550-2410 BC"
     },
     "temple2end": {
       "title": "Second Temple Destroyed",
-      "source": ""
+      "source": "",
+      "placement": "70 AD"
+    },
+
+    "WARS": "——————————————————————————————————————————————————————",
+
+    "war_7years": {
+      "title": "The Seven Years War",
+      "source": "",
+      "placement": "1756-1763 AD"
+    },
+    "war_americanRevolution": {
+      "title": "The American Revolutionary War",
+      "source": "",
+      "placement": "1756-1763 AD"
+    },
+    "war_frenchRevolution": {
+      "title": "The French Revolutionary Wars",
+      "source": "",
+      "placement": "1789 AD"
+    },
+
+    "MODERN(ish) HISTORY": "——————————————————————————————————————————————————————",
+
+    "usa": {
+      "title": "USA Declaration of Independence",
+      "source": "",
+      "placement": "1776 AD"
     },
     "israelReformed": {
-      "title": "Reestablishment of Nation of Israel"
+      "title": "Reestablishment of the Nation of Israel",
+      "source": "",
+      "placement": "1948 AD"
     },
+
     "today": {
-      "title": "TODAY"
+      "title": "✱ YOU ARE HERE",
+      "source": "",
+      "placement": ""
     }
   }
 }

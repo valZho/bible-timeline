@@ -109,13 +109,18 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
   padding: 5px 10px !important;
   margin-left: 25px;
 
-  .sourceContent {
+  .sourceContent,
+  .placementContent {
     color: var(--mantine-color-body);
     a {
       color: var(--mantine-color-blue-8);
       :root[data-mantine-color-scheme='light'] & {
         color: var(--mantine-color-blue-2);
       }
+    }
+    span {
+      font-weight: 700;
+      color: var(--mantine-color-blue-1);
     }
   }
 }

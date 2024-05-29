@@ -49,12 +49,12 @@ const PageWrapper = () => {
         <SegmentedControl
           className="calendarControl"
           size="xs"
-          radius="xl"
+          radius="sm"
           color={theme.colors.yellow[5]}
           autoContrast
           data={[
-            { label: t('options.calendar.am'), value: 'am' },
-            { label: t('options.calendar.ce'), value: 'ce' },
+            { label: t('options.display.calendar.am'), value: 'am' },
+            { label: t('options.display.calendar.ce'), value: 'ce' },
           ]}
           value={calendar}
           onChange={setCalendar}
@@ -62,7 +62,7 @@ const PageWrapper = () => {
         <SegmentedControl
           className="themeControl"
           size="xs"
-          radius="xl"
+          radius="sm"
           color={theme.colors.yellow[5]}
           autoContrast
           data={[

@@ -1,10 +1,16 @@
-.mantine-Accordion-item {
-  margin-bottom: 0.25rem;
-}
+.options {
+  .alertMessage {
+    margin-bottom: 1rem;
+  }
 
-.mantine-Divider-root {
-  margin: .5rem 0;
-  .mantine-Divider-label {
-    font-size: 0.8rem;
+  .mantine-Accordion-label {
+    font-weight: 700;
+  }
+
+  .settingTitle {
+    margin-bottom: 0.2rem;
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+    }
   }
 }

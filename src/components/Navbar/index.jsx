@@ -40,12 +40,12 @@ const Navbar = () => {
           <Tabs.List>
             <Tabs.Tab value="options">
               <IconSettings className="timelineIcon" size={20} stroke="1.5" />
-              <span>{t('options.title')}</span>
+              <span>{t('options.tab')}</span>
             </Tabs.Tab>
 
             <Tabs.Tab value="project">
               <IconCodeAsterix size={20} stroke="1.5" />
-              <span>{t('project.title')}</span>
+              <span>{t('project.tab')}</span>
             </Tabs.Tab>
           </Tabs.List>
 

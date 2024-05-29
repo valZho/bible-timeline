@@ -3,6 +3,12 @@ import { recoilPersist } from 'recoil-persist';
 const { persistAtom } = recoilPersist();
 
 const optionsState = {
+  panels: atom({
+    key: 'optionsPanels',
+    default: [],
+    effects_UNSTABLE: [persistAtom],
+  }),
+
   scale: atom({
     key: 'optionsScale',
     default: 10,

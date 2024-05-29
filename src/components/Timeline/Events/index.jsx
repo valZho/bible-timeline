@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
 import { HoverCard, LoadingOverlay, Text } from '@mantine/core';
 
@@ -82,6 +82,20 @@ const Events = () => {
 
     return events?.map(e => {
       const source = t(`events.${e.key}.source`);
+      let placement = t(`events.${e.key}.placement`);
+      if (!placement && e.relative) {
+        placement = (
+          <Trans
+            i18nKey={`timeline.relative${typeof e.relative.start === 'number' ? 'Start' : 'End'}_wTags`}
+            values={{
+              count: e.relative.start ?? e.relative.end,
+              id: e.relative.id,
+            }}
+            components={[<span />]}
+          />
+        );
+      }
+
       return (
         <HoverCard
           key={e.key}
@@ -90,7 +104,7 @@ const Events = () => {
           size="xs"
           position="bottom-start"
           closeDelay={100}
-          disabled={!source}
+          disabled={!source && !placement}
           withinPortal={false}
           withArrow
           arrowSize={10}
@@ -112,15 +126,21 @@ const Events = () => {
             </div>
           </HoverCard.Target>
           <HoverCard.Dropdown>
-            <Text className="sourceContent" size="xs">
-              <strong>{t('timeline.source', { manuscript: 'Septuagint' })}</strong>{' '}
-              <BibleLink bibleRef={t(`events.${e.key}.source`)} />
-            </Text>
+            {placement && (
+              <Text className="placementContent" size="xs">
+                <strong>{t('timeline.placement', {})}</strong> {placement}
+              </Text>
+            )}
+            {source && (
+              <Text className="sourceContent" size="xs">
+                <strong>{t('timeline.source')}</strong> <BibleLink bibleRef={source} />
+              </Text>
+            )}
           </HoverCard.Dropdown>
         </HoverCard>
       );
     });
-  }, [events, calendar, margins, flagHeight, t]);
+  }, [events, t, calendar, ceConvert, margins, flagHeight]);
 
   return events.length ? (
     <div className="eventsContainer" style={{ width: farRight + 200, height: trackHeight * (trackCount + 1) }}>
