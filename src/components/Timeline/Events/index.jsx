@@ -44,35 +44,38 @@ const Events = () => {
       endCE,
       display: { hideEndDate },
     }) => {
+      let startLabel = t(
+        ...getDate({
+          yearAM: startAM,
+          yearCE: startCE,
+          need: calendar,
+          ...ceConvert,
+        }).label,
+      );
+      let endLabel = t(
+        ...getDate({
+          yearAM: endAM,
+          yearCE: endCE,
+          need: calendar,
+          ...ceConvert,
+        }).label,
+      );
+
+      if (margins) {
+        startLabel = marginStart ? t(`timeline.date_wMargin`, { date: startLabel, count: marginStart }) : startLabel;
+        endLabel = marginEnd ? t(`timeline.date_wMargin`, { date: endLabel, count: marginEnd }) : endLabel;
+      }
+
       return (
         <div className="labels">
           <div className="start">
             <span className="title">{t(`events.${key}.title`)}</span>
             {t('timeline.textSeparator')}
-            {t(
-              ...getDate({
-                yearAM: startAM,
-                yearCE: startCE,
-                need: calendar,
-                ...ceConvert,
-              }).label,
-            )}
+            {startLabel}
             {years !== 0 && t('timeline.textSeparator')}
             {years !== 0 && <i>{t('timeline.year', { count: years })}</i>}
           </div>
-          {!hideEndDate && (
-            <div className="end">
-              {' '}
-              {t(
-                ...getDate({
-                  yearAM: endAM,
-                  yearCE: endCE,
-                  need: calendar,
-                  ...ceConvert,
-                }).label,
-              )}
-            </div>
-          )}
+          {!hideEndDate && <div className="end">{endLabel}</div>}
         </div>
       );
     };
