@@ -5,17 +5,9 @@ import { useRecoilValue } from 'recoil';
 
 import chapterAndVerse from 'chapter-and-verse/js/cv';
 
-import BIBLES from '../../data/state-bibles';
+import BIBLES from '@/data/state-bibles';
+import { YOU_VERSION } from '@/data/constants';
 import { Anchor } from '@mantine/core';
-
-// Bible.com's book abbreviations
-const ABBREVIATIONS = {
-  Exodus: 'Exo',
-  Deuteronomy: 'Deu',
-  Matthew: 'Mat',
-  John: 'Jhn',
-  Acts: 'Act',
-};
 
 // Add links to Bible.com in source strings
 const BibleLink = ({ bibleRef = '' }) => {
@@ -36,7 +28,7 @@ const BibleLink = ({ bibleRef = '' }) => {
     const ID = split.length > 1 ? bibles[split.shift().toUpperCase()] ?? bibles.default : bibles.default;
 
     const parsed = chapterAndVerse(split[0]);
-    const BOOK = ABBREVIATIONS[parsed.book.name] || parsed.book.id;
+    const BOOK = YOU_VERSION[parsed.book.name] || parsed.book.id;
     const CHAPTER = parsed.chapter;
     let VERSES = `${parsed.from}${parsed.from === parsed.to ? '' : '-' + parsed.to}`;
 
