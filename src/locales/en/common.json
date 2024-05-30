@@ -1,38 +1,29 @@
 {
   "title": "Biblical Timeline",
-  "bibleVersions": "en CSB-1713 NIV-111 ESV-59",
+  "bibleVersions": "en CSB-1713 NIV-111 ESV-59 HCSB-72",
   "tip": "<strong>TIP:</strong> Hold down the <0>Shift</0> key for horizontal scrolling",
   "notes": {
     "title": "Important Notes",
     "button": "NOTES",
     "inclusiveTime": {
       "title": "Inclusive Time",
-      "description_wTags": "It is important to understand that the Bible uses an <strong><i>inclusive</i></strong> reconing of time which can be foreign to our modern, Western, <i>exclusive</i> reconing about time.<br /><br />To illustrate, only a full year after birth would we moderns say that a baby is one year old, i.e., they have been alive for a year. In Ancient Isreal, as soon as they were born, it would have been said that they were one, i.e., they were in their first year.<br /><br />Applying this to a Biblical example, in Gen5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we moderns should understand it to mean that he was what we would call 499 years old and \"in his 500th year\" when he became a father. This has obvious implications on dates, and is something to keep in mind."
+      "description_wTags": "It is important to understand that the Bible uses an <strong><i>inclusive</i></strong> reconing of time which can be foreign to our modern, Western, <i>exclusive</i> reconing about time.<br /><br />To illustrate, only a full year after birth would we moderns say that a baby is one year old, i.e., they have been alive for at least one full year. However, in Ancient Isreal, as soon as they were born, it would have been said that they were one, i.e., they were in their first year.<br /><br />Applying this to a Biblical example, in hcsb|Gen 5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we moderns should understand it to mean that he was \"in his 500th year\" even though we would say he was 499 years old by our reconing. This has obvious implications on dates, and is something to keep in mind."
     },
     "ages": {
-      "title": "Manuscript Source",
-      "description_wTags": "The ages of Adam through Terah found in Genesis 5 & 11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC (and I'm not going to bother with the Samaritan Pentateuch which appears to have a lot of problems in this area).<br /><br />There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to these dates (with a couple of exceptions). In particular, I have heavily referenced <0>the work of Henry B. Smith Jr. of the Associates of Biblical Research</0> on the topic, and the \"$t(options.ages.best)\" option is based on his assertions: mostly following the LXX.<br /><br />It's important to note that, despite the preponderance of evidence, and by what I would consider a quirk of history, all English bible translations — even the most recent (and I can't speak for translations in other languages) — are still using the ages found in the MT.<br /><br />I recommend keeping this option set to \"$t(options.ages.best)\", but I have included the ability to set the timeline to use solely the MT or the LXX for the patriarch ages.",
-      "septuagint": "Septuagint",
-      "masoretic": "Masoretic",
-      "best": "Best Attested"
+      "title": "Patriarch Ages: The Masoretic Text vs The Septuagint",
+      "description_wTags": "The ages of Adam through Terah found in Gen5 & Gen11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC. And for those in the know, I'm not going to bother with the Samaritan Pentateuch which appears to have a lot of problems in this area.<br /><br />It's important to note that, despite the preponderance of evidence, and by what I would consider a quirk of history, <i>all</i> English bible translations — even the most recent — are still using the ages found in the MT. I assume changing the dates at this point would probably raise too much ire and controversy, which is unfortunate.<br /><br /><0><0></0> <strong>$t(options.calculations.ages.title)</strong></0><br /><br /><0>$t(options.calculations.ages.best)</0> — There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to the patriarchal dates with a couple of minor exceptions. I have heavily referenced <1>the work of Henry B. Smith Jr. of the Associates of Biblical Research</1> on the topic, and this settings is based on his assertions which mostly follow the LXX, but make corrections in a couple of key places.<br /><br /><0>$t(options.calculations.ages.septuagint)</0> — Strictly follow the partiarchal ages found in the Septuagint.<br /><br /><0>$t(options.calculations.ages.masoretic)</0> — Strictly follow the partiarchal ages found in the Masoretic Text. Note that the MT excludes Kainan (son of Arphaxad and father of Shelah)."
     },
     "margins": {
       "title": "Margin of Error",
-      "description_wTags": "When constructing a Biblical timeline there is going to be some margin of error on <i>all</i> of your dates. This is inescapable by virtue of how the Bible lists birth years in Genesis; the Bible will list the year a person had their first child, but was that child born at the beginning of that year, the end, or somewhere in the middle? Naturally, that places a ±6mo margin of error on all dates of birth for the patriarchs (save Adam) which compounds to about a ±10yr margin of error for all subsequent dates.<br /><br />A common method around this is to just assume that placing all of these birth dates at the middle of the year will more-or-less average itself out. Technically it's less precise, but likely gets you pretty close — in essence, the margins of error are still there, you just won't see them.",
-      "on": "Show",
-      "off": "Hide"
+      "description_wTags": "When constructing a Biblical timeline there is going to be some margin of error on <i>all</i> of your dates. This is inescapable by virtue of how the Bible lists birth years in Genesis; the Bible will list the year a person had their first child, but was that child born at the beginning of that year, the end, or somewhere in the middle? Naturally, that places a ±6mo margin of error on all dates of birth for the patriarchs (save Adam) which compounds to about a ±10yr margin of error for all subsequent dates.<br /><br />A common method around this is to just assume that placing all of these birth dates at the middle of the year will more-or-less average itself out. Technically it's less precise, but likely gets you pretty close — in essence, the margins of error are still there, you just won't see them."
     },
     "jubilee": {
       "title": "Jubilee Years",
-      "description_wTags": "Leviticus 25 mandates the observation of a sabbath year (the <i>\"shmita\"</i>) every 7th year and a jubilee year every 7 shmita. Apparently, there is some wiggle room for interpretation on just when the jubilee year occurs in relation to the shmita cycle. Below are the three different methods for calculating the jubilee year that I have seen floating around out there:<br /><br /><strong>• Inclusive:</strong> Each jubilee year overlaps with each 49th (<i>shmita</i>) year.<br /><br /><strong>• Exclusive:</strong> Each jubilee year begins <i>after</i> each 49th (<i>shmita</i>) year and overlaps with the 1st year of each new shmita cycle (49-year cycles)<br /><br /><strong>• Intercalated:</strong> Each jubilee year begins <i>after</i> the 49th (<i>shmita</i>) year and interrupts the shmita cycle with an intercalated (inserted) year. The first year of the next shmita cycle begins <i>after</i> the jubilee year (50-year cycles)",
-      "inclusive": "Inclusive",
-      "exclusive": "Exclusive",
-      "intercalated": "Intercalated"
+      "description_wTags": "Leviticus 25 mandates the observation of a sabbath year — the <i>\"shmita\"</i> — every 7th year and a jubilee year after every 7th shmita. Apparently, there is some wiggle room for interpretation on just when the jubilee year occurs in relation to the shmita cycle. Below are the three different methods for calculating the jubilee year that I have seen floating around out there. Although the \"exclusive\" method seems the most obvious to me, I have included the ability to change this in the settings.<br /><br /><strong>• Inclusive:</strong> Each jubilee year <i>overlaps</i> with each 49th shmita. [49-year jubilee cycles]<br /><br /><strong>• Exclusive:</strong> Each jubilee year begins <i>after</i> each 49th shmita and overlaps with the 1st year of the next shmita cycle. [49-year jubilee cycles]<br /><br /><strong>• Intercalated:</strong> Each jubilee year begins <i>after</i> each 49th shmita and interrupts the shmita cycle with an intercalated (inserted) year. The first year of the next shmita cycle begins <i>after</i> the jubilee year. [50-year jubilee cycles] Proponents of this view also claim that Daniel's 70 Weeks (shmita cycles) includes these extra jubilee years intercalated in — which would mean that the 69 cycles leading up to the Messiah would be:<br /><strong><0>    69 \"weeks\" × 7 years each <i>+ 9 jubilees</i> = 492 years</0></strong>"
     },
     "crucifixion": {
       "title": "Crucifixion Date",
-      "description_wTags": "There is some dispute as to the exact year that Jesus was crucified. Here you can set what A.D. year the timeline uses for the Crucifixion.<br /><br >For a more detailed discussion on the topic, see the relevant section in the notes.<br /><br /><strong>NOTE:</strong> <i>All</i> Gregorian dates on the timeline are calculated from this date.",
-      "optionLabels": ["27 A.D.", "30 A.D.", "33 A.D."]
+      "description_wTags": "There is some dispute as to the exact year that Jesus was crucified. Here you can set what A.D. year the timeline uses for the Crucifixion.<br /><br >For a more detailed discussion on the topic, see the relevant section in the notes.<br /><br /><strong>NOTE:</strong> <i>All</i> Gregorian dates on the timeline are calculated from this date."
     }
   },
   "project": {
@@ -102,6 +93,8 @@
     "title": "Events are Ordered by Start Date"
   },
   "timeline": {
+    "bibleReference": "{{book}} {{chapter}}:{{verse}}",
+    "bibleReferenceRange": "{{book}} {{chapter}}:{{verseFrom}}-{{verseTo}}",
     "textSeparator": "  •  ",
     "dateAM": "{{year}} AM",
     "dateAD": "{{year}} AD",
@@ -512,6 +505,11 @@
       "title": "Zedekiah's Reign",
       "source": "",
       "placement": ""
+    },
+    "daniel": {
+      "title": "Daniel [Speculation]",
+      "source": "",
+      "placement": "Daniel was a young man when taken to captivity, which would most likely put him at 13-20 at the time of the exile. We also know that he served "
     },
     "exile": {
       "title": "The Exile",

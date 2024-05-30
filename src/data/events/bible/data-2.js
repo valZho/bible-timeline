@@ -53,6 +53,7 @@ const eventData2 = (MT, LXX) => {
 
   // This is just guesswork based on the ages and birth years of the others and the fact the nimrod is Shem's grandson
   events.nimrod = { relative: { id: 'shem', start: MT ? 120 : 260 }, years: MT ? 430 : 500, fuzzy: true };
+  events.daniel = { relative: { id: 'exile', start: -16 }, years: 85, fuzzy: true };
 
   return events;
 };

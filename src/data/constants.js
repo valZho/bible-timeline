@@ -1,5 +1,5 @@
 // can't hurt to just have a source reference... keeping this around for its usefulness
-export const BOOKS = [
+const BIBLE_BOOKS = [
   'Genesis',
   'Exodus',
   'Leviticus',
@@ -69,7 +69,7 @@ export const BOOKS = [
 ];
 
 // Book name abbreviation for YouVersion (bible.com) reference links
-export const YOU_VERSION = {
+const YOU_VERSION = {
   Genesis: 'GEN',
   Exodus: 'EXO',
   Leviticus: 'LEV',
@@ -137,3 +137,5 @@ export const YOU_VERSION = {
   Jude: 'JUD',
   Revelation: 'REV',
 };
+
+export { BIBLE_BOOKS, YOU_VERSION };

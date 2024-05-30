@@ -5,7 +5,7 @@ import { HoverCard, LoadingOverlay, Text } from '@mantine/core';
 
 import OPTIONS from '@/data/state-options';
 import CALENDAR from '@/data/state-calendar';
-import BibleLink from '@/components/BibleLink';
+import TransWithBible from '@/components/TransWithBible';
 import getDate from '@/data/events/utils/getDate';
 
 import './style.scss';
@@ -141,7 +141,7 @@ const Events = () => {
             )}
             {source && (
               <Text className="sourceContent" size="xs">
-                <strong>{t('timeline.source')}</strong> <BibleLink bibleRef={source} />
+                {/* <strong>{t('timeline.source')}</strong> <BibleLink bibleRef={source} /> */}
               </Text>
             )}
           </HoverCard.Dropdown>

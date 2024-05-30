@@ -69,3 +69,10 @@
     }
   }
 }
+
+.settingLabel {
+  color: var(--mantine-color-blue-1);
+  :root[data-mantine-color-scheme='light'] & {
+    color: var(--mantine-color-blue-8);
+  }
+}

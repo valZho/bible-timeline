@@ -54,6 +54,11 @@ const optionsState = {
     default: [],
     effects_UNSTABLE: [persistAtom],
   }),
+  notes: atom({
+    key: 'optionsNotes',
+    default: [],
+    effects_UNSTABLE: [persistAtom],
+  }),
 };
 
 export default optionsState;
