@@ -25,6 +25,22 @@
   max-width: 80% !important;
   align-items: stretch;
 
+  .title {
+    position: absolute;
+    left: -1px;
+    bottom: calc(100% - 1px);
+    padding: 3px 20px 3px 10px;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.2rem;
+    background: var(--mantine-color-dark-6);
+    border: 1px solid var(--popover-border-color);
+    border-bottom: none;
+    :root[data-mantine-color-scheme='light'] & {
+      background: var(--mantine-color-white);
+      border-color: var(--mantine-color-gray-2);
+    }
+  }
+
   .mantine-Menu-item {
     flex-grow: 1;
     flex-shrink: 0;

@@ -38,7 +38,10 @@ const EventPicker = ({ scrollTo }) => {
         <Menu.Target>
           <Button leftSection={<IconLogin2 size={18} />}>{t('eventPicker.button')}</Button>
         </Menu.Target>
-        <Menu.Dropdown className="eventPickerMenu">{getItems()}</Menu.Dropdown>
+        <Menu.Dropdown className="eventPickerMenu">
+          <div className="title">{t('eventPicker.title')}</div>
+          {getItems()}
+        </Menu.Dropdown>
       </Menu>
     </div>
   ) : (
