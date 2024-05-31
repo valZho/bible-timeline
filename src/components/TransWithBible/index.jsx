@@ -18,7 +18,15 @@ const TransWithBible = ({ i18nKey = '', values = {}, components = [] }) => {
 
   // first pull the source string out of translation
   // this will still have tags in it if present, that's ok
-  let output = t(i18nKey, values);
+  // HEADS UP: the one gotcha here is that if the string contains a colon `:`
+  // the t() function can possibly crash trying to parse the colon as a namespace operator
+  // so I'm wrapping this in a try{} just to catch cases where this can happen
+  let output = i18nKey;
+  try {
+    output = t(i18nKey, values);
+  } catch (e) {
+    output = t(i18nKey.replace(':', '{{REPLACED_COLON}}'), { ...values, REPLACED_COLON: ':' });
+  }
 
   // extract any text with a verse-like structure, e.g., version|Xxxxx #:#-#,#
   const potentialRefs = output.match(/([A-Za-z]+\|){0,1}[A-Za-z]+\W{0,1}\d+(:\d+(-\d+|,\d+)*){0,1}/gi);

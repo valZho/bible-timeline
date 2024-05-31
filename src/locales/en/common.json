@@ -5,25 +5,94 @@
   "notes": {
     "title": "Important Notes",
     "button": "NOTES",
+    "howMade": {
+      "title": "Where Did All These Dates Come From?",
+      "description_wTags": [
+        "Plotting Biblical dates can be tedious and difficult. First of all, there are just <i>so many</i> dates to keep track of, but moreso, everything is in relation to everything else. For example, to get the year Joseph was born: we see that it was 30 years prior to the 14-year period of feast and famine in Egypt ... which began 9 years prior to Jacob's arrival there ... which happened 17 years before his death ... which was 147 years after his birth ... which happened 60 years after Isaac's birth ... which was 100 years after Abraham's birth ... and on and on back to Adam which ultimately establishes <i>all</i> the dates on the calendar. Whew!",
+
+        "After trying to \"check the math\", so to speak, on one author's claims, I realized that a computer could do this stuff much easier than me, and being a web developer, I decided it would be a fun little project to take on. Very quickly I realized that there are a lot of opinions and assumptions out there regarding Biblical dates, and nothing is <i>quite</i> as clean and clear-cut as you might think. So I decided to just add that variability as options with the benefit of getting to see what the different assumptions do to the timeline in relation to everything else.",
+
+        "As stated above, every date on the calendar is ultimately calculated relationally from Adam all the way to the Crucifixion using just the Bible. Once all the Biblical dates are calculated, I then use the user setting for the Gregorian date of the Crucifixion to then calculate and add all of the Gregorian dates to all of the events. Also once this is done, I am able to add secular, Gregorian-only dates to the timeline as well.",
+
+        "<0><0></0> <strong>AM / CE</strong></0> — Using the toggle at the top of the page, you can switch between displaying the Hebrew dates: AM (<i>anno mundi</i>), or the Gregorian dates: CE (common era) ",
+
+        "<0><0></0> <strong>$t(options.display.showSource.title)</strong> — On / Off</0> — Turn this on to show pop-up tooltips for each event listing the Bible verses referenced as well as a plain-language explanation of how the engine placed the item onto the timeline. If you don't need it, these pop-ups can be pretty annoying, so I have it disabled by default."
+      ]
+    },
     "inclusiveTime": {
-      "title": "Inclusive Time",
-      "description_wTags": "It is important to understand that the Bible uses an <strong><i>inclusive</i></strong> reconing of time which can be foreign to our modern, Western, <i>exclusive</i> reconing about time.<br /><br />To illustrate, only a full year after birth would we moderns say that a baby is one year old, i.e., they have been alive for at least one full year. However, in Ancient Isreal, as soon as they were born, it would have been said that they were one, i.e., they were in their first year.<br /><br />Applying this to a Biblical example, in hcsb|Gen 5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we moderns should understand it to mean that he was \"in his 500th year\" even though we would say he was 499 years old by our reconing. This has obvious implications on dates, and is something to keep in mind."
+      "title": "Time and the Bible: Inclusive vs. Exclusive",
+      "description_wTags": [
+        "It is important to understand that the Bible uses an <strong><i>inclusive</i></strong> reconing of time which can be foreign to our modern, Western, <i>exclusive</i> thinking.",
+
+        "To illustrate, imagine the birth of a baby; only a full year later would we say that that baby is one year old, i.e., they have been alive for (at least) one full year. However, in Ancient Isreal, <i>as soon as they were born</i> it would have been said that the baby was one, i.e., they were in their first year.",
+
+        "Applying this to a Biblical example, in Gen 5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we must understand that it is meaning that he was \"in his 500th year\" even though we would recon him to be 499 years old by our exclusive thinking.",
+
+        "All of this is to say that if you aren't expecting the difference between inclusive and exlusive reconing of time, the timeline might seem weird or off to you.",
+
+        "On a related note, because this timeline was built primarily to plot out the history recorded in the Bible, using inclusive dating, this means that the secular events added using only Gregorian dates may also not act <i>completely</i> as you might expect. Nonetheless, I find that having other historical events on the timeline very helpful."
+      ]
     },
     "ages": {
       "title": "Patriarch Ages: The Masoretic Text vs The Septuagint",
-      "description_wTags": "The ages of Adam through Terah found in Gen5 & Gen11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC. And for those in the know, I'm not going to bother with the Samaritan Pentateuch which appears to have a lot of problems in this area.<br /><br />It's important to note that, despite the preponderance of evidence, and by what I would consider a quirk of history, <i>all</i> English bible translations — even the most recent — are still using the ages found in the MT. I assume changing the dates at this point would probably raise too much ire and controversy, which is unfortunate.<br /><br /><0><0></0> <strong>$t(options.calculations.ages.title)</strong></0><br /><br /><0>$t(options.calculations.ages.best)</0> — There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to the patriarchal dates with a couple of minor exceptions. I have heavily referenced <1>the work of Henry B. Smith Jr. of the Associates of Biblical Research</1> on the topic, and this settings is based on his assertions which mostly follow the LXX, but make corrections in a couple of key places.<br /><br /><0>$t(options.calculations.ages.septuagint)</0> — Strictly follow the partiarchal ages found in the Septuagint.<br /><br /><0>$t(options.calculations.ages.masoretic)</0> — Strictly follow the partiarchal ages found in the Masoretic Text. Note that the MT excludes Kainan (son of Arphaxad and father of Shelah)."
+      "description_wTags": [
+        "The ages of Adam through Terah found in Gen5 & Gen11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC. And for those curious about it, I'm not event going to bother with the Samaritan Pentateuch which appears to have a lot of problems in this area.",
+
+        "It's important to note that, despite the preponderance of evidence, and by what I would consider a quirk of history, <i>all</i> English bible translations — even the most recent — are still using the ages found in the MT. I assume changing the dates at this point would probably raise too much ire and controversy, which is unfortunate.",
+
+        "<0><0></0> <strong>$t(options.calculations.ages.title):</strong></0>",
+
+        "<0>$t(options.calculations.ages.best)</0> — There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to the patriarchal dates with a couple of minor exceptions. I have heavily referenced <1>the work of Henry B. Smith Jr. of the Associates of Biblical Research</1> on the topic, and this settings is based on his assertions which mostly follow the LXX, but make corrections in a couple of key places.",
+
+        "<0>$t(options.calculations.ages.septuagint)</0> — Strictly follow the partiarchal ages found in the Septuagint.",
+
+        "<0>$t(options.calculations.ages.masoretic)</0> — Strictly follow the partiarchal ages found in the Masoretic Text. Note that the MT excludes Kainan (son of Arphaxad and father of Shelah)."
+      ]
     },
     "margins": {
       "title": "Margin of Error",
-      "description_wTags": "When constructing a Biblical timeline there is going to be some margin of error on <i>all</i> of your dates. This is inescapable by virtue of how the Bible lists birth years in Genesis; the Bible will list the year a person had their first child, but was that child born at the beginning of that year, the end, or somewhere in the middle? Naturally, that places a ±6mo margin of error on all dates of birth for the patriarchs (save Adam) which compounds to about a ±10yr margin of error for all subsequent dates.<br /><br />A common method around this is to just assume that placing all of these birth dates at the middle of the year will more-or-less average itself out. Technically it's less precise, but likely gets you pretty close — in essence, the margins of error are still there, you just won't see them."
+      "description_wTags": [
+        "When constructing a Biblical timeline as I am doing here, there <i>will</i> be a margin of error on <i>all</i> of your dates. This is inescapable just from the fact that the Bible lists only the year and not the month or day for most events.",
+
+        "For example, Gen5 & Gen11 list the years each patriarch had their first child, but were those births at the beginning of each year, the end, or more likely, somewhere in the middle? Naturally, that places a ±6mo margin of error on all dates where only a year is given.",
+
+        "For practicality, all such dates are averaged — put into the middle of the year — and a ±6 month margin of error is added to a compounding number. Starting with Adam, by the time you get to Christ, you are looking at a swing of more than two decades on your dates. While this margin of error is hidden by default, it's important to remember that they are there and any impression of fine precision you might have is actually a bit of an illusion. Having said that, plus or minus a decade can still be very useful at the scale of millenia.",
+
+        "<0><0></0> <strong>$t(options.display.margins.title)</strong> — Show / Hide</0> — Note that even though the Gregorian dates are still, in a way, subject to the compounding margin of error, those margins are <i>not</i> applied to or shown on secular, Gregorian-only dates on the timeline."
+      ]
     },
     "jubilee": {
       "title": "Jubilee Years",
-      "description_wTags": "Leviticus 25 mandates the observation of a sabbath year — the <i>\"shmita\"</i> — every 7th year and a jubilee year after every 7th shmita. Apparently, there is some wiggle room for interpretation on just when the jubilee year occurs in relation to the shmita cycle. Below are the three different methods for calculating the jubilee year that I have seen floating around out there. Although the \"exclusive\" method seems the most obvious to me, I have included the ability to change this in the settings.<br /><br /><strong>• Inclusive:</strong> Each jubilee year <i>overlaps</i> with each 49th shmita. [49-year jubilee cycles]<br /><br /><strong>• Exclusive:</strong> Each jubilee year begins <i>after</i> each 49th shmita and overlaps with the 1st year of the next shmita cycle. [49-year jubilee cycles]<br /><br /><strong>• Intercalated:</strong> Each jubilee year begins <i>after</i> each 49th shmita and interrupts the shmita cycle with an intercalated (inserted) year. The first year of the next shmita cycle begins <i>after</i> the jubilee year. [50-year jubilee cycles] Proponents of this view also claim that Daniel's 70 Weeks (shmita cycles) includes these extra jubilee years intercalated in — which would mean that the 69 cycles leading up to the Messiah would be:<br /><strong><0>    69 \"weeks\" × 7 years each <i>+ 9 jubilees</i> = 492 years</0></strong>"
+      "description_wTags": [
+        "Leviticus 25 mandates the observation of a sabbath year — the <i>\"shmita\"</i> — every 7th year and a jubilee year after every 7th shmita. Apparently, there is some wiggle room for interpretation on just when the jubilee year occurs in relation to the shmita cycle. Below are the three different methods for calculating the jubilee year that I have seen floating around out there. Although the \"exclusive\" method seems the most obvious to me, I have included the others for visualization.",
+
+        "<0><0></0> <strong>$t(options.calculations.jubilee.title):</strong></0>",
+        "<0>$t(options.calculations.jubilee.inclusive)</0> — Each jubilee year <i>overlaps</i> with each 49th shmita. [49-year jubilee cycles]",
+
+        "<0>$t(options.calculations.jubilee.exclusive)</0> — Each jubilee year begins <i>after</i> each 49th shmita and overlaps with the 1st year of the next shmita cycle. <code>[49-year jubilee cycles]</code>",
+
+        "<0>$t(options.calculations.jubilee.intercalated)</0> — Each jubilee year begins <i>after</i> each 49th shmita and interrupts the shmita cycle with an intercalated (inserted) year. The first year of the next shmita cycle begins <i>after</i> the jubilee year. [50-year jubilee cycles] — Proponents of this view also claim that Daniel's 70 Weeks (shmita cycles) implies these extra jubilee years should be intercalated (added in) which means that the first 69 weeks of Daniel (483 years) would have an <i>additional</i> 9 jubilee years added in for a total of 492 years."
+      ]
     },
     "crucifixion": {
       "title": "Crucifixion Date",
-      "description_wTags": "There is some dispute as to the exact year that Jesus was crucified. Here you can set what A.D. year the timeline uses for the Crucifixion.<br /><br >For a more detailed discussion on the topic, see the relevant section in the notes.<br /><br /><strong>NOTE:</strong> <i>All</i> Gregorian dates on the timeline are calculated from this date."
+      "description_wTags": [
+        "In which year, <i>exactly</i>, was Jesus crucified? To come up with an answer we first have to start with an understanding of Passover and the Feast of Unleavened Bread found in Exo12. The Passover was to be eaten in the evening after sundown (the beginning of the Jewish day) on the 14th day of the month of Abib. Following that, for seven days (Abib 15-21, inclusive), was the Feast of Unleavened Bread with the first day (Abib 15) and the last day (Abib 21) being \"high\" sabbath days — days that are to be treated like a sabbath, but don't necessarily fall on a Saturday.",
+
+        "We know from the gospels that Jesus died around 3pm in the daytime following the passover meal (still Abib 14). John19:31 even reminds us that the next day, Abib 15, which would begin at sundown, was a high sabbath. We also know from the Gospels that Jesus rose sometime before dawn (early in the day) on the first day of the week (Sunday). We must then reconcile all this info with Matt12:40 and similar verses which tell us that Jesus would be in the tomb for 3 days and 3 nights. With all of that there are really only three days of the week that could be considered to meet the criteria for the day of the Crucifixion: Wednesday, Thursday, or Friday.",
+
+        "On a personal note, my opinion is that for a Friday date to make sense you have to stretch inclusive time and the meaning of \"three days and nights\" almost to their breaking point taking \"day and night\" to mean a single 24-hour period, the whole of which you can count as long as some portion is included; I suspect that church tradition places the crucifixion on Friday because of a misunderstanding of the difference between a sabbath and a high sabbath. I personally lean towards it being on a Wednesday. At any rate, here's what the three options look like:",
+
+        "<strong>Option 1: Jesus Died on a Friday</strong><br />1 day+night: Friday before sundown<br />1 day+night: Friday sundown - Saturday sundown<br />1 day+night: Saturday sundown - early Sunday",
+
+        "<strong>Option 2: Jesus Died on a Thursday</strong><br />1 day: Thursday before sundown (partial day)<br />1 night: Thursday night<br />1 day: Friday before sundown<br />1 night: Friday night<br />1 day: Saturday till sundown<br />1 night: Saturday night (partial night)",
+
+        "<strong>Option 3: Jesus Died on a Wednesday</strong><br />1 full night & 1 full day: Wednesday sundown - Thursday sundown<br />1 full night & 1 full day: Thursday sundown - Friday sundown<br />1 full night & 1 full day: Friday sundown - Saturday sundown",
+
+        "<0><0></0> <strong>$t(options.calculations.crucifixion.title):</strong></0>",
+
+        "<0>$t(options.calculations.crucifixion.optionLabels.0) - $t(options.calculations.crucifixion.optionLabels.2)</0> — I have found it difficult to find agreement as to which day of the week Passover falls on in the early first century. You can use your own sources and set the AD date to whatever you think fits best within a ten-year window"
+      ]
     }
   },
   "project": {
@@ -55,7 +124,7 @@
       },
       "crucifixion": {
         "title": "Crucifixion Date",
-        "optionLabels": ["27 A.D.", "30 A.D.", "33 A.D."]
+        "optionLabels": ["25 A.D.", "30 A.D.", "35 A.D."]
       }
     },
     "display": {
@@ -79,7 +148,7 @@
         "off": "Hide"
       },
       "showSource": {
-        "title": "Event Details (for nerds)",
+        "title": "Event Details",
         "label": "Show reference tooltips?"
       },
       "calendar": {

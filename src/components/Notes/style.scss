@@ -70,9 +70,28 @@
   }
 }
 
-.settingLabel {
-  color: var(--mantine-color-blue-1);
-  :root[data-mantine-color-scheme='light'] & {
-    color: var(--mantine-color-blue-8);
+.notesModal {
+  .mantine-Accordion-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .mantine-Accordion-icon {
+    padding: 3px;
+    border-radius: 5px;
+    background: var(--mantine-color-yellow-7);
+    color: var(--mantine-color-dark-4);
+  }
+
+  p + p {
+    margin-top: 1rem;
+  }
+
+  .settingLabel {
+    text-transform: uppercase;
+    color: var(--mantine-color-blue-1);
+    :root[data-mantine-color-scheme='light'] & {
+      color: var(--mantine-color-blue-8);
+    }
   }
 }
+

@@ -141,7 +141,7 @@ const Events = () => {
             )}
             {source && (
               <Text className="sourceContent" size="xs">
-                {/* <strong>{t('timeline.source')}</strong> <BibleLink bibleRef={source} /> */}
+                <strong>{t('timeline.source')}</strong> <TransWithBible i18nKey={`events.${e.key}.source`} />
               </Text>
             )}
           </HoverCard.Dropdown>

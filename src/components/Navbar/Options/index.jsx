@@ -92,14 +92,14 @@ const Timeline = () => {
               color={controlsColor}
               value={crucifixion}
               onChange={setCrucifixion}
-              min={27}
-              max={33}
+              min={25}
+              max={35}
               step={1}
               size="md"
               marks={[
-                { value: 27, label: t('options.calculations.crucifixion.optionLabels.0') },
+                { value: 25, label: t('options.calculations.crucifixion.optionLabels.0') },
                 { value: 30, label: t('options.calculations.crucifixion.optionLabels.1') },
-                { value: 33, label: t('options.calculations.crucifixion.optionLabels.2') },
+                { value: 35, label: t('options.calculations.crucifixion.optionLabels.2') },
               ]}
             />
           </Accordion.Panel>

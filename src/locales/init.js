@@ -26,6 +26,7 @@ i18n
     fallbackLng: 'en',
     initImmediate: false,
     resources,
+    transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'p', 'code'],
     supportedLanguages: Object.keys(resources),
     detection: { order: ['navigator', 'queryString', 'cookie', 'localStorage', 'sessionStorage'] },
     interpolation: {
