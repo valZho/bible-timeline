@@ -1,6 +1,6 @@
 {
   "title": "Biblical Timeline",
-  "bibleVersions": "en CSB-1713 NIV-111 ESV-59 HCSB-72",
+  "bibleVersions": "en CSB-1713 NIV-111 NET-107 ESV-59 HCSB-72",
   "tip": "<strong>TIP:</strong> Hold down the <0>Shift</0> key for horizontal scrolling",
   "notes": {
     "title": "Important Notes",
@@ -14,7 +14,7 @@
 
         "As stated above, every date on the calendar is ultimately calculated relationally from Adam all the way to the Crucifixion using just the Bible. Once all the Biblical dates are calculated, I then use the user setting for the Gregorian date of the Crucifixion to then calculate and add all of the Gregorian dates to all of the events. Also once this is done, I am able to add secular, Gregorian-only dates to the timeline as well.",
 
-        "<0><0></0> <strong>AM / CE</strong></0> — Using the toggle at the top of the page, you can switch between displaying the Hebrew dates: AM (<i>anno mundi</i>), or the Gregorian dates: CE (common era) ",
+        "<0><0></0> <strong>AM / CE</strong></0> — Using the toggle at the top of the page, you can switch between displaying the Hebrew dates: AM (<i>anno mundi</i>), or the Gregorian dates: CE (common era - BC/AD) ",
 
         "<0><0></0> <strong>$t(options.display.showSource.title)</strong> — On / Off</0> — Turn this on to show pop-up tooltips for each event listing the Bible verses referenced as well as a plain-language explanation of how the engine placed the item onto the timeline. If you don't need it, these pop-ups can be pretty annoying, so I have it disabled by default."
       ]
@@ -91,7 +91,7 @@
 
         "<0><0></0> <strong>$t(options.calculations.crucifixion.title):</strong></0>",
 
-        "<0>$t(options.calculations.crucifixion.optionLabels.0) - $t(options.calculations.crucifixion.optionLabels.2)</0> — I have found it difficult to find agreement as to which day of the week Passover falls on in the early first century. You can use your own sources and set the AD date to whatever you think fits best within a ten-year window"
+        "<0>$t(options.calculations.crucifixion.optionLabels.0) - $t(options.calculations.crucifixion.optionLabels.2)</0> — I have found it difficult to find agreement as to which day of the week Passover falls on each year in the early first century. Within a ten-year window, you can use your own sources and set the AD date to whatever you think is correct."
       ]
     }
   },
@@ -465,6 +465,16 @@
 
     "KINGDOM AGE": "————————————————————————————————————————————————————————————————",
 
+    "saul": {
+      "title": "Saul's Reign",
+      "source": "Acts13:21",
+      "placement": ""
+    },
+    "saulReign": {
+      "title": "Saul's Reign",
+      "source": "NET|1Sam13:1, Acts13:21",
+      "placement": ""
+    },
     "temple1start": {
       "title": "The Building of the First Temple",
       "source": "",
@@ -598,6 +608,21 @@
 
     "ROME": "———————————————————————————————————————————————————————————————————————",
 
+    "rome_kingdom": {
+      "title": "The Roman Kingdom",
+      "source": "",
+      "placement": "753-509 BC"
+    },
+    "rome_republic": {
+      "title": "The Roman Republic",
+      "source": "",
+      "placement": "509-27 BC"
+    },
+    "rome_empire": {
+      "title": "The Roman Empire",
+      "source": "",
+      "placement": "27 BC - 395 AD"
+    },
     "rome_augustus": {
       "title": "Reign of Augustus",
       "source": "",
@@ -646,30 +671,71 @@
       "source": "",
       "placement": "2550-2410 BC"
     },
-    "assyriaEnd": {
-      "title": "Fall of Assyria",
+    "assyrianEmpire": {
+      "title": "The Assyrian Empire",
       "source": "",
-      "placement": "612-609 BC"
+      "placement": "1363-609 BC"
+    },
+    "achaemenianEmpire": {
+      "title": "The Achaemenian (Medo-Persian) Empire",
+      "source": "",
+      "placement": "538-330 BC"
+    },
+    "confucious": {
+      "title": "Confucious",
+      "source": "",
+      "placement": "551-479 BC"
+    },
+    "buddha": {
+      "title": "Siddhartha Gautama (Buddha)",
+      "source": "",
+      "placement": "563-483 BC"
+    },
+    "socrates": {
+      "title": "Socrates",
+      "source": "",
+      "placement": "470-399 BC"
+    },
+    "plato": {
+      "title": "Plato (Aristocles)",
+      "source": "",
+      "placement": "428-348 BC"
+    },
+    "aristotle": {
+      "title": "Aristotle",
+      "source": "",
+      "placement": "384-322 BC"
+    },
+    "alexander": {
+      "title": "Alexander the Great",
+      "source": "",
+      "placement": "384-322 BC"
+    },
+
+    "origen": {
+      "title": "Origen",
+      "source": "",
+      "placement": "185-253 AD"
+    },
+    "augustine": {
+      "title": "Augustine",
+      "source": "",
+      "placement": "354-430 AD"
+    },
+    "muhammad": {
+      "title": "Muhammad",
+      "source": "",
+      "placement": "570-632 AD"
     },
     "temple2end": {
       "title": "Second Temple Destroyed",
       "source": "",
       "placement": "70 AD"
     },
-    "niceanCouncil": {
-      "title": "The Council of Nicea",
+    "nicaea1": {
+      "title": "The First Council of Nicaea",
       "source": "",
       "placement": "325 AD"
-    },
-    "blackDeath": {
-      "title": "The Black Plague",
-      "source": "",
-      "placement": "1346-1353 AD"
-    },
-    "reformation": {
-      "title": "The Reformation",
-      "source": "",
-      "placement": "1517-1685 AD"
     },
 
     "WARS": "———————————————————————————————————————————————————————————————————————",
@@ -737,10 +803,45 @@
 
     "MODERN(ish) HISTORY": "————————————————————————————————————————————————————————",
 
+    "schism": {
+      "title": "The Great East-West Schism",
+      "source": "",
+      "placement": "1054 AD"
+    },
+    "ottoman": {
+      "title": "The Ottoman Empire",
+      "source": "",
+      "placement": "1299-1453 AD"
+    },
+    "blackDeath": {
+      "title": "The Black Plague",
+      "source": "",
+      "placement": "1346-1353 AD"
+    },
+    "gutenburg": {
+      "title": "The Gutenburg Bible",
+      "source": "",
+      "placement": "1450s AD"
+    },
+    "calvin": {
+      "title": "John Calvin",
+      "source": "",
+      "placement": "1509-1564 AD"
+    },
+    "reformation": {
+      "title": "The Reformation",
+      "source": "",
+      "placement": "1517-1685 AD"
+    },
     "greatDepression": {
       "title": "The Great Depression",
       "source": "",
       "placement": "1929-1939 AD"
+    },
+    "deadSeaScrolls": {
+      "title": "Dead Sea Scrolls Found",
+      "source": "",
+      "placement": "1947 AD"
     },
     "israelReformed": {
       "title": "Restoration of Israel",

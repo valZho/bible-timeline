@@ -1,13 +1,13 @@
-import bibleData1 from './bible/data-1';
-import bibleData2 from './bible/data-2';
-import bibleData3 from './bible/data-3';
-import bibleData4 from './bible/data-4';
-import bibleData5 from './bible/data-5';
+import bible_patriarchs1 from './bible/data-patriarchs1';
+import bible_patriarchs2 from './bible/data-patriarchs2';
+import bible_promise from './bible/data-promise';
+import bible_kingdoms from './bible/data-kingdoms';
+import bible_messiah from './bible/data-messiah';
 
-import secularData1 from './secular/data-1';
-import secularData2 from './secular/data-2';
-import secularData3 from './secular/data-3';
-import secularData4 from './secular/data-4';
+import secular_ancient from './secular/data-ancient';
+import secular_modern from './secular/data-modern';
+import secular_rome from './secular/data-rome';
+import secular_wars from './secular/data-wars';
 
 import convertToTimeline from './utils/convertToTimeline';
 
@@ -41,18 +41,18 @@ const getEvents = ({ ages, jubilee, ...options }) => {
   const INTERCALATED = jubilee === 'intercalated';
 
   const bibleEvents = {
-    ...bibleData1(MT, LXX),
-    ...bibleData2(MT, LXX),
-    ...bibleData3(),
-    ...bibleData4(),
-    ...bibleData5(INTERCALATED),
+    ...bible_patriarchs1(MT, LXX),
+    ...bible_patriarchs2(MT, LXX),
+    ...bible_promise(),
+    ...bible_kingdoms(),
+    ...bible_messiah(INTERCALATED),
   };
 
   const secularEvents = {
-    ...secularData1(),
-    ...secularData2(),
-    ...secularData3(),
-    ...secularData4(),
+    ...secular_ancient(),
+    ...secular_modern(),
+    ...secular_rome(),
+    ...secular_wars(),
   };
 
   return convertToTimeline({ bibleEvents, secularEvents, ...options });

@@ -1,5 +1,5 @@
 // WARS
-const eventData3 = () => {
+const data = () => {
   const events = {
     war_7years: { startCE: 1756, end: 1763 },
     war_americanRevolution: { startCE: 1775, end: 1783 },
@@ -23,4 +23,4 @@ const eventData3 = () => {
   return events;
 };
 
-export default eventData3;
+export default data;

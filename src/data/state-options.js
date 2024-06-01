@@ -16,7 +16,7 @@ const optionsState = {
   }),
   crucifixion: atom({
     key: 'optionsCrucifixion',
-    default: 30,
+    default: 31,
     effects_UNSTABLE: [persistAtom],
   }),
 

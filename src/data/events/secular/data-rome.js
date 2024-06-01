@@ -1,7 +1,10 @@
 // WARS
-const eventData3 = () => {
+const data = () => {
   const events = {
-    rome_augustus: { startCE: -27, end: 14 }, // +1 for no year zero
+    rome_kingdom: { startCE: -753, end: -509 },
+    rome_republic: { startCE: -509, end: -27 },
+    rome_empire: { startCE: -27, end: 395 },
+    rome_augustus: { startCE: -27, end: 14 },
     rome_tiberius: { startCE: 14, end: 37 },
     rome_caligula: { startCE: 37, end: 41 },
     rome_claudius: { startCE: 41, end: 54 },
@@ -20,4 +23,6 @@ const eventData3 = () => {
   return events;
 };
 
-export default eventData3;
+export default data;
+
+// the Roman Kingdom(753–509 BC), Roman Republic(509–27 BC), Roman Empire(27 BC– 395 AD), and the collapse of the Western Roman Empire in the 5th century AD.[1][a]
