@@ -29,7 +29,7 @@ const TransWithBible = ({ i18nKey = '', values = {}, components = [] }) => {
   }
 
   // extract any text with a verse-like structure, e.g., version|Xxxxx #:#-#,#
-  const potentialRefs = output.match(/([A-Za-z]+\|){0,1}[A-Za-z]+\W{0,1}\d+(:\d+(-\d+|,\d+)*){0,1}/gi);
+  const potentialRefs = output.match(/([A-Za-z]+\|){0,1}[1-3]{0,1}\W{0,1}[A-Za-z]+\W{0,1}\d+(:\d+(-\d+|,\d+)*){0,1}/gi);
 
   // loop through potential reference matches
   if (potentialRefs) {
