@@ -14,7 +14,7 @@ import {
   IconSettingsFilled,
   IconSquareToggle,
   IconTool,
-  IconWalk,
+  // IconWalk,
 } from '@tabler/icons-react';
 
 import TransWithBible from '../TransWithBible';
