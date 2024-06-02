@@ -12,6 +12,7 @@ import Notes from '../Notes';
 import Navbar from '../Navbar';
 import Timeline from '../Timeline';
 
+import '@mantine/core/styles.css';
 import './style.scss';
 
 const Page = () => {
