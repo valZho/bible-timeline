@@ -162,7 +162,7 @@
       },
       "trackMin": {
         "title": "Minimum Number of Vertical Tracks",
-        "auto": "Auto",
+        "auto": "Minimum",
         "all": "Unlimited"
       },
       "margins": {
