@@ -11,7 +11,7 @@ const eventData3 = () => {
     egyptFeastAndFamine: { relative: { id: 'jacobInEgypt', start: -9 }, years: 17, exact: true, color: 'cyan' },
     joseph: { relative: { id: 'egyptFeastAndFamine', start: -30 }, years: 110, margin: 0.5 },
     josephEnslaved: { relative: { id: 'joseph', start: 17 }, years: 30 - 17, margin: 0.5, color: 'cyan' },
-    covenant: { relative: { id: 'isaac', start: -1 }, years: 0, exact: true, hideEndLabel: true, color: 'cyan' },
+    // covenant: { relative: { id: 'isaac', start: -1 }, years: 0, exact: true, hideEndLabel: true, color: 'cyan' },
     sojourn430: { relative: { id: 'isaac', start: -30 }, years: 430, color: 'cyan' },
     sojourn400: { relative: { id: 'isaac', start: 0 }, years: 400, exactStart: true, color: 'cyan' },
     sojourn450: { relative: { id: 'isaac', start: 0 }, years: 450, exactStart: true, color: 'cyan' },

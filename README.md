@@ -1,1 +1,1 @@
-Deployed at: http://inventurous.net/timeline
+See the timeline at: http://inventurous.net/timeline
