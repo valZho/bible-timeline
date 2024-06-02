@@ -9,9 +9,6 @@ import chapterAndVerse from 'chapter-and-verse/js/cv';
 import BIBLES from '@/data/state-bibles';
 import { YOU_VERSION } from '@/data/constants';
 
-console.log(chapterAndVerse('1king11:42'));
-console.log();
-
 // This is a replacement for the <Trans/> component
 // it takes all the same values, translates the text, but has the
 // added benefit of detecting bible references and making them links

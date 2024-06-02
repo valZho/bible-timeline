@@ -4,16 +4,17 @@ import { useRecoilState } from 'recoil';
 
 import { Affix, Title, Text, Kbd, useMantineColorScheme, useMantineTheme, rem, SegmentedControl } from '@mantine/core';
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
-import IconBiblicalTimeline from './IconBiblicalTimeline';
 
-import OPTIONS from '../data/state-options';
+import OPTIONS from '@/data/state-options';
 
-import Notes from './Notes';
-import Navbar from './Navbar';
-import Timeline from './Timeline';
-import './PageWrapper.scss';
+import IconBiblicalTimeline from '../IconBiblicalTimeline';
+import Notes from '../Notes';
+import Navbar from '../Navbar';
+import Timeline from '../Timeline';
 
-const PageWrapper = () => {
+import './style.scss';
+
+const Page = () => {
   const { t } = useTranslation();
   const [calendar, setCalendar] = useRecoilState(OPTIONS.calendar);
   const { setColorScheme, colorScheme } = useMantineColorScheme();
@@ -77,4 +78,4 @@ const PageWrapper = () => {
   );
 };
 
-export default PageWrapper;
+export default Page;
