@@ -1,7 +1,7 @@
-$track-height: 35px;
+$track-height: 40px;
 $margin: 0 3px 3px 3px;
 
-$bar-height: 5px;
+$bar-height: 10px;
 $bar-shadow: 0px 5px 4px rgba(0, 0, 0, 0.5);
 
 $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pink, red, teal, violet, yellow;
@@ -115,6 +115,13 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
         background: linear-gradient(90deg, transparent, var(--mantine-color-body) 95%);
       }
     }
+
+    &.today {
+      .labels {
+        font-size: 1.1rem;
+        color: var(--mantine-color-orange-4);
+      }
+    }
   }
 }
 
@@ -125,6 +132,7 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
   border: none !important;
   padding: 5px 10px !important;
   margin-left: 25px;
+  max-width: 500px;
 
   .sourceContent,
   .placementContent {

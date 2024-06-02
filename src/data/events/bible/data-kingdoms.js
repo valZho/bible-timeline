@@ -5,12 +5,12 @@
 const eventData4 = () => {
   const events = {
     temple1start: { relative: { id: 'exodus', end: 480 }, years: 7, exact: true, color: 'cyan', extraBuffer: 200 },
-    solomon: { relative: { id: 'temple1start', start: -4 }, years: 40, exact: true, color: 'grape' },
+    solomonReign: { relative: { id: 'temple1start', start: -4 }, years: 40, exact: true, color: 'grape' },
   };
 
   // need solomon in there for reference
   const kings = [
-    ['solomon'],
+    ['solomonReign'],
     ['rehoboam', 17],
     ['abijam', 3],
     ['asa', 41],
@@ -43,8 +43,11 @@ const eventData4 = () => {
     };
   }
 
-  // events.saulReign = { relative: {}, years: 40 };
-  // events.saul = { relative: { id: 'saulReign', start: -30 }, years: 40 };
+  events.saul = { relative: { id: 'saulReign', start: -30 }, years: 70 };
+  events.saulReign = { relative: { id: 'davidReign', start: -40 }, years: 40, exact: true, color: 'grape' };
+  events.david = { relative: { id: 'davidReign', start: -30 }, years: 70.5 };
+  events.davidReign = { relative: { id: 'solomonReign', start: -40.5 }, years: 40.5, exact: true, color: 'grape' };
+  events.solomon = { relative: { id: 'solomonReign', start: -25 }, years: 65, fuzzyStart: true };
 
   return events;
 };

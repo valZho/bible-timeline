@@ -6,6 +6,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Accordion, Modal, Anchor } from '@mantine/core';
 import {
   IconBook,
+  IconClipboardList,
   IconConfetti,
   IconCrossFilled,
   IconHourglassLow,
@@ -13,6 +14,7 @@ import {
   IconSettingsFilled,
   IconSquareToggle,
   IconTool,
+  IconWalk,
 } from '@tabler/icons-react';
 
 import TransWithBible from '../TransWithBible';
@@ -63,6 +65,14 @@ const Notes = () => {
     {
       key: 'crucifixion',
       icon: <IconCrossFilled />,
+    },
+    // {
+    //   key: 'sojourning',
+    //   icon: <IconWalk />,
+    // },
+    {
+      key: 'version',
+      icon: <IconClipboardList />,
     },
   ];
 

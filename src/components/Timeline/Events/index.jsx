@@ -22,12 +22,13 @@ const Events = () => {
   const showSource = useRecoilValue(OPTIONS.showSource);
   const calendar = useRecoilValue(OPTIONS.calendar);
 
-  const trackHeight = 40;
+  const trackHeight = 45;
+  const barHeight = 10;
   const flagHeight = (trackCount + 2) * trackHeight;
 
   const createEvents = useCallback(() => {
     const bar = ({ fuzzy, color, marginStart, width, fullWidth, marginEnd }, key) => (
-      <svg key={key} className={`bar ${fuzzy ? 'fuzzy' : ''}`} version="1.1" width={fullWidth} height="10">
+      <svg key={key} className={`bar ${fuzzy ? 'fuzzy' : ''}`} version="1.1" width={fullWidth} height={barHeight}>
         <rect className={`base ${color || ''}`} width="100%" height="100%" fill="blue" />
         <rect className="margin" width={marginStart * 2} height="100%" fill="lightblue" />
         <rect className="margin" width={marginEnd * 2} x={fullWidth - marginEnd * 2} height="100%" fill="lightblue" />
@@ -45,7 +46,7 @@ const Events = () => {
       marginEnd,
       endAM,
       endCE,
-      display: { hideEndDate, fuzzy },
+      display: { hideEndDate, fuzzy, fuzzyStart, fuzzyEnd },
     }) => {
       let startLabel = t(
         ...getDate({
@@ -53,7 +54,7 @@ const Events = () => {
           yearCE: startCE,
           need: calendar,
           ...ceConvert,
-          fuzzy,
+          fuzzy: fuzzy || fuzzyStart,
         }).label,
       );
       let endLabel = t(
@@ -62,7 +63,7 @@ const Events = () => {
           yearCE: endCE,
           need: calendar,
           ...ceConvert,
-          fuzzy,
+          fuzzy: fuzzy || fuzzyEnd,
         }).label,
       );
 
@@ -78,7 +79,9 @@ const Events = () => {
             {t('timeline.textSeparator')}
             {startLabel}
             {years !== 0 && t('timeline.textSeparator')}
-            {years !== 0 && <i>{t(`timeline.year${fuzzy ? 'Fuzzy' : ''}`, { count: years })}</i>}
+            {years !== 0 && (
+              <i>{t(`timeline.year${fuzzy || fuzzyStart || fuzzyEnd ? 'Fuzzy' : ''}`, { count: years })}</i>
+            )}
           </div>
           {!hideEndDate && <div className="end">{endLabel}</div>}
         </div>
@@ -87,19 +90,23 @@ const Events = () => {
 
     const eventWrapper = e => (
       <div
-        className={`eventWrapper ${e.color ?? ''} track${e.display.track} ${e.display.fuzzy ? 'fuzzy' : ''}`}
+        className={`eventWrapper ${e.key} ${e.color ?? ''} track${e.display.track} ${e.display.fuzzy ? 'fuzzy' : ''}`}
         style={{
           top: e.display.track * trackHeight,
           left: e.display.left,
           width: e.display.fullWidth, // add 2 pixels for borders
         }}
       >
-        {e.display.fuzzy && <div className="fuzzyCap start" />}
-        {e.display.fuzzy && <div className="fuzzyCap end" />}
+        {(e.display.fuzzy || e.display.fuzzyStart) && <div className="fuzzyCap start" />}
+        {(e.display.fuzzy || e.display.fuzzyEnd) && <div className="fuzzyCap end" />}
         {bar(e.display, e.key)}
         {labels(e)}
-        {!e.display.fuzzy && <div className="flag" style={{ height: flagHeight, left: e.display.marginStart }} />}
-        {!e.display.fuzzy && <div className="flag" style={{ height: flagHeight, right: e.display.marginEnd - 1 }} />}
+        {!e.display.fuzzy && !e.display.fuzzyStart && (
+          <div className="flag" style={{ height: flagHeight, left: e.display.marginStart }} />
+        )}
+        {!e.display.fuzzy && !e.display.fuzzyEnd && (
+          <div className="flag" style={{ height: flagHeight, right: e.display.marginEnd - 1 }} />
+        )}
       </div>
     );
 

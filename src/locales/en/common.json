@@ -26,7 +26,7 @@
 
         "To illustrate, imagine the birth of a baby; only a full year later would we say that that baby is one year old, i.e., they have been alive for (at least) one full year. However, in Ancient Isreal, <i>as soon as they were born</i> it would have been said that the baby was one, i.e., they were in their first year.",
 
-        "Applying this to a Biblical example, in Gen 5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we must understand that it is meaning that he was \"in his 500th year\" even though we would recon him to be 499 years old by our exclusive thinking.",
+        "Applying this to a Biblical example, in Gen5:32 when we read, \"<i>Noah was 500 years old, and he fathered Shem, Ham, and Japheth,</i>\" we must understand that it is meaning that he was \"in his 500th year\" even though we would recon him to be 499 years old by our exclusive thinking.",
 
         "All of this is to say that if you aren't expecting the difference between inclusive and exlusive reconing of time, the timeline might seem weird or off to you.",
 
@@ -64,7 +64,7 @@
     "jubilee": {
       "title": "Jubilee Years",
       "description_wTags": [
-        "Leviticus 25 mandates the observation of a sabbath year — the <i>\"shmita\"</i> — every 7th year and a jubilee year after every 7th shmita. Apparently, there is some wiggle room for interpretation on just when the jubilee year occurs in relation to the shmita cycle. Below are the three different methods for calculating the jubilee year that I have seen floating around out there. Although the \"exclusive\" method seems the most obvious to me, I have included the others for visualization.",
+        "Lev25 mandates the observation of a sabbath year — the <i>\"shmita\"</i> — every 7th year and a jubilee year after every 7th shmita. Apparently, there is some wiggle room for interpretation on just when the jubilee year occurs in relation to the shmita cycle. Below are the three different methods for calculating the jubilee year that I have seen floating around out there. Although the \"exclusive\" method seems the most obvious to me, I have included the others for visualization.",
 
         "<0><0></0> <strong>$t(options.calculations.jubilee.title):</strong></0>",
         "<0>$t(options.calculations.jubilee.inclusive)</0> — Each jubilee year <i>overlaps</i> with each 49th shmita. [49-year jubilee cycles]",
@@ -93,6 +93,32 @@
 
         "<0>$t(options.calculations.crucifixion.optionLabels.0) - $t(options.calculations.crucifixion.optionLabels.2)</0> — I have found it difficult to find agreement as to which day of the week Passover falls on each year in the early first century. Within a ten-year window, you can use your own sources and set the AD date to whatever you think is correct."
       ]
+    },
+    "sojourning": {
+      "title": "Sojourning: Abraham to the Exodus",
+      "description_wTags": [
+        "There can be a little bit of confusion about the time from Abraham to the Exodus. When was Abraham called by God? How long were the Israelites sojourning (as some translations put it) in Egypt? At first glance, it seems like there are some irreconcilable numbers, but with a little digging we can make a pretty good estimation.",
+
+        "Our first bit of info, and the one that seems to trip people up the most, comes in Gen15:13 and Acts7:6, \"Know this for certain: Your offspring will be resident aliens for <strong>four hundred years</strong> in a land that does not belong to them and will be enslaved and oppressed.\"",
+
+        "Many translations read something like, \"they will be enslaved for 400 years,\" which leaves little wiggle room. However, some translations, like the CSB above, do a little bit better job of capturing the parenthetical nature of \"enslaved and opressed\". We are being told that Abraham's offspring will be <i>resident aliens</i> for 400 years, and that, during some portion of that time, they will be enslaved and opressed. Much like someone who is told, \"you will go to an all day event and will have lunch,\" wouldn't expect to be eating for 8 hours.",
+
+        "Instead of looking for the onset of the oppression and trying to start this 400 year period perhaps when Joseph gets taken to Egypt, or maybe even some other nebulous time later, we should instead look for the moment when Abraham's offspring became resident aliens — which turns out to have an obvious, and exact, date: Isaac was <i>born</i> as a resident alien! If it weren't obivous enough from context, in Gen21 where we read about Isaac's birth, the Bible <i>explicitely tells us</i> in verse 23 that Abraham and his family were indeed resident aliens at that time.",
+
+        "Our next number for sojourning comes from Acts13:17-20 which tells us that the time in Egypt + the time wandering the desert + the time taking the promised land took \"<i>about</i> 450 years\". We can surmise through an examination through the book of Joshua that the taking of the land should be close to about seven years, which does fit within Paul's rounded \"about 450\" number.",
+
+        "Finally, if we head over to NET|Exo12:40-41, we find our most problematic passage where we read that the time that the Israelite people were in Egypt was 430 years. It is here that we need to turn to the Septuagint which tells us this time is when they were in \"...Egypt <i>and in Canaan</i>...\". This is confirmed in Gal3:16-17 where Paul states that the law (just after the Exodus) was given 430 years <i>not</i> after Abraham's descendents became foreigners, but rather after <i>the promise</i>.",
+
+        "Gen12:4 tells us that Abraham was 75 years old when he left Haran. Acts7:2-4 tells us that he left Haran <i>after</i> his father, Terah, died. That leaves us with a question: was it 25 years from the promise until Isaac's birth or 30 years? This is a small descrepancy, and we must figure out how to resolve it. I can think of 3 ways.",
+
+        "1. Moses just rounds the number presented in Exodus from 425 to 430 and Paul goes on to quote this number later in Genesis. Not very satisifying, but we have already seen a rounded number in this mess. To be fair, though, that rounding was excplicitly called out in the text.",
+
+        "2. Instead of at Isaac's birth, the 400-year time of sojourning starts when he was in his 5th year. Proponents of this view will cite "
+      ]
+    },
+    "version": {
+      "title": "Website Version History",
+      "description_wTags": ["• 1.0 — 2024-06-02 — Initial release"]
     }
   },
   "project": {
@@ -137,9 +163,6 @@
       "trackMin": {
         "title": "Minimum Number of Vertical Tracks",
         "auto": "Auto",
-        "ten": "10",
-        "twenty": "20",
-        "thirty": "30",
         "all": "Unlimited"
       },
       "margins": {
@@ -466,21 +489,36 @@
     "KINGDOM AGE": "————————————————————————————————————————————————————————————————",
 
     "saul": {
-      "title": "Saul's Reign",
-      "source": "Acts13:21",
+      "title": "Saul",
+      "source": "",
       "placement": ""
     },
     "saulReign": {
       "title": "Saul's Reign",
-      "source": "NET|1Sam13:1, Acts13:21",
+      "source": "NET|1Sam13:1, 1Sam31:1-6, Acts13:21",
+      "placement": ""
+    },
+    "david": {
+      "title": "David",
+      "source": "2Sam5:4-5, 1King2:11",
+      "placement": ""
+    },
+    "davidReign": {
+      "title": "David's Reign",
+      "source": "2Sam2:11, 2Sam5:4-5, 1King2:11",
+      "placement": ""
+    },
+    "solomon": {
+      "title": "Solomon",
+      "source": "1King11:42",
       "placement": ""
     },
     "temple1start": {
       "title": "The Building of the First Temple",
-      "source": "",
+      "source": "1King6:1",
       "placement": ""
     },
-    "solomon": {
+    "solomonReign": {
       "title": "Solomon's Reign",
       "source": "",
       "placement": ""

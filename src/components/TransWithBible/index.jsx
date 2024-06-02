@@ -32,12 +32,12 @@ const TransWithBible = ({ i18nKey = '', values = {}, components = [] }) => {
   }
 
   // extract any text with a verse-like structure, e.g., version|Xxxxx #:#-#,#
-  const potentialRefs = output.match(/([A-Za-z]+\|){0,1}[1-3]{0,1}\W{0,1}[A-Za-z]+\W{0,1}\d+(:\d+(-\d+|,\d+)*){0,1}/gi);
+  const potentialRefs = output.match(/([A-Z]+\|)??[1-3]??[A-Z]+\d+(:\d+(-\d+|,\d+|)*)?/gi);
 
   // loop through potential reference matches
   if (potentialRefs) {
     let id = components.length;
-    potentialRefs.map((source, i) => {
+    potentialRefs.map(source => {
       let REF = source;
       let VERSION = bibles.default;
 
@@ -55,7 +55,7 @@ const TransWithBible = ({ i18nKey = '', values = {}, components = [] }) => {
 
       // translate the book name for the reference and add tags for the link component
       const bookName = t(`bible.${parsed.book.name}`);
-      const replacement = REF.replace(/^[1-3]{0,1}\W{0,1}[A-Za-z]+\W*(.*)/, `<${id}>${bookName} $1</${id}>`);
+      const replacement = REF.replace(/^[1-3]??[A-Z]+(.*)/i, `<${id}>${bookName} $1</${id}>`);
 
       // inject the reference string
       id++;

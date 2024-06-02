@@ -55,6 +55,8 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
     marginWidth: (src.margin || 0) * 2 * scale,
     display: {
       fuzzy: src.fuzzy ?? false,
+      fuzzyStart: src.fuzzyStart ?? false,
+      fuzzyEnd: src.fuzzyEnd ?? false,
       buffer: src.buffer ?? 0,
       color: src.color,
       hideEndDate: src.hideEndDate,
