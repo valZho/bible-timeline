@@ -14,7 +14,7 @@ import './style.scss';
 const EventPicker = ({ scrollTo }) => {
   const { t } = useTranslation();
   const events = useRecoilValue(CALENDAR.events);
-  const [open, { toggle, close }] = useDisclosure(true);
+  const [open, { toggle, close }] = useDisclosure(false);
 
   const getItems = useCallback(() => {
     return events.map(e => (
