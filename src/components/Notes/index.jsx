@@ -14,7 +14,7 @@ import {
   IconSettingsFilled,
   IconSquareToggle,
   IconTool,
-  // IconWalk,
+  IconWalk,
 } from '@tabler/icons-react';
 
 import TransWithBible from '../TransWithBible';
@@ -66,10 +66,10 @@ const Notes = () => {
       key: 'crucifixion',
       icon: <IconCrossFilled />,
     },
-    // {
-    //   key: 'sojourning',
-    //   icon: <IconWalk />,
-    // },
+    {
+      key: 'sojourning',
+      icon: <IconWalk />,
+    },
     {
       key: 'version',
       icon: <IconClipboardList />,

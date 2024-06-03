@@ -6,7 +6,6 @@
  */
 const eventData2 = (MT, LXX) => {
   // it's easier to create objects as they appear in Bible
-  // e.g.,
   // and then normalize them to our event format afterwards
   const events = {
     // Shem was 100 years old when he had Arphaxad which was 2 years after the flood
