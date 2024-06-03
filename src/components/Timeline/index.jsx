@@ -10,10 +10,11 @@ const Timeline = () => {
   const viewport = useRef(null);
 
   const scrollBuffer = 40;
+  const trackHeight = 45;
   const scrollTo = (left, track) => {
     viewport.current.scrollTo({
       left: left - scrollBuffer,
-      top: track * 60 - scrollBuffer,
+      top: track * trackHeight - scrollBuffer,
       behavior: 'smooth',
     });
   };
@@ -21,7 +22,7 @@ const Timeline = () => {
   return (
     <ScrollArea className="timelineContainer" type="always" offsetScrollbars="false" viewportRef={viewport}>
       <Ruler />
-      <Events />
+      <Events trackHeight={trackHeight} />
       <EventPicker scrollTo={scrollTo} />
     </ScrollArea>
   );

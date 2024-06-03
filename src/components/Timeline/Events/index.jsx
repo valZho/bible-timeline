@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { Trans, useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
 import { HoverCard, LoadingOverlay, Text } from '@mantine/core';
@@ -10,7 +11,7 @@ import getDate from '@/data/events/utils/getDate';
 
 import './style.scss';
 
-const Events = () => {
+const Events = ({ trackHeight = 45 }) => {
   const { t } = useTranslation();
 
   const events = useRecoilValue(CALENDAR.events);
@@ -22,7 +23,6 @@ const Events = () => {
   const showSource = useRecoilValue(OPTIONS.showSource);
   const calendar = useRecoilValue(OPTIONS.calendar);
 
-  const trackHeight = 45;
   const barHeight = 10;
   const flagHeight = (trackCount + 2) * trackHeight;
 
@@ -83,7 +83,7 @@ const Events = () => {
               <i>{t(`timeline.year${fuzzy || fuzzyStart || fuzzyEnd ? 'Fuzzy' : ''}`, { count: years })}</i>
             )}
           </div>
-          {!hideEndDate && <div className="end">{endLabel}</div>}
+          {!hideEndDate && years && <div className="end">{endLabel}</div>}
         </div>
       );
     };
@@ -160,7 +160,7 @@ const Events = () => {
     return events?.map(e => {
       return showSource ? eventWrapperWithSource(e) : eventWrapper(e);
     });
-  }, [events, t, calendar, ceConvert, margins, flagHeight, showSource]);
+  }, [events, t, calendar, ceConvert, margins, trackHeight, flagHeight, showSource]);
 
   return events.length ? (
     <div className="eventsContainer" style={{ width: farRight + 200, height: trackHeight * (trackCount + 1) }}>
@@ -173,6 +173,10 @@ const Events = () => {
       style={{ width: '100%', height: '100%' }}
     />
   );
+};
+
+Events.propTypes = {
+  trackHeight: PropTypes.number,
 };
 
 export default Events;
