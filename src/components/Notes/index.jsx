@@ -94,12 +94,12 @@ const Notes = () => {
           onChange={newArr => setNotes(newArr.filter(tab => !notes.includes(tab)))}
         >
           {sections.map(({ key = '', components = [], icon = '' }) => (
-            <Accordion.Item value={key}>
+            <Accordion.Item key={key} value={key}>
               <Accordion.Control icon={icon}>{t(`notes.${key}.title`)}</Accordion.Control>
               <Accordion.Panel>
                 {/* a little trick here to use an array of strings for paragraphs -- WAY easier to manage and maintain */}
-                {i18n.getResource('en', 'common', `notes.${key}.description_wTags`).map(str => (
-                  <p>
+                {i18n.getResource('en', 'common', `notes.${key}.description_wTags`).map((str, i) => (
+                  <p key={`${key}-notes-p-${i}`}>
                     <TransWithBible i18nKey={str} components={[settingSpan, ...components]} />
                   </p>
                 ))}

@@ -20,8 +20,6 @@ const addGregorian = ({ events = {}, knownKey = 'messiah', knownDate = 30, start
     events[key].endCE = getDate({ yearAM: events[key].endAM, need: 'ce', shift, push }).year;
   });
 
-  console.log('---->', events);
-
   return { shift, push: '' };
 };
 

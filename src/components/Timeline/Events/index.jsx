@@ -90,6 +90,7 @@ const Events = () => {
 
     const eventWrapper = e => (
       <div
+        key={e.key}
         className={`eventWrapper ${e.key} ${e.color ?? ''} track${e.display.track} ${e.display.fuzzy ? 'fuzzy' : ''}`}
         style={{
           top: e.display.track * trackHeight,
