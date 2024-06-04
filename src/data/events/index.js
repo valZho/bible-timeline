@@ -11,7 +11,7 @@ import secular_wars from './secular/data-wars';
 
 import convertToTimeline from './utils/convertToTimeline';
 
-const getEvents = ({ ages, jubilee, ...options }) => {
+const getEvents = ({ ages, jubilee, sojourn, ...options }) => {
   // FIRST GENERATE A KEYED OBJECT OF EVENTS
   // using an object first makes it much easier to reference events for doing relative dates
   //
@@ -39,11 +39,12 @@ const getEvents = ({ ages, jubilee, ...options }) => {
   const MT = ages === 'mt';
   const LXX = ages === 'lxx';
   const INTERCALATED = jubilee === 'intercalated';
+  const EARLY_SOJOURN = sojourn === 'early';
 
   const bibleEvents = {
     ...bible_patriarchs1(MT, LXX),
     ...bible_patriarchs2(MT, LXX),
-    ...bible_promise(),
+    ...bible_promise(EARLY_SOJOURN),
     ...bible_kingdoms(),
     ...bible_messiah(INTERCALATED),
   };

@@ -111,9 +111,13 @@
 
         "To solve this, let's take a look at a couple of relavant passages in the new testament. In Gal3:16-17 Paul states that the law was given 430 years after <i>the promise</i>, and Acts7:2 reminds us that the promise was given while Abraham was still in Mesopotamia (Haran); the promise must have been given, <i>at a minimum</i>, 190 years prior to Joseph being taken into Egypt. In other words, the 430 years <i>must</i> include Abraham's time in Canaan. Indeed, when we go back and look at the Exodus verse in the Septuagint, we can see that it includes \"...<i>and in Canaan</i>...\" where the Masoretic Text does not.",
 
-        "With that problem solved, our second arises. Gen12:4 tells us that Abraham was 75 years old when he left Haran — 25 years before the birth of Isaac. What are we to do, then, with the extra 5 years between \"the promise\" and Abraham setting out from Haran? My answer, which may be a bit of a cop-out, is just to read Gen12:1-4 as \"God called Abraham out of Haran with a promise, and some time later Abraham left.\" In this case, it took him 5 years and his father dying to actually leave.",
+        "With that problem solved, our second arises. Gen12:4 tells us that Abraham was 75 years old when he left Haran — 25 years before the birth of Isaac. What are we to do, then, with the extra 5 years that arises between \"the promise\" being 30 years prios to Isaac, but Isaac being born only 25 years after Abraham left Haran? There are a couple of ways that this can be resolved:",
 
-        "At any rate, this is how I resolved these numbers. There are a dozen different other ways that people have tried to reconcile them, but this is the only one that makes a lick of sense to me. Perhaps I will add more of the other theories as options in the future, but for now, I'm sticking with this."
+        "<0><0></0> <strong>$t(options.calculations.sojourn.title):</strong></0>",
+
+        "<0>$t(options.calculations.sojourn.early)</0> — This is the stronger option in my opinion. You can either read Gen12:1-4 as \"God called Abraham out of Haran with a promise, and some time later Abraham left.\" which places the promise about five years prior to Abraham leaving Haran, or there is some Greek textual support for reading Acts7:4 such that Abraham left Haran prior to his father's death. Whether he left before his father died or waited a while after the promise has interesting theological implications (you could get a sermon out of either of those), the effect on the timeline either way is the same.",
+
+        "<0>$t(options.calculations.sojourn.late)</0> — If the Promise, Abraham's departure, and Haran's death were indeed all the same year, then you must push back the beginning of the 400 and 450 year periods to begin when Isaac was about 5 years old. Some have tried to argue that this has to do with higher infant mortality rates and that the Israelites wouldn't count a person until after their 4th or 5th year, but I personally am unable to find any independent support for that assertion."
       ]
     },
     "version": {
@@ -141,6 +145,11 @@
         "septuagint": "Septuagint",
         "masoretic": "Masoretic",
         "best": "Best Attested"
+      },
+      "sojourn": {
+        "title": "The Promise to Abraham",
+        "early": "Age 70",
+        "late": "Age 75"
       },
       "jubilee": {
         "title": "Jubilee Years",

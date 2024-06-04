@@ -9,6 +9,11 @@ const optionsState = {
     default: 'best',
     effects_UNSTABLE: [persistAtom],
   }),
+  sojourn: atom({
+    key: 'optionsSojourn',
+    default: 'early',
+    effects_UNSTABLE: [persistAtom],
+  }),
   jubilee: atom({
     key: 'optionsJubilee',
     default: 'exclusive',

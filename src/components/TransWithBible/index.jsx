@@ -25,7 +25,7 @@ const TransWithBible = ({ i18nKey = '', values = {}, components = [] }) => {
   try {
     output = t(i18nKey, values);
   } catch (e) {
-    output = t(i18nKey.replace(':', '{{REPLACED_COLON}}'), { ...values, REPLACED_COLON: ':' });
+    output = t(i18nKey.replaceAll(':', '{{REPLACED_COLON}}'), { ...values, REPLACED_COLON: ':' });
   }
 
   // extract any text with a verse-like structure, e.g., version|Xxxxx #:#-#,#

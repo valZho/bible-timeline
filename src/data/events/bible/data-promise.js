@@ -1,8 +1,9 @@
 /**
  * Generate events from Abrahama to the taking of the Promised Land
+ * @param {boolean} earlySojourn - use the early or late date for the Promise to Abraham?
  * @returns {object}
  */
-const eventData3 = () => {
+const eventData3 = earlySojourn => {
   const events = {
     abraham: { relative: { id: 'terah', end: -75 }, years: 175, margin: 0.5 },
     isaac: { relative: { id: 'abraham', start: 100 }, years: 180, margin: 0.5 },
@@ -11,10 +12,20 @@ const eventData3 = () => {
     egyptFeastAndFamine: { relative: { id: 'jacobInEgypt', start: -9 }, years: 17, exact: true, color: 'cyan' },
     joseph: { relative: { id: 'egyptFeastAndFamine', start: -30 }, years: 110, margin: 0.5 },
     josephEnslaved: { relative: { id: 'joseph', start: 17 }, years: 30 - 17, margin: 0.5, color: 'cyan' },
-    // covenant: { relative: { id: 'isaac', start: -1 }, years: 0, exact: true, hideEndLabel: true, color: 'cyan' },
-    sojourn430: { relative: { id: 'isaac', start: -30 }, years: 430, color: 'cyan' },
-    sojourn400: { relative: { id: 'isaac', start: 0 }, years: 400, exactStart: true, color: 'cyan' },
-    sojourn450: { relative: { id: 'isaac', start: 0 }, years: 450, exactStart: true, color: 'cyan' },
+    covenant: { relative: { id: 'isaac', start: -1 }, years: 0, exact: true, hideEndLabel: true, color: 'cyan' },
+    sojourn430: { relative: { id: 'isaac', start: earlySojourn ? -30 : -25 }, years: 430, color: 'cyan' },
+    sojourn400: {
+      relative: { id: 'isaac', start: earlySojourn ? 0 : 5 },
+      years: 400,
+      exactStart: earlySojourn,
+      color: 'cyan',
+    },
+    sojourn450: {
+      relative: { id: 'isaac', start: earlySojourn ? 0 : 5 },
+      years: 450,
+      exactStart: earlySojourn,
+      color: 'cyan',
+    },
     exodus: { relative: { id: 'sojourn400', end: -0.5 }, years: 0.5, exact: true, color: 'cyan', hideEndDate: true },
     moses: { relative: { id: 'exodus', start: -80 }, years: 120, margin: 0.5 },
     mosesMidian: { relative: { id: 'moses', start: 40 }, years: 40, margin: 0.5, color: 'cyan' },
