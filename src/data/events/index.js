@@ -17,7 +17,8 @@ import convertToTimeline from './utils/convertToTimeline';
  * biblical events (dated)         lime.6
  * biblical figures (speculated)   blue.4
  * biblical events (speculated)    lime.5
- * biblical reigns                 grape.5
+ * biblical reigns (Judah)         grape.6
+ * biblical reigns (Israel)        grape.4
  *
  * secular church events           teal.4
  * secular figures                 blue.2
