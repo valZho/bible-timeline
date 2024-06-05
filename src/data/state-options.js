@@ -4,8 +4,8 @@ const { persistAtom } = recoilPersist();
 
 const optionsState = {
   // CALCULATION OPTIONS
-  ages: atom({
-    key: 'optionsAges',
+  manuscript: atom({
+    key: 'optionsManuscript',
     default: 'best',
     effects_UNSTABLE: [persistAtom],
   }),
@@ -22,6 +22,11 @@ const optionsState = {
   crucifixion: atom({
     key: 'optionsCrucifixion',
     default: 31,
+    effects_UNSTABLE: [persistAtom],
+  }),
+  pyramids: atom({
+    key: 'optionsPyramids',
+    default: 'revised',
     effects_UNSTABLE: [persistAtom],
   }),
 

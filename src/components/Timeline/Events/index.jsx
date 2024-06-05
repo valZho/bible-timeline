@@ -2,7 +2,9 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Trans, useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
-import { HoverCard, LoadingOverlay, Text } from '@mantine/core';
+import { HoverCard, LoadingOverlay, Text, MantineColor } from '@mantine/core';
+
+console.log(MantineColor);
 
 import OPTIONS from '@/data/state-options';
 import CALENDAR from '@/data/state-calendar';
@@ -29,7 +31,7 @@ const Events = ({ trackHeight = 45 }) => {
   const createEvents = useCallback(() => {
     const bar = ({ fuzzy, color, marginStart, width, fullWidth, marginEnd }, key) => (
       <svg key={key} className={`bar ${fuzzy ? 'fuzzy' : ''}`} version="1.1" width={fullWidth} height={barHeight}>
-        <rect className={`base ${color || ''}`} width="100%" height="100%" fill="blue" />
+        <rect className={`base ${color?.replace('.', '_') || 'blue_6'}`} width="100%" height="100%" fill="blue" />
         <rect className="margin" width={marginStart * 2} height="100%" fill="lightblue" />
         <rect className="margin" width={marginEnd * 2} x={fullWidth - marginEnd * 2} height="100%" fill="lightblue" />
         <rect className="start" width={marginStart ? 1 : 0} height="100%" x={marginStart} fill="black" />

@@ -59,7 +59,7 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
       fuzzyEnd: src.fuzzyEnd ?? false,
       buffer: src.buffer ?? 0,
       color: src.color,
-      hideEndDate: src.hideEndDate,
+      hideEndDate: src.hideEndDate || src.years < 20,
       track: 0,
     },
   };
@@ -94,8 +94,9 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
   }
 
   // END DATE & MARGIN END -------------------------
-  processed[key].endAM = processed[key].startAM + src.years - (src.exact || src.exactEnd ? 0 : 0.5);
-  processed[key].marginEnd = processed[key].marginStart + (src.exact || src.exactEnd ? 0 : 0.5);
+  const endFuzz = src.years < 1 || src.exact || src.exactEnd ? 0 : 0.5;
+  processed[key].endAM = processed[key].startAM + src.years - endFuzz;
+  processed[key].marginEnd = processed[key].marginStart + endFuzz;
 
   // CALCULATE DISPLAY -------------------------
   // start values

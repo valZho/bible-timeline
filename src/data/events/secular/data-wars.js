@@ -15,7 +15,7 @@ const data = () => {
 
   Object.keys(events).forEach(key => {
     events[key].exact = true;
-    events[key].color = 'gray';
+    events[key].color = 'pink.2';
     events[key].years = events[key].end - events[key].startCE;
     delete events[key].end;
   });

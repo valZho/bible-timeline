@@ -20,8 +20,9 @@ const EventPicker = ({ scrollTo }) => {
     return events.map(e => (
       <Badge
         key={e.key}
+        autoContrast
         className="event"
-        color={e.display.color}
+        color={e.display.color || 'blue.6'}
         size="lg"
         style={{ borderRadius: 0 }}
         rightSection={<IconChevronsRight size={18} stroke={1.5} className="mantine-rotate-rtl" />}

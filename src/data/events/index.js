@@ -11,7 +11,23 @@ import secular_wars from './secular/data-wars';
 
 import convertToTimeline from './utils/convertToTimeline';
 
-const getEvents = ({ ages, jubilee, sojourn, ...options }) => {
+/**
+ * COLOR GUIDE:
+ * biblical figures (dated)        blue.5
+ * biblical events (dated)         lime.6
+ * biblical figures (speculated)   blue.4
+ * biblical events (speculated)    lime.5
+ * biblical reigns                 grape.5
+ *
+ * secular church events           teal.4
+ * secular figures                 blue.2
+ * secular reigns                  violet.2
+ * secular empires                 dark.4
+ * secular events                  gray.4
+ * secular wars                    pink.3
+ */
+
+const getEvents = ({ manuscript, jubilee, sojourn, pyramids, ...options }) => {
   // FIRST GENERATE A KEYED OBJECT OF EVENTS
   // using an object first makes it much easier to reference events for doing relative dates
   //
@@ -36,8 +52,8 @@ const getEvents = ({ ages, jubilee, sojourn, ...options }) => {
   // —— Start date relative to END date of another event
   // { title: 'timeline.shem', relative: { id: 'flood', end: -98 }, years: 600, margin: { end: 0.5 } }
   //
-  const MT = ages === 'mt';
-  const LXX = ages === 'lxx';
+  const MT = manuscript === 'mt';
+  const LXX = manuscript === 'lxx';
   const INTERCALATED = jubilee === 'intercalated';
   const EARLY_SOJOURN = sojourn === 'early';
 
@@ -49,10 +65,12 @@ const getEvents = ({ ages, jubilee, sojourn, ...options }) => {
     ...bible_messiah(INTERCALATED),
   };
 
+  const REVISED_PYRAMIDS = pyramids === 'revised';
+
   const secularEvents = {
-    ...secular_ancient(),
+    ...secular_ancient(REVISED_PYRAMIDS),
     ...secular_modern(),
-    ...secular_rome(),
+    // ...secular_rome(),
     ...secular_wars(),
   };
 

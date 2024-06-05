@@ -4,14 +4,14 @@
  */
 const eventData5 = (INTERCALATED = false) => {
   const events = {
-    exile: { relative: { id: 'temple1start', end: 430 }, years: 70, exact: true, color: 'cyan' },
+    exile: { relative: { id: 'zedekiah', end: 0 }, years: 70, exact: true, color: 'red.7' },
     dan69weeks: {
       relative: { id: 'exile', end: 0 },
       years: 69 * 7 + (INTERCALATED ? 9 : 0),
       exact: true,
-      color: 'cyan',
+      color: 'lime',
     },
-    messiah: { relative: { id: 'dan69weeks', end: -33 }, years: 33, exact: true, color: 'yellow' },
+    messiah: { relative: { id: 'dan69weeks', end: -33 }, years: 33, exact: true, color: 'yellow.5' },
   };
 
   return events;

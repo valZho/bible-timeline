@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { useTranslation } from 'react-i18next';
+import { useRecoilState } from 'recoil';
 import { Text, SegmentedControl, Slider, Switch } from '@mantine/core';
 
-const Option = ({ title = '', value = '', options = [], range = [], label = '', onChange = () => {} }) => {
-  const color = 'yellow.5';
-  let control = '';
+import OPTIONS from '@/data/state-options';
 
+const Option = ({ option, values = [], range = [], label = '' }) => {
+  const { t } = useTranslation();
+  const [value, setValue] = useRecoilState(OPTIONS[option]);
+
+  const color = 'yellow.5';
+
+  let control = '';
   if (!range.length && !label) {
     control = (
       <SegmentedControl
@@ -14,9 +20,9 @@ const Option = ({ title = '', value = '', options = [], range = [], label = '', 
         autoContrast
         size="xs"
         value={value}
-        onChange={onChange}
+        onChange={setValue}
         fullWidth
-        data={options}
+        data={values}
       />
     );
   }
@@ -27,7 +33,7 @@ const Option = ({ title = '', value = '', options = [], range = [], label = '', 
         color={color}
         size="md"
         checked={value}
-        onChange={e => onChange(e.currentTarget.checked)}
+        onChange={e => setValue(e.currentTarget.checked)}
         label={label}
         labelPosition="left"
       />
@@ -39,11 +45,11 @@ const Option = ({ title = '', value = '', options = [], range = [], label = '', 
       <Slider
         color={color}
         value={value}
-        onChange={onChange}
+        onChange={setValue}
         min={range[0] || 1}
         max={range[1] || 1}
         step={range[2] || 1}
-        marks={options}
+        marks={values}
       />
     );
   }
@@ -51,7 +57,7 @@ const Option = ({ title = '', value = '', options = [], range = [], label = '', 
   return (
     <>
       <Text className="settingTitle" size="sm">
-        {title}
+        {t(`options.${option}.title`)}
       </Text>
       {control}
     </>
@@ -60,16 +66,14 @@ const Option = ({ title = '', value = '', options = [], range = [], label = '', 
 
 Option.propTypes = {
   label: PropTypes.string,
-  onChange: PropTypes.func,
-  options: PropTypes.arrayOf(
+  option: PropTypes.array,
+  range: PropTypes.arrayOf(PropTypes.number),
+  values: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     }),
   ),
-  range: PropTypes.arrayOf(PropTypes.number),
-  title: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default Option;

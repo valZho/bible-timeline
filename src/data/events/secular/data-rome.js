@@ -1,9 +1,9 @@
 // WARS
 const data = () => {
   const events = {
-    rome_kingdom: { startCE: -753, end: -509 },
-    rome_republic: { startCE: -509, end: -27 },
-    rome_empire: { startCE: -27, end: 395 },
+    rome_kingdom: { startCE: -753, end: -509, color: 'dark.4' },
+    rome_republic: { startCE: -509, end: -27, color: 'dark.4' },
+    rome_empire: { startCE: -27, end: 395, color: 'dark.4' },
     rome_augustus: { startCE: -27, end: 14 },
     rome_tiberius: { startCE: 14, end: 37 },
     rome_caligula: { startCE: 37, end: 41 },
@@ -15,7 +15,7 @@ const data = () => {
 
   Object.keys(events).forEach(key => {
     events[key].exact = true;
-    events[key].color = 'gray';
+    events[key].color = events[key].color || 'violet.2';
     events[key].years = events[key].end - events[key].startCE;
     delete events[key].end;
   });

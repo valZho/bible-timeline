@@ -16,7 +16,7 @@
 
         "<0><0></0> <strong>AM / CE</strong></0> — Using the toggle at the top of the page, you can switch between displaying the Hebrew dates: AM (<i>anno mundi</i>), or the Gregorian dates: CE (common era - BC/AD) ",
 
-        "<0><0></0> <strong>$t(options.display.showSource.title)</strong> — On / Off</0> — Turn this on to show pop-up tooltips for each event listing the Bible verses referenced as well as a plain-language explanation of how the engine placed the item onto the timeline. If you don't need it, these pop-ups can be pretty annoying, so I have it disabled by default."
+        "<0><0></0> <strong>$t(options.showSource.title)</strong> — On / Off</0> — Turn this on to show pop-up tooltips for each event listing the Bible verses referenced as well as a plain-language explanation of how the engine placed the item onto the timeline. If you don't need it, these pop-ups can be pretty annoying, so I have it disabled by default."
       ]
     },
     "inclusiveTime": {
@@ -33,20 +33,20 @@
         "On a related note, because this timeline was built primarily to plot out the history recorded in the Bible, using inclusive dating, this means that the secular events added using only Gregorian dates may also not act <i>completely</i> as you might expect. Nonetheless, I find that having other historical events on the timeline very helpful."
       ]
     },
-    "ages": {
+    "manuscript": {
       "title": "Patriarch Ages: The Masoretic Text vs The Septuagint",
       "description_wTags": [
         "The ages of Adam through Terah found in Gen5 & Gen11 differ between the Masoretic Text (MT), Hebrew scriptures dating to the 2nd century AD, and the Septuagint (LXX), the Greek translation of the scriptures dating back possibly to the 3rd century BC. And for those curious about it, I'm not event going to bother with the Samaritan Pentateuch which appears to have a lot of problems in this area.",
 
         "It's important to note that, despite the preponderance of evidence, and by what I would consider a quirk of history, <i>all</i> English bible translations — even the most recent — are still using the ages found in the MT. I assume changing the dates at this point would probably raise too much ire and controversy, which is unfortunate.",
 
-        "<0><0></0> <strong>$t(options.calculations.ages.title):</strong></0>",
+        "<0><0></0> <strong>$t(options.manuscript.title):</strong></0>",
 
-        "<0>$t(options.calculations.ages.best)</0> — There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to the patriarchal dates with a couple of minor exceptions. I have heavily referenced <1>the work of Henry B. Smith Jr. of the Associates of Biblical Research</1> on the topic, and this settings is based on his assertions which mostly follow the LXX, but make corrections in a couple of key places.",
+        "<0>$t(options.manuscript.best)</0> — There are a whole host of factors indicating that the LXX should be trusted over the MT with regards to the patriarchal dates with a couple of minor exceptions. I have heavily referenced <1>the work of Henry B. Smith Jr. of the Associates of Biblical Research</1> on the topic, and this settings is based on his assertions which mostly follow the LXX, but make corrections in a couple of key places.",
 
-        "<0>$t(options.calculations.ages.septuagint)</0> — Strictly follow the partiarchal ages found in the Septuagint.",
+        "<0>$t(options.manuscript.septuagint)</0> — Strictly follow the partiarchal ages found in the Septuagint.",
 
-        "<0>$t(options.calculations.ages.masoretic)</0> — Strictly follow the partiarchal ages found in the Masoretic Text. Note that the MT excludes Kainan (son of Arphaxad and father of Shelah)."
+        "<0>$t(options.manuscript.masoretic)</0> — Strictly follow the partiarchal ages found in the Masoretic Text. Note that the MT excludes Kainan (son of Arphaxad and father of Shelah)."
       ]
     },
     "margins": {
@@ -58,7 +58,7 @@
 
         "For practicality, all such dates are averaged — put into the middle of the year — and a ±6 month margin of error is added to a compounding number. Starting with Adam, by the time you get to Christ, you are looking at a swing of more than two decades on your dates. While this margin of error is hidden by default, it's important to remember that they are there and any impression of fine precision you might have is actually a bit of an illusion. Having said that, plus or minus a decade can still be very useful at the scale of millenia.",
 
-        "<0><0></0> <strong>$t(options.display.margins.title)</strong> — Show / Hide</0> — Note that even though the Gregorian dates are still, in a way, subject to the compounding margin of error, those margins are <i>not</i> applied to or shown on secular, Gregorian-only dates on the timeline."
+        "<0><0></0> <strong>$t(options.margins.title)</strong> — Show / Hide</0> — Note that even though the Gregorian dates are still, in a way, subject to the compounding margin of error, those margins are <i>not</i> applied to or shown on secular, Gregorian-only dates on the timeline."
       ]
     },
     "jubilee": {
@@ -66,12 +66,12 @@
       "description_wTags": [
         "Lev25 mandates the observation of a sabbath year — the <i>\"shmita\"</i> — every 7th year and a jubilee year after every 7th shmita. Apparently, there is some wiggle room for interpretation on just when the jubilee year occurs in relation to the shmita cycle. Below are the three different methods for calculating the jubilee year that I have seen floating around out there. Although the \"exclusive\" method seems the most obvious to me, I have included the others for visualization.",
 
-        "<0><0></0> <strong>$t(options.calculations.jubilee.title):</strong></0>",
-        "<0>$t(options.calculations.jubilee.inclusive)</0> — Each jubilee year <i>overlaps</i> with each 49th shmita. [49-year jubilee cycles]",
+        "<0><0></0> <strong>$t(options.jubilee.title):</strong></0>",
+        "<0>$t(options.jubilee.inclusive)</0> — Each jubilee year <i>overlaps</i> with each 49th shmita. [49-year jubilee cycles]",
 
-        "<0>$t(options.calculations.jubilee.exclusive)</0> — Each jubilee year begins <i>after</i> each 49th shmita and overlaps with the 1st year of the next shmita cycle. <code>[49-year jubilee cycles]</code>",
+        "<0>$t(options.jubilee.exclusive)</0> — Each jubilee year begins <i>after</i> each 49th shmita and overlaps with the 1st year of the next shmita cycle. <code>[49-year jubilee cycles]</code>",
 
-        "<0>$t(options.calculations.jubilee.intercalated)</0> — Each jubilee year begins <i>after</i> each 49th shmita and interrupts the shmita cycle with an intercalated (inserted) year. The first year of the next shmita cycle begins <i>after</i> the jubilee year. [50-year jubilee cycles] — Proponents of this view also claim that Daniel's 70 Weeks (shmita cycles) implies these extra jubilee years should be intercalated (added in) which means that the first 69 weeks of Daniel (483 years) would have an <i>additional</i> 9 jubilee years added in for a total of 492 years."
+        "<0>$t(options.jubilee.intercalated)</0> — Each jubilee year begins <i>after</i> each 49th shmita and interrupts the shmita cycle with an intercalated (inserted) year. The first year of the next shmita cycle begins <i>after</i> the jubilee year. [50-year jubilee cycles] — Proponents of this view also claim that Daniel's 70 Weeks (shmita cycles) implies these extra jubilee years should be intercalated (added in) which means that the first 69 weeks of Daniel (483 years) would have an <i>additional</i> 9 jubilee years added in for a total of 492 years."
       ]
     },
     "crucifixion": {
@@ -89,9 +89,9 @@
 
         "<strong>Option 3: Jesus Died on a Wednesday</strong><br />1 full night & 1 full day: Wednesday sundown - Thursday sundown<br />1 full night & 1 full day: Thursday sundown - Friday sundown<br />1 full night & 1 full day: Friday sundown - Saturday sundown",
 
-        "<0><0></0> <strong>$t(options.calculations.crucifixion.title):</strong></0>",
+        "<0><0></0> <strong>$t(options.crucifixion.title):</strong></0>",
 
-        "<0>$t(options.calculations.crucifixion.optionLabels.0) - $t(options.calculations.crucifixion.optionLabels.2)</0> — I have found it difficult to find agreement as to which day of the week Passover falls on each year in the early first century. Within a ten-year window, you can use your own sources and set the AD date to whatever you think is correct."
+        "<0>$t(options.crucifixion.optionLabels.0) - $t(options.crucifixion.optionLabels.2)</0> — I have found it difficult to find agreement as to which day of the week Passover falls on each year in the early first century. Within a ten-year window, you can use your own sources and set the AD date to whatever you think is correct."
       ]
     },
     "sojourning": {
@@ -113,11 +113,23 @@
 
         "With that problem solved, our second arises. Gen12:4 tells us that Abraham was 75 years old when he left Haran — 25 years before the birth of Isaac. What are we to do, then, with the extra 5 years that arises between \"the promise\" being 30 years prios to Isaac, but Isaac being born only 25 years after Abraham left Haran? There are a couple of ways that this can be resolved:",
 
-        "<0><0></0> <strong>$t(options.calculations.sojourn.title):</strong></0>",
+        "<0><0></0> <strong>$t(options.sojourn.title):</strong></0>",
 
-        "<0>$t(options.calculations.sojourn.early)</0> — This is the stronger option in my opinion. You can either read Gen12:1-4 as \"God called Abraham out of Haran with a promise, and some time later Abraham left.\" which places the promise about five years prior to Abraham leaving Haran, or there is some Greek textual support for reading Acts7:4 such that Abraham left Haran prior to his father's death. Whether he left before his father died or waited a while after the promise has interesting theological implications (you could get a sermon out of either of those), the effect on the timeline either way is the same.",
+        "<0>$t(options.sojourn.early)</0> — This is the stronger option in my opinion. You can either read Gen12:1-4 as \"God called Abraham out of Haran with a promise, and some time later Abraham left.\" which places the promise about five years prior to Abraham leaving Haran, or there is some Greek textual support for reading Acts7:4 such that Abraham left Haran prior to his father's death. Whether he left before his father died or waited a while after the promise has interesting theological implications (you could get a sermon out of either of those), the effect on the timeline either way is the same.",
 
-        "<0>$t(options.calculations.sojourn.late)</0> — If the Promise, Abraham's departure, and Haran's death were indeed all the same year, then you must push back the beginning of the 400 and 450 year periods to begin when Isaac was about 5 years old. Some have tried to argue that this has to do with higher infant mortality rates and that the Israelites wouldn't count a person until after their 4th or 5th year, but I personally am unable to find any independent support for that assertion."
+        "<0>$t(options.sojourn.late)</0> — If the Promise, Abraham's departure, and Haran's death were indeed all the same year, then you must push back the beginning of the 400 and 450 year periods to begin when Isaac was about 5 years old. Some have tried to argue that this has to do with higher infant mortality rates and that the Israelites wouldn't count a person until after their 4th or 5th year, but I personally am unable to find any independent support for that assertion."
+      ]
+    },
+    "pyramids": {
+      "title": "The Building of the Pyramids",
+      "description_wTags": [
+        "The accepted mainstream dates for the building of the great pyramids at Giza are approximately 2550-2410 BC. The earliest known Egyptian pyramid, the pyramid of Djoser, has a mainstream construction date of 2670-2650 BC. The documentary film, <1>Patterns of Evidence: The Exodus</1> lays out a compelling case for why these dates should be moved forward 200 years.",
+
+        "<0><0></0> <strong>$t(options.pyramids.title):</strong></0>",
+
+        "<0>$t(options.pyramids.mainstream)</0> — Use the mainstream dates for the construction of the pyramids.",
+
+        "<0>$t(options.pyramids.revised)</0> — Use the revised dates from <i>Patterns of Evidence: The Exodus</i> for the construction of the pyramids."
       ]
     },
     "version": {
@@ -138,55 +150,56 @@
     "tab": "Timeline Options",
     "notificationTitle": "What are all these settings?",
     "notificationText": "For detailed information about these options, why they're here and what they do, please see the notes.",
-    "calculations": {
-      "title": "Date Calculation",
-      "ages": {
-        "title": "Manuscript Source",
-        "septuagint": "Septuagint",
-        "masoretic": "Masoretic",
-        "best": "Best Attested"
-      },
-      "sojourn": {
-        "title": "The Promise to Abraham",
-        "early": "Age 70",
-        "late": "Age 75"
-      },
-      "jubilee": {
-        "title": "Jubilee Years",
-        "inclusive": "Inclusive",
-        "exclusive": "Exclusive",
-        "intercalated": "Intercalated"
-      },
-      "crucifixion": {
-        "title": "Crucifixion Date",
-        "optionLabels": ["25 A.D.", "30 A.D.", "35 A.D."]
-      }
+    "calculationsTitle": "Date Calculation",
+    "displayTitle": "Display Options",
+    "manuscript": {
+      "title": "Manuscript Source",
+      "septuagint": "Septuagint",
+      "masoretic": "Masoretic",
+      "best": "Best Attested"
     },
-    "display": {
-      "title": "Display Options",
-      "scale": {
-        "title": "Horizontal Scale",
-        "bigger": "Bigger",
-        "smaller": "Smaller"
-      },
-      "trackMin": {
-        "title": "Minimum Number of Vertical Tracks",
-        "auto": "Minimum",
-        "all": "Unlimited"
-      },
-      "margins": {
-        "title": "Margin of Error",
-        "on": "Show",
-        "off": "Hide"
-      },
-      "showSource": {
-        "title": "Event Details",
-        "label": "Show reference tooltips?"
-      },
-      "calendar": {
-        "ce": "CE",
-        "am": "AM"
-      }
+    "sojourn": {
+      "title": "The Promise to Abraham",
+      "early": "Age 70",
+      "late": "Age 75"
+    },
+    "jubilee": {
+      "title": "Jubilee Years",
+      "inclusive": "Inclusive",
+      "exclusive": "Exclusive",
+      "intercalated": "Intercalated"
+    },
+    "crucifixion": {
+      "title": "Crucifixion Date",
+      "optionLabels": ["25 A.D.", "30 A.D.", "35 A.D."]
+    },
+    "pyramids": {
+      "title": "Building of the Pyramids",
+      "revised": "Revised",
+      "mainstream": "Mainstream"
+    },
+    "scale": {
+      "title": "Horizontal Scale",
+      "bigger": "Bigger",
+      "smaller": "Smaller"
+    },
+    "trackMin": {
+      "title": "Minimum Number of Vertical Tracks",
+      "auto": "Minimum",
+      "all": "Unlimited"
+    },
+    "margins": {
+      "title": "Margin of Error",
+      "on": "Show",
+      "off": "Hide"
+    },
+    "showSource": {
+      "title": "Event Details",
+      "label": "Show reference tooltips?"
+    },
+    "calendar": {
+      "ce": "CE",
+      "am": "AM"
     }
   },
   "eventPicker": {
@@ -352,8 +365,8 @@
       "placement": ""
     },
     "nimrod": {
-      "title": "Nimrod [Speculation]",
-      "source": "",
+      "title": "Nimrod [SPECULATION]",
+      "source": "NET|Gen10:6-12, Birth and age speculated based on ages of contemporaries",
       "placement": ""
     },
     "arphaxad": {
@@ -375,6 +388,11 @@
       "title": "Eber",
       "source": "Gen11:14-17",
       "placement": ""
+    },
+    "babel": {
+      "title": "Tower of Babel [SPECULATION]",
+      "source": "Gen10:25 and tradition places Peleg's birth around the same time as the Tower of Babel",
+      "placement": "A roughly 10-year span around the time Peleg was born"
     },
     "peleg": {
       "title": "Peleg",
@@ -533,113 +551,226 @@
       "placement": ""
     },
     "rehoboam": {
-      "title": "Rehoboam's Reign",
+      "title": "Rehoboam's Reign [Judah]",
+      "source": "1King11:43, 1King14:21",
+      "placement": ""
+    },
+
+    "kingdomDivided": {
+      "title": "The Kingdom of Israel Divides",
       "source": "",
       "placement": ""
     },
+
+    "SOUTHERN_KINGS": "——————————————————————————————",
+
     "abijam": {
-      "title": "Abijam's Reign",
-      "source": "",
+      "title": "Abijam's Reign [Judah]",
+      "source": "1King14:31, 1King15:1-2",
       "placement": ""
     },
     "asa": {
-      "title": "Asa's Reign",
-      "source": "",
+      "title": "Asa's Reign [Judah]",
+      "source": "1King15:9-10",
       "placement": ""
     },
     "jehoshaphat": {
-      "title": "Jehoshaphat's Reign",
-      "source": "",
+      "title": "Jehoshaphat's Reign [Judah]",
+      "source": "1King22:41-42",
       "placement": ""
     },
     "jehoram": {
-      "title": "Jehoram's Reign",
-      "source": "",
+      "title": "Jehoram's Reign [Judah]",
+      "source": "2King8:16-17",
       "placement": ""
     },
-    "ahaziah": {
-      "title": "Ahaziah's Reign",
-      "source": "",
+    "ahaziahSouth": {
+      "title": "Ahaziah's Reign [Judah]",
+      "source": "2King:8:25-26",
       "placement": ""
     },
     "athaliah": {
-      "title": "Athaliah's Reign",
-      "source": "",
+      "title": "Athaliah's Reign [Judah]",
+      "source": "2King11:1-3",
       "placement": ""
     },
     "joash": {
-      "title": "Joash's Reign",
-      "source": "",
+      "title": "Joash's Reign [Judah]",
+      "source": "2King12:1",
       "placement": ""
     },
     "amaziah": {
-      "title": "Amaziah's Reign",
-      "source": "",
+      "title": "Amaziah's Reign [Judah]",
+      "source": "2King14:1-2",
       "placement": ""
     },
     "uzziah": {
-      "title": "Uzziah's Reign",
-      "source": "",
+      "title": "Uzziah/Azariah's Reign [Judah]",
+      "source": "2King15:1-2",
       "placement": ""
     },
     "jotham": {
-      "title": "Jotham's Reign",
-      "source": "",
+      "title": "Jotham's Reign [Judah]",
+      "source": "2King15:32-33",
       "placement": ""
     },
     "ahaz": {
-      "title": "Ahaz's Reign",
-      "source": "",
+      "title": "Ahaz's Reign [Judah]",
+      "source": "2King16:1-2",
       "placement": ""
     },
     "hezekiah": {
-      "title": "Hezekiah's Reign",
-      "source": "",
+      "title": "Hezekiah's Reign [Judah]",
+      "source": "2King18:1-2",
       "placement": ""
     },
     "manasseh": {
-      "title": "Manasseh's Reign",
-      "source": "",
+      "title": "Manasseh's Reign [Judah]",
+      "source": "2King20:21, 2King21:1",
       "placement": ""
     },
     "amon": {
-      "title": "Amon's Reign",
-      "source": "",
+      "title": "Amon's Reign [Judah]",
+      "source": "2King21:18-19",
       "placement": ""
     },
     "josiah": {
-      "title": "Josiah's Reign",
-      "source": "",
+      "title": "Josiah's Reign [Judah]",
+      "source": "2King21:23-24, 2King22:1",
       "placement": ""
     },
-    "jehoahaz": {
-      "title": "Jehoahaz's Reign",
-      "source": "",
+    "jehoahazSouth": {
+      "title": "Jehoahaz's Reign [Judah]",
+      "source": "2Chr36:1-2",
       "placement": ""
     },
-    "eliakim": {
-      "title": "Eliakim's Reign",
-      "source": "",
+    "jehoiakim": {
+      "title": "Eliakim/Jehoiakim's Reign [Judah]",
+      "source": "2King23:34-36",
       "placement": ""
     },
     "jehoiachin": {
-      "title": "Jehoiachin's Reign",
-      "source": "",
+      "title": "Jehoiachin's Reign [Judah]",
+      "source": "2King24:6-8",
       "placement": ""
     },
     "zedekiah": {
-      "title": "Zedekiah's Reign",
+      "title": "Zedekiah's Reign [Judah]",
+      "source": "2King24:15-18",
+      "placement": ""
+    },
+
+    "NORTHERN_KINGS": "—————————————————————————————————",
+
+    "jeroboam1": {
+      "title": "Jeroboam Reign [Israel]",
+      "source": "1King14:20",
+      "placement": ""
+    },
+    "nadab": {
+      "title": "Nadab's Reign [Israel]",
+      "source": "1King15:25",
+      "placement": ""
+    },
+    "baasha": {
+      "title": "Baasha's Reign [Israel]",
+      "source": "1King15:33",
+      "placement": ""
+    },
+    "elah": {
+      "title": "Elah's Reign [Israel]",
       "source": "",
       "placement": ""
     },
+    "zimri": {
+      "title": "Zimri's Reign [Israel]",
+      "source": "1King16:15",
+      "placement": ""
+    },
+    "tibni": {
+      "title": "Tibni [Israel, Divided]",
+      "source": "1King16:15-21",
+      "placement": ""
+    },
+    "omri": {
+      "title": "Omri's Reign [Israel]",
+      "source": "1King16:15-23",
+      "placement": ""
+    },
+    "ahab": {
+      "title": "Ahab's Reign [Israel]",
+      "source": "1King16:29",
+      "placement": ""
+    },
+    "ahaziahNorth": {
+      "title": "Azahiah's Reign [Israel]",
+      "source": "1King22:51",
+      "placement": ""
+    },
+    "joram": {
+      "title": "Joram's Reign [Israel]",
+      "source": "2King3:1",
+      "placement": ""
+    },
+    "jehu": {
+      "title": "Jehu's Reign [Israel]",
+      "source": "2King10:36",
+      "placement": ""
+    },
+    "jehoahazNorth": {
+      "title": "Jehoahaz's Reign [Israel]",
+      "source": "2King13:1",
+      "placement": ""
+    },
+    "jehoash": {
+      "title": "Jehoash's Reign [Israel]",
+      "source": "2King13:10",
+      "placement": ""
+    },
+    "jeroboam2": {
+      "title": "Jeroboam Reign [Israel]",
+      "source": "2King14:23",
+      "placement": ""
+    },
+    "zechariah": {
+      "title": "Zechariah's Reign [Israel]",
+      "source": "2King15:8",
+      "placement": ""
+    },
+    "shallum": {
+      "title": "Shallum's Reign [Israel]",
+      "source": "2King15:13",
+      "placement": ""
+    },
+    "menahem": {
+      "title": "Menahem's Reign [Israel]",
+      "source": "2King15:17",
+      "placement": ""
+    },
+    "pekahiah": {
+      "title": "Pekahiah's Reign [Israel]",
+      "source": "2King15:23",
+      "placement": ""
+    },
+    "pekah": {
+      "title": "Pekah's Reign [Israel]",
+      "source": "",
+      "placement": "2King15:27"
+    },
+    "hoshea": {
+      "title": "Hoshea's Reign [Israel]",
+      "source": "2King17:1",
+      "placement": ""
+    },
+
     "daniel": {
-      "title": "Daniel [Speculation]",
+      "title": "Daniel [SPECULATION]",
       "source": "",
       "placement": "Daniel was a young man when taken to captivity, which would most likely put him at 13-20 at the time of the exile. We also know that he served "
     },
     "exile": {
       "title": "The Exile",
-      "source": "",
+      "source": "2King25:1-21",
       "placement": ""
     },
     "dan69weeks": {
@@ -711,23 +842,50 @@
     "pyramidDjoser": {
       "title": "Pyramid of Djoser Built",
       "source": "",
-      "placement": "2630-2610 BC"
+      "placement": "Maintream: 2630-2610 BC | Revised: 2430-2410 BC"
     },
     "pyramidsGiza": {
       "title": "The Great Pyramids of Giza Built",
       "source": "",
-      "placement": "2550-2410 BC"
+      "placement": "Mainstream: 2550-2410 BC | Revised: 2350-2210 BC"
     },
     "assyrianEmpire": {
       "title": "The Assyrian Empire",
       "source": "",
       "placement": "1363-609 BC"
     },
+    "babylonianEmpire": {
+      "title": "The Neo-Babylonian Empire",
+      "source": "",
+      "placement": "620-539 BC"
+    },
     "achaemenianEmpire": {
       "title": "The Achaemenian (Medo-Persian) Empire",
       "source": "",
       "placement": "538-330 BC"
     },
+
+    "nebuchadnezzar": {
+      "title": "Reign of Nebuchadnezzar",
+      "source": "",
+      "placement": "605-562 BC"
+    },
+    "darius": {
+      "title": "Reign of Darius the Great",
+      "source": "",
+      "placement": "522-486 BC"
+    },
+    "xerxes": {
+      "title": "Reign of Xerxes the Great",
+      "source": "",
+      "placement": "486-465 BC"
+    },
+    "artaxerxes": {
+      "title": "Reign of Artaxerxes",
+      "source": "",
+      "placement": "465-424 BC"
+    },
+
     "confucious": {
       "title": "Confucious",
       "source": "",

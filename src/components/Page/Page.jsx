@@ -55,8 +55,8 @@ const Page = () => {
           color={theme.colors.yellow[5]}
           autoContrast
           data={[
-            { label: t('options.display.calendar.am'), value: 'am' },
-            { label: t('options.display.calendar.ce'), value: 'ce' },
+            { label: t('options.calendar.am'), value: 'am' },
+            { label: t('options.calendar.ce'), value: 'ce' },
           ]}
           value={calendar}
           onChange={setCalendar}

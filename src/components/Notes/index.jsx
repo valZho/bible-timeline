@@ -11,6 +11,7 @@ import {
   IconCrossFilled,
   IconHourglassLow,
   IconNotes,
+  IconPyramid,
   IconSettingsFilled,
   IconSquareToggle,
   IconTool,
@@ -43,7 +44,7 @@ const Notes = () => {
       icon: <IconHourglassLow />,
     },
     {
-      key: 'ages',
+      key: 'manuscript',
       icon: <IconBook />,
       components: [
         <Anchor
@@ -69,6 +70,13 @@ const Notes = () => {
     {
       key: 'sojourning',
       icon: <IconWalk />,
+    },
+    {
+      key: 'pyramids',
+      icon: <IconPyramid />,
+      components: [
+        <Accordion href="https://www.patternsofevidence.com/exodus-film/" target="_blank" rel="noopen noreferrer" />,
+      ],
     },
     {
       key: 'version',

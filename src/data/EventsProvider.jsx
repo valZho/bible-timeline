@@ -11,36 +11,39 @@ const EventsProvider = () => {
   const [_ceConvert, setCeConvert] = useRecoilState(CALENDAR.ceConvert);
   const [_farRight, setFarRight] = useRecoilState(CALENDAR.farRight);
   const [_trackCount, setTrackCount] = useRecoilState(CALENDAR.trackCount);
-  const ages = useRecoilValue(OPTIONS.ages);
+  const manuscript = useRecoilValue(OPTIONS.manuscript);
   const sojourn = useRecoilValue(OPTIONS.sojourn);
   const scale = useRecoilValue(OPTIONS.scale);
   const margins = useRecoilValue(OPTIONS.margins);
   const trackMin = useRecoilValue(OPTIONS.trackMin);
   const crucifixion = useRecoilValue(OPTIONS.crucifixion);
   const jubilee = useRecoilValue(OPTIONS.jubilee);
+  const pyramids = useRecoilValue(OPTIONS.pyramids);
 
   useEffect(() => {
     const { events, ceConvert, farRight, trackCount } = getEvents({
-      ages,
+      manuscript,
       sojourn,
       scale,
       margins: margins === 'on',
       trackMin,
       crucifixion,
       jubilee,
+      pyramids,
     });
     setEvents(events);
     setCeConvert(ceConvert);
     setFarRight(farRight);
     setTrackCount(trackCount);
   }, [
-    ages,
+    manuscript,
     sojourn,
     scale,
     margins,
     trackMin,
     crucifixion,
     jubilee,
+    pyramids,
     setEvents,
     setCeConvert,
     setFarRight,

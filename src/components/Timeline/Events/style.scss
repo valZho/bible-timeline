@@ -5,6 +5,7 @@ $bar-height: 10px;
 $bar-shadow: 0px 5px 4px rgba(0, 0, 0, 0.5);
 
 $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pink, red, teal, violet, yellow;
+$mantine-color-shades: 1, 2, 3, 4, 5, 6, 7;
 
 .mantine-Loader-root {
   transform: rotate(90deg);
@@ -39,8 +40,10 @@ $mantine-colors: blue, cyan, dark, grape, gray, green, indigo, lime, orange, pin
       .base {
         fill: var(--mantine-color-blue-text);
         @each $color in $mantine-colors {
-          &.#{$color} {
-            fill: var(--mantine-color-#{$color}-text);
+          @each $shade in $mantine-color-shades {
+            &.#{$color}_#{$shade} {
+              fill: var(--mantine-color-#{$color}-#{$shade});
+            }
           }
         }
       }
