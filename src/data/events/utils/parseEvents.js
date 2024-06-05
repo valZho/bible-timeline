@@ -86,10 +86,10 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
     }
 
     // if a year or more relative, add a ±6month margin unless flagged as exact
-    let addMargin = relativeStart < 0 ? 0.5 : -0.5;
-    if (src.exact || src.exactStart || Math.abs(relativeStart) < 1) addMargin = 0;
+    let startFuzz = relativeStart < 0 ? 0.5 : -0.5;
+    if (src.exact || src.exactStart || Math.abs(relativeStart) < 1) startFuzz = 0;
 
-    processed[key].startAM = relatedDate + relativeStart + addMargin;
+    processed[key].startAM = relatedDate + relativeStart + startFuzz;
     processed[key].marginStart = relatedMargin + (src.margin || 0);
   }
 
