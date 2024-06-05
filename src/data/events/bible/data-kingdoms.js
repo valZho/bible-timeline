@@ -45,7 +45,7 @@ const eventData4 = () => {
     jehoash: { relative: { id: 'joash', start: 37 }, color: 'grape.4', years: 16 },
     jeroboam2: { relative: { id: 'amaziah', start: 15 }, color: 'grape.4', years: 41 },
     zechariah: { relative: { id: 'uzziah', start: 38 }, color: 'grape.4', years: 0.5, exact: true },
-    shallum: { relative: { id: 'uzziah', start: 39 }, color: 'grape.4', years: 1 / 12, exact: true },
+    shallum: { relative: { id: 'uzziah', start: 39 }, color: 'grape.4', years: 0.083, exact: true },
     menahem: { relative: { id: 'uzziah', start: 39 }, color: 'grape.4', years: 10 },
     pekahiah: { relative: { id: 'uzziah', start: 50 }, color: 'grape.4', years: 2 },
     pekah: { relative: { id: 'uzziah', start: 52 }, color: 'grape.4', years: 20 },
