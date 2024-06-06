@@ -132,9 +132,26 @@
         "<0>$t(options.pyramids.revised)</0> — Use the revised dates from <i>Patterns of Evidence: The Exodus</i> for the construction of the pyramids."
       ]
     },
+    "daniel69": {
+      "title": "Daniel 9:25 and the \"Anointed One\"",
+      "description_wTags": [
+        "In Dan9:24-27 we read about 7 \"weeks\" (7-year periods), the first 69 of which end with \"an Anointed One, the ruler\". This is a reference to Jesus, but does this period end with the triumphal entry (when he <i>arrived</i> as King), at his Baptism (when he was <i>anointed</i>), or at his birth (when he <i>arrived</i> on earth)?",
+
+        "<0><0></0> <strong>$t(options.daniel69.title):</strong></0>",
+
+        "<0>$t(options.daniel69.birth)</0> — A multitude of angels announced Jesus' birth to the shepherds; magi from the East travelled great distances after seeing signs in the heavens; Simeon and Anna recognized Jesus as the messiah at his purification offering in the temple when he was 40 days old; the Jewish people were expecting the arrival of the messiah around that time.",
+
+        "<0>$t(options.daniel69.baptism)</0> — Jesus became \"the anointed one\" when he was baptized. It is only after this that he begins his minisry as the messiah.",
+
+        "<0>$t(options.daniel69.death)</0> — At the Triumphal Entry, Jesus </i>arrived</i> at Jerusalem and was received as messiah and king. Days later he fulfilled his primary purpose as messiah: his substitionary death on the cross."
+      ]
+    },
     "version": {
       "title": "Website Version History",
-      "description_wTags": ["• 1.0 — 2024-06-02 — Initial release"]
+      "description_wTags": [
+        "• 1.1 — 2024-06-07<br>    - Added Northern Kings and cleaned up Kingdom dates<br>    - Added option for Pyramid construction date<br>    - Added option for the end of Daniel's 69 Weeks",
+        "• 1.0 — 2024-06-02<br>    - Initial release"
+      ]
     }
   },
   "project": {
@@ -177,6 +194,12 @@
       "title": "Building of the Pyramids",
       "revised": "Revised",
       "mainstream": "Mainstream"
+    },
+    "daniel69": {
+      "title": "End of Daniel's 69th Week",
+      "birth": "Nativity",
+      "baptism": "Baptism",
+      "death": "Crucifixion"
     },
     "scale": {
       "title": "Horizontal Scale",

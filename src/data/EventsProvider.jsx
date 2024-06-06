@@ -19,6 +19,7 @@ const EventsProvider = () => {
   const crucifixion = useRecoilValue(OPTIONS.crucifixion);
   const jubilee = useRecoilValue(OPTIONS.jubilee);
   const pyramids = useRecoilValue(OPTIONS.pyramids);
+  const daniel69 = useRecoilValue(OPTIONS.daniel69);
 
   useEffect(() => {
     const { events, ceConvert, farRight, trackCount } = getEvents({
@@ -30,6 +31,7 @@ const EventsProvider = () => {
       crucifixion,
       jubilee,
       pyramids,
+      daniel69,
     });
     setEvents(events);
     setCeConvert(ceConvert);
@@ -44,6 +46,7 @@ const EventsProvider = () => {
     crucifixion,
     jubilee,
     pyramids,
+    daniel69,
     setEvents,
     setCeConvert,
     setFarRight,

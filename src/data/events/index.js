@@ -28,7 +28,7 @@ import convertToTimeline from './utils/convertToTimeline';
  * secular wars                    pink.3
  */
 
-const getEvents = ({ manuscript, jubilee, sojourn, pyramids, ...options }) => {
+const getEvents = ({ manuscript, jubilee, sojourn, pyramids, daniel69, ...options }) => {
   // FIRST GENERATE A KEYED OBJECT OF EVENTS
   // using an object first makes it much easier to reference events for doing relative dates
   //
@@ -63,7 +63,7 @@ const getEvents = ({ manuscript, jubilee, sojourn, pyramids, ...options }) => {
     ...bible_patriarchs2(MT, LXX),
     ...bible_promise(EARLY_SOJOURN),
     ...bible_kingdoms(),
-    ...bible_messiah(INTERCALATED),
+    ...bible_messiah(INTERCALATED, daniel69),
   };
 
   const REVISED_PYRAMIDS = pyramids === 'revised';

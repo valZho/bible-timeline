@@ -6,6 +6,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Accordion, Modal, Anchor } from '@mantine/core';
 import {
   IconBook,
+  IconCalendarUser,
   IconClipboardList,
   IconConfetti,
   IconCrossFilled,
@@ -66,6 +67,10 @@ const Notes = () => {
     {
       key: 'crucifixion',
       icon: <IconCrossFilled />,
+    },
+    {
+      key: 'daniel69',
+      icon: <IconCalendarUser />,
     },
     {
       key: 'sojourning',

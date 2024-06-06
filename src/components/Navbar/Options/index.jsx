@@ -60,6 +60,16 @@ const Timeline = () => {
               ]}
             />
 
+            {/* END OF DANIEL'S 69 WEEKS */}
+            <Option
+              option="daniel69"
+              values={[
+                { value: 'birth', label: t('options.daniel69.birth') },
+                { value: 'baptism', label: t('options.daniel69.baptism') },
+                { value: 'death', label: t('options.daniel69.death') },
+              ]}
+            />
+
             {/* CRUCIFIXION */}
             <Option
               option="crucifixion"

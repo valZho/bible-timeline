@@ -29,6 +29,11 @@ const optionsState = {
     default: 'revised',
     effects_UNSTABLE: [persistAtom],
   }),
+  daniel69: atom({
+    key: 'optionsDaniel69',
+    default: 'birth',
+    effects_UNSTABLE: [persistAtom],
+  }),
 
   // DISPLAY OPTIONS
   margins: atom({
