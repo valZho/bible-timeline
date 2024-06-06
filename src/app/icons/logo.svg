@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 28 25" fill="none"
+  stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+  class="tabler-icon tabler-icon-biblical-timeline biblicalTimeline logo">
+  <defs>
+    <pattern id="calendar" viewBox="0 0 24 24" x="12" y="9" width="15" height="15"
+      patternUnits="userSpaceOnUse">
+      <rect class="calendarTitle" x="4" y="5.5" width="16" height="5" fill="#4dabf7"
+        stroke-width="0" />
+      <rect class="calendarBody" x="4" y="10.75" width="16" height="10" fill="white"
+        stroke-width="0" />
+      <path stroke-width="1.5"
+        d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+      <path class="calendarRings" stroke-width="1.5" d="M16 3v4" stroke="#adb5bd" />
+      <path class="calendarRings" stroke-width="1.5" d="M8 3v4" stroke="#adb5bd" />
+      <path d="M4 11h16" />
+      <path class="calendarDate date1" stroke-width="2" stroke-linecap="square" stroke="#1971c2"
+        d="M7 14h.013" />
+      <path class="calendarDate date2" stroke-width="2" stroke-linecap="square" stroke="#f08c00"
+        d="M10.01 14h.005" />
+      <path class="calendarDate date3" stroke-width="2" stroke-linecap="square" stroke="#e03131"
+        d="M13.01 14h.005" />
+      <path class="calendarDate date5" stroke-width="2" stroke-linecap="square" stroke="#22b8cf"
+        d="M13.015 17h.005" />
+      <path class="calendarDate date6" stroke-width="2" stroke-linecap="square" stroke="#adb5bd"
+        d="M7.01 17h.005" />
+      <path class="calendarDate date7" stroke-width="2" stroke-linecap="square" stroke="#ae3ec9"
+        d="M10.01 17h.005" />
+      <path class="calendarDate date4" stroke-width="2" stroke-linecap="square" stroke="#66a80f"
+        d="M16.015 14h.005" />
+    </pattern>
+  </defs>
+  <rect class="bibleCover" fill="white" x="5.4" y="4" width="14" height="16" stroke-width="0" />
+  <rect class="biblePages" fill="gray" x="7" y="16" width="12" height="4" stroke-width="0" />
+  <circle class="biblePages" fill="gray" cx="7" cy="18" r="2" stroke-width="0" />
+  <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z" />
+  <path d="M19 16h-12a2 2 0 0 0 -2 2" />
+  <path class="bibleCross" stroke="black" d="M12 7v6" />
+  <path class="bibleCross" stroke="black" d="M10 9h4" />
+  <rect x="12" y="9" width="15" height="15" fill="url(#calendar)" stroke-width="0" />
+</svg>
