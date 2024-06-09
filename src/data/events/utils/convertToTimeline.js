@@ -46,7 +46,13 @@ const convertToTimeline = ({
   // export events to an array and sort by start
   const eventArray = Object.keys(processed)
     .map(key => processed[key])
-    .sort((a, b) => a.display.left - b.display.left);
+    .sort((a, b) => {
+      // earlier dates should come first
+      let sort = a.display.left - b.display.left;
+      // if start dates are the same, put shorter bars first
+      if (sort === 0) sort = a.display.fullWidth - b.display.fullWidth;
+      return sort;
+    });
 
   // place events in vertical tracks
   const { events: timeline, trackCount } = setTracks({ events: eventArray, trackMin, scale });

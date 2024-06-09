@@ -38,7 +38,7 @@ const eventData3 = earlySojourn => {
     joshua: { relative: { id: 'exodus', end: -39 }, years: 110, margin: 0.5 },
     wandering: { relative: { id: 'exodus', end: 0 }, years: 40, exact: true, color: 'lime.6' },
     conquering: { relative: { id: 'wandering', end: 0 }, years: 10, exact: true, fuzzyEnd: true, color: 'lime.6' },
-    judges: { relative: { id: 'joshua', end: 0 }, years: 410, fuzzy: true, color: 'lime.6' },
+    judges: { relative: { id: 'joshua', end: 0 }, years: 4253 - 3957, fuzzy: true, color: 'lime.6' },
   };
 
   return events;

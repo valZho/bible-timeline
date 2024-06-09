@@ -87,14 +87,14 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
 
     // if a year or more relative, add a ±6month margin unless flagged as exact
     let startFuzz = relativeStart < 0 ? 0.5 : -0.5;
-    if (src.exact || src.exactStart || Math.abs(relativeStart) < 1) startFuzz = 0;
+    if (src.exact || src.exactStart) startFuzz = 0;
 
     processed[key].startAM = relatedDate + relativeStart + startFuzz;
     processed[key].marginStart = relatedMargin + (src.margin || 0);
   }
 
   // END DATE & MARGIN END -------------------------
-  const endFuzz = src.years < 1 || src.exact || src.exactEnd ? 0 : 0.5;
+  const endFuzz = src.exact || src.exactEnd ? 0 : 0.5;
   processed[key].endAM = processed[key].startAM + src.years - endFuzz;
   processed[key].marginEnd = processed[key].marginStart + endFuzz;
 
