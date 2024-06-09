@@ -12,7 +12,6 @@
     "@mantine/core": "^7.9.1",
     "@mantine/hooks": "^7.9.1",
     "@mantine/modals": "^7.9.1",
-    "@react-hook/resize-observer": "^2.0.1",
     "@tabler/icons-react": "^3.4.0",
     "chapter-and-verse": "^3.0.4",
     "i18next": "^23.11.4",

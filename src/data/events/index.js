@@ -71,7 +71,7 @@ const getEvents = ({ manuscript, jubilee, sojourn, pyramids, daniel69, ...option
   const secularEvents = {
     ...secular_ancient(REVISED_PYRAMIDS),
     ...secular_modern(),
-    // ...secular_rome(),
+    ...secular_rome(),
     ...secular_wars(),
   };
 

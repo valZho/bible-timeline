@@ -1,5 +1,7 @@
-import React, { useRef, useState } from 'react';
-import useResizeObserver from '@react-hook/resize-observer';
+'use client';
+
+import React, { useRef } from 'react';
+// import useResizeObserver from '@react-hook/resize-observer';
 import { ScrollArea } from '@mantine/core';
 
 import Ruler from './Ruler';
@@ -7,17 +9,19 @@ import Events from './Events';
 import EventPicker from './EventPicker';
 import './style.scss';
 
-const Timeline = () => {
-  const [{ width }, setVeiwportSize] = useState({ width: 0 });
-  const viewport = useRef(null);
-  useResizeObserver(viewport, el => setVeiwportSize(el.contentRect));
+// import dynamic from 'next/dynamic';
+// const useResizeObserver = dynamic(() => import('@react-hook/resize-observer'), {
+//   ssr: false,
+// });
 
-  // with the resize observer we can try to scroll items into the middle of the viewport
+const Timeline = () => {
+  const viewport = useRef(null);
+
   const trackHeight = 45;
   const topMargin = 50;
   const scrollTo = (eventLeftSide, track) => {
     viewport.current.scrollTo({
-      left: eventLeftSide - width / 4,
+      left: eventLeftSide - viewport.current.offsetWidth / 4,
       top: (track - 3) * trackHeight + topMargin,
       behavior: 'smooth',
     });
