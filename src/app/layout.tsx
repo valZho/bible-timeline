@@ -17,7 +17,11 @@ export const metadata: Metadata = {
     icon: [
       { url: 'icons/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
       { url: 'icons/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
-      { url: 'icons/safari-pinned-tab.svg', rel: 'mask-icon', color: '#5bbad5' },
+      {
+        url: 'icons/safari-pinned-tab.svg',
+        rel: 'mask-icon',
+        color: '#5bbad5',
+      },
     ],
     apple: [{ url: 'icons/apple-touch-icon.png', sizes: '180x180' }],
   },
@@ -39,7 +43,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={font.className}>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider defaultColorScheme="dark">{children}</MantineProvider>
       </body>
     </html>
   );

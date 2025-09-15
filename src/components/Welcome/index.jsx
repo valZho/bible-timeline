@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 
 import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
-import { IconHelp, IconMoodHappy, IconMoodHappyFilled } from '@tabler/icons-react';
+import { IconHelp, IconMoodHappyFilled } from '@tabler/icons-react';
 
 import './style.scss';
 
