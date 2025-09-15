@@ -73,11 +73,11 @@ const Timeline = () => {
             {/* CRUCIFIXION */}
             <Option
               option="crucifixion"
-              range={[25, 35, 1]}
+              range={[26, 36, 1]}
               values={[
-                { value: 25, label: t('options.crucifixion.optionLabels.0') },
-                { value: 30, label: t('options.crucifixion.optionLabels.1') },
-                { value: 35, label: t('options.crucifixion.optionLabels.2') },
+                { value: 26, label: t('options.crucifixion.optionLabels.0') },
+                { value: 31, label: t('options.crucifixion.optionLabels.1') },
+                { value: 36, label: t('options.crucifixion.optionLabels.2') },
               ]}
             />
 

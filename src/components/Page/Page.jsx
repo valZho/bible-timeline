@@ -9,6 +9,7 @@ import OPTIONS from '@/data/state-options';
 
 import IconBiblicalTimeline from '../IconBiblicalTimeline';
 import Notes from '../Notes';
+import Welcome from '../Welcome';
 import Navbar from '../Navbar';
 import Timeline from '../Timeline';
 
@@ -48,6 +49,7 @@ const Page = () => {
 
       {/* theme and calendar pickers */}
       <Affix position={{ top: 20, right: 40 }} className="rightToggles">
+        <Welcome />
         <SegmentedControl
           className="calendarControl"
           size="xs"

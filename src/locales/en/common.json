@@ -2,6 +2,18 @@
   "title": "Biblical Timeline",
   "bibleVersions": "en CSB-1713 NIV-111 NET-107 ESV-59 HCSB-72",
   "tip": "<strong>TIP:</strong> Hold down the <0>Shift</0> key for horizontal scrolling",
+  "welcome": {
+    "title": "WELCOME!",
+    "message_wTags": [
+      "If you've stumbled here, I hope you find this tool useful in some way. It's meant to be a way to quickly see the effects of different assumptions and interprations on the broader timeline without having to repeatedly do meticulous hand calculations. Keep in mind, though, that this is an ongoing, work-in-progress, side project. If there are any options that are missing or inadequate, please let me know!",
+
+      "<i>⬆︎</i> Click the <strong>NOTES</strong> button in the header to bring up notes about the timeline (assumptions, calculations, etc.) as well as detailed explanations regarding available options and their effects.",
+
+      "<i>⬅︎</i> Open the left <strong>SIDE BAR</strong> for <i>date calculation</i> and <i>timeline display options</i>. There you can also find project details and contact information.",
+
+      "<i>⬇︎</i> The <strong>Go to Event...</strong> menu provides a quick way to jump to any spot in the timeline."
+    ]
+  },
   "notes": {
     "title": "Important Notes",
     "button": "NOTES",
@@ -77,21 +89,11 @@
     "crucifixion": {
       "title": "Crucifixion Date",
       "description_wTags": [
-        "In which year, <i>exactly</i>, was Jesus crucified? To come up with an answer we first have to start with an understanding of Passover and the Feast of Unleavened Bread found in Exo12. The Passover was to be eaten in the evening after sundown (the beginning of the Jewish day) on the 14th day of the month of Abib. Following that, for seven days (Abib 15-21, inclusive), was the Feast of Unleavened Bread with the first day (Abib 15) and the last day (Abib 21) being \"high\" sabbath days — days that are to be treated like a sabbath, but don't necessarily fall on a Saturday.",
-
-        "We know from the gospels that Jesus died around 3pm in the daytime following the passover meal (still Abib 14). John19:31 even reminds us that the next day, Abib 15, which would begin at sundown, was a high sabbath. We also know from the Gospels that Jesus rose sometime before dawn (early in the day) on the first day of the week (Sunday). We must then reconcile all this info with Matt12:40 and similar verses which tell us that Jesus would be in the tomb for 3 days and 3 nights. With all of that there are really only three days of the week that could be considered to meet the criteria for the day of the Crucifixion: Wednesday, Thursday, or Friday.",
-
-        "On a personal note, my opinion is that for a Friday date to make sense you have to stretch inclusive time and the meaning of \"three days and nights\" almost to their breaking point taking \"day and night\" to mean a single 24-hour period, the whole of which you can count as long as some portion is included; I suspect that church tradition places the crucifixion on Friday because of a misunderstanding of the difference between a sabbath and a high sabbath. I personally lean towards it being on a Wednesday. At any rate, here's what the three options look like:",
-
-        "<strong>Option 1: Jesus Died on a Friday</strong><br />1 day+night: Friday before sundown<br />1 day+night: Friday sundown - Saturday sundown<br />1 day+night: Saturday sundown - early Sunday",
-
-        "<strong>Option 2: Jesus Died on a Thursday</strong><br />1 day: Thursday before sundown (partial day)<br />1 night: Thursday night<br />1 day: Friday before sundown<br />1 night: Friday night<br />1 day: Saturday till sundown<br />1 night: Saturday night (partial night)",
-
-        "<strong>Option 3: Jesus Died on a Wednesday</strong><br />1 full night & 1 full day: Wednesday sundown - Thursday sundown<br />1 full night & 1 full day: Thursday sundown - Friday sundown<br />1 full night & 1 full day: Friday sundown - Saturday sundown",
+        "I have written at length about this here: <1>Analysis of the Timing of the Crucifixion</1>. Long story short, the data pointed me to 31 AD, which I use as the default here.",
 
         "<0><0></0> <strong>$t(options.crucifixion.title):</strong></0>",
 
-        "<0>$t(options.crucifixion.optionLabels.0) - $t(options.crucifixion.optionLabels.2)</0> — I have found it difficult to find agreement as to which day of the week Passover falls on each year in the early first century. Within a ten-year window, you can use your own sources and set the AD date to whatever you think is correct."
+        "<0>$t(options.crucifixion.optionLabels.0) - $t(options.crucifixion.optionLabels.2)</0> — Traditionally, the crucifixion is placed at 30 or 33 AD, I propose 31 AD. This option lets you place it on any year d-uring Pontius Pilate's time in Judea (26-36 AD)."
       ]
     },
     "sojourning": {
@@ -188,7 +190,7 @@
     },
     "crucifixion": {
       "title": "Crucifixion Date",
-      "optionLabels": ["25 A.D.", "30 A.D.", "35 A.D."]
+      "optionLabels": ["26 A.D.", "31 A.D.", "36 A.D."]
     },
     "pyramids": {
       "title": "Building of the Pyramids",

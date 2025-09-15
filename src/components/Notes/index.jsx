@@ -67,6 +67,7 @@ const Notes = () => {
     {
       key: 'crucifixion',
       icon: <IconCrossFilled />,
+      components: [<a href="https://inventurous.net/crucifixion/" target="_blank" rel="noopen noreferrer" />],
     },
     {
       key: 'daniel69',
@@ -80,7 +81,7 @@ const Notes = () => {
       key: 'pyramids',
       icon: <IconPyramid />,
       components: [
-        <Accordion href="https://www.patternsofevidence.com/exodus-film/" target="_blank" rel="noopen noreferrer" />,
+        <a href="https://www.patternsofevidence.com/exodus-film/" target="_blank" rel="noopen noreferrer" />,
       ],
     },
     {
