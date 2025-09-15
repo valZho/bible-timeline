@@ -93,7 +93,7 @@
 
         "<0><0></0> <strong>$t(options.crucifixion.title):</strong></0>",
 
-        "<0>$t(options.crucifixion.optionLabels.0) - $t(options.crucifixion.optionLabels.2)</0> — Traditionally, the crucifixion is placed at 30 or 33 AD, I propose 31 AD. This option lets you place it on any year d-uring Pontius Pilate's time in Judea (26-36 AD)."
+        "<0>$t(options.crucifixion.optionLabels.0) - $t(options.crucifixion.optionLabels.2)</0> — Traditionally, the crucifixion is placed at 30 or 33 AD, I propose 31 AD. This option lets you place it in any year during Pontius Pilate's time in Judea (26-36 AD)."
       ]
     },
     "sojourning": {
