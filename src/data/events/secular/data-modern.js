@@ -4,9 +4,15 @@ const thisYear = new Date().getFullYear();
 const data = () => {
   const events = {
     schism: { startCE: 1054, years: 0, color: 'teal.4' },
+
+    mongols: { startCE: 1206, years: 162, color: 'black' },
+
     ottoman: { startCE: 1299, years: 1922 - 1299, color: 'black' },
     blackDeath: { startCE: 1346, years: 1353 - 1346, color: 'gray.6' },
+
     gutenburg: { startCE: 1450, years: 10, fuzzy: true, color: 'teal.4' },
+    columbus: { startCE: 1492, years: 0, color: 'gray.6' },
+
     calvin: { startCE: 1509, years: 1564 - 1509, color: 'teal.4' },
     reformation: { startCE: 1517, years: 1685 - 1517, color: 'teal.4' },
     greatDepression: { startCE: 1929, years: 10, color: 'gray.6' },

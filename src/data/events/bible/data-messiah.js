@@ -11,12 +11,10 @@ const data = ({
   ministryLength = 'three',
   crucifixion = 'baptism',
 }) => {
-  console.log(crucifixion, '---', birthYear, '---', ministryLength);
-  const ministry = ministryLength === 'three' ? 2 : 1;
-
   // length has to account for no year zero... move up by 1
-  // these dates are inclusive by nature, so need to adjust for that
+  // these dates are inclusive by nature, so no need to adjust for that
   const jesusAge = crucifixion - birthYear - 1;
+  const ministry = ministryLength === 'three' ? 2 : 1;
 
   const events = {
     exile: {
@@ -32,14 +30,21 @@ const data = ({
       color: 'lime.6',
     },
     // total years crosses AD/BC threshhold so add year for no year zero
-    messiah: { relative: { id: 'dan69weeks', end: 0 }, years: jesusAge, exact: true, color: 'yellow.5' },
+    messiah: { relative: { id: 'dan69weeks', end: 0 }, years: jesusAge, exact: true, color: 'yellow.6' },
+
+    apostleJohn: {
+      relative: { id: 'messiah', end: -20 },
+      years: 90, // Lives ~90 years total
+      color: 'green.7',
+    },
 
     // WE NEED TO USE THESE TO GET A DATE FOR THE EXILE
-    nebuchadnezzar: { relative: { id: 'exile', start: -19 }, exact: true, years: 43, color: 'gray.6' },
-    cyrus: { relative: { id: 'exile', start: 69.5 }, exact: true, years: 30, color: 'gray.6' },
-    darius: { relative: { id: 'cyrus', end: 0 }, exact: true, years: 36, color: 'gray.6' },
-    artaxerxes: { relative: { id: 'darius', end: 0 }, years: 41, color: 'gray.6' },
+    nebuchadnezzar: { relative: { id: 'exile', start: -19 }, exact: true, years: 43, color: 'cyan.7' },
+    cyrus: { relative: { id: 'exile', start: 69.5 }, exact: true, years: 30, color: 'cyan.7' },
+    darius: { relative: { id: 'cyrus', end: 0 }, exact: true, years: 36, color: 'cyan.7' },
+    artaxerxes: { relative: { id: 'darius', end: 0 }, years: 41, color: 'cyan.7' },
 
+    temple1end: { relative: { id: 'zedekiah', end: 0 }, years: 0, color: 'red.7' },
     temple2: { relative: { id: 'exile', end: 0 }, years: 21, color: 'lime.4' },
   };
 

@@ -16,12 +16,23 @@ const data = REVISED_PYRAMIDS => {
     aristotle: { startCE: -384, years: 384 - 322 },
     alexander: { startCE: -356, years: 356 - 323 },
 
+    maccabean: { startCE: -167, years: 7 },
+    hasmonean: { startCE: -167, years: 25 },
+
     // AD
+    gospelMark: { startCE: 65, years: 5, fuzzy: true, color: 'green.7' },
+    gospelMatt: { startCE: 75, years: 5, fuzzy: true, color: 'green.7' },
+    gospelLuke: { startCE: 80, years: 10, fuzzy: true, color: 'green.7' },
+    gospelJohn: { startCE: 90, years: 10, fuzzy: true, color: 'green.7' },
+    revelation: { startCE: 90, years: 6, fuzzy: true, color: 'green.7' },
+
     origen: { startCE: 185, years: 253 - 185, color: 'teal.4' },
     augustine: { startCE: 354, years: 430 - 354, color: 'teal.4' },
     muhammad: { startCE: 570, years: 632 - 570 },
-    temple2end: { startCE: 70, color: 'lime.6' },
+    temple2end: { startCE: 70, color: 'red.7' },
     nicaea1: { startCE: 325, color: 'teal.4' },
+
+    byzantine: { startCE: 330, years: 1453 - 330, color: 'black' },
   };
 
   Object.keys(events).forEach(key => {

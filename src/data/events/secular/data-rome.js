@@ -6,10 +6,10 @@ const data = () => {
     rome_empire: { startCE: -27, end: 395, color: 'black' },
     rome_augustus: { startCE: -27, end: 14 },
     rome_tiberius: { startCE: 14, end: 37 },
-    rome_caligula: { startCE: 37, end: 41 },
-    rome_claudius: { startCE: 41, end: 54 },
-    rome_nero: { startCE: 54, end: 68 },
-    rome_vespasian: { startCE: 69, end: 79 },
+    // rome_caligula: { startCE: 37, end: 41 },
+    // rome_claudius: { startCE: 41, end: 54 },
+    // rome_nero: { startCE: 54, end: 68 },
+    // rome_vespasian: { startCE: 69, end: 79 },
     rome_constantine1: { startCE: 306, end: 337 },
   };
 

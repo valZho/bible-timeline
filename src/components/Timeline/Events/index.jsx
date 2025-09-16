@@ -118,9 +118,18 @@ const Events = ({ trackHeight = 45 }) => {
     );
 
     const eventWrapperWithSource = e => {
-      const source = t(`events.${e.key}.source`);
-      let placement = t(`events.${e.key}.placement`);
-      if (!placement && e.relative) {
+      const sourceKey = `events.${e.key}.source`;
+      const placementKey = `events.${e.key}.placement`;
+      const noteKey = `events.${e.key}.note`;
+
+      // we need to get strings first just so we can test if they are empty
+      // or note since TransWithBible will always return a node
+      const source = t(sourceKey);
+      const note = t(noteKey);
+
+      // automatically set placement if a relative event
+      let placement = t(placementKey);
+      if (e.relative && (!placement || placement === placementKey)) {
         placement = (
           <Trans
             i18nKey={`timeline.relative${typeof e.relative.start === 'number' ? 'Start' : 'End'}_wTags`}
@@ -131,7 +140,28 @@ const Events = ({ trackHeight = 45 }) => {
             components={[<span className="id" />]}
           />
         );
+      } else if (!placement || placement === placementKey) {
+        // someday, auto-calculate a placed date
       }
+
+      const placementText = placement && placement !== placementKey && (
+        <Text className="placementContent" size="xs">
+          <strong>{t('timeline.placement', {})}</strong> {placement}
+        </Text>
+      );
+      const sourceText = source && source !== sourceKey && (
+        <Text className="sourceContent" size="xs">
+          <strong>{t('timeline.source')}</strong> <TransWithBible i18nKey={sourceKey} />
+        </Text>
+      );
+
+      const noteText = note && note !== noteKey && (
+        <Text className="sourceContent" size="xs">
+          <strong>{t('timeline.note')}</strong> <TransWithBible i18nKey={noteKey} />
+        </Text>
+      );
+
+      // create tooltip
       return (
         <HoverCard
           key={e.key}
@@ -140,7 +170,7 @@ const Events = ({ trackHeight = 45 }) => {
           size="xs"
           position="bottom-start"
           closeDelay={100}
-          disabled={!source && !placement}
+          disabled={!placementText && !sourceText && !noteText}
           withinPortal={false}
           withArrow
           arrowSize={10}
@@ -148,16 +178,9 @@ const Events = ({ trackHeight = 45 }) => {
         >
           <HoverCard.Target>{eventWrapper(e)}</HoverCard.Target>
           <HoverCard.Dropdown>
-            {placement && (
-              <Text className="placementContent" size="xs">
-                <strong>{t('timeline.placement', {})}</strong> {placement}
-              </Text>
-            )}
-            {source && (
-              <Text className="sourceContent" size="xs">
-                <strong>{t('timeline.source')}</strong> <TransWithBible i18nKey={`events.${e.key}.source`} />
-              </Text>
-            )}
+            {placementText}
+            {sourceText}
+            {noteText}
           </HoverCard.Dropdown>
         </HoverCard>
       );

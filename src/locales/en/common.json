@@ -200,8 +200,12 @@
     "version": {
       "title": "Website Version History",
       "description_wTags": [
+        "• 2025-09-16<br>    - Added a few more dates<br>    - Added note capability on event tooltips<br>    - Fixed bug removing trailing zeros in numbers<br>    - A few more color adjustments",
+
         "• 2025-09-15<br>    - Updated all Kingdom dates using Edwin R. Thiele's timeline<br>    - Added option for Jesus' birth year<br>    - Added option for Jesus' ministry length<br>    - Added option for Daniel's 70 weeks start<br>    - Added option for Exile start<br>    - Fixed calculations for end of Daniel's 69 Weeks<br>    - Added Welcome / Help modal<br>    - Fixed some JavaScript floating number display issues<br>    - Minor style / color improvements",
+
         "• 2024-06-09<br>    - Added Northern Kings and cleaned up Kingdom dates<br>    - Added option for Pyramid construction date<br>    - Added option for the end of Daniel's 69 Weeks",
+
         "• 2024-06-02<br>    - Initial release"
       ]
     }
@@ -320,6 +324,7 @@
     "yearFuzzy_other": "≈{{count}} years",
     "source": "Source:",
     "placement": "Placement:",
+    "note": "Note:",
     "relativeStart_wTags_one": "{{count}} year from the beginning of: <0>$t(events.{{id}}.title)</0>",
     "relativeStart_wTags_zero": "At the beginning of: <0>$t(events.{{id}}.title)</0>",
     "relativeStart_wTags_other": "{{count}} years from the beginning of: <0>$t(events.{{id}}.title)</0>",
@@ -876,8 +881,8 @@
     },
     "messiah": {
       "title": "Jesus Christ",
-      "source": "",
-      "placement": ""
+      "placement": "Based on user settings",
+      "note": "All CE dates are calculated from the set crucifixion date"
     },
     "temple2": {
       "title": "The Building of the 2nd Temple",
@@ -936,6 +941,16 @@
       "title": "Reign of Constantine I",
       "source": "",
       "placement": "306-337 AD"
+    },
+
+    "byzantine": {
+      "title": "The Byzantine Empire"
+    },
+    "mongols": {
+      "title": "The Mongol Empire"
+    },
+    "columbus": {
+      "title": "Christopher Columbus Discovers the Americas"
     },
 
     "ANCIENT(ish) HISTORY": "———————————————————————————————————————————————————————",
@@ -1035,6 +1050,11 @@
       "source": "",
       "placement": "570-632 AD"
     },
+    "temple1end": {
+      "title": "First Temple Destroyed",
+      "source": "",
+      "placement": ""
+    },
     "temple2end": {
       "title": "Second Temple Destroyed",
       "source": "",
@@ -1044,6 +1064,39 @@
       "title": "The First Council of Nicaea",
       "source": "",
       "placement": "325 AD"
+    },
+
+    "maccabean": {
+      "title": "Maccabean Revolt",
+      "source": "",
+      "note": "Origin of Hanukkah",
+      "placement": "167 BC"
+    },
+    "hasmonean": {
+      "title": "Hasmonean Dynasty",
+      "note": "Independent Jewish reign",
+      "source": "",
+      "placement": "167 BC"
+    },
+
+    "gospelMark": {
+      "title": "Gospel of Mark Written"
+    },
+    "gospelMatt": {
+      "title": "Gospel of Matthew Written"
+    },
+    "gospelLuke": {
+      "title": "Gospel of Luke & Acts Written"
+    },
+    "gospelJohn": {
+      "title": "Gospel of John Written"
+    },
+    "revelation": {
+      "title": "The Book of Revelation Written"
+    },
+
+    "apostleJohn": {
+      "title": "John the Apostle"
     },
 
     "WARS": "———————————————————————————————————————————————————————————————————————",
