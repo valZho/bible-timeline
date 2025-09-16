@@ -28,50 +28,49 @@ const TransWithBible = ({ i18nKey = '', values = {}, components = [] }) => {
     output = t(i18nKey.replaceAll(':', '{{REPLACED_COLON}}'), { ...values, REPLACED_COLON: ':' });
   }
 
+  let id = components.length;
+
   // extract any text with a verse-like structure, e.g., version|Xxxxx #:#-#,#
-  const potentialRefs = output.match(/([A-Z]+\|)??[1-3]??[A-Z]+\d+(:\d+(-\d+|,\d+|)*)?/gi);
+  const verseRegEx = /([A-Z]+\|)??[1-3]??[A-Z]+\d+(:\d+(-\d+|,\d+|)*)?/gi;
+  const parsedOutput = output.replaceAll(verseRegEx, (...matches) => {
+    const source = matches[0];
+    let REF = source;
+    let VERSION = bibles.default;
 
-  // loop through potential reference matches
-  if (potentialRefs) {
-    let id = components.length;
-    potentialRefs.map(source => {
-      let REF = source;
-      let VERSION = bibles.default;
+    // first, see if there is a specific bible translation referenced
+    let v = source.split('|');
+    if (v.length > 1) {
+      VERSION = bibles[v[0].toUpperCase()] ?? bibles.default;
+      REF = v[1];
+    }
 
-      // first, see if there is a specific bible translation referenced
-      let v = source.split('|');
-      if (v.length > 1) {
-        VERSION = bibles[v[0].toUpperCase()] ?? bibles.default;
-        REF = v[1];
-      }
+    // use chapter-and-verse to test for legitimate references (it doesn't like commas, though)
+    const splitRef = REF.split(',');
+    const parsed = chapterAndVerse(splitRef[0]);
+    if (!parsed.success) return;
 
-      // use chapter-and-verse to test for legitimate references (it doesn't like commas, though)
-      const splitRef = REF.split(',');
-      const parsed = chapterAndVerse(splitRef[0]);
-      if (!parsed.success) return;
+    // translate the book name for the reference and add tags for the link component
+    const bookName = t(`bible.${parsed.book.name}`);
+    const replacement = REF.replace(/^[1-3]??[A-Z]+(.*)/i, `<${id}>${bookName} $1</${id}>`);
 
-      // translate the book name for the reference and add tags for the link component
-      const bookName = t(`bible.${parsed.book.name}`);
-      const replacement = REF.replace(/^[1-3]??[A-Z]+(.*)/i, `<${id}>${bookName} $1</${id}>`);
+    // add the link to the components array
+    id++;
+    const BOOK = YOU_VERSION[parsed.book.name] || parsed.book.id;
+    const CHAPTER = parsed.chapter || '1';
+    // if there's any verse reference, just use the original (which may have commas)
+    let VERSES = parsed.from ? `.${REF.split(':')[1]}` : '';
+    const href = `https://www.bible.com/${bibles.languageCode}/bible/${VERSION}/${BOOK}.${CHAPTER}${VERSES}`;
 
-      // inject the reference string
-      id++;
-      output = output.replace(source, replacement);
+    // add the link to the components
+    components.push(<Anchor href={href} target="_blank" rel="noopener noreferrer" />);
 
-      // add the link to the components array
-      const BOOK = YOU_VERSION[parsed.book.name] || parsed.book.id;
-      const CHAPTER = parsed.chapter || '1';
-      // if there's any verse reference, just use the original (which may have commas)
-      let VERSES = parsed.from ? `.${REF.split(':')[1]}` : '';
-      const href = `https://www.bible.com/${bibles.languageCode}/bible/${VERSION}/${BOOK}.${CHAPTER}${VERSES}`;
-
-      // add the link to the components
-      components.push(<Anchor href={href} target="_blank" rel="noopener noreferrer" />);
-    });
-  }
+    // return the wrapped string to inject as replacement
+    // change any spaces to non-breaking so it stays together
+    return replacement.replaceAll(' ', ' ');
+  });
 
   // now use the Trans component to parse the tags and inject components
-  return <Trans i18nKey={output} components={components} />;
+  return <Trans i18nKey={parsedOutput} components={components} />;
 };
 
 TransWithBible.propTypes = {
