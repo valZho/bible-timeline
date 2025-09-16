@@ -27,7 +27,7 @@ const Events = ({ trackHeight = 45 }) => {
   const flagHeight = (trackCount + 2) * trackHeight;
 
   const createEvents = useCallback(() => {
-    const bar = ({ fuzzy, color, marginStart, width, fullWidth, marginEnd }, key) => (
+    const bar = ({ fuzzy, color = 'blue_6', marginStart, width, fullWidth, marginEnd }, key) => (
       <svg
         key={key}
         className={`bar ${fuzzy ? 'fuzzy' : ''}`}
@@ -35,7 +35,7 @@ const Events = ({ trackHeight = 45 }) => {
         width={Math.max(0, fullWidth)}
         height={barHeight}
       >
-        <rect className={`base ${color?.replace('.', '_') || 'blue_6'}`} width="100%" height="100%" fill="blue" />
+        <rect className={`base ${color?.replace('.', '_')}`} width="100%" height="100%" fill="blue" />
         <rect className="margin" width={marginStart * 2} height="100%" fill="lightblue" />
         <rect className="margin" width={marginEnd * 2} x={fullWidth - marginEnd * 2} height="100%" fill="lightblue" />
         <rect className="start" width={marginStart ? 1 : 0} height="100%" x={marginStart} fill="black" />

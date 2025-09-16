@@ -1,66 +1,69 @@
 /**
  * Generate events of the Kingdoms
+ * ALL of this timeline is based off of Edwin R. Thiele's timeline
  * @returns {object}
  */
 const eventData4 = () => {
   const events = {
     temple1start: { relative: { id: 'exodus', end: 480 }, years: 7, color: 'lime.6', extraBuffer: 200 },
-    solomonReign: { relative: { id: 'temple1start', start: -4 }, years: 40, color: 'grape.7', exactEnd: true },
+    solomonReign: { relative: { id: 'temple1start', start: -4 }, years: 40, color: 'grape.2', exactEnd: true },
     kingdomDivided: { relative: { id: 'solomonReign', end: 0 }, years: 0, color: 'lime.6', exactStart: true },
 
-    // JUDAH (SOUTHERN KINGDOM) need solomon in there for reference
-    rehoboam: { relative: { id: 'solomonReign', end: 0 }, color: 'grape.7', years: 17 },
-    abijam: { relative: { id: 'rehoboam', end: 0 }, color: 'grape.7', years: 3 },
-    asa: { relative: { id: 'abijam', end: 0 }, color: 'grape.7', years: 41 },
-    jehoshaphat: { relative: { id: 'asa', end: 0 }, color: 'grape.7', years: 24.5 },
-    jehoram: { relative: { id: 'jehoshaphat', end: 0 }, color: 'grape.7', years: 7.5 },
-    ahaziahSouth: { relative: { id: 'jehoram', end: 0 }, color: 'grape.7', years: 1 },
-    athaliah: { relative: { id: 'ahaziahSouth', end: 0 }, color: 'grape.7', years: 6 },
-    joash: { relative: { id: 'athaliah', end: 0 }, color: 'grape.7', years: 39.5 },
-    amaziah: { relative: { id: 'joash', end: 0 }, color: 'grape.7', years: 29 },
-    uzziah: { relative: { id: 'amaziah', end: 0 }, color: 'grape.7', years: 52 },
-    jotham: { relative: { id: 'uzziah', end: 0 }, color: 'grape.7', years: 16 },
-    ahaz: { relative: { id: 'jotham', end: 0 }, color: 'grape.7', years: 16 },
-    hezekiah: { relative: { id: 'ahaz', end: 0 }, color: 'grape.7', years: 29 },
-    manasseh: { relative: { id: 'hezekiah', end: 0 }, color: 'grape.7', years: 55 },
-    amon: { relative: { id: 'manasseh', end: 0 }, color: 'grape.7', years: 2 },
-    josiah: { relative: { id: 'amon', end: 0 }, color: 'grape.7', years: 31 },
-    jehoahazSouth: { relative: { id: 'josiah', end: 0 }, color: 'grape.7', years: 0.25 },
-    jehoiakim: { relative: { id: 'jehoahazSouth', end: 0 }, color: 'grape.7', years: 11 },
-    jehoiachin: { relative: { id: 'jehoiakim', end: 0 }, color: 'grape.7', years: 0.25 },
-    zedekiah: { relative: { id: 'jehoiachin', end: 0 }, color: 'grape.7', years: 11 },
+    // JUDAH
+    rehoboam: { relative: { id: 'solomonReign', end: 0 }, color: 'grape.2', years: 17 },
+    abijam: { relative: { id: 'rehoboam', end: 0 }, color: 'grape.2', years: 3 },
+    asa: { relative: { id: 'abijam', end: 0 }, color: 'grape.2', years: 41 },
+    jehoshaphat: { relative: { id: 'asa', end: -4 }, color: 'grape.2', years: 25 },
+    jehoram: { relative: { id: 'jehoshaphat', end: -5 }, color: 'grape.2', years: 8 },
+    ahaziahSouth: { relative: { id: 'jehoram', end: 0 }, color: 'grape.2', years: 1 },
+    athaliah: { relative: { id: 'ahaziahSouth', end: 0 }, color: 'grape.2', years: 6 },
+    joash: { relative: { id: 'athaliah', end: 0 }, color: 'grape.2', years: 40 },
+    amaziah: { relative: { id: 'joash', end: 0 }, color: 'grape.2', years: 29 },
+    uzziah: { relative: { id: 'jeroboam2', start: 27 }, color: 'grape.2', years: 52 },
+    jotham: { relative: { id: 'pekah', start: 2 }, color: 'grape.2', years: 16 },
+    ahaz: { relative: { id: 'pekah', start: 17 }, color: 'grape.2', years: 16 },
+    hezekiah: { relative: { id: 'hoshea', start: 3 }, color: 'grape.2', years: 29 },
+    manasseh: { relative: { id: 'hezekiah', end: -11 }, color: 'grape.2', years: 55 },
+    amon: { relative: { id: 'manasseh', end: 0 }, color: 'grape.2', years: 2 },
+    josiah: { relative: { id: 'amon', end: 0 }, color: 'grape.2', years: 31 },
+    jehoahazSouth: { relative: { id: 'josiah', end: 0 }, color: 'grape.2', years: 0.01 },
+    jehoiakim: { relative: { id: 'jehoahazSouth', end: 0 }, color: 'grape.2', years: 11 },
+    jehoiachin: { relative: { id: 'jehoiakim', end: 0 }, color: 'grape.2', years: 0.01 },
+    zedekiah: { relative: { id: 'jehoiachin', end: 0 }, color: 'grape.2', years: 11 },
 
-    // // ISRAEL (NORTHERN KINGDOM)
-    // jeroboam1: { relative: { id: 'solomonReign', end: 0 }, color: 'grape.4', years: 22, exactStart: true },
-    // nadab: { relative: { id: 'asa', start: 2 }, color: 'grape.4', years: 2 },
-    // baasha: { relative: { id: 'asa', start: 3 }, color: 'grape.4', years: 23.5, exactStart: true },
-    // elah: { relative: { id: 'asa', start: 26 }, color: 'grape.4', years: 1.5, exactStart: true },
-    // zimri: { relative: { id: 'asa', start: 27 }, color: 'grape.4', years: 0, exactStart: true },
-    // tibni: { relative: { id: 'zimri', start: 0 }, color: 'grape.4', years: 4, exactStart: true },
-    // omri: { relative: { id: 'zimri', start: 0 }, color: 'grape.4', years: 11.5, exactStart: true },
-    // ahab: { relative: { id: 'asa', start: 38 }, color: 'grape.4', years: 21.5, exactStart: true },
-    // ahaziahNorth: { relative: { id: 'jehoshaphat', start: 17 }, color: 'grape.4', years: 1.5, exactStart: true },
-    // joram: { relative: { id: 'ahaziahNorth', end: 0 }, color: 'grape.4', years: 12, exactStart: true },
-    // jehu: { relative: { id: 'jehoahazNorth', start: -27.5 }, color: 'grape.4', years: 28, exactStart: true },
-    // jehoahazNorth: { relative: { id: 'joash', start: 22.5 }, color: 'grape.4', years: 17 },
-    // jehoash: { relative: { id: 'joash', start: 37 }, color: 'grape.4', years: 16, exact: true },
-    // jeroboam2: { relative: { id: 'amaziah', start: 15 }, color: 'grape.4', years: 41, exactStart: true },
-    // zechariah: { relative: { id: 'jeroboam2', end: 0 }, color: 'grape.4', years: 0.5, exact: true },
-    // shallum: { relative: { id: 'zechariah', end: 0 }, color: 'grape.4', years: 0.083, exactStart: true },
-    // menahem: { relative: { id: 'shallum', start: 0 }, color: 'grape.4', years: 10, exactStart: true },
-    // pekahiah: { relative: { id: 'menahem', end: 0 }, color: 'grape.4', years: 2 },
-    // pekah: { relative: { id: 'pekahiah', end: 0 }, color: 'grape.4', years: 20 },
-    // hoshea: { relative: { id: 'pekah', end: 0 }, color: 'grape.4', years: 9 },
+    // ISRAEL
+    jeroboam1: { relative: { id: 'solomonReign', end: 0 }, color: 'grape.7', years: 22 },
+    nadab: { relative: { id: 'jeroboam1', end: 0 }, color: 'grape.7', years: 2 },
+    baasha: { relative: { id: 'nadab', end: 0 }, color: 'grape.7', years: 24 },
+    elah: { relative: { id: 'baasha', end: 0 }, color: 'grape.7', years: 2 },
+    zimri: { relative: { id: 'elah', end: 0 }, color: 'grape.7', years: 0.019 },
+    omri: { relative: { id: 'zimri', start: 0 }, color: 'grape.7', years: 12 },
+    ahab: { relative: { id: 'omri', end: 0 }, color: 'grape.7', years: 22 },
+    ahaziahNorth: { relative: { id: 'ahab', end: 0 }, color: 'grape.7', years: 2 },
+    joram: { relative: { id: 'ahaziahNorth', end: 0 }, color: 'grape.7', years: 12 },
+    jehu: { relative: { id: 'joram', end: 0 }, color: 'grape.7', years: 28 },
+    jehoahazNorth: { relative: { id: 'joash', start: 23 }, color: 'grape.7', years: 17 },
+    jehoash: { relative: { id: 'joash', start: 37 }, color: 'grape.7', years: 16 },
+    jeroboam2: { relative: { id: 'amaziah', start: 15 }, color: 'grape.7', years: 41 },
+    zechariah: { relative: { id: 'jeroboam2', end: 0 }, color: 'grape.7', years: 0.5 },
+    shallum: { relative: { id: 'zechariah', end: 0 }, color: 'grape.7', years: 0.083 },
+    menahem: { relative: { id: 'shallum', end: 0 }, color: 'grape.7', years: 10 },
+    pekahiah: { relative: { id: 'menahem', end: 0 }, color: 'grape.7', years: 2 },
+    pekah: { relative: { id: 'pekahiah', end: 0 }, color: 'grape.7', years: 20 },
+    hoshea: { relative: { id: 'pekah', end: 0 }, color: 'grape.7', years: 9 },
   };
 
   // SPECIAL CASES
-  events.saul = { relative: { id: 'saulReign', start: -30 }, years: 70 };
-  events.saulReign = { relative: { id: 'davidReign', start: -40 }, years: 40, color: 'grape.7' };
+  events.saul = { relative: { id: 'saulReign', end: -70 }, years: 70 };
+  events.saulReign = { relative: { id: 'davidReign', start: -40 }, years: 40, color: 'grape.2' };
 
-  events.david = { relative: { id: 'davidReign', start: -30 }, years: 70.5 };
-  events.davidReign = { relative: { id: 'solomonReign', start: -40.5 }, years: 40.5, color: 'grape.7' };
+  events.david = { relative: { id: 'davidReign', end: -70.5 }, years: 70.5 };
+  events.davidReign = { relative: { id: 'solomonReign', start: -40.5 }, years: 40.5, color: 'grape.2' };
 
   events.solomon = { relative: { id: 'solomonReign', start: -25 }, years: 65, fuzzyStart: true };
+
+  // no margin of error on these dates
+  Object.keys(events).map(key => (events[key].relative.exact = true));
 
   return events;
 };

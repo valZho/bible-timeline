@@ -6,11 +6,11 @@ import { Text, SegmentedControl, Slider, Switch } from '@mantine/core';
 
 import OPTIONS from '@/data/state-options';
 
-const Option = ({ option, values = [], range = [], label = '' }) => {
+const Option = ({ option, values = [], range = [], label = '', isDisplay }) => {
   const { t } = useTranslation();
   const [value, setValue] = useRecoilState(OPTIONS[option]);
 
-  const color = 'yellow.5';
+  const color = isDisplay ? 'gray.7' : 'yellow.5';
 
   let control = '';
   if (!range.length && !label) {
@@ -65,6 +65,7 @@ const Option = ({ option, values = [], range = [], label = '' }) => {
 };
 
 Option.propTypes = {
+  isDisplay: PropTypes.bool,
   label: PropTypes.string,
   option: PropTypes.array,
   range: PropTypes.arrayOf(PropTypes.number),

@@ -55,11 +55,11 @@ const eventData2 = (MT, LXX) => {
     relative: { id: 'shem', start: MT ? 120 : 260 },
     years: MT ? 430 : 500,
     fuzzy: true,
-    color: 'blue.4',
+    color: 'blue.6',
   };
-  events.daniel = { relative: { id: 'exile', start: -16 }, years: 85, fuzzy: true, color: 'blue.4' };
+  events.daniel = { relative: { id: 'exile', start: -16 }, years: 85, fuzzy: true, color: 'blue.6' };
 
-  events.babel = { relative: { id: 'peleg', start: -5 }, years: 10, fuzzy: true, hideEndDate: true, color: 'lime.5' };
+  events.babel = { relative: { id: 'peleg', start: -5 }, years: 10, fuzzy: true, hideEndDate: true, color: 'lime.6' };
 
   return events;
 };

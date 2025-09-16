@@ -1,3 +1,5 @@
+import round from './round';
+
 /**
  * Get a converted date and a spreadable array to use in t() function
  * Note that the year can be positive (AM, AD) or negative (BC)
@@ -9,7 +11,7 @@
  * @param {boolean} fuzzy - fuzzy dates? (changes label)
  * @returns - ( year: {number}, label: [{string}, { year: {number} }] )
  */
-const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc', fuzzy = false }) => {
+const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc', fuzzy = false, decimals = 2 }) => {
   let newDate;
 
   const labelBase = `timeline.date${fuzzy ? 'Fuzzy' : ''}`;
@@ -17,11 +19,11 @@ const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc', fuzzy = 
   // NEED AM DATE -----
   if (need === 'am') {
     // already have AM date, no conversion necessary
-    if (yearAM) return { year: yearAM, label: [`${labelBase}AM`, { year: yearAM }] };
+    if (yearAM) return { year: yearAM, label: [`${labelBase}AM`, { year: round(yearAM, decimals) }] };
 
     // have CE date > convert
     if (yearCE) {
-      newDate = yearCE - shift;
+      newDate = round(yearCE - shift, decimals);
       // NO YEAR ZERO!
       if (push === 'ad' && yearCE > 0) newDate--;
       if (push === 'bc' && yearCE < 0) newDate++;
@@ -31,15 +33,22 @@ const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc', fuzzy = 
     // NEED CE DATE ---
   } else {
     // already have CE date, no conversion necessary
-    if (yearCE) return { year: yearCE, label: [`${labelBase}${yearCE > 0 ? 'AD' : 'BC'}`, { year: Math.abs(yearCE) }] };
+    if (yearCE)
+      return {
+        year: yearCE,
+        label: [`${labelBase}${yearCE > 0 ? 'AD' : 'BC'}`, { year: round(Math.abs(yearCE), decimals) }],
+      };
 
     // need CE and we have AM date > convert
     if (yearAM) {
-      newDate = yearAM + shift;
+      newDate = round(yearAM + shift);
       // NO YEAR ZERO!
       if (push === 'ad' && newDate >= 0) newDate++;
       if (push === 'bc' && newDate <= 0) newDate--;
-      return { year: newDate, label: [`${labelBase}${newDate > 0 ? 'AD' : 'BC'}`, { year: Math.abs(newDate) }] };
+      return {
+        year: newDate,
+        label: [`${labelBase}${newDate > 0 ? 'AD' : 'BC'}`, { year: round(Math.abs(newDate), decimals) }],
+      };
     }
   }
 

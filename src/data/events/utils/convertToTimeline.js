@@ -18,7 +18,7 @@ const convertToTimeline = ({
   scale = 4,
   margins = true,
   trackMin = 'auto',
-  crucifixion = 30,
+  crucifixion = 31,
 }) => {
   // we need to hold processed data in an intermediate keyed object
   // so that we can reference them for relative dates

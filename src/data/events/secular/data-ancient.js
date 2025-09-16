@@ -2,17 +2,12 @@
 const data = REVISED_PYRAMIDS => {
   const events = {
     // BC
-    pyramidDjoser: { startCE: -2630, years: 2630 - 2610, fuzzy: true, buffer: 300, color: 'gray.4' },
-    pyramidsGiza: { startCE: -2550, years: 2550 - 2410, fuzzy: true, color: 'gray.4' },
+    pyramidDjoser: { startCE: -2630, years: 2630 - 2610, fuzzy: true, buffer: 300, color: 'black' },
+    pyramidsGiza: { startCE: -2550, years: 2550 - 2410, fuzzy: true, color: 'black' },
 
-    assyrianEmpire: { startCE: -1363, years: 1363 - 609, color: 'dark.4' },
-    babylonianEmpire: { startCE: -620, years: 620 - 539, color: 'dark.4', fuzzyStart: true },
-    achaemenianEmpire: { startCE: -538, years: 538 - 330, color: 'dark.4' },
-
-    nebuchadnezzar: { startCE: -605, years: 605 - 562, color: 'violet.2' },
-    darius: { startCE: -522, years: 522 - 486, color: 'violet.2' },
-    xerxes: { startCE: -486, years: 486 - 465, color: 'violet.2' },
-    artaxerxes: { startCE: -465, years: 465 - 424, color: 'violet.2' },
+    assyrianEmpire: { startCE: -1900, years: 1900 - 607, color: 'black', fuzzyStart: true },
+    babylonianEmpire: { startCE: -626, years: 626 - 539, color: 'black', fuzzyStart: true },
+    achaemenianEmpire: { startCE: -539, years: 538 - 330, color: 'black' },
 
     confucious: { startCE: -551, years: 551 - 479 },
     buddha: { startCE: -563, years: 563 - 483 },
@@ -32,7 +27,7 @@ const data = REVISED_PYRAMIDS => {
   Object.keys(events).forEach(key => {
     events[key].years = events[key].years || 0;
     events[key].exact = events[key].exact ?? true;
-    events[key].color = events[key].color || 'blue.2';
+    events[key].color = events[key].color || 'gray.6';
   });
 
   if (REVISED_PYRAMIDS) {

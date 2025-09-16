@@ -8,7 +8,7 @@ import getDate from './getDate';
  * @param {number} knownDate - the Gregorian date we know for the known event (negative numbers for BC)
  * @returns {number} the shift factor for converting dates
  */
-const addGregorian = ({ events = {}, knownKey = 'messiah', knownDate = 30, start = false }) => {
+const addGregorian = ({ events = {}, knownKey = 'messiah', knownDate = 31, start = false }) => {
   const relatedDate = start ? events[knownKey]?.startAM : events[knownKey].endAM;
   if (!relatedDate) return;
 

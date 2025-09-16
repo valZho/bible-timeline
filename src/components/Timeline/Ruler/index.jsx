@@ -94,7 +94,7 @@ const Ruler = () => {
           fontSize="0.8rem"
           fontWeight="bold"
         >
-          {t(...getDate({ yearAM, need: calendar, ...ceConvert }).label)}
+          {t(...getDate({ yearAM, need: calendar, ...ceConvert, decimals: 0 }).label)}
         </text>
       );
     });
@@ -115,7 +115,7 @@ const Ruler = () => {
         const yearAM = (i + 1) * 7 + intercalation;
         return (
           <text key={`sText${yearAM}`} x={placeText(yearAM)} y="45%" textAnchor="middle" fontSize="0.7rem">
-            {t(...getDate({ yearAM, need: calendar, ...ceConvert }).label)}
+            {t(...getDate({ yearAM, need: calendar, ...ceConvert, decimals: 0 }).label)}
           </text>
         );
       });

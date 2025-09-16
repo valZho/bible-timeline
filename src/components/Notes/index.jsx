@@ -5,6 +5,7 @@ import { useRecoilState } from 'recoil';
 import { useDisclosure } from '@mantine/hooks';
 import { Accordion, Modal, Anchor } from '@mantine/core';
 import {
+  IconBabyCarriage,
   IconBook,
   IconCalendarUser,
   IconClipboardList,
@@ -13,7 +14,9 @@ import {
   IconHourglassLow,
   IconNotes,
   IconPyramid,
+  IconSeeding,
   IconSettingsFilled,
+  IconSpeakerphone,
   IconSquareToggle,
   IconTool,
   IconWalk,
@@ -60,18 +63,35 @@ const Notes = () => {
       icon: <IconSquareToggle />,
     },
     {
+      key: 'exileStart',
+      icon: <IconWalk />,
+    },
+    {
+      key: 'decree',
+      icon: <IconSpeakerphone />,
+    },
+    {
+      key: 'daniel69',
+      icon: <IconCalendarUser />,
+    },
+    {
       key: 'jubilee',
       icon: <IconConfetti />,
       components: [<code />],
     },
     {
-      key: 'crucifixion',
-      icon: <IconCrossFilled />,
+      key: 'birthYear',
+      icon: <IconBabyCarriage />,
+    },
+    {
+      key: 'ministryLength',
+      icon: <IconSeeding />,
       components: [<a href="https://inventurous.net/crucifixion/" target="_blank" rel="noopen noreferrer" />],
     },
     {
-      key: 'daniel69',
-      icon: <IconCalendarUser />,
+      key: 'crucifixion',
+      icon: <IconCrossFilled />,
+      components: [<a href="https://inventurous.net/crucifixion/" target="_blank" rel="noopen noreferrer" />],
     },
     {
       key: 'sojourning',

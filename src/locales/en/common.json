@@ -73,6 +73,59 @@
         "<0><0></0> <strong>$t(options.margins.title)</strong> — Show / Hide</0> — Note that even though the Gregorian dates are still, in a way, subject to the compounding margin of error, those margins are <i>not</i> applied to or shown on secular, Gregorian-only dates on the timeline."
       ]
     },
+    "pyramids": {
+      "title": "The Building of the Pyramids",
+      "description_wTags": [
+        "The accepted mainstream dates for the building of the great pyramids at Giza are approximately 2550-2410 BC. The earliest known Egyptian pyramid, the pyramid of Djoser, has a mainstream construction date of 2670-2650 BC. The documentary film, <1>Patterns of Evidence: The Exodus</1> lays out a compelling case for why these dates should be moved forward 200 years.",
+
+        "<0><0></0> <strong>$t(options.pyramids.title):</strong></0>",
+
+        "<0>$t(options.pyramids.mainstream)</0> — Use the mainstream dates for the construction of the pyramids.",
+
+        "<0>$t(options.pyramids.revised)</0> — Use the revised dates from <i>Patterns of Evidence: The Exodus</i> for the construction of the pyramids."
+      ]
+    },
+    "decree": {
+      "title": "The Decree to Rebuild the Temple",
+      "description_wTags": [
+        "In Dan9:24-27 we read about 7 \"weeks\" (7-year periods), which start with the issuing of the decree \"to restore and rebuild Jerusalem.\" When did the decree take place?",
+
+        "<0><0></0> <strong>$t(options.decree.title):</strong></0>",
+
+        "<0>$t(options.decree.cyrus)</0> — 2Chr36:22-23 - King Cyrus issued a decree in his 1st year to rebuild the temple, which was the last year of the exile.",
+
+        "<0>$t(options.decree.darius)</0> — Ezra6:1-12 - King Darius issued a decree in his 2nd year to resume work on the temple.",
+
+        "<0>$t(options.decree.ezra)</0> — Ezra7:11-26 - King Artaxerxes issued a decree in his 7th year that allowed any Israelites to return to Jerusalem, financially supported the temple and supplies, provided tax examption, ensured support from officials, and allowed legal autonomy.",
+
+        "<0>$t(options.decree.nehemiah)</0> — Neh2:1-8 - King Artaxerxes grants Nehemiah's request to rebuild Jerusalem and its walls."
+      ]
+    },
+    "exileStart": {
+      "title": "The Start of the Exile",
+      "description_wTags": [
+        "Did the Exile period start with the first deportation at the surrender of king Jehoiachin or did it start with the destruction of Solomon's temple? This is almost certainly tied to the first deporation, but here's the option if you want it!",
+
+        "<0><0></0> <strong>$t(options.exileStart.title):</strong></0>",
+        "<0>$t(options.exileStart.deportation)</0> — The Exile started with the first deportation into Babylon at the end of Jehoiachin's reign.",
+
+        "<0>$t(options.exileStart.temple)</0> — The Exile started with the destruction of Solomon's temple at the end of Zedekiah's reign."
+      ]
+    },
+    "daniel69": {
+      "title": "Daniel 9:25 and the \"Anointed One\"",
+      "description_wTags": [
+        "In Dan9:24-27 we read about 7 \"weeks\" (7-year periods), the first 69 of which end with \"an Anointed One, the ruler.\" This is a reference to Jesus, but does this period end with the triumphal entry (when he <i>arrived</i> as King), at his Baptism (when he was <i>anointed</i> by the Holy Spirit), or at his birth (when he <i>arrived</i> on earth)?",
+
+        "<0><0></0> <strong>$t(options.daniel69.title):</strong></0>",
+
+        "<0>$t(options.daniel69.birth)</0> — A multitude of angels announced Jesus' birth to the shepherds; magi from the East travelled great distances after seeing signs in the heavens; Simeon and Anna recognized Jesus as the messiah at his purification offering in the temple when he was 40 days old; the Jewish people were expecting the arrival of the messiah around that time.",
+
+        "<0>$t(options.daniel69.baptism)</0> — Jesus became \"the anointed one\" when he was baptized. It is only after this that he begins his minisry as the messiah.",
+
+        "<0>$t(options.daniel69.death)</0> — At the Triumphal Entry, Jesus </i>arrived</i> at Jerusalem and was received as messiah and king. Days later he fulfilled his primary purpose as messiah: his substitionary death on the cross."
+      ]
+    },
     "jubilee": {
       "title": "Jubilee Years",
       "description_wTags": [
@@ -84,6 +137,28 @@
         "<0>$t(options.jubilee.exclusive)</0> — Each jubilee year begins <i>after</i> each 49th shmita and overlaps with the 1st year of the next shmita cycle. <code>[49-year jubilee cycles]</code>",
 
         "<0>$t(options.jubilee.intercalated)</0> — Each jubilee year begins <i>after</i> each 49th shmita and interrupts the shmita cycle with an intercalated (inserted) year. The first year of the next shmita cycle begins <i>after</i> the jubilee year. [50-year jubilee cycles] — Proponents of this view also claim that Daniel's 70 Weeks (shmita cycles) implies these extra jubilee years should be intercalated (added in) which means that the first 69 weeks of Daniel (483 years) would have an <i>additional</i> 9 jubilee years added in for a total of 492 years."
+      ]
+    },
+    "birthYear": {
+      "title": "Jesus' Birth Year",
+      "description_wTags": [
+        "There is debate regarding the year of Herod the Great's death, placing it sometime between 6 BC and 1 BC, which affects the age of Jesus at birth.",
+
+        "<0><0></0> <strong>$t(options.birthYear.title):</strong></0>",
+
+        "<0>$t(options.birthYear.optionLabels.0) - $t(options.birthYear.optionLabels.4)</0> — Luke states that Jesus' age at his baptism was \"about 30\", so double check his age as you fiddle with options."
+      ]
+    },
+    "ministryLength": {
+      "title": "The Length of Jesus' Ministry",
+      "description_wTags": [
+        "There is a debate centering on John 6:4 as to how long Jesus' ministry lasted. Did it begin prior to Passover and end with his Crucifixion at the following Passover (a little more than a year), or did it end after a third Passover (a little more than two years)?",
+
+        "<0><0></0> <strong>$t(options.ministryLength.title):</strong></0>",
+
+        "<0>$t(options.ministryLength.two)</0> — Jesus' ministry lasted a little more than 1 year.",
+
+        "<0>$t(options.ministryLength.three)</0> — Jesus' ministry lasted a little more than 2 years."
       ]
     },
     "crucifixion": {
@@ -122,37 +197,12 @@
         "<0>$t(options.sojourn.late)</0> — If the Promise, Abraham's departure, and Haran's death were indeed all the same year, then you must push back the beginning of the 400 and 450 year periods to begin when Isaac was about 5 years old. Some have tried to argue that this has to do with higher infant mortality rates and that the Israelites wouldn't count a person until after their 4th or 5th year, but I personally am unable to find any independent support for that assertion."
       ]
     },
-    "pyramids": {
-      "title": "The Building of the Pyramids",
-      "description_wTags": [
-        "The accepted mainstream dates for the building of the great pyramids at Giza are approximately 2550-2410 BC. The earliest known Egyptian pyramid, the pyramid of Djoser, has a mainstream construction date of 2670-2650 BC. The documentary film, <1>Patterns of Evidence: The Exodus</1> lays out a compelling case for why these dates should be moved forward 200 years.",
-
-        "<0><0></0> <strong>$t(options.pyramids.title):</strong></0>",
-
-        "<0>$t(options.pyramids.mainstream)</0> — Use the mainstream dates for the construction of the pyramids.",
-
-        "<0>$t(options.pyramids.revised)</0> — Use the revised dates from <i>Patterns of Evidence: The Exodus</i> for the construction of the pyramids."
-      ]
-    },
-    "daniel69": {
-      "title": "Daniel 9:25 and the \"Anointed One\"",
-      "description_wTags": [
-        "In Dan9:24-27 we read about 7 \"weeks\" (7-year periods), the first 69 of which end with \"an Anointed One, the ruler\". This is a reference to Jesus, but does this period end with the triumphal entry (when he <i>arrived</i> as King), at his Baptism (when he was <i>anointed</i>), or at his birth (when he <i>arrived</i> on earth)?",
-
-        "<0><0></0> <strong>$t(options.daniel69.title):</strong></0>",
-
-        "<0>$t(options.daniel69.birth)</0> — A multitude of angels announced Jesus' birth to the shepherds; magi from the East travelled great distances after seeing signs in the heavens; Simeon and Anna recognized Jesus as the messiah at his purification offering in the temple when he was 40 days old; the Jewish people were expecting the arrival of the messiah around that time.",
-
-        "<0>$t(options.daniel69.baptism)</0> — Jesus became \"the anointed one\" when he was baptized. It is only after this that he begins his minisry as the messiah.",
-
-        "<0>$t(options.daniel69.death)</0> — At the Triumphal Entry, Jesus </i>arrived</i> at Jerusalem and was received as messiah and king. Days later he fulfilled his primary purpose as messiah: his substitionary death on the cross."
-      ]
-    },
     "version": {
       "title": "Website Version History",
       "description_wTags": [
-        "• 1.1 — 2024-06-09<br>    - Added Northern Kings and cleaned up Kingdom dates<br>    - Added option for Pyramid construction date<br>    - Added option for the end of Daniel's 69 Weeks",
-        "• 1.0 — 2024-06-02<br>    - Initial release"
+        "• 2025-09-15<br>    - Updated all Kingdom dates using Edwin R. Thiele's timeline<br>    - Added option for Jesus' birth year<br>    - Added option for Jesus' ministry length<br>    - Added option for Daniel's 70 weeks start<br>    - Added option for Exile start<br>    - Fixed calculations for end of Daniel's 69 Weeks<br>    - Added Welcome / Help modal<br>    - Fixed some JavaScript floating number display issues<br>    - Minor style / color improvements",
+        "• 2024-06-09<br>    - Added Northern Kings and cleaned up Kingdom dates<br>    - Added option for Pyramid construction date<br>    - Added option for the end of Daniel's 69 Weeks",
+        "• 2024-06-02<br>    - Initial release"
       ]
     }
   },
@@ -177,31 +227,52 @@
       "masoretic": "Masoretic",
       "best": "Best Attested"
     },
+    "pyramids": {
+      "title": "Building of the Pyramids",
+      "revised": "Revised",
+      "mainstream": "Mainstream"
+    },
     "sojourn": {
       "title": "The Promise to Abraham",
       "early": "Age 70",
       "late": "Age 75"
     },
+    "exileStart": {
+      "title": "The Start of the Exile",
+      "deportation": "Deportation",
+      "temple": "Temple Destruction"
+    },
+    "decree": {
+      "title": "The Beginning of Daniel's 70 Weeks",
+      "cyrus": "Cyrus",
+      "darius": "Darius",
+      "ezra": "Ezra",
+      "nehemiah": "Nehemia"
+    },
     "jubilee": {
-      "title": "Jubilee Years",
+      "title": "Jubilee Years (affects Daniel's 70 Weeks)",
       "inclusive": "Inclusive",
       "exclusive": "Exclusive",
       "intercalated": "Intercalated"
-    },
-    "crucifixion": {
-      "title": "Crucifixion Date",
-      "optionLabels": ["26 A.D.", "31 A.D.", "36 A.D."]
-    },
-    "pyramids": {
-      "title": "Building of the Pyramids",
-      "revised": "Revised",
-      "mainstream": "Mainstream"
     },
     "daniel69": {
       "title": "End of Daniel's 69th Week",
       "birth": "Nativity",
       "baptism": "Baptism",
       "death": "Crucifixion"
+    },
+    "birthYear": {
+      "title": "Jesus' Birth Year",
+      "optionLabels": ["9 B.C.", "7", "5", "3", "1 B.C."]
+    },
+    "ministryLength": {
+      "title": "The Length of Jesus' Ministry",
+      "two": "Two Passovers",
+      "three": "Three Passovers"
+    },
+    "crucifixion": {
+      "title": "Crucifixion Date",
+      "optionLabels": ["26 A.D.", "31 A.D.", "36 A.D."]
     },
     "scale": {
       "title": "Horizontal Scale",
@@ -566,7 +637,7 @@
       "placement": ""
     },
     "temple1start": {
-      "title": "The Building of the First Temple",
+      "title": "The Building of the 1st Temple",
       "source": "1King6:1",
       "placement": ""
     },
@@ -808,6 +879,11 @@
       "source": "",
       "placement": ""
     },
+    "temple2": {
+      "title": "The Building of the 2nd Temple",
+      "source": "Ezra3:8, Ezra6:15",
+      "placement": ""
+    },
 
     "ROME": "———————————————————————————————————————————————————————————————————————",
 
@@ -892,13 +968,15 @@
 
     "nebuchadnezzar": {
       "title": "Reign of Nebuchadnezzar",
-      "source": "",
-      "placement": "605-562 BC"
+      "source": "Jer25:1, 2King24:1-12"
+    },
+    "cyrus": {
+      "title": "Reign of Cyrus",
+      "source": "2Chr36:22, Ezra1:1"
     },
     "darius": {
       "title": "Reign of Darius the Great",
-      "source": "",
-      "placement": "522-486 BC"
+      "source": "Ezr4:24, Hagi1:1"
     },
     "xerxes": {
       "title": "Reign of Xerxes the Great",

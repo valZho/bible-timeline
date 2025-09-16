@@ -14,9 +14,34 @@ const optionsState = {
     default: 'early',
     effects_UNSTABLE: [persistAtom],
   }),
+  exileStart: atom({
+    key: 'optionsExileStart',
+    default: 'deportation',
+    effects_UNSTABLE: [persistAtom],
+  }),
+  decree: atom({
+    key: 'optionsDecree',
+    default: 'nehmiah',
+    effects_UNSTABLE: [persistAtom],
+  }),
   jubilee: atom({
     key: 'optionsJubilee',
-    default: 'exclusive',
+    default: 'inclusive',
+    effects_UNSTABLE: [persistAtom],
+  }),
+  daniel69: atom({
+    key: 'optionsDaniel69',
+    default: 'baptism',
+    effects_UNSTABLE: [persistAtom],
+  }),
+  birthYear: atom({
+    key: 'optionsBirthYear',
+    default: -3,
+    effects_UNSTABLE: [persistAtom],
+  }),
+  ministryLength: atom({
+    key: 'optionsMinistryLength',
+    default: 'three',
     effects_UNSTABLE: [persistAtom],
   }),
   crucifixion: atom({
@@ -27,11 +52,6 @@ const optionsState = {
   pyramids: atom({
     key: 'optionsPyramids',
     default: 'revised',
-    effects_UNSTABLE: [persistAtom],
-  }),
-  daniel69: atom({
-    key: 'optionsDaniel69',
-    default: 'birth',
     effects_UNSTABLE: [persistAtom],
   }),
 
