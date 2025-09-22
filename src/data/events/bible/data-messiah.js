@@ -5,6 +5,7 @@
 const data = ({
   INTERCALATED = false,
   exileStart = 'deportation',
+  persia = 'revised',
   decree = 'nehemiah',
   daniel69 = 'birth',
   birthYear = -3,
@@ -40,12 +41,15 @@ const data = ({
 
     // WE NEED TO USE THESE TO GET A DATE FOR THE EXILE
     nebuchadnezzar: { relative: { id: 'exile', start: -19 }, exact: true, years: 43, color: 'cyan.7' },
-    cyrus: { relative: { id: 'exile', start: 69.5 }, exact: true, years: 30, color: 'cyan.7' },
-    darius: { relative: { id: 'cyrus', end: 0 }, exact: true, years: 36, color: 'cyan.7' },
-    artaxerxes: { relative: { id: 'darius', end: 0 }, years: 41, color: 'cyan.7' },
+
+    cyrus: { relative: { id: 'exile', end: -0.5 }, exact: true, years: 9, color: 'cyan.7' },
+    cambyses: { relative: { id: 'cyrus', end: 0 }, exact: true, years: 8, color: 'cyan.7' },
+    darius: { relative: { id: 'cambyses', end: 0 }, exact: true, years: 36, color: 'cyan.7' },
+    xerxes: { relative: { id: 'darius', end: 0 }, exact: true, years: 21, color: 'cyan.7' },
+    artaxerxes: { relative: { id: 'xerxes', end: 0 }, exact: true, years: 41, color: 'cyan.7' },
 
     temple1end: { relative: { id: 'zedekiah', end: 0 }, years: 0, color: 'red.7' },
-    temple2: { relative: { id: 'exile', end: 0 }, years: 21, color: 'lime.4' },
+    temple2: { relative: { id: 'exile', end: 2 }, years: 21, color: 'lime.4' },
   };
 
   switch (decree) {
@@ -54,16 +58,31 @@ const data = ({
       break;
 
     case 'darius':
-      events.dan69weeks.relative = { id: 'darius', start: 1 };
+      events.dan69weeks.relative = { id: 'darius', start: 1.5 };
       break;
 
     case 'ezra':
-      events.dan69weeks.relative = { id: 'artaxerxes', start: 6 };
+      events.dan69weeks.relative = { id: 'artaxerxes', start: 6.5 };
       break;
 
     case 'nehemiah':
     default:
-      events.dan69weeks.relative = { id: 'artaxerxes', start: 19 };
+      events.dan69weeks.relative = { id: 'artaxerxes', start: 19.5 };
+      break;
+  }
+
+  switch (persia) {
+    case 'mainstream':
+      events.xerxes.relative.end = 0;
+      events.artaxerxes.relative.end = 0;
+      events.artaxerxes.years = 41;
+      break;
+
+    case 'revised':
+    default:
+      events.xerxes.relative.end = -10;
+      events.artaxerxes.relative.end = -10;
+      events.artaxerxes.years = 41;
       break;
   }
 

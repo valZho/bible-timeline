@@ -74,15 +74,26 @@
       ]
     },
     "pyramids": {
-      "title": "The Building of the Pyramids",
+      "title": "Ancient Chronologies",
       "description_wTags": [
-        "The accepted mainstream dates for the building of the great pyramids at Giza are approximately 2550-2410 BC. The earliest known Egyptian pyramid, the pyramid of Djoser, has a mainstream construction date of 2670-2650 BC. The documentary film, <1>Patterns of Evidence: The Exodus</1> lays out a compelling case for why these dates should be moved forward 200 years.",
+        "The accepted mainstream dates for ancient Egypt propose some real logistical problems regarding the timing of the building of the Pyramids and Noah's Flood. British Egyptologist David Rohl's proposed New Chronology shifts these dates forward significantly.",
 
         "<0><0></0> <strong>$t(options.pyramids.title):</strong></0>",
 
-        "<0>$t(options.pyramids.mainstream)</0> — Use the mainstream dates for the construction of the pyramids.",
+        "<0>$t(options.pyramids.mainstream)</0> — Use the mainstream chronology for ancient Egypt.",
 
-        "<0>$t(options.pyramids.revised)</0> — Use the revised dates from <i>Patterns of Evidence: The Exodus</i> for the construction of the pyramids."
+        "<0>$t(options.pyramids.revised)</0> — Use David Rohl's New Chronology for ancient Egypt."
+      ]
+    },
+    "exileStart": {
+      "title": "The Start of the Exile",
+      "description_wTags": [
+        "Did the Exile period start with the first deportation at the surrender of king Jehoiachin or did it start with the destruction of Solomon's temple? This is almost certainly tied to the first deporation, but here's the option if you want it!",
+
+        "<0><0></0> <strong>$t(options.exileStart.title):</strong></0>",
+        "<0>$t(options.exileStart.deportation)</0> — The Exile started with the first deportation into Babylon at the end of Jehoiachin's reign.",
+
+        "<0>$t(options.exileStart.temple)</0> — The Exile started with the destruction of Solomon's temple at the end of Zedekiah's reign."
       ]
     },
     "decree": {
@@ -101,15 +112,16 @@
         "<0>$t(options.decree.nehemiah)</0> — Neh2:1-8 - King Artaxerxes grants Nehemiah's request to rebuild Jerusalem and its walls."
       ]
     },
-    "exileStart": {
-      "title": "The Start of the Exile",
+    "persia": {
+      "title": "Persian Kings",
       "description_wTags": [
-        "Did the Exile period start with the first deportation at the surrender of king Jehoiachin or did it start with the destruction of Solomon's temple? This is almost certainly tied to the first deporation, but here's the option if you want it!",
+        "Mainstream archaeology places the fall of Babylon to the Medo-Persian empire at 539 BC. This date is firmly established thanks to detailed Babylonian astronomical records. A chronology built from these records gives associated dates for the various decrees associated with Daniel's 70 Weeks prophecy. French independent scholar and linguist Gerard Gertoux has proposed an alternative interpretation of the Babylonian records which includes co-regencies and overlapping reigns.",
 
-        "<0><0></0> <strong>$t(options.exileStart.title):</strong></0>",
-        "<0>$t(options.exileStart.deportation)</0> — The Exile started with the first deportation into Babylon at the end of Jehoiachin's reign.",
+        "<0><0></0> <strong>$t(options.persia.title):</strong></0>",
 
-        "<0>$t(options.exileStart.temple)</0> — The Exile started with the destruction of Solomon's temple at the end of Zedekiah's reign."
+        "<0>$t(options.persia.mainstream)</0> — Use the mainstream chronology for Medo-Persia.",
+
+        "<0>$t(options.persia.revised)</0> — Use Gerard Gertoux's alternative chronology for Medo-Persia."
       ]
     },
     "daniel69": {
@@ -200,6 +212,8 @@
     "version": {
       "title": "Website Version History",
       "description_wTags": [
+        "• 2025-09-21<br>    - Updated Rohl's Egyptian timeline dates (Pyramids)<br>    - Added option for Medo-Persian chronology (Gertoux)<br>    - Fixed succession of Persian kings post-Exile<br>    - Overhaul options component and add RESET buttons",
+
         "• 2025-09-16<br>    - Added a few more dates<br>    - Added note capability on event tooltips<br>    - Fixed bug removing trailing zeros in numbers<br>    - A few more color adjustments",
 
         "• 2025-09-15<br>    - Updated all Kingdom dates using Edwin R. Thiele's timeline<br>    - Added option for Jesus' birth year<br>    - Added option for Jesus' ministry length<br>    - Added option for Daniel's 70 weeks start<br>    - Added option for Exile start<br>    - Fixed calculations for end of Daniel's 69 Weeks<br>    - Added Welcome / Help modal<br>    - Fixed some JavaScript floating number display issues<br>    - Minor style / color improvements",
@@ -220,6 +234,7 @@
     "contact": "Contact"
   },
   "options": {
+    "reset": "Reset",
     "tab": "Timeline Options",
     "notificationTitle": "What are all these settings?",
     "notificationText": "For detailed information about these options, why they're here and what they do, please see the notes.",
@@ -232,8 +247,8 @@
       "best": "Best Attested"
     },
     "pyramids": {
-      "title": "Building of the Pyramids",
-      "revised": "Revised",
+      "title": "Egyptian Chronology",
+      "revised": "Rohl's",
       "mainstream": "Mainstream"
     },
     "sojourn": {
@@ -252,6 +267,11 @@
       "darius": "Darius",
       "ezra": "Ezra",
       "nehemiah": "Nehemia"
+    },
+    "persia": {
+      "title": "Medo-Persian Chronology",
+      "mainstream": "Mainstream",
+      "revised": "Gertoux's"
     },
     "jubilee": {
       "title": "Jubilee Years (affects Daniel's 70 Weeks)",
@@ -280,18 +300,19 @@
     },
     "scale": {
       "title": "Horizontal Scale",
-      "bigger": "Bigger",
-      "smaller": "Smaller"
+      "optionLabels": ["Smaller", "", "", "", "Bigger"]
     },
     "trackMin": {
       "title": "Minimum Number of Vertical Tracks",
       "auto": "Minimum",
+      "10": "10",
+      "20": "20",
       "all": "Unlimited"
     },
     "margins": {
       "title": "Margin of Error",
-      "on": "Show",
-      "off": "Hide"
+      "show": "Show",
+      "hide": "Hide"
     },
     "showSource": {
       "title": "Event Details",
@@ -956,27 +977,21 @@
     "ANCIENT(ish) HISTORY": "———————————————————————————————————————————————————————",
 
     "pyramidDjoser": {
-      "title": "Pyramid of Djoser Built",
-      "source": "",
-      "placement": "Maintream: 2630-2610 BC | Revised: 2430-2410 BC"
+      "title": "Pyramid of Djoser Built"
     },
     "pyramidsGiza": {
-      "title": "The Great Pyramids of Giza Built",
-      "source": "",
-      "placement": "Mainstream: 2550-2410 BC | Revised: 2350-2210 BC"
+      "title": "The Great Pyramids of Giza Built"
     },
-    "assyrianEmpire": {
-      "title": "The Assyrian Empire",
-      "source": "",
-      "placement": "1363-609 BC"
+    "ancientAssyria": {
+      "title": "The Ancient Assyrian Empire"
     },
     "babylonianEmpire": {
       "title": "The Neo-Babylonian Empire",
       "source": "",
       "placement": "620-539 BC"
     },
-    "achaemenianEmpire": {
-      "title": "The Achaemenian (Medo-Persian) Empire",
+    "persianEmpire": {
+      "title": "The Medo-Persian (Achaemenid) Empire",
       "source": "",
       "placement": "538-330 BC"
     },
@@ -986,22 +1001,23 @@
       "source": "Jer25:1, 2King24:1-12"
     },
     "cyrus": {
-      "title": "Reign of Cyrus",
+      "title": "Reign of Cyrus the Great (over Babylon)",
       "source": "2Chr36:22, Ezra1:1"
     },
+    "cambyses": {
+      "title": "Reign of Cambyses II"
+    },
     "darius": {
-      "title": "Reign of Darius the Great",
+      "title": "Reign of Darius I",
       "source": "Ezr4:24, Hagi1:1"
     },
     "xerxes": {
-      "title": "Reign of Xerxes the Great",
+      "title": "Reign of Xerxes I (Ahasuerus)",
       "source": "",
       "placement": "486-465 BC"
     },
     "artaxerxes": {
-      "title": "Reign of Artaxerxes",
-      "source": "",
-      "placement": "465-424 BC"
+      "title": "Reign of Artaxerxes I (Longimanus)"
     },
 
     "confucious": {

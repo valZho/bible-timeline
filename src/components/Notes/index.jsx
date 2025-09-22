@@ -11,6 +11,7 @@ import {
   IconClipboardList,
   IconConfetti,
   IconCrossFilled,
+  IconCrown,
   IconHourglassLow,
   IconNotes,
   IconPyramid,
@@ -63,12 +64,23 @@ const Notes = () => {
       icon: <IconSquareToggle />,
     },
     {
+      key: 'pyramids',
+      icon: <IconPyramid />,
+      components: [
+        <a href="https://www.patternsofevidence.com/exodus-film/" target="_blank" rel="noopen noreferrer" />,
+      ],
+    },
+    {
       key: 'exileStart',
       icon: <IconWalk />,
     },
     {
       key: 'decree',
       icon: <IconSpeakerphone />,
+    },
+    {
+      key: 'persia',
+      icon: <IconCrown />,
     },
     {
       key: 'daniel69',
@@ -96,13 +108,6 @@ const Notes = () => {
     {
       key: 'sojourning',
       icon: <IconWalk />,
-    },
-    {
-      key: 'pyramids',
-      icon: <IconPyramid />,
-      components: [
-        <a href="https://www.patternsofevidence.com/exodus-film/" target="_blank" rel="noopen noreferrer" />,
-      ],
     },
     {
       key: 'version',

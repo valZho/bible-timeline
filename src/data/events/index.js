@@ -36,6 +36,7 @@ const getEvents = ({
   exileStart,
   decree,
   daniel69,
+  persia,
   birthYear,
   ministryLength,
   crucifixion,
@@ -65,8 +66,8 @@ const getEvents = ({
   // —— Start date relative to END date of another event
   // { title: 'timeline.shem', relative: { id: 'flood', end: -98 }, years: 600, margin: { end: 0.5 } }
   //
-  const MT = manuscript === 'mt';
-  const LXX = manuscript === 'lxx';
+  const MT = manuscript === 'masoretic';
+  const LXX = manuscript === 'septuagint';
   const INTERCALATED = jubilee === 'intercalated';
   const EARLY_SOJOURN = sojourn === 'early';
 
@@ -75,7 +76,7 @@ const getEvents = ({
     ...bible_patriarchs2(MT, LXX),
     ...bible_promise(EARLY_SOJOURN),
     ...bible_kingdoms(),
-    ...bible_messiah({ INTERCALATED, exileStart, decree, daniel69, birthYear, ministryLength, crucifixion }),
+    ...bible_messiah({ INTERCALATED, exileStart, decree, persia, daniel69, birthYear, ministryLength, crucifixion }),
   };
 
   const REVISED_PYRAMIDS = pyramids === 'revised';

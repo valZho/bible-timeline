@@ -1,13 +1,14 @@
 // ANCIENT-ish HISTORY
-const data = REVISED_PYRAMIDS => {
+const data = ROHLS_CHRONOLOGY => {
   const events = {
     // BC
-    pyramidDjoser: { startCE: -2630, years: 2630 - 2610, fuzzy: true, buffer: 300, color: 'black' },
-    pyramidsGiza: { startCE: -2550, years: 2550 - 2410, fuzzy: true, color: 'black' },
+    pyramidDjoser: { startCE: -2670, years: 20, fuzzy: true, buffer: 300, color: 'gray.6' },
+    pyramidsGiza: { startCE: -2580, years: 20, fuzzy: true, color: 'gray.6' },
+    ancientAssyria: { startCE: -2025, years: 2025 - 609, color: 'black', fuzzy: true },
 
-    assyrianEmpire: { startCE: -1900, years: 1900 - 607, color: 'black', fuzzyStart: true },
     babylonianEmpire: { startCE: -626, years: 626 - 539, color: 'black', fuzzyStart: true },
-    achaemenianEmpire: { startCE: -539, years: 538 - 330, color: 'black' },
+
+    persianEmpire: { startCE: -539, years: 539 - 330, color: 'black' },
 
     confucious: { startCE: -551, years: 551 - 479 },
     buddha: { startCE: -563, years: 563 - 483 },
@@ -41,20 +42,12 @@ const data = REVISED_PYRAMIDS => {
     events[key].color = events[key].color || 'gray.6';
   });
 
-  if (REVISED_PYRAMIDS) {
-    events.pyramidDjoser.startCE += 200;
-    events.pyramidsGiza.startCE += 200;
+  if (ROHLS_CHRONOLOGY) {
+    events.pyramidDjoser.startCE = -2250;
+    events.pyramidsGiza.startCE = -2150;
 
-    // events.assyrianEmpire.startCE += 100;
-    // events.assyrianEmpire.years += 100;
-    // events.babylonianEmpire.startCE += 100;
-    // events.babylonianEmpire.years += 100;
-    // events.achaemenianEmpire.startCE += 100;
-    // events.achaemenianEmpire.years += 100;
-
-    // events.darius.startCE += 100;
-    // events.xerxes.startCE += 100;
-    // events.artaxerxes.startCE += 100;
+    events.ancientAssyria.startCE = -2000;
+    events.ancientAssyria.years = 2000 - 609;
   }
 
   return events;

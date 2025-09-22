@@ -19,6 +19,7 @@ const EventsProvider = () => {
   const pyramids = useRecoilValue(OPTIONS.pyramids);
   const exileStart = useRecoilValue(OPTIONS.exileStart);
   const decree = useRecoilValue(OPTIONS.decree);
+  const persia = useRecoilValue(OPTIONS.persia);
   const daniel69 = useRecoilValue(OPTIONS.daniel69);
   const jubilee = useRecoilValue(OPTIONS.jubilee);
   const birthYear = useRecoilValue(OPTIONS.birthYear);
@@ -35,6 +36,7 @@ const EventsProvider = () => {
       pyramids,
       exileStart,
       decree,
+      persia,
       daniel69,
       jubilee,
       birthYear,
@@ -54,6 +56,7 @@ const EventsProvider = () => {
     pyramids,
     exileStart,
     decree,
+    persia,
     daniel69,
     jubilee,
     birthYear,
