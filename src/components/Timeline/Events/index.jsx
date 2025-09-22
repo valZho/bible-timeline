@@ -123,7 +123,7 @@ const Events = ({ trackHeight = 45 }) => {
       const noteKey = `events.${e.key}.note`;
 
       // we need to get strings first just so we can test if they are empty
-      // or note since TransWithBible will always return a node
+      // or not since TransWithBible will always return a node
       const source = t(sourceKey);
       const note = t(noteKey);
 

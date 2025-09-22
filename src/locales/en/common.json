@@ -212,7 +212,7 @@
     "version": {
       "title": "Website Version History",
       "description_wTags": [
-        "• 2025-09-21<br>    - Updated Rohl's Egyptian timeline dates (Pyramids)<br>    - Added option for Medo-Persian chronology (Gertoux)<br>    - Fixed succession of Persian kings post-Exile<br>    - Overhaul options component and add RESET buttons",
+        "• 2025-09-21<br>    - Updated Rohl's Egyptian timeline dates (Pyramids)<br>    - Added option for Medo-Persian chronology (Gertoux)<br>    - Fixed succession of Persian kings post-Exile<br>    - Overhaul options component and add RESET buttons<br>    - Fix Tooltip rendering bug",
 
         "• 2025-09-16<br>    - Added a few more dates<br>    - Added note capability on event tooltips<br>    - Fixed bug removing trailing zeros in numbers<br>    - A few more color adjustments",
 
