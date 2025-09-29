@@ -994,8 +994,7 @@
     },
     "persianEmpire": {
       "title": "The Medo-Persian (Achaemenid) Empire",
-      "source": "",
-      "placement": "538-330 BC"
+      "note": "Thanks to detailed astronomical records, this date is firmly established"
     },
 
     "nebuchadnezzar": {
@@ -1004,7 +1003,8 @@
     },
     "cyrus": {
       "title": "Reign of Cyrus the Great (over Babylon)",
-      "source": "2Chr36:22, Ezra1:1"
+      "source": "2Chr36:22, Ezra1:1",
+      "note": "This should align with the start of $t(events.persianEmpire.title)"
     },
     "cambyses": {
       "title": "Reign of Cambyses II"
