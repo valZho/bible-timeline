@@ -79,10 +79,8 @@ const getEvents = ({
     ...bible_messiah({ INTERCALATED, exileStart, decree, persia, daniel69, birthYear, ministryLength, crucifixion }),
   };
 
-  const REVISED_PYRAMIDS = pyramids === 'revised';
-
   const secularEvents = {
-    ...secular_ancient(REVISED_PYRAMIDS),
+    ...secular_ancient(pyramids === 'revised'),
     ...secular_modern(),
     ...secular_rome(),
     ...secular_wars(),

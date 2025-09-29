@@ -74,15 +74,13 @@ const data = ({
   switch (persia) {
     case 'mainstream':
       events.xerxes.relative.end = 0;
-      events.artaxerxes.relative.end = 0;
       events.artaxerxes.years = 41;
       break;
 
     case 'revised':
     default:
       events.xerxes.relative.end = -10;
-      events.artaxerxes.relative.end = -10;
-      events.artaxerxes.years = 41;
+      events.artaxerxes.years = 50;
       break;
   }
 

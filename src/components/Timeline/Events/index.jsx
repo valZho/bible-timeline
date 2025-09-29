@@ -26,6 +26,8 @@ const Events = ({ trackHeight = 45 }) => {
   const barHeight = 10;
   const flagHeight = (trackCount + 2) * trackHeight;
 
+  console.log(events);
+
   const createEvents = useCallback(() => {
     const bar = ({ fuzzy, color = 'blue_6', marginStart, width, fullWidth, marginEnd }, key) => (
       <svg
@@ -56,8 +58,8 @@ const Events = ({ trackHeight = 45 }) => {
     }) => {
       let startLabel = t(
         ...getDate({
-          yearAM: Math.ceil(startAM),
-          yearCE: Math.ceil(startCE),
+          yearAM: startAM,
+          yearCE: startCE,
           need: calendar,
           ...ceConvert,
           fuzzy: fuzzy || fuzzyStart,
@@ -65,8 +67,8 @@ const Events = ({ trackHeight = 45 }) => {
       );
       let endLabel = t(
         ...getDate({
-          yearAM: Math.ceil(endAM),
-          yearCE: Math.ceil(endCE),
+          yearAM: endAM,
+          yearCE: endCE,
           need: calendar,
           ...ceConvert,
           fuzzy: fuzzy || fuzzyEnd,

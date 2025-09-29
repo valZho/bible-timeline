@@ -6,6 +6,7 @@ import getDate from './getDate';
  * @param {object} events
  * @param {string} knownKey - the event key we know the AD date for
  * @param {number} knownDate - the Gregorian date we know for the known event (negative numbers for BC)
+ * @param {boolean} start - use the start of the known event as our pinned date? if false, use end.
  * @returns {number} the shift factor for converting dates
  */
 const addGregorian = ({ events = {}, knownKey = 'messiah', knownDate = 31, start = false }) => {

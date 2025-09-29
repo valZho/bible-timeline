@@ -31,7 +31,7 @@ const EventsProvider = () => {
       manuscript,
       sojourn,
       scale,
-      margins: margins === 'on',
+      margins: margins === 'show',
       trackMin,
       pyramids,
       exileStart,

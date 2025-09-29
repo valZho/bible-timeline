@@ -1,6 +1,6 @@
 $margin: 20px;
 $background: var(--mantine-color-gray-5);
-$line: var(--mantine-color-dark-filled);
+$line: var(--mantine-color-dark-text);
 
 .rulerContainer {
   position: sticky;
@@ -31,9 +31,15 @@ $line: var(--mantine-color-dark-filled);
     .yearTick {
       stroke: $line;
     }
+
+    .labelTick {
+      stroke: #0002;
+    }
+
     .shmitaTick {
       stroke: var(--mantine-color-blue-text);
     }
+
     .jubileeTick {
       stroke: var(--mantine-color-yellow-text);
     }

@@ -11,7 +11,7 @@ import round from './round';
  * @param {boolean} fuzzy - fuzzy dates? (changes label)
  * @returns - ( year: {number}, label: [{string}, { year: {number} }] )
  */
-const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc', fuzzy = false, decimals = 2 }) => {
+const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, fuzzy = false, decimals = 2, isRuler = false }) => {
   let newDate;
 
   const labelBase = `timeline.date${fuzzy ? 'Fuzzy' : ''}`;
@@ -21,12 +21,11 @@ const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc', fuzzy = 
     // already have AM date, no conversion necessary
     if (yearAM) return { year: yearAM, label: [`${labelBase}AM`, { year: round(yearAM, decimals) }] };
 
-    // have CE date > convert
+    // have CE date but need AM —> convert
     if (yearCE) {
-      newDate = round(yearCE - shift, decimals);
+      newDate = yearCE - shift;
       // NO YEAR ZERO!
-      if (push === 'ad' && yearCE > 0) newDate--;
-      if (push === 'bc' && yearCE < 0) newDate++;
+      if (newDate <= 0) newDate--;
       return { year: newDate, label: [`${labelBase}AM`, { year: newDate }] };
     }
 
@@ -39,12 +38,12 @@ const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, push = 'bc', fuzzy = 
         label: [`${labelBase}${yearCE > 0 ? 'AD' : 'BC'}`, { year: round(Math.abs(yearCE), decimals) }],
       };
 
-    // need CE and we have AM date > convert
+    // have AM date but need CE —> convert
     if (yearAM) {
       newDate = round(yearAM + shift);
       // NO YEAR ZERO!
-      if (push === 'ad' && newDate >= 0) newDate++;
-      if (push === 'bc' && newDate <= 0) newDate--;
+      if (newDate >= 0) newDate++;
+      if (isRuler) newDate++;
       return {
         year: newDate,
         label: [`${labelBase}${newDate > 0 ? 'AD' : 'BC'}`, { year: round(Math.abs(newDate), decimals) }],
