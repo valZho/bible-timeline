@@ -31,7 +31,7 @@ const parseEvents = ({ key = '', events = {}, processed = {}, scale = 2, margins
   // PARSE THE EVENTS OBJECTS INTO A TIMELINE ARRAY
   // final processed[key] should an array of display object sorted by start date
   //
-  // title (string)        <--- i18nKey
+  // key (string)          <--- i18nKey
   // startAM (number)      <--- Year in AM of the start date (averaged)
   // endAM (number)        <--- Year in AM of the end date of the event (averaged)
   // marginStart (number)  <--- +/- margin of error at start (cumulative)

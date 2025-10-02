@@ -13,12 +13,12 @@ const addGregorian = ({ events = {}, knownKey = 'messiah', knownDate = 31, start
   const relatedDate = start ? events[knownKey]?.startAM : events[knownKey].endAM;
   if (!relatedDate) return;
 
-  const shift = knownDate + (start ? 1 : -1) - relatedDate;
-  const push = knownDate > 0 ? 'ad' : 'bc';
+  // round the related date because we care about the year level, not sub-year level
+  const shift = knownDate - Math.round(relatedDate);
 
   Object.keys(events).forEach(key => {
-    events[key].startCE = getDate({ yearAM: events[key].startAM, need: 'ce', shift, push }).year;
-    events[key].endCE = getDate({ yearAM: events[key].endAM, need: 'ce', shift, push }).year;
+    events[key].startCE = getDate({ yearAM: events[key].startAM, need: 'ce', shift }).year;
+    events[key].endCE = getDate({ yearAM: events[key].endAM, need: 'ce', shift }).year;
   });
 
   return { shift, push: '' };

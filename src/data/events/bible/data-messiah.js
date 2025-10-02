@@ -3,7 +3,6 @@
  * @returns {object}
  */
 const data = ({
-  INTERCALATED = false,
   exileStart = 'deportation',
   persia = 'revised',
   decree = 'nehemiah',
@@ -26,7 +25,7 @@ const data = ({
     },
     dan69weeks: {
       relative: { id: 'exile', end: 0 },
-      years: 69 * 7 + (INTERCALATED ? 9 : 0),
+      years: 69 * 7,
       exact: true,
       color: 'lime.6',
     },
@@ -36,6 +35,7 @@ const data = ({
     apostleJohn: {
       relative: { id: 'messiah', end: -20 },
       years: 90, // Lives ~90 years total
+      exact: true,
       color: 'green.7',
     },
 

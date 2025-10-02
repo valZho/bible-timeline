@@ -26,8 +26,6 @@ const Events = ({ trackHeight = 45 }) => {
   const barHeight = 10;
   const flagHeight = (trackCount + 2) * trackHeight;
 
-  console.log(events);
-
   const createEvents = useCallback(() => {
     const bar = ({ fuzzy, color = 'blue_6', marginStart, width, fullWidth, marginEnd }, key) => (
       <svg

@@ -26,9 +26,9 @@ const eventData4 = () => {
     manasseh: { relative: { id: 'hezekiah', end: -11 }, color: 'grape.2', years: 55 },
     amon: { relative: { id: 'manasseh', end: 0 }, color: 'grape.2', years: 2 },
     josiah: { relative: { id: 'amon', end: 0 }, color: 'grape.2', years: 31 },
-    jehoahazSouth: { relative: { id: 'josiah', end: 0 }, color: 'grape.2', years: 0.01 },
+    jehoahazSouth: { relative: { id: 'josiah', end: 0 }, color: 'grape.2', years: 0 },
     jehoiakim: { relative: { id: 'jehoahazSouth', end: 0 }, color: 'grape.2', years: 11 },
-    jehoiachin: { relative: { id: 'jehoiakim', end: 0 }, color: 'grape.2', years: 0.01 },
+    jehoiachin: { relative: { id: 'jehoiakim', end: 0 }, color: 'grape.2', years: 0 },
     zedekiah: { relative: { id: 'jehoiachin', end: 0 }, color: 'grape.2', years: 11 },
 
     // ISRAEL
@@ -36,7 +36,7 @@ const eventData4 = () => {
     nadab: { relative: { id: 'jeroboam1', end: 0 }, color: 'grape.7', years: 2 },
     baasha: { relative: { id: 'nadab', end: 0 }, color: 'grape.7', years: 24 },
     elah: { relative: { id: 'baasha', end: 0 }, color: 'grape.7', years: 2 },
-    zimri: { relative: { id: 'elah', end: 0 }, color: 'grape.7', years: 0.019 },
+    zimri: { relative: { id: 'elah', end: 0 }, color: 'grape.7', years: 0 },
     omri: { relative: { id: 'zimri', start: 0 }, color: 'grape.7', years: 12 },
     ahab: { relative: { id: 'omri', end: 0 }, color: 'grape.7', years: 22 },
     ahaziahNorth: { relative: { id: 'ahab', end: 0 }, color: 'grape.7', years: 2 },
@@ -46,7 +46,7 @@ const eventData4 = () => {
     jehoash: { relative: { id: 'joash', start: 37 }, color: 'grape.7', years: 16 },
     jeroboam2: { relative: { id: 'amaziah', start: 15 }, color: 'grape.7', years: 41 },
     zechariah: { relative: { id: 'jeroboam2', end: 0 }, color: 'grape.7', years: 0.5 },
-    shallum: { relative: { id: 'zechariah', end: 0 }, color: 'grape.7', years: 0.083 },
+    shallum: { relative: { id: 'zechariah', end: 0 }, color: 'grape.7', years: 0 },
     menahem: { relative: { id: 'shallum', end: 0 }, color: 'grape.7', years: 10 },
     pekahiah: { relative: { id: 'menahem', end: 0 }, color: 'grape.7', years: 2 },
     pekah: { relative: { id: 'pekahiah', end: 0 }, color: 'grape.7', years: 20 },
@@ -63,7 +63,7 @@ const eventData4 = () => {
   events.solomon = { relative: { id: 'solomonReign', start: -25 }, years: 65, fuzzyStart: true };
 
   // no margin of error on these dates
-  Object.keys(events).map(key => (events[key].relative.exact = true));
+  Object.keys(events).map(key => (events[key].exact = true));
 
   return events;
 };

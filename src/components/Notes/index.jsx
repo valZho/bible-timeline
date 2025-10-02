@@ -64,6 +64,11 @@ const Notes = () => {
       icon: <IconSquareToggle />,
     },
     {
+      key: 'shmita',
+      icon: <IconConfetti />,
+      components: [<hr />],
+    },
+    {
       key: 'pyramids',
       icon: <IconPyramid />,
       components: [
@@ -85,11 +90,6 @@ const Notes = () => {
     {
       key: 'daniel69',
       icon: <IconCalendarUser />,
-    },
-    {
-      key: 'jubilee',
-      icon: <IconConfetti />,
-      components: [<code />],
     },
     {
       key: 'birthYear',

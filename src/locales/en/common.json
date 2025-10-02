@@ -138,17 +138,29 @@
         "<0>$t(options.daniel69.death)</0> — At the Triumphal Entry, Jesus </i>arrived</i> at Jerusalem and was received as messiah and king. Days later he fulfilled his primary purpose as messiah: his substitionary death on the cross."
       ]
     },
-    "jubilee": {
-      "title": "Jubilee Years",
+    "shmita": {
+      "title": "Sabbath and Jubilee Years",
       "description_wTags": [
-        "Lev25 mandates the observation of a sabbath year — the <i>\"shmita\"</i> — every 7th year and a jubilee year after every 7th shmita. Apparently, there is some wiggle room for interpretation on just when the jubilee year occurs in relation to the shmita cycle. Below are the three different methods for calculating the jubilee year that I have seen floating around out there. Although the \"exclusive\" method seems the most obvious to me, I have included the others for visualization.",
+        "Lev25 mandates the observation of a sabbath year (the <i>shmita</i>) with this seven-year cycle itself referred to as a <i>shavua</i> (often translanted as \"weeks\" in Dan9:24-27. Israel was commanded to observe a jubilee year after every 7th shmita — like a shmita, but with additional laws and observances. There are different interpretations as to when to begin the count of the shavu'im, whether the exile acted like a count reset or not, and when exactly to observe the jubilee year.",
 
-        "<0><0></0> <strong>$t(options.jubilee.title):</strong></0>",
-        "<0>$t(options.jubilee.inclusive)</0> — Each jubilee year <i>overlaps</i> with each 49th shmita. [49-year jubilee cycles]",
+        "<0><0></0> <strong>$t(options.shmita.title):</strong></0>",
+        "<0>$t(options.shmita.creation)</0> — Shavu'im count begins at creation.",
 
-        "<0>$t(options.jubilee.exclusive)</0> — Each jubilee year begins <i>after</i> each 49th shmita and overlaps with the 1st year of the next shmita cycle. <code>[49-year jubilee cycles]</code>",
+        "<0>$t(options.shmita.exodus)</0> — Shavu'im count begins when the Exodus is complete.</code>",
 
-        "<0>$t(options.jubilee.intercalated)</0> — Each jubilee year begins <i>after</i> each 49th shmita and interrupts the shmita cycle with an intercalated (inserted) year. The first year of the next shmita cycle begins <i>after</i> the jubilee year. [50-year jubilee cycles] — Proponents of this view also claim that Daniel's 70 Weeks (shmita cycles) implies these extra jubilee years should be intercalated (added in) which means that the first 69 weeks of Daniel (483 years) would have an <i>additional</i> 9 jubilee years added in for a total of 492 years."
+        "<0>$t(options.shmita.entry)</0> — Shavu'im count begins when Joshua leads Israel into the promised land.",
+
+        "<0>$t(options.shmita.conquest)</0> — Shavu'im count begins at the end of the conquest of the promised land.",
+
+        "<1 >",
+
+        "<0><0></0> <strong>$t(options.shmitaReset.label):</strong></0>",
+        "<0>ON / OFF</0> — When on, Shavu'im ends at the Exile and restarts when the Exile ends.",
+
+        "<1 >",
+
+        "<0><0></0> <strong>$t(options.jubileeOverlap.label):</strong></0>",
+        "<0>ON / OFF</0> — When on, the Jubilee overlaps the final shmita in the cycle. When off, the Jubilee overlaps the first year of the next cycle."
       ]
     },
     "birthYear": {
@@ -212,6 +224,8 @@
     "version": {
       "title": "Website Version History",
       "description_wTags": [
+        "• 2025-10-01<br>    - CE date display errors, especially in top ruler, should now be fixed<br>    - Added options for showing shmita and jubilees on ruler<br>    - removed intercalation option affecting Daniel's 70 weeks",
+
         "• 2025-09-29<br>    - Fixed Gertoux's Persian king dates which were slightly off.<br>    - Beginning of fixes to top ruler; still in progress, but actual CE dates should display correctly now. I'll be refining the display and adding correct shmita/Jubilee indicators with options for calculation in the next iteration",
 
         "• 2025-09-21<br>    - Updated Rohl's Egyptian timeline dates (Pyramids)<br>    - Added option for Medo-Persian chronology (Gertoux)<br>    - Fixed succession of Persian kings post-Exile<br>    - Overhaul options component and add RESET buttons<br>    - Fix Tooltip rendering bug",
@@ -275,11 +289,20 @@
       "mainstream": "Mainstream",
       "revised": "Gertoux's"
     },
-    "jubilee": {
-      "title": "Jubilee Years (affects Daniel's 70 Weeks)",
-      "inclusive": "Inclusive",
-      "exclusive": "Exclusive",
-      "intercalated": "Intercalated"
+    "shmita": {
+      "title": "Sabbath Year Cycle (Shavua) Start",
+      "creation": "Creation",
+      "exodus": "Exodus",
+      "entry": "Entry",
+      "conquest": "Conquest"
+    },
+    "shmitaReset": {
+      "title": "",
+      "label": "Exile Interrupts Shavu'im?"
+    },
+    "jubileeOverlap": {
+      "title": "",
+      "label": "Jubilee Overlaps Shmita?"
     },
     "daniel69": {
       "title": "End of Daniel's 69th Week",
@@ -424,7 +447,7 @@
     "Revelation": "Revelation"
   },
   "events": {
-    "PATRIARCHS": "—————————————————————————————————————————————————————————————————",
+    "PATRIARCHS": "<1 >—————————————",
 
     "adam": {
       "title": "Adam",
@@ -544,7 +567,7 @@
       "placement": ""
     },
 
-    "ABRAHAM to the PROMISED LAND": "———————————————————————————————————————————————",
+    "ABRAHAM to the PROMISED LAND": "<1 >—————————————————————",
 
     "abraham": {
       "title": "Abraham",
@@ -637,7 +660,7 @@
       "placement": ""
     },
 
-    "KINGDOM AGE": "————————————————————————————————————————————————————————————————",
+    "KINGDOM AGE": "<1 >————————————",
 
     "saul": {
       "title": "Saul",
@@ -686,7 +709,7 @@
       "placement": ""
     },
 
-    "SOUTHERN_KINGS": "——————————————————————————————",
+    "SOUTHERN_KINGS": "<1 >————",
 
     "abijam": {
       "title": "Abijam's Reign [Judah]",
@@ -784,7 +807,7 @@
       "placement": ""
     },
 
-    "NORTHERN_KINGS": "—————————————————————————————————",
+    "NORTHERN_KINGS": "<1 >———————",
 
     "jeroboam1": {
       "title": "Jeroboam Reign [Israel]",
@@ -913,7 +936,7 @@
       "placement": ""
     },
 
-    "ROME": "———————————————————————————————————————————————————————————————————————",
+    "ROME": "<1 >———————————————————",
 
     "rome_kingdom": {
       "title": "The Roman Kingdom",
@@ -976,7 +999,7 @@
       "title": "Christopher Columbus Discovers the Americas"
     },
 
-    "ANCIENT(ish) HISTORY": "———————————————————————————————————————————————————————",
+    "ANCIENT(ish) HISTORY": "<1 >———",
 
     "pyramidDjoser": {
       "title": "Pyramid of Djoser Built"
@@ -994,7 +1017,7 @@
     },
     "persianEmpire": {
       "title": "The Medo-Persian (Achaemenid) Empire",
-      "note": "Thanks to detailed astronomical records, this date is firmly established"
+      "note": "Thanks to detailed astronomical records, this date is firmly established at 539 BC"
     },
 
     "nebuchadnezzar": {
@@ -1004,7 +1027,7 @@
     "cyrus": {
       "title": "Reign of Cyrus the Great (over Babylon)",
       "source": "2Chr36:22, Ezra1:1",
-      "note": "This should align with the start of $t(events.persianEmpire.title)"
+      "note": "This should align with the start of $t(events.persianEmpire.title) in 539 BC"
     },
     "cambyses": {
       "title": "Reign of Cambyses II"
@@ -1117,7 +1140,7 @@
       "title": "John the Apostle"
     },
 
-    "WARS": "———————————————————————————————————————————————————————————————————————",
+    "WARS": "<1 >———————————————————",
 
     "war_7years": {
       "title": "The Seven Years War",
@@ -1180,7 +1203,7 @@
       "placement": "2001-2021 AD"
     },
 
-    "MODERN(ish) HISTORY": "————————————————————————————————————————————————————————",
+    "MODERN(ish) HISTORY": "<1 >————",
 
     "schism": {
       "title": "The Great East-West Schism",

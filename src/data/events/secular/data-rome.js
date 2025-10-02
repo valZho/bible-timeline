@@ -3,8 +3,9 @@ const data = () => {
   const events = {
     rome_kingdom: { startCE: -753, end: -509, color: 'black' },
     rome_republic: { startCE: -509, end: -27, color: 'black' },
-    rome_empire: { startCE: -27, end: 395, color: 'black' },
-    rome_augustus: { startCE: -27, end: 14 },
+    // subtract 2 for crossing year zero threshhold
+    rome_empire: { startCE: -27, end: 395 - 2, color: 'black' },
+    rome_augustus: { startCE: -27, end: 14 - 2 },
     rome_tiberius: { startCE: 14, end: 37 },
     // rome_caligula: { startCE: 37, end: 41 },
     // rome_claudius: { startCE: 41, end: 54 },
@@ -22,7 +23,6 @@ const data = () => {
 
   return events;
 };
-
 export default data;
 
 // the Roman Kingdom(753–509 BC), Roman Republic(509–27 BC), Roman Empire(27 BC– 395 AD), and the collapse of the Western Roman Empire in the 5th century AD.[1][a]

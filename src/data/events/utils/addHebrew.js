@@ -1,8 +1,8 @@
 import getDate from './getDate';
 
-const addHebrew = ({ events = {}, shift = 0, push = 'bc' }) => {
+const addHebrew = ({ events = {}, shift = 0 }) => {
   Object.keys(events).forEach(key => {
-    events[key].startAM = getDate({ yearCE: events[key].startCE, need: 'am', shift, push }).year;
+    events[key].startAM = getDate({ yearCE: events[key].startCE, need: 'am', shift }).year;
   });
 };
 

@@ -21,7 +21,7 @@ const EventsProvider = () => {
   const decree = useRecoilValue(OPTIONS.decree);
   const persia = useRecoilValue(OPTIONS.persia);
   const daniel69 = useRecoilValue(OPTIONS.daniel69);
-  const jubilee = useRecoilValue(OPTIONS.jubilee);
+  const shmita = useRecoilValue(OPTIONS.shmita);
   const birthYear = useRecoilValue(OPTIONS.birthYear);
   const ministryLength = useRecoilValue(OPTIONS.ministryLength);
   const crucifixion = useRecoilValue(OPTIONS.crucifixion);
@@ -38,7 +38,7 @@ const EventsProvider = () => {
       decree,
       persia,
       daniel69,
-      jubilee,
+      shmita,
       birthYear,
       ministryLength,
       crucifixion,
@@ -58,7 +58,7 @@ const EventsProvider = () => {
     decree,
     persia,
     daniel69,
-    jubilee,
+    shmita,
     birthYear,
     ministryLength,
     crucifixion,

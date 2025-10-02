@@ -8,12 +8,14 @@ const scaleMax = 20;
 
 export const calendarOptions = [
   { id: 'manuscript', type: 'select', default: 'best', values: ['best', 'septuagint', 'masoretic'] },
+  { id: 'shmita', type: 'select', default: 'entry', values: ['creation', 'exodus', 'entry', 'conquest'] },
+  { id: 'shmitaReset', type: 'boolean', default: false },
+  { id: 'jubileeOverlap', type: 'boolean', default: false },
   { id: 'pyramids', type: 'select', default: 'revised', values: ['mainstream', 'revised'] },
   { id: 'sojourn', type: 'select', default: 'early', values: ['early', 'late'] },
   { id: 'exileStart', type: 'select', default: 'deportation', values: ['deportation', 'temple'] },
   { id: 'decree', type: 'select', default: 'nehemiah', values: ['cyrus', 'darius', 'ezra', 'nehemiah'] },
   { id: 'persia', type: 'select', default: 'revised', values: ['mainstream', 'revised'] },
-  { id: 'jubilee', type: 'select', default: 'inclusive', values: ['inclusive', 'exclusive', 'intercalated'] },
   { id: 'daniel69', type: 'select', default: 'baptism', values: ['birth', 'baptism', 'death'] },
   { id: 'birthYear', type: 'slider', default: -3, range: [-9, -1, 1], values: [-9, -7, -5, -3, -1] },
   { id: 'ministryLength', type: 'select', default: 'three', values: ['two', 'three'] },

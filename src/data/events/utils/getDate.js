@@ -9,49 +9,51 @@ import round from './round';
  * @param {number} shift - the shift factor for converting dates
  * @param {string} push - ['ad', 'bc'] which dates get "pushed" when crossing year 0
  * @param {boolean} fuzzy - fuzzy dates? (changes label)
+ * @param {boolean} isRuler - is the ruler the one making the request?
+ * @param {boolean} isEnd - is this an end date? (otherwise beginning)
  * @returns - ( year: {number}, label: [{string}, { year: {number} }] )
  */
 const getDate = ({ yearAM, yearCE, need = 'am', shift = 0, fuzzy = false, decimals = 2, isRuler = false }) => {
   let newDate;
 
-  const labelBase = `timeline.date${fuzzy ? 'Fuzzy' : ''}`;
+  const formatOutput = (year, type) => ({
+    label: [`timeline.date${fuzzy ? 'Fuzzy' : ''}${type}`, { year: round(Math.abs(year), decimals) }],
+    year,
+  });
 
-  // NEED AM DATE -----
-  if (need === 'am') {
-    // already have AM date, no conversion necessary
-    if (yearAM) return { year: yearAM, label: [`${labelBase}AM`, { year: round(yearAM, decimals) }] };
+  switch (need) {
+    case 'am':
+      // already have AM
+      if (yearAM) return formatOutput(yearAM, 'AM');
 
-    // have CE date but need AM —> convert
-    if (yearCE) {
-      newDate = yearCE - shift;
-      // NO YEAR ZERO!
-      if (newDate <= 0) newDate--;
-      return { year: newDate, label: [`${labelBase}AM`, { year: newDate }] };
-    }
+      // CONVERT: CE —> AM
+      if (yearCE) {
+        newDate = yearCE - shift;
+        newDate += yearCE <= 0 ? 1 : -1;
+        return formatOutput(newDate, 'AM');
+      }
+      break;
 
-    // NEED CE DATE ---
-  } else {
-    // already have CE date, no conversion necessary
-    if (yearCE)
-      return {
-        year: yearCE,
-        label: [`${labelBase}${yearCE > 0 ? 'AD' : 'BC'}`, { year: round(Math.abs(yearCE), decimals) }],
-      };
+    case 'ce':
+      // already have CE
+      if (yearCE) return formatOutput(yearCE, yearCE > 0 ? 'AD' : 'BC');
 
-    // have AM date but need CE —> convert
-    if (yearAM) {
-      newDate = round(yearAM + shift);
-      // NO YEAR ZERO!
-      if (newDate >= 0) newDate++;
-      if (isRuler) newDate++;
-      return {
-        year: newDate,
-        label: [`${labelBase}${newDate > 0 ? 'AD' : 'BC'}`, { year: round(Math.abs(newDate), decimals) }],
-      };
-    }
+      // CONVERT: AM —> CE
+      if (yearAM) {
+        newDate = yearAM + shift;
+        // no year zero... have to shift dates left or right
+        newDate += newDate >= 0 ? 1 : -1;
+        // tick labels show in the space to the right
+        // but BC goes in the other direction!
+        // thus, we can just shift the BC labels by one
+        // displays fine, and we don't have to mess with moving labels around
+        if (isRuler && newDate <= 0) newDate++;
+        return formatOutput(round(newDate, 1), newDate > 0 ? 'AD' : 'BC');
+      }
+      break;
   }
 
-  // FAIL
+  // FAIL / FALLTHROUGH
   return { year: 1, label: '' };
 };
 

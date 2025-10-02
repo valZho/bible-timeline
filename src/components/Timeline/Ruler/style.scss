@@ -32,16 +32,16 @@ $line: var(--mantine-color-dark-text);
       stroke: $line;
     }
 
-    .labelTick {
-      stroke: #0002;
+    .labelHighlight {
+      stroke: #00003311;
     }
 
-    .shmitaTick {
-      stroke: var(--mantine-color-blue-text);
+    .shmitaHighlight {
+      stroke: var(--mantine-color-blue-7);
     }
 
-    .jubileeTick {
-      stroke: var(--mantine-color-yellow-text);
+    .jubileeHighlight {
+      stroke: var(--mantine-color-yellow-5);
     }
   }
 }
